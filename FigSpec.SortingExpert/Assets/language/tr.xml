@@ -1,0 +1,2826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Forms>
+    <FormItem>
+      <Key>AppsForm</Key>
+      <Value>AppsForm</Value>
+      <Controls>
+        <Item>
+          <Key>lblReportName</Key>
+          <Value>rapor</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2Sorting</Key>
+          <Value>Gerçek zamanlı sıralama sayfasına gönder</Value>
+        </Item>
+        <Item>
+          <Key>btnApply</Key>
+          <Value>uygulama</Value>
+        </Item>
+        <Item>
+          <Key>lblRemark</Key>
+          <Value>remarks</Value>
+        </Item>
+        <Item>
+          <Key>lblVersion</Key>
+          <Value>editorial content attribute</Value>
+        </Item>
+        <Item>
+          <Key>lblSensor</Key>
+          <Value>sensor</Value>
+        </Item>
+        <Item>
+          <Key>lblModelName</Key>
+          <Value>Model İsmi</Value>
+        </Item>
+        <Item>
+          <Key>barBtnDeleteModel</Key>
+          <Value>Sil</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToSorting</Key>
+          <Value>Gerçek zamanlı sıralama sayfasına gönder</Value>
+        </Item>
+        <Item>
+          <Key>barBtnPrint</Key>
+          <Value>raporunu bastır</Value>
+        </Item>
+        <Item>
+          <Key>barBtnFileRename</Key>
+          <Value>Model dosya ismini yeniden adlandır</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2Train</Key>
+          <Value>Model eğitim sayfasına gönder</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToTrain</Key>
+          <Value>Model eğitim sayfasına gönder</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2OutlineSorting</Key>
+          <Value>Kontor sıralama sayfasına gönder</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToOutlineSorting</Key>
+          <Value>Kontor sıralama sayfasına gönder</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>BrowseForm</Key>
+      <Value>BrowseForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnSent2Trian</Key>
+          <Value>Eğitim modeline gönder</Value>
+        </Item>
+        <Item>
+          <Key>lblFileName</Key>
+          <Value>dosya adı</Value>
+        </Item>
+        <Item>
+          <Key>btnFind</Key>
+          <Value>ekran</Value>
+        </Item>
+        <Item>
+          <Key>btnSwitchPath</Key>
+          <Value>Dizini değiştir</Value>
+        </Item>
+        <Item>
+          <Key>btnDeviceModel</Key>
+          <Value>Hizmetler modeli</Value>
+        </Item>
+        <Item>
+          <Key>barBtnDelete</Key>
+          <Value>Sil</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2Train</Key>
+          <Value>Eğitim modeline gönder</Value>
+        </Item>
+        <Item>
+          <Key>barBtnAppend2Train</Key>
+          <Value>Eğitim modeline ekle</Value>
+        </Item>
+        <Item>
+          <Key>BtnAppend2Train</Key>
+          <Value>Eğitim modeline ekle</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>EjectForm</Key>
+      <Value>EjectForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnStartEject</Key>
+          <Value>Hava patlamayı başlat.</Value>
+        </Item>
+        <Item>
+          <Key>btnEjectSetting</Key>
+          <Value>Hava patlaması ayarlaması</Value>
+        </Item>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>Çerçive hızı: 3000fps</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>MainForm</Key>
+      <Value>SortingExpert</Value>
+      <Controls>
+        <Item>
+          <Key>labBrowse</Key>
+          <Value>Resimleri topla</Value>
+        </Item>
+        <Item>
+          <Key>labScan</Key>
+          <Value>Görüntüyü görüntüle</Value>
+        </Item>
+        <Item>
+          <Key>labTran</Key>
+          <Value>Eğitim modeli</Value>
+        </Item>
+        <Item>
+          <Key>labApps</Key>
+          <Value>Görüntü Modeli</Value>
+        </Item>
+        <Item>
+          <Key>labSorting</Key>
+          <Value>Gerçek zamanlı sıralama</Value>
+        </Item>
+        <Item>
+          <Key>labEject</Key>
+          <Value>Gerçek zamanı havalandı.</Value>
+        </Item>
+        <Item>
+          <Key>barItemLanguage</Key>
+          <Value>Çok dilli</Value>
+        </Item>
+        <Item>
+          <Key>barBtnAbout</Key>
+          <Value>hakkında</Value>
+        </Item>
+        <Item>
+          <Key>barButtonImportCamFig</Key>
+          <Value>Kamera ayarlama dosyasını indir</Value>
+        </Item>
+        <Item>
+          <Key>labOutlineSorting</Key>
+          <Value>Contour sorting</Value>
+        </Item>
+        <Item>
+          <Key>barButtonItemGuide</Key>
+          <Value>Araç Sihirbazları</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>ScanForm</Key>
+      <Value>ViewForm</Value>
+      <Controls>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>Ağımdaki çerçeve hızı: 3000fps</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>bağla</Value>
+        </Item>
+        <Item>
+          <Key>btnStartScan</Key>
+          <Value>başlatma</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>Kamera ayarları</Value>
+        </Item>
+        <Item>
+          <Key>btndisplayandcalibsetting</Key>
+          <Value>Görüntüle ve kalibre ayarları</Value>
+        </Item>
+        <Item>
+          <Key>btn_SeleteBlack</Key>
+          <Value>Siyah kalibre</Value>
+        </Item>
+        <Item>
+          <Key>btn_SelectWhite</Key>
+          <Value>Beyaz kalibre</Value>
+        </Item>
+        <Item>
+          <Key>btnsaveimage</Key>
+          <Value>Resimi Kaydet</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>spektrum</Value>
+        </Item>
+        <Item>
+          <Key>colGUANGPUBIANHAO</Key>
+          <Value>Spektral numarası</Value>
+        </Item>
+        <Item>
+          <Key>colYANSE</Key>
+          <Value>renk</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteCheck</Key>
+          <Value>Seçili hedefi sil</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteAll</Key>
+          <Value>Bütün hedefleri sil</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveToFile</Key>
+          <Value>Seçili spektrumu kaydet</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveAllToFile</Key>
+          <Value>Tüm spektrayı kurtar</Value>
+        </Item>
+        <Item>
+          <Key>cb_ReflectanceDisplay</Key>
+          <Value>Refleksyon gösterisi</Value>
+        </Item>
+        <Item>
+          <Key>cb_CurveSmoothing</Key>
+          <Value>Yüksek eğri</Value>
+        </Item>
+        <Item>
+          <Key>btnPause</Key>
+          <Value>suspend</Value>
+        </Item>
+        <Item>
+          <Key>lblStartWaveLength</Key>
+          <Value>Dalga uzunluğunu başlatıyoruz</Value>
+        </Item>
+        <Item>
+          <Key>lblEndWaveLength</Key>
+          <Value>Son dalga uzunluğu</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingForm</Key>
+      <Value>SortingForm</Value>
+      <Controls>
+        <Item>
+          <Key>labModelInfo</Key>
+          <Value>Model dosyasının adı</Value>
+        </Item>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>Ağımdaki çerçeve hızı: 3000fps</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>Kamera bağla</Value>
+        </Item>
+        <Item>
+          <Key>btnStartSorting</Key>
+          <Value>Sıramaya başla</Value>
+        </Item>
+        <Item>
+          <Key>btnEjectSetting</Key>
+          <Value>Hava patlaması ayarlaması</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>Kamera ayarları</Value>
+        </Item>
+        <Item>
+          <Key>btnCalibration</Key>
+          <Value>Siyah ve beyaz kalibre</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>widmo</Value>
+        </Item>
+        <Item>
+          <Key>colGUANGPUBIANHAO</Key>
+          <Value>Liczba widmowa</Value>
+        </Item>
+        <Item>
+          <Key>colYANSE</Key>
+          <Value>kolor</Value>
+        </Item>
+        <Item>
+          <Key>cb_ReflectanceDisplay</Key>
+          <Value>Wyświetlanie odbicia</Value>
+        </Item>
+        <Item>
+          <Key>cb_CurveSmoothing</Key>
+          <Value>Gładka krzywa</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteCheck</Key>
+          <Value>Usuń wybrany cel</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteAll</Key>
+          <Value>Usuń wszystkie cele</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveToFile</Key>
+          <Value>Zapisz wybrane widmo</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveAllToFile</Key>
+          <Value>Zapisz wszystkie widma</Value>
+        </Item>
+        <Item>
+          <Key>lblStartWaveLength</Key>
+          <Value>Dalga uzunluğunu başlatıyoruz</Value>
+        </Item>
+        <Item>
+          <Key>lblEndWaveLength</Key>
+          <Value>Son dalga uzunluğu</Value>
+        </Item>
+        <Item>
+          <Key>btnBlackCalibration</Key>
+          <Value>Siyah kalibre</Value>
+        </Item>
+        <Item>
+          <Key>btnWhiteCalibration</Key>
+          <Value>Beyaz kalibre</Value>
+        </Item>
+        <Item>
+          <Key>sortingBaseBtbSendToCppProgram</Key>
+          <Value>Hızlı Seçicilere Gönder</Value>
+        </Item>
+        <Item>
+          <Key>btnrunfastsorting</Key>
+          <Value>Hızlı Seçim Programını Başlat</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>TrainForm</Key>
+      <Value>TrainForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnFreshDisplay</Key>
+          <Value>Gösterimi Yeniden Tazelt</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRange</Key>
+          <Value>Aranını sıfırla</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Resim Aralığı</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRGB</Key>
+          <Value>RGB grubunu ayarla</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Mavi [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Yeşil [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Kırmızı</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>RGB görüntüleme grubu</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Görüntü modusu</Value>
+        </Item>
+        <Item>
+          <Key>btnTrain</Key>
+          <Value>Eğitimi başlat</Value>
+        </Item>
+        <Item>
+          <Key>tabPageAlgorithm</Key>
+          <Value>Ordlama algoritmi</Value>
+        </Item>
+        <Item>
+          <Key>labelControl8</Key>
+          <Value>test</Value>
+        </Item>
+        <Item>
+          <Key>tabPagePreprocessing</Key>
+          <Value>Ön işleme</Value>
+        </Item>
+        <Item>
+          <Key>treeListColumn1</Key>
+          <Value>isim</Value>
+        </Item>
+        <Item>
+          <Key>treeListDrawType</Key>
+          <Value>Seçim türü</Value>
+        </Item>
+        <Item>
+          <Key>treeListColumn3</Key>
+          <Value>renk</Value>
+        </Item>
+        <Item>
+          <Key>treeListcCLassificationColumn</Key>
+          <Value>klasifikasyon</Value>
+        </Item>
+        <Item>
+          <Key>btnClass</Key>
+          <Value>Kategoriyi düzenle</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Eğitim Bilgisi</Value>
+        </Item>
+        <Item>
+          <Key>btnDeleteLabel</Key>
+          <Value>Sil</Value>
+        </Item>
+        <Item>
+          <Key>btnClearLabel</Key>
+          <Value>Etiketleri temizle</Value>
+        </Item>
+        <Item>
+          <Key>btnClearModel</Key>
+          <Value>Modeli temizle</Value>
+        </Item>
+        <Item>
+          <Key>btnDeleteModel</Key>
+          <Value>Sil</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveToModelView</Key>
+          <Value>Görüntü Modeline Kaydet'</Value>
+        </Item>
+        <Item>
+          <Key>barBtnModelRename</Key>
+          <Value>Yeniden Adlandır</Value>
+        </Item>
+        <Item>
+          <Key>barBtnUseModel</Key>
+          <Value>Uygulama modeli</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2Sorting</Key>
+          <Value>Gerçek zamanlı sıralama' ya gönderin</Value>
+        </Item>
+        <Item>
+          <Key>barBtnThresholdEdit</Key>
+          <Value>Elimi değiştir</Value>
+        </Item>
+        <Item>
+          <Key>btnContourImage</Key>
+          <Value>Dışarı önizleme</Value>
+        </Item>
+        <Item>
+          <Key>lcCtl</Key>
+          <Value>Kontörler sayısı: 0</Value>
+        </Item>
+        <Item>
+          <Key>lblKernelInfo</Key>
+          <Value>Kernel İsmi</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2OutlineSorting</Key>
+          <Value>Contour Sorting'a gönder</Value>
+        </Item>
+        <Item>
+          <Key>chkUpDownLoad</Key>
+          <Value>Orijinal spektrumu ve önceden işlenmiş spektrumu yukarı ve altına ayır</Value>
+        </Item>
+        <Item>
+          <Key>rdoBoth</Key>
+          <Value>Hat verileri ve önişlenmiş verileri göster</Value>
+        </Item>
+        <Item>
+          <Key>rdoPanel1</Key>
+          <Value>Sadece çizgi verileri göster</Value>
+        </Item>
+        <Item>
+          <Key>rdoPanel2</Key>
+          <Value>Sadece önişlenmiş verileri göster</Value>
+        </Item>
+        <Item>
+          <Key>colPreprocessType</Key>
+          <Value>Algoritm türü</Value>
+        </Item>
+        <Item>
+          <Key>colPreprocessAlgorithm</Key>
+          <Value>Algoritim adı</Value>
+        </Item>
+        <Item>
+          <Key>colParams</Key>
+          <Value>Parametre</Value>
+        </Item>
+        <Item>
+          <Key>colOperate</Key>
+          <Value>Etkinleştirildi</Value>
+        </Item>
+        <Item>
+          <Key>btnAddPreprocess</Key>
+          <Value>Ön işleme algoritmi ekle</Value>
+        </Item>
+        <Item>
+          <Key>btnExportCsv</Key>
+          <Value>Etiket bilgisini dışarı aktar</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>Eğitim Ayarları</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel2</Key>
+          <Value>spektral bilgi</Value>
+        </Item>
+        <Item>
+          <Key>barBtnExportClass</Key>
+          <Value>Etiket bilgisini dışarı aktar</Value>
+        </Item>
+        <Item>
+          <Key>btnPreClearAll</Key>
+          <Value>boş</Value>
+        </Item>
+        <Item>
+          <Key>btnPreDelete</Key>
+          <Value>Sil</Value>
+        </Item>
+        <Item>
+          <Key>btnPreEdit</Key>
+          <Value>edit</Value>
+        </Item>
+        <Item>
+          <Key>btnPreApply</Key>
+          <Value>uygulama</Value>
+        </Item>
+        <Item>
+          <Key>btnPreAdd</Key>
+          <Value>yeni eklendi</Value>
+        </Item>
+        <Item>
+          <Key>barBtnUseModelLabel</Key>
+          <Value>Uygulama etiketleri</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>CameraSettingForm</Key>
+      <Value>Kamera ayarları</Value>
+      <Controls>
+        <Item>
+          <Key>hlLabelResetRange</Key>
+          <Value>Aranını sıfırla</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Resim Aralığı</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRGB</Key>
+          <Value>RGB grubunu ayarla</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Mavi [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Yeşil [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Kırmızı</Value>
+        </Item>
+        <Item>
+          <Key>labelControl8</Key>
+          <Value>RGB görüntüleme grubu</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>belirle</Value>
+        </Item>
+        <Item>
+          <Key>sortingBaseButton1</Key>
+          <Value>Maksimum çerçeve hızını alın</Value>
+        </Item>
+        <Item>
+          <Key>labelControl9</Key>
+          <Value>Çerçive oranlarının gerçek zamanlı gösterisi</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>gain</Value>
+        </Item>
+        <Item>
+          <Key>btnreadmaxFrameRate</Key>
+          <Value>Maksimum fotoğraf hızını alın</Value>
+        </Item>
+        <Item>
+          <Key>labUseTime</Key>
+          <Value>Kalibrasyon değerlendirme dönemi</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Çerçive hızı</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>açıklama zamanı</Value>
+        </Item>
+        <Item>
+          <Key>checkFlipX</Key>
+          <Value>Görüntü aynalı ve döndü mi?</Value>
+        </Item>
+        <Item>
+          <Key>labelControl10</Key>
+          <Value>tetikleme modu</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>ClassSettingForm</Key>
+      <Value>Klasifik yönetimi</Value>
+      <Controls>
+        <Item>
+          <Key>btnColose</Key>
+          <Value>kapat</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveName</Key>
+          <Value>koruması</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>remarks</Value>
+        </Item>
+        <Item>
+          <Key>chcEditthreshold</Key>
+          <Value>Elimi etkinleştir</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Klasifikasyon eşiği</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>kodu</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>renk</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>isim</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Sınıf bilgileri</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Zaten gizli</Value>
+        </Item>
+        <Item>
+          <Key>columnColor</Key>
+          <Value>renk</Value>
+        </Item>
+        <Item>
+          <Key>gridColumn2</Key>
+          <Value>isim</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>DisplayAndCalibrationSettingForm</Key>
+      <Value>Kalibre ve göster ayarları</Value>
+      <Controls>
+        <Item>
+          <Key>groupControl2</Key>
+          <Value>Diğer ayarlar</Value>
+        </Item>
+        <Item>
+          <Key>checkdisplayrefimg</Key>
+          <Value>Spektrogramı göster</Value>
+        </Item>
+        <Item>
+          <Key>groupControl1</Key>
+          <Value>Kalibration file status</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>isim</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>isim</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>isim</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>isim</Value>
+        </Item>
+        <Item>
+          <Key>btnimportblackraw</Key>
+          <Value>İçeri</Value>
+        </Item>
+        <Item>
+          <Key>btnimportblackref</Key>
+          <Value>İçeri</Value>
+        </Item>
+        <Item>
+          <Key>btnimportwhiteraw</Key>
+          <Value>İçeri</Value>
+        </Item>
+        <Item>
+          <Key>btnimportwhiteref</Key>
+          <Value>İçeri</Value>
+        </Item>
+        <Item>
+          <Key>btnSave</Key>
+          <Value>koruması</Value>
+        </Item>
+        <Item>
+          <Key>checkSavesawimage</Key>
+          <Value>Orijinal verileri kaydet</Value>
+        </Item>
+        <Item>
+          <Key>chkSaveDisplayArea</Key>
+          <Value>Sadece şu anda görüntü alanını kaydet (notu: sadece yatay olarak yakala)</Value>
+        </Item>
+        <Item>
+          <Key>chkSplicingWhiteCalibrate</Key>
+          <Value>Beyaz kalibre seçimi bölüyor</Value>
+        </Item>
+        <Item>
+          <Key>chkOnlyCacheDisplayArea</Key>
+          <Value>Sadece görüntü alanındaki cache verileri</Value>
+        </Item>
+        <Item>
+          <Key>lblEffectiveHour</Key>
+          <Value>Efektiv zamanı (h)</Value>
+        </Item>
+        <Item>
+          <Key>lblSampleInterval</Key>
+          <Value>Piksel menzilini göster (1~640)</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>EjectIpSettingForm</Key>
+      <Value>Hava patlaması ayarlaması</Value>
+      <Controls>
+        <Item>
+          <Key>barEditItem12</Key>
+          <Value>Resim alıcı IP adresi</Value>
+        </Item>
+        <Item>
+          <Key>colTrachea</Key>
+          <Value>Tracheal numarası</Value>
+        </Item>
+        <Item>
+          <Key>colStartPixel</Key>
+          <Value>Piksel başlatılıyor</Value>
+        </Item>
+        <Item>
+          <Key>colEndPixel</Key>
+          <Value>Piksel bitir</Value>
+        </Item>
+        <Item>
+          <Key>btnCreateConfig</Key>
+          <Value>Yeni yapılandırma oluştur</Value>
+        </Item>
+        <Item>
+          <Key>lblPixelInterval</Key>
+          <Value>Yakın traşin başlangıç piksel pozisyonları arasındaki aralık</Value>
+        </Item>
+        <Item>
+          <Key>lblTracheaPixels</Key>
+          <Value>Tek bir traşe tarafından kaplı piksel sayısı</Value>
+        </Item>
+        <Item>
+          <Key>lblPixelNumber</Key>
+          <Value>Piksel sayısı</Value>
+        </Item>
+        <Item>
+          <Key>lblEndPixel</Key>
+          <Value>Piksel bitir</Value>
+        </Item>
+        <Item>
+          <Key>lblStartPixel</Key>
+          <Value>Piksel başlatılıyor</Value>
+        </Item>
+        <Item>
+          <Key>lblTrachea</Key>
+          <Value>Trahea sayısı</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Çerçive hızını etkinleştir</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Hava patlama gecikmesi (milisaniye)</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Blowing time (milliseconds)</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>belirle</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>Blowing device COM port</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Port numarası</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>IP adresi</Value>
+        </Item>
+        <Item>
+          <Key>btnApply</Key>
+          <Value>uygulama</Value>
+        </Item>
+        <Item>
+          <Key>chkTracheaDesc</Key>
+          <Value>Ters sırasında numarayı izle</Value>
+        </Item>
+        <Item>
+          <Key>colOperate</Key>
+          <Value>operasyon</Value>
+        </Item>
+        <Item>
+          <Key>btnConnect</Key>
+          <Value>bağlan</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Pikselleri etkinleştir</Value>
+        </Item>
+        <Item>
+          <Key>lblLocalIP</Key>
+          <Value>Yerel IP adresi</Value>
+        </Item>
+        <Item>
+          <Key>lblLocalPort</Key>
+          <Value>Yerel liman numarası</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectPort</Key>
+          <Value>Kapı numarası havalandırma cihazı</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectCom</Key>
+          <Value>Blowing device COM port</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectIp</Key>
+          <Value>Uçak cihazının IP adresi</Value>
+        </Item>
+        <Item>
+          <Key>chkTcpConnect</Key>
+          <Value>Hava patlama cihazı bağlantı metodu: TCP/IP</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormThresholdChange</Key>
+      <Value>Eşit değiştirmesi</Value>
+      <Controls>
+        <Item>
+          <Key>lblThreshold</Key>
+          <Value>sınıf</Value>
+        </Item>
+        <Item>
+          <Key>lblErodeLevel</Key>
+          <Value>Korozyon derecesi</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>belirle</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormThresholdMatting</Key>
+      <Value>Eşit değiştirmesi</Value>
+      <Controls>
+        <Item>
+          <Key>lblPaiHeiDiSuanFa</Key>
+          <Value>Siyah arkaplan deducasyon algoritmi</Value>
+        </Item>
+        <Item>
+          <Key>lblThreshold</Key>
+          <Value>Siyah arka arka sınıf değerlendirmesi</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>belirle</Value>
+        </Item>
+        <Item>
+          <Key>lblErodeLevel</Key>
+          <Value>Korozyon derecesi</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FromModelFileRename</Key>
+      <Value>Yeniden Adlandır</Value>
+      <Controls>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>iptal et</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>onaylayın</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>isim</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FromModelRename</Key>
+      <Value>Yeniden Adlandır</Value>
+      <Controls>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>iptal et</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>onaylayın</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>isim</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SaveFileOfName</Key>
+      <Value>Dosya ismini gir</Value>
+      <Controls>
+        <Item>
+          <Key>lblName</Key>
+          <Value>isim</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>onaylayın</Value>
+        </Item>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>iptal et</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SelectTrainBandsForm</Key>
+      <Value>Eğitim grubu seçin</Value>
+      <Controls>
+        <Item>
+          <Key>chkShowToTrainForm</Key>
+          <Value>Ana arayüz çizgisinde göstermek için dalga uzunluğunu seç</Value>
+        </Item>
+        <Item>
+          <Key>btnSetSelection</Key>
+          <Value>Seç</Value>
+        </Item>
+        <Item>
+          <Key>btnSelectAll</Key>
+          <Value>Hepsini Seç</Value>
+        </Item>
+        <Item>
+          <Key>btnClearSelection</Key>
+          <Value>boş</Value>
+        </Item>
+        <Item>
+          <Key>btnReverseSelect</Key>
+          <Value>Ters seçim</Value>
+        </Item>
+        <Item>
+          <Key>btnSave</Key>
+          <Value>onaylayın</Value>
+        </Item>
+        <Item>
+          <Key>chkSameSelect</Key>
+          <Value>Tüm etiketler aynı seçili frekans grubunu kullanır</Value>
+        </Item>
+        <Item>
+          <Key>lblClass</Key>
+          <Value>etiket</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingConnectEject</Key>
+      <Value>Hava patlama program ı bağlantı ayarları</Value>
+      <Controls>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>belirle</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>IP adresi</Value>
+        </Item>
+        <Item>
+          <Key>btnGetIPAddress</Key>
+          <Value>Yerel IP adresini alın</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Port numarası</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>İletişim Yolları</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Dosya Depolama Yolu</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Dosya depolama çerçeveleri</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingSettingForm</Key>
+      <Value>Seçim ayarları</Value>
+      <Controls>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>belirle</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Korozyon şiddeti</Value>
+        </Item>
+        <Item>
+          <Key>checkOriImg</Key>
+          <Value>Orijinal resimi göster</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>AboutForm</Key>
+      <Value>hakkında</Value>
+      <Controls>
+        <Item>
+          <Key>labVersionTitle</Key>
+          <Value>Yazım:</Value>
+        </Item>
+        <Item>
+          <Key>btnCheckUpdate</Key>
+          <Value>Güncellemeler için kontrol et</Value>
+        </Item>
+        <Item>
+          <Key>label3</Key>
+          <Value>İçeri:</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>NewVersionForm</Key>
+      <Value>NewVersionForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnUpdateNow</Key>
+          <Value>Derhal güncelleştir</Value>
+        </Item>
+        <Item>
+          <Key>labTitle</Key>
+          <Value>Yeni sürüm</Value>
+        </Item>
+        <Item>
+          <Key>btnUpdateLater</Key>
+          <Value>Gelecekte beni hatırlat.</Value>
+        </Item>
+        <Item>
+          <Key>btnIgnore</Key>
+          <Value>Ağımdaki sürümü yok et</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormPreprocessEdit</Key>
+      <Value>Ön işleme Algoritmi Ekle/Düzenle</Value>
+      <Controls>
+        <Item>
+          <Key>lblType</Key>
+          <Value>Algoritm türü</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>algoritm</Value>
+        </Item>
+        <Item>
+          <Key>lblParam1</Key>
+          <Value>Süzgüç uzunluğu</Value>
+        </Item>
+        <Item>
+          <Key>lblParam2</Key>
+          <Value>Süzgüç frekansı</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>belirle</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>iptal et</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>UserGuideForm</Key>
+      <Value>Araç Sihirbazları</Value>
+      <Controls>
+        <Item>
+          <Key>lblStep1</Key>
+          <Value>1. adım:</Value>
+        </Item>
+        <Item>
+          <Key>btnImportFile</Key>
+          <Value>Kamera ayarlama dosyasını indir</Value>
+        </Item>
+        <Item>
+          <Key>lblStep2</Key>
+          <Value>2. adım:</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>Kamera bağla</Value>
+        </Item>
+        <Item>
+          <Key>lblLinkFile</Key>
+          <Value>Bağlantı başarısızlığına sebep olan sıradan sorunlar</Value>
+        </Item>
+        <Item>
+          <Key>lblGain</Key>
+          <Value>Gayet (yüksek kazanç önerildi)</Value>
+        </Item>
+        <Item>
+          <Key>lblExposureTime</Key>
+          <Value>açıklama zamanı</Value>
+        </Item>
+        <Item>
+          <Key>btnSet2Device</Key>
+          <Value>Instrumentaya Güncelleştir</Value>
+        </Item>
+        <Item>
+          <Key>lblMaxFrame</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblArea</Key>
+          <Value>Tanıma</Value>
+        </Item>
+        <Item>
+          <Key>lblSignal</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblClarity</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblStep3</Key>
+          <Value>3. adım:</Value>
+        </Item>
+        <Item>
+          <Key>btnAdjust</Key>
+          <Value>Açıklığı ve sinyal sesini ayarlamaya başlat</Value>
+        </Item>
+        <Item>
+          <Key>lblStep3Result</Key>
+          <Value>Ayarlama süreci başlattı.</Value>
+        </Item>
+        <Item>
+          <Key>groupBox1</Key>
+          <Value>Maksimum çerçeve hızı (fps)</Value>
+        </Item>
+        <Item>
+          <Key>groupBox2</Key>
+          <Value>tanımlama</Value>
+        </Item>
+        <Item>
+          <Key>groupBox3</Key>
+          <Value>Sinyal</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Sinyal ayarlama: Beyaz tablosu ölçü alanına yerleştirin, exposure zamanı ayarlayın, 8000 ile 15000 arasında sinyal yapın.</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Açıklık ayarlaması: ağ kağıtını ölçü alanına yerleştirin, lenslerin açılışını maksimum olarak ayarlayın, lenslerin fokalını maksimum olarak ayarlayın.</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SplicingWhiteCalibrationForm</Key>
+      <Value>Beyaz kalibre verileri bölüyor</Value>
+      <Controls>
+        <Item>
+          <Key>colParams</Key>
+          <Value>koordinat</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>koruması</Value>
+        </Item>
+        <Item>
+          <Key>btnDelete</Key>
+          <Value>Seçili Sil</Value>
+        </Item>
+        <Item>
+          <Key>grpPreArea</Key>
+          <Value>Önizleme alanı</Value>
+        </Item>
+        <Item>
+          <Key>btnOkAndClose</Key>
+          <Value>Kaydet ve Kapat</Value>
+        </Item>
+        <Item>
+          <Key>btnStartScan</Key>
+          <Value>Toplamaya başla</Value>
+        </Item>
+        <Item>
+          <Key>btnPause</Key>
+          <Value>suspend</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveAndSwitch</Key>
+          <Value>Beyaz kalibreye kaydet ve değiştir</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>Kamera ayarları</Value>
+        </Item>
+        <Item>
+          <Key>groupBox1</Key>
+          <Value>kalibre alanını seçmek için lütfen resimde tıklayın</Value>
+        </Item>
+        <Item>
+          <Key>lblTitle</Key>
+          <Value>Siyah kalibre</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>LoadingForm</Key>
+      <Value>ShowDialogForm</Value>
+      <Controls>
+        <Item>
+          <Key>gpcCaption</Key>
+          <Value>isim</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+  </Forms>
+  <Prompts>
+    <Item>
+      <Key>本地模型文件</Key>
+      <Value>Yerel model dosyası</Value>
+    </Item>
+    <Item>
+      <Key>云端模型文件</Key>
+      <Value>Bulut tabanlı model dosyaları</Value>
+    </Item>
+    <Item>
+      <Key>选择路径</Key>
+      <Value>Bir yol seç</Value>
+    </Item>
+    <Item>
+      <Key>将删除相关原始文件，确定删除吗？</Key>
+      <Value>Önemli dosyaları silmeye emin misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>提示</Key>
+      <Value>Tips</Value>
+    </Item>
+    <Item>
+      <Key>切换语言将重启软件，确定切换吗？</Key>
+      <Value>Dilleri değiştirmek yazılım yeniden başlatacak. Değiştirmek istediğinizden emin misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>未找到此模型的黑白校准文件或反射率文件，无法使用</Key>
+      <Value>Bu model için siyah ve beyaz kalibre dosyası ya da refleks dosyası bulunamadı, kullanamadı</Value>
+    </Item>
+    <Item>
+      <Key>模型信息：</Key>
+      <Value>Model bilgisi:</Value>
+    </Item>
+    <Item>
+      <Key>电脑未连接相机</Key>
+      <Value>Bilgisayar kameraya bağlanmadı.</Value>
+    </Item>
+    <Item>
+      <Key>缺少反射率数据</Key>
+      <Value>Refleks verileri eksik</Value>
+    </Item>
+    <Item>
+      <Key>缺少黑校准数据</Key>
+      <Value>Siyah kalibre verileri eksik</Value>
+    </Item>
+    <Item>
+      <Key>缺少白校准数据</Key>
+      <Value>Beyaz kalibre verileri eksik</Value>
+    </Item>
+    <Item>
+      <Key>模型的光谱通道与相机的不匹配</Key>
+      <Value>Modelin ve kameranın spektral kanalı arasında eşleşme.</Value>
+    </Item>
+    <Item>
+      <Key>点击YES为黑校准，点击NO为白校准,点击Cancel未暗电流校准</Key>
+      <Value>Siyah kalibre için YES'e tıklayın, beyaz kalibre için NO'ya tıklayın, karanlık ağımdaki kalibre için Cancel'e tıklayın</Value>
+    </Item>
+    <Item>
+      <Key>链接成功</Key>
+      <Value>Bağlantı başarılı</Value>
+    </Item>
+    <Item>
+      <Key>标签</Key>
+      <Value>etiket</Value>
+    </Item>
+    <Item>
+      <Key>模型</Key>
+      <Value>Model</Value>
+    </Item>
+    <Item>
+      <Key>选区数量少于两个，数量不够</Key>
+      <Value>Meclis sayısı iki'den az, bu kadar yetmez.</Value>
+    </Item>
+    <Item>
+      <Key>缺少背景选区或未分类选区</Key>
+      <Value>Arkaplan seçim yoktur ya da klasik seçim yoktur</Value>
+    </Item>
+    <Item>
+      <Key>缺少目标选区</Key>
+      <Value>Hedef seçim alanı eksik</Value>
+    </Item>
+    <Item>
+      <Key>存在为标记类型的选区，请核实</Key>
+      <Value>İşaretçi türünün seçimi var, lütfen doğrulayın</Value>
+    </Item>
+    <Item>
+      <Key>训练中...</Key>
+      <Value>Eğitim sırasında</Value>
+    </Item>
+    <Item>
+      <Key>算法运行错误，未生成模型</Key>
+      <Value>Algoritim çalıştığı hata, model üretilmedi</Value>
+    </Item>
+    <Item>
+      <Key>请先选择光谱图像</Key>
+      <Value>Lütfen önce spektral resmini seçin</Value>
+    </Item>
+    <Item>
+      <Key>波长集合</Key>
+      <Value>Dalga uzunluğu seti</Value>
+    </Item>
+    <Item>
+      <Key>高光谱图像图片</Key>
+      <Value>Hiperspektral resim</Value>
+    </Item>
+    <Item>
+      <Key>数量已经达到最大值</Key>
+      <Value>Kıymet maksimum değerine ulaştı.</Value>
+    </Item>
+    <Item>
+      <Key>名称不能为空</Key>
+      <Value>İsim boş olamaz</Value>
+    </Item>
+    <Item>
+      <Key>名称重复</Key>
+      <Value>Köprü isim</Value>
+    </Item>
+    <Item>
+      <Key>初始化气吹控制失败</Key>
+      <Value>Hava patlama kontrolünün başlatılması başarısız oldu</Value>
+    </Item>
+    <Item>
+      <Key>是</Key>
+      <Value>Evet.</Value>
+    </Item>
+    <Item>
+      <Key>否</Key>
+      <Value>Hayır.</Value>
+    </Item>
+    <Item>
+      <Key>常规</Key>
+      <Value>rutin</Value>
+    </Item>
+    <Item>
+      <Key>算法类型</Key>
+      <Value>Algoritm türü</Value>
+    </Item>
+    <Item>
+      <Key>主成分数量(2-10)</Key>
+      <Value>Ana komponent noktası (2-10)</Value>
+    </Item>
+    <Item>
+      <Key>训练集大小(0.5-1)</Key>
+      <Value>Eğitim ayarlama boyutu (0.5-1)</Value>
+    </Item>
+    <Item>
+      <Key>训练波长数量</Key>
+      <Value>Eğitim dalga uzunluğunun sayısı</Value>
+    </Item>
+    <Item>
+      <Key>训练循环步幅</Key>
+      <Value>Eğitim döngüsü</Value>
+    </Item>
+    <Item>
+      <Key>训练的波长集合</Key>
+      <Value>Eğitim için dalga uzunluğu ayarlandı.</Value>
+    </Item>
+    <Item>
+      <Key>是否开启均值滤波</Key>
+      <Value>Önemli filtrelemeyi etkinleştirmek ister misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波力度</Key>
+      <Value>Orta filtreme şiddeti</Value>
+    </Item>
+    <Item>
+      <Key>是否开启标准化</Key>
+      <Value>Standart dizasyonu etkinleştirilmeyecek mi?</Value>
+    </Item>
+    <Item>
+      <Key>缺少模型文件</Key>
+      <Value>Model veri eksik</Value>
+    </Item>
+    <Item>
+      <Key>分选模块正在被使用</Key>
+      <Value>Seçim modüli kullanılıyor</Value>
+    </Item>
+    <Item>
+      <Key>当前帧率：</Key>
+      <Value>Güncel çerçeve hızı:</Value>
+    </Item>
+    <Item>
+      <Key>连接相机中...</Key>
+      <Value>Kamera bağlanıyor</Value>
+    </Item>
+    <Item>
+      <Key>正在停止...</Key>
+      <Value>Duruyor</Value>
+    </Item>
+    <Item>
+      <Key>确定删除该样本吗？</Key>
+      <Value>Bu örnek silmeye emin misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>确定清空所有样本吗？</Key>
+      <Value>Bütün örnekleri temizleyecek misin?</Value>
+    </Item>
+    <Item>
+      <Key>确定删除模型吗？</Key>
+      <Value>Modeli silecek misin?</Value>
+    </Item>
+    <Item>
+      <Key>确定清空所有模型吗？</Key>
+      <Value>Bütün modelleri temizleyecek misin?</Value>
+    </Item>
+    <Item>
+      <Key>样本</Key>
+      <Value>örnek</Value>
+    </Item>
+    <Item>
+      <Key>预处理</Key>
+      <Value>Ön işleme</Value>
+    </Item>
+    <Item>
+      <Key>是否开启均值滤波：</Key>
+      <Value>Önemli filtrelemeyi etkinleştirmek ister misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>是否开启标准化：</Key>
+      <Value>Standardization etkinleştirilmeyecek mi:</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波力度：</Key>
+      <Value>Orta filtreme şiddeti:</Value>
+    </Item>
+    <Item>
+      <Key>波长信息</Key>
+      <Value>Dalga uzunluğu bilgisi</Value>
+    </Item>
+    <Item>
+      <Key>类别</Key>
+      <Value>class</Value>
+    </Item>
+    <Item>
+      <Key>取消</Key>
+      <Value>iptal et</Value>
+    </Item>
+    <Item>
+      <Key>确定</Key>
+      <Value>belirle</Value>
+    </Item>
+    <Item>
+      <Key>忽略</Key>
+      <Value>ignore</Value>
+    </Item>
+    <Item>
+      <Key>中止</Key>
+      <Value>suspension</Value>
+    </Item>
+    <Item>
+      <Key>重试</Key>
+      <Value>geri dene</Value>
+    </Item>
+    <Item>
+      <Key>未选中模型!</Key>
+      <Value>Model seçilmedi!</Value>
+    </Item>
+    <Item>
+      <Key>模型未加载!</Key>
+      <Value>Model yüklenmedi!</Value>
+    </Item>
+    <Item>
+      <Key>应用失败!</Key>
+      <Value>Uygulama başarısız oldu!</Value>
+    </Item>
+    <Item>
+      <Key>应用成功</Key>
+      <Value>Uygulama başarılı</Value>
+    </Item>
+    <Item>
+      <Key>发送成功</Key>
+      <Value>Gönderilen başarıyla</Value>
+    </Item>
+    <Item>
+      <Key>请选择相机配置文件</Key>
+      <Value>Lütfen bir kamera ayarlama dosyasını seçin</Value>
+    </Item>
+    <Item>
+      <Key>相机配置文件导入成功!</Key>
+      <Value>Kamera yapılandırma dosyası başarıyla import edildi!</Value>
+    </Item>
+    <Item>
+      <Key>相机连接中...</Key>
+      <Value>Kamera bağlantısı ilerliyor</Value>
+    </Item>
+    <Item>
+      <Key>相机连接失败</Key>
+      <Value>Kamera bağlantısı başarısız oldu</Value>
+    </Item>
+    <Item>
+      <Key>相机连接成功</Key>
+      <Value>Kamera bağlantısı başarılı</Value>
+    </Item>
+    <Item>
+      <Key>相机断开中...</Key>
+      <Value>Kamera bağlantısı kesildi</Value>
+    </Item>
+    <Item>
+      <Key>相机已经断开</Key>
+      <Value>Kamera bağlantısı kesildi</Value>
+    </Item>
+    <Item>
+      <Key>结束采集</Key>
+      <Value>Kes şunu.</Value>
+    </Item>
+    <Item>
+      <Key>开始采集</Key>
+      <Value>başlatma</Value>
+    </Item>
+    <Item>
+      <Key>暂停</Key>
+      <Value>suspend</Value>
+    </Item>
+    <Item>
+      <Key>连接相机</Key>
+      <Value>bağla</Value>
+    </Item>
+    <Item>
+      <Key>断开连接</Key>
+      <Value>Bağlantını kesin</Value>
+    </Item>
+    <Item>
+      <Key>正在将采集到的图像写入磁盘</Key>
+      <Value>Diske toplanmış resimler yazılıyor</Value>
+    </Item>
+    <Item>
+      <Key>相机或GPU正在被使用</Key>
+      <Value>Kamera ya da GPU şu anda kullanılıyor.</Value>
+    </Item>
+    <Item>
+      <Key>正在启动...</Key>
+      <Value>Başlangıç</Value>
+    </Item>
+    <Item>
+      <Key>校准文件缺失，无法显示校准后图像，自动切换为显示原始图像</Key>
+      <Value>Kalibrasyon dosyası kayıp, kalibreli görüntüyü gösteremedi, orijinal görüntüyü göstermeye otomatik değiştirir</Value>
+    </Item>
+    <Item>
+      <Key>请先连接相机</Key>
+      <Value>Lütfen önce kamerayı bağlayın.</Value>
+    </Item>
+    <Item>
+      <Key>无图像</Key>
+      <Value>Görüntü mevcut değil</Value>
+    </Item>
+    <Item>
+      <Key>所选区域需要完全覆盖一个像素点</Key>
+      <Value>Seçili alan bir piksel noktasını tamamen kapatmak zorundadır.</Value>
+    </Item>
+    <Item>
+      <Key>超出当前数据范围</Key>
+      <Value>Ağımdaki veri menzili üzerinde</Value>
+    </Item>
+    <Item>
+      <Key>当前点的光谱数据已存在</Key>
+      <Value>Ağımdaki noktayın spektral verileri zaten mevcut.</Value>
+    </Item>
+    <Item>
+      <Key>超出图像范围</Key>
+      <Value>Görüntü menzilinden fazla</Value>
+    </Item>
+    <Item>
+      <Key>校准线超出图像范围</Key>
+      <Value>Kalibraci çizgi resim menzilinden fazla</Value>
+    </Item>
+    <Item>
+      <Key>加载中</Key>
+      <Value>Yüklenmek üzere</Value>
+    </Item>
+    <Item>
+      <Key>请先采集图像</Key>
+      <Value>Lütfen önce resimleri toplayın</Value>
+    </Item>
+    <Item>
+      <Key>正在更新白板原始数据，如果确定，请点击图像上白板所在的位置</Key>
+      <Value>Beyaz tahta hatlı verileri güncelliyor. Eğer doğrulanırsa, lütfen resimdeki beyaz tahta yerine tıklayın</Value>
+    </Item>
+    <Item>
+      <Key>正在更新黑板原始数据，如果确定，请点击图像上黑板所在的位置</Key>
+      <Value>Kara tahtasının hatlı verilerini güncelleştiriyor. Eğer doğrulanırsa, lütfen resimdeki kara tahtasının yerine tıklayın.</Value>
+    </Item>
+    <Item>
+      <Key>出现异常,请稍后重试</Key>
+      <Value>Bir istisna oluştu, lütfen sonra tekrar deneyin</Value>
+    </Item>
+    <Item>
+      <Key>未找黑白校准文件或反射率文件，无法使用</Key>
+      <Value>Siyah ve beyaz kalibre dosyaları ya da refleks dosyaları bulunamadı, kullanamadı</Value>
+    </Item>
+    <Item>
+      <Key>保存中</Key>
+      <Value>Kurtarılıyor</Value>
+    </Item>
+    <Item>
+      <Key>保存完成</Key>
+      <Value>Kaydet tamamlandı</Value>
+    </Item>
+    <Item>
+      <Key>数据保存失败</Key>
+      <Value>Veri kaydedilemesi başarısız oldu</Value>
+    </Item>
+    <Item>
+      <Key>无数据</Key>
+      <Value>Veri mevcut değil</Value>
+    </Item>
+    <Item>
+      <Key>未选中任何数据</Key>
+      <Value>Veri seçilmedi</Value>
+    </Item>
+    <Item>
+      <Key>导出</Key>
+      <Value>dışarı aktar</Value>
+    </Item>
+    <Item>
+      <Key>文件</Key>
+      <Value>dosya</Value>
+    </Item>
+    <Item>
+      <Key>保存成功</Key>
+      <Value>Saqlanmış başarıyla</Value>
+    </Item>
+    <Item>
+      <Key>保存失败</Key>
+      <Value>Kaydet başarısız oldu</Value>
+    </Item>
+    <Item>
+      <Key>波长</Key>
+      <Value>dalga uzunluğu</Value>
+    </Item>
+    <Item>
+      <Key>保存成功！</Key>
+      <Value>Başarılı kurtarıldı!</Value>
+    </Item>
+    <Item>
+      <Key>开始</Key>
+      <Value>başlat</Value>
+    </Item>
+    <Item>
+      <Key>正在停止分选...</Key>
+      <Value>Sıramayı durduruyor</Value>
+    </Item>
+    <Item>
+      <Key>吹气设备连接失败</Key>
+      <Value>Hava patlama aygıtları bağlantısı başarısız oldu</Value>
+    </Item>
+    <Item>
+      <Key>正在启动分选...</Key>
+      <Value>Sıralama başlatıla</Value>
+    </Item>
+    <Item>
+      <Key>停止分选</Key>
+      <Value>Düzenlemeyi kes</Value>
+    </Item>
+    <Item>
+      <Key>启动分选</Key>
+      <Value>Sıramaya başla</Value>
+    </Item>
+    <Item>
+      <Key>清空标签</Key>
+      <Value>Etiketleri temizle</Value>
+    </Item>
+    <Item>
+      <Key>删除</Key>
+      <Value>Sil</Value>
+    </Item>
+    <Item>
+      <Key>确定删除样本吗？</Key>
+      <Value>Örneğini silmeye emin misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>移动</Key>
+      <Value>hareket et</Value>
+    </Item>
+    <Item>
+      <Key>选点</Key>
+      <Value>Bir nokta seç</Value>
+    </Item>
+    <Item>
+      <Key>画线</Key>
+      <Value>Bir çizgi çiz</Value>
+    </Item>
+    <Item>
+      <Key>画矩形</Key>
+      <Value>Dörtgen çiz</Value>
+    </Item>
+    <Item>
+      <Key>自适应</Key>
+      <Value>kendi uygulama</Value>
+    </Item>
+    <Item>
+      <Key>抠图</Key>
+      <Value>Görüntü kestir</Value>
+    </Item>
+    <Item>
+      <Key>处理后的数据已经存在，是否重新生成？</Key>
+      <Value>İşlemli veriler zaten mevcut, yeniden yaratmak ister misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>预处理处理中...</Key>
+      <Value>Önceden işlemde</Value>
+    </Item>
+    <Item>
+      <Key>停止训练</Key>
+      <Value>Eğitimi durdur.</Value>
+    </Item>
+    <Item>
+      <Key>开始训练</Key>
+      <Value>Eğitimi başlat</Value>
+    </Item>
+    <Item>
+      <Key>白校准板光谱数据</Key>
+      <Value>Beyaz kalibre tahtasının spektral verileri</Value>
+    </Item>
+    <Item>
+      <Key>白校准板原始数据</Key>
+      <Value>Beyaz kalibre tahtasının kaybı veri</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板光谱数据</Key>
+      <Value>Siyah kalibre tahtasının spektral verileri</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板原始数据</Key>
+      <Value>Siyah kalibre tahtasının ince verileri</Value>
+    </Item>
+    <Item>
+      <Key>请选择白板光谱反射率文件</Key>
+      <Value>Lütfen beyaztahta spektral refleks dosyasını seçin</Value>
+    </Item>
+    <Item>
+      <Key>白板光谱反射率文件下找不到对应的文件</Key>
+      <Value>Beyaz tahta spektral refleks dosyasında uyumlu dosya bulamadı</Value>
+    </Item>
+    <Item>
+      <Key>白板光谱反射率文件加载成功</Key>
+      <Value>Beyaz tahta spektral refleks dosyası başarıyla yüklendi</Value>
+    </Item>
+    <Item>
+      <Key>解析白板光谱反射率文件失败，请检查</Key>
+      <Value>Beyaz tahta spektral refleks dosyası analiz edilemedi, lütfen kontrol edin</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑板光谱反射率文件</Key>
+      <Value>Lütfen kara masaüstü spektral refleks dosyasını seçin</Value>
+    </Item>
+    <Item>
+      <Key>黑板光谱反射率文件下找不到对应的文件</Key>
+      <Value>Kara masaüstü spektral refleks dosyasında uyumlu dosya bulamadı</Value>
+    </Item>
+    <Item>
+      <Key>黑板光谱反射率文件加载成功</Key>
+      <Value>Blackboard spektral refleks dosyası başarıyla yüklendi</Value>
+    </Item>
+    <Item>
+      <Key>解析黑板光谱反射率文件失败，请检查</Key>
+      <Value>Kara masaüstü spektral refleks dosyasını analiz edilemedi. Lütfen kontrol edin.</Value>
+    </Item>
+    <Item>
+      <Key>请选择线原始数据文件</Key>
+      <Value>Lütfen çizgi için çizgi veri dosyasını seçin</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件下找不到对应的文件</Key>
+      <Value>Beyaz kalibre dosyasında uyumlu dosya bulamadı</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件的光谱通道不符合，请重新选择</Key>
+      <Value>Beyaz kalibreleme için orijinal veri dosyasının spektral kanalı uyuyor. Lütfen tekrar seçin</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件的空间通道不符合，请重新选择</Key>
+      <Value>Beyaz kalibre hatı veri dosyasının uzay kanalı eşleşmiyor. Lütfen tekrar seçin</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件加载成功</Key>
+      <Value>Beyaz kalibre hatı veri dosyası başarıyla yüklendi</Value>
+    </Item>
+    <Item>
+      <Key>解析线原始数据文件失败，请检查</Key>
+      <Value>Çizginin çizgi veri dosyasını analiz edilemedi, lütfen kontrol edin</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑校准原始数据文件</Key>
+      <Value>Lütfen siyah kalibre hatı veri dosyasını seçin</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件下找不到对应的文件</Key>
+      <Value>Kara kalibre hatı veri dosyasında uyumlu dosya bulamadı</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件的光谱通道不符合，请重新选择</Key>
+      <Value>Siyah kalibre hatı veri dosyasının spektral kanalı uyuyor. Lütfen tekrar seçin</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件的空间通道不符合，请重新选择</Key>
+      <Value>Siyah kalibre hatı veri dosyasının uzay kanalı uyuyor. Lütfen tekrar seçin</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件加载成功</Key>
+      <Value>Siyah kalibre hatı veri dosyası başarıyla yüklendi</Value>
+    </Item>
+    <Item>
+      <Key>解析黑校准原始数据文件失败，请检查</Key>
+      <Value>Siyah kalibre hatı veri dosyası analiz edilemedi, lütfen kontrol edin</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准板反射率数据文件</Key>
+      <Value>Beyaz kalibreleme tahtası refleks veri dosyası bulunamadı</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准板原始数据文件</Key>
+      <Value>Beyaz kalibre tahtası çift veri dosyası bulunamadı</Value>
+    </Item>
+    <Item>
+      <Key>白校准板原始数据文件异常</Key>
+      <Value>Beyaz kalibre tahtasının orijinal veri dosyası normaldir.</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准板反射率数据文件</Key>
+      <Value>Siyah kalibreleme tahtası refleks veri dosyası bulunamadı</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准板原始数据文件</Key>
+      <Value>Siyah kalibre tahtası çift veri dosyası bulunamadı</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板原始数据文件异常</Key>
+      <Value>Siyah kalibre tahtasının orijinal veri dosyası normaldir.</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度：</Key>
+      <Value>Süzgüç uzunluğu:</Value>
+    </Item>
+    <Item>
+      <Key>当前设备可用内存为{0}MB,一次最多可采集{1}帧</Key>
+      <Value>Aygıt için mevcut hafıza {0}MB {1} çerçevelere hemen toplanılabilir</Value>
+    </Item>
+    <Item>
+      <Key>无法获取设备可用内存，采集过程中会不断增加占用内存，请视情况停止采集</Key>
+      <Value>Aygıtın mevcut hafızasını alınamadı, hafıza kullanımı koleksiyon sürecinde artmaya devam edecek. Lütfen duruma göre koleksiyonu durdurun.</Value>
+    </Item>
+    <Item>
+      <Key>文件已存在</Key>
+      <Value>dosya zaten mevcut</Value>
+    </Item>
+    <Item>
+      <Key>文件不存在</Key>
+      <Value>dosya yok</Value>
+    </Item>
+    <Item>
+      <Key>请选择</Key>
+      <Value>Lütfen seç</Value>
+    </Item>
+    <Item>
+      <Key>不显示</Key>
+      <Value>Gösterme</Value>
+    </Item>
+    <Item>
+      <Key>显示</Key>
+      <Value>Ekran</Value>
+    </Item>
+    <Item>
+      <Key>参数配置必须大于零</Key>
+      <Value>Parametre yapılandırması sıfırdan daha büyük olmalı.</Value>
+    </Item>
+    <Item>
+      <Key>起始像素和终止像素必须在像素个数范围内</Key>
+      <Value>Başlangıç ve sonlandırma pikselleri piksel sayısının menzilinde olmalı.</Value>
+    </Item>
+    <Item>
+      <Key>起始像素不能大于终止像素</Key>
+      <Value>Başlangıç piksel bitiş pikselden daha büyük olamaz</Value>
+    </Item>
+    <Item>
+      <Key>起始像素必须在像素个数[0~{0}]范围内</Key>
+      <Value>Başlangıç piksel [0~{0}] piksel menzilinde olmalı</Value>
+    </Item>
+    <Item>
+      <Key>终止像素必须在像素个数[0~{0}]范围内</Key>
+      <Value>Sonlandırma piksel [0~{0}] piksellerin arasında olmalı</Value>
+    </Item>
+    <Item>
+      <Key>终止像素不能小于起始像素</Key>
+      <Value>Bitirme piksel başlangıç pikselinden daha küçük olamaz.</Value>
+    </Item>
+    <Item>
+      <Key>二值化</Key>
+      <Value>Binarizasyon</Value>
+    </Item>
+    <Item>
+      <Key>二值化反转</Key>
+      <Value>İkili tersi</Value>
+    </Item>
+    <Item>
+      <Key>关于</Key>
+      <Value>hakkında</Value>
+    </Item>
+    <Item>
+      <Key>版本：</Key>
+      <Value>Yazım:</Value>
+    </Item>
+    <Item>
+      <Key>已是最新版本</Key>
+      <Value>Bu zaten en en son versiyon.</Value>
+    </Item>
+    <Item>
+      <Key>下载并更新</Key>
+      <Value>İndir ve güncelleştir</Value>
+    </Item>
+    <Item>
+      <Key>立即更新</Key>
+      <Value>Derhal güncelleştir</Value>
+    </Item>
+    <Item>
+      <Key>已下载({0})</Key>
+      <Value>Endirildi ({0})</Value>
+    </Item>
+    <Item>
+      <Key>请允许来自未知发布者的应用对你的设备进行更改</Key>
+      <Value>Lütfen bilinmeyen yayımcılardan uygulamalarınızı aygıtlarınıza değiştirmeye izin verin</Value>
+    </Item>
+    <Item>
+      <Key>应用成功!</Key>
+      <Value>Uygulama başarılı!</Value>
+    </Item>
+    <Item>
+      <Key>标签为空？</Key>
+      <Value>Etiket boş mu?</Value>
+    </Item>
+    <Item>
+      <Key>低</Key>
+      <Value>düşük</Value>
+    </Item>
+    <Item>
+      <Key>中</Key>
+      <Value>İçeri</Value>
+    </Item>
+    <Item>
+      <Key>高</Key>
+      <Value>yüksek</Value>
+    </Item>
+    <Item>
+      <Key>启动中...</Key>
+      <Value>Başlangıç</Value>
+    </Item>
+    <Item>
+      <Key>点选区域</Key>
+      <Value>Bölgeyi Seç</Value>
+    </Item>
+    <Item>
+      <Key>存在未标记类型的选区，请核实</Key>
+      <Value>İşaretsiz seçim tipleri var, lütfen doğrulayın</Value>
+    </Item>
+    <Item>
+      <Key>轮廓数：</Key>
+      <Value>Kontörler sayısı:</Value>
+    </Item>
+    <Item>
+      <Key>计算中</Key>
+      <Value>Hesaplama sürecinde</Value>
+    </Item>
+    <Item>
+      <Key>平滑算法</Key>
+      <Value>Yükleme algoritmi</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度</Key>
+      <Value>Süzgüç uzunluğu</Value>
+    </Item>
+    <Item>
+      <Key>滤波次数</Key>
+      <Value>Süzgüç frekansı</Value>
+    </Item>
+    <Item>
+      <Key>尺度缩放算法</Key>
+      <Value>Ölçüme algoritmi</Value>
+    </Item>
+    <Item>
+      <Key>散射校正</Key>
+      <Value>Ölçüme düzeltmesi</Value>
+    </Item>
+    <Item>
+      <Key>基线校正</Key>
+      <Value>Temel çizgi düzeltme</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波</Key>
+      <Value>Orta filtreme</Value>
+    </Item>
+    <Item>
+      <Key>不使用</Key>
+      <Value>Kullanılmadı</Value>
+    </Item>
+    <Item>
+      <Key>标准化</Key>
+      <Value>Standardization</Value>
+    </Item>
+    <Item>
+      <Key>一阶导数</Key>
+      <Value>İlk türevi</Value>
+    </Item>
+    <Item>
+      <Key>二阶导数</Key>
+      <Value>İkinci türev</Value>
+    </Item>
+    <Item>
+      <Key>请先导入相机配置文件（可点击软件左下角导入）</Key>
+      <Value>Lütfen önce kamera ayarlama dosyasını ital edin (import için yazılımın alt sol köşesine tıklayın)</Value>
+    </Item>
+    <Item>
+      <Key>导出中</Key>
+      <Value>İhraç ediliyor</Value>
+    </Item>
+    <Item>
+      <Key>导出完成</Key>
+      <Value>İhraç tamamlandı</Value>
+    </Item>
+    <Item>
+      <Key>未分类</Key>
+      <Value>Sınıflanmış</Value>
+    </Item>
+    <Item>
+      <Key>背景</Key>
+      <Value>Arkaplan</Value>
+    </Item>
+    <Item>
+      <Key>目标</Key>
+      <Value>hedef</Value>
+    </Item>
+    <Item>
+      <Key>缺少校准文件，请开灯采集白板数据，然后关灯采集黑板数据，进行校准。</Key>
+      <Value />
+    </Item>
+    <Item>
+      <Key>相机与校准文件不匹配，需重新校准</Key>
+      <Value />
+    </Item>
+    <Item>
+      <Key>增益或曝光时间已修改，请确定是否需要重新校准</Key>
+      <Value />
+    </Item>
+    <Item>
+      <Key>矩形</Key>
+      <Value>dörtgen</Value>
+    </Item>
+    <Item>
+      <Key>画笔</Key>
+      <Value>boya fırçası</Value>
+    </Item>
+    <Item>
+      <Key>点</Key>
+      <Value>nokta</Value>
+    </Item>
+    <Item>
+      <Key>抠图</Key>
+      <Value>Görüntü kestir</Value>
+    </Item>
+    <Item>
+      <Key>点选区</Key>
+      <Value>Nokta seçim alanı</Value>
+    </Item>
+    <Item>
+      <Key>魔法棒</Key>
+      <Value>Büyücü çantası</Value>
+    </Item>
+    <Item>
+      <Key>停止气吹</Key>
+      <Value>Hava patlamayı kes.</Value>
+    </Item>
+    <Item>
+      <Key>启动气吹</Key>
+      <Value>Hava patlamayı başlat.</Value>
+    </Item>
+    <Item>
+      <Key>光谱</Key>
+      <Value>widmo</Value>
+    </Item>
+    <Item>
+      <Key>同一图片文件不可追加，请重新选择图片</Key>
+      <Value>Aynı resim dosyasını eklemez. Lütfen yeni bir resim seçin</Value>
+    </Item>
+    <Item>
+      <Key>追加的图片格式不匹配，请重新选择图片</Key>
+      <Value>Eklenmiş resmin format ı eşleşmiyor. Lütfen yeni bir resim seçin</Value>
+    </Item>
+    <Item>
+      <Key>数据复制中，请稍后</Key>
+      <Value>Veri kopyalama ilerliyor, lütfen bekle</Value>
+    </Item>
+    <Item>
+      <Key>训练图片必须是反射率图片</Key>
+      <Value>Eğitim görüntüsü bir refleks görüntüsü olmalı.</Value>
+    </Item>
+    <Item>
+      <Key>无法打开训练图片</Key>
+      <Value>Eğitim görüntüsü açılamadı</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准系数文件</Key>
+      <Value>Beyaz kalibre koefitörlü dosya bulamadı</Value>
+    </Item>
+    <Item>
+      <Key>设置ROI失败</Key>
+      <Value>ROI ayarlanamadı</Value>
+    </Item>
+    <Item>
+      <Key>模型的序列号与相机的不匹配</Key>
+      <Value>Modelin seri numarası kameraya uymuyor.</Value>
+    </Item>
+    <Item>
+      <Key>相机设置工作模式失败</Key>
+      <Value>Kamera ayarlama çalışma modu başarısız oldu</Value>
+    </Item>
+    <Item>
+      <Key>轮廓区域</Key>
+      <Value>Dışarı alan</Value>
+    </Item>
+    <Item>
+      <Key>训练失败</Key>
+      <Value>Eğitim başarısız oldu</Value>
+    </Item>
+    <Item>
+      <Key>该模型的波长通道与训练图片不匹配</Key>
+      <Value>Modelin dalga uzunluğu kanalı eğitim görüntüsüne uymuyor</Value>
+    </Item>
+    <Item>
+      <Key>已加载图片与该模型的标签不匹配，是否重新加载图片？</Key>
+      <Value>Yüklenen resim modelin etiketine uymuyor. Resimi yeniden yüklemek ister misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>应用模型中...</Key>
+      <Value>Uygulama modelinde</Value>
+    </Item>
+    <Item>
+      <Key>计算轮廓中</Key>
+      <Value>Kontörü hesapla</Value>
+    </Item>
+    <Item>
+      <Key>计算反射率中</Key>
+      <Value>Tekrarlığı hesapla</Value>
+    </Item>
+    <Item>
+      <Key>请选择文件夹</Key>
+      <Value>Lütfen bir klasör seçin</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度:</Key>
+      <Value>Süzgüç uzunluğu:</Value>
+    </Item>
+    <Item>
+      <Key>,滤波次数:</Key>
+      <Value>Süzgüç zamanları:</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件</Key>
+      <Value>Beyaz kalibre koefitörlü dosya</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件</Key>
+      <Value>Beyaz kalibre dosyası</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件</Key>
+      <Value>Kara kalibre dosyası</Value>
+    </Item>
+    <Item>
+      <Key>请选择白校准系数文件</Key>
+      <Value>Lütfen beyaz kalibre koefitörlüğünü seçin</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件不存在</Key>
+      <Value>Beyaz kalibre koefitörlü dosya yok.</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件加载成功</Key>
+      <Value>Beyaz kalibre koefitörlü dosya başarıyla yüklendi.</Value>
+    </Item>
+    <Item>
+      <Key>解析白校准系数文件失败，请检查</Key>
+      <Value>Beyaz kalibre koefitörlü dosyasını analiz edilemedi, lütfen kontrol edin</Value>
+    </Item>
+    <Item>
+      <Key>请选择白校准文件</Key>
+      <Value>Lütfen beyaz kalibre dosyasını seçin</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件不存在</Key>
+      <Value>Beyaz kalibre dosyası yok.</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件类型不是线</Key>
+      <Value>Beyaz kalibre dosya tipi hattı değil</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件的光谱通道不符合，请重新选择</Key>
+      <Value>Beyaz kalibre dosyasındaki spektral kanalı eşleşmiyor. Lütfen tekrar seçin</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件的空间通道不符合，请重新选择</Key>
+      <Value>Beyaz kalibre dosyasının uzay kanalı eşleşmiyor. Lütfen tekrar seçin</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件加载成功</Key>
+      <Value>Beyaz kalibre dosyası başarıyla yüklendi</Value>
+    </Item>
+    <Item>
+      <Key>解析白校准文件失败，请检查</Key>
+      <Value>Beyaz kalibre dosyası analiz edilemedi, lütfen kontrol edin</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑校准文件</Key>
+      <Value>Lütfen siyah kalibre dosyasını seçin</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件不存在</Key>
+      <Value>Siyah kalibre dosyası yok</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件类型不是线</Key>
+      <Value>Kara kalibre dosya türü çizgi değil</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件的光谱通道不符合，请重新选择</Key>
+      <Value>Siyah kalibre dosyasındaki spektral kanalı eşleşmiyor. Lütfen tekrar seçin</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件的空间通道不符合，请重新选择</Key>
+      <Value>Siyah kalibre dosyasının uzay kanalı eşleşmiyor. Lütfen tekrar seçin</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件加载成功</Key>
+      <Value>Kara kalibre dosyası başarıyla yüklendi</Value>
+    </Item>
+    <Item>
+      <Key>解析黑校准文件失败，请检查</Key>
+      <Value>Siyah kalibre dosyası analiz edilemedi, lütfen kontrol edin</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准文件</Key>
+      <Value>Beyaz kalibre dosyası bulunamadı</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件异常</Key>
+      <Value>Normal beyaz kalibre dosyası</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准文件</Key>
+      <Value>Siyah kalibre dosyası bulunamadı</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件异常</Key>
+      <Value>Kara kalibre dosyası normalitesi</Value>
+    </Item>
+    <Item>
+      <Key>标签信息</Key>
+      <Value>Etiket bilgisi</Value>
+    </Item>
+    <Item>
+      <Key>支持的波长范围：</Key>
+      <Value>Desteklenmiş dalga uzunluğu menzili:</Value>
+    </Item>
+    <Item>
+      <Key>使用的波长范围：</Key>
+      <Value>Kullanılan dalga uzunluğunun menzili:</Value>
+    </Item>
+    <Item>
+      <Key>传感器：</Key>
+      <Value>Sensor:</Value>
+    </Item>
+    <Item>
+      <Key>备注：</Key>
+      <Value>Şarkılar:</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件已存在</Key>
+      <Value>Beyaz kalibre koefitörlü dosya zaten mevcut.</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件已存在</Key>
+      <Value>Beyaz kalibre dosyası zaten mevcut.</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件已存在</Key>
+      <Value>Siyah kalibre dosyası zaten mevcut.</Value>
+    </Item>
+    <Item>
+      <Key>新增预处理算法</Key>
+      <Value>Ön işleme algoritmi ekle</Value>
+    </Item>
+    <Item>
+      <Key>修改预处理算法</Key>
+      <Value>Ön işleme algoritmini değiştir</Value>
+    </Item>
+    <Item>
+      <Key>必须为奇数</Key>
+      <Value>Garip bir numara olmalı.</Value>
+    </Item>
+    <Item>
+      <Key>修改失败!</Key>
+      <Value>Değişiklik başarısız oldu!</Value>
+    </Item>
+    <Item>
+      <Key>修改成功</Key>
+      <Value>Başarılı değiştirildi</Value>
+    </Item>
+    <Item>
+      <Key>文件名：</Key>
+      <Value>Dosya İsmi:</Value>
+    </Item>
+    <Item>
+      <Key>设备型号：</Key>
+      <Value>Equipment model:</Value>
+    </Item>
+    <Item>
+      <Key>设备序列号：</Key>
+      <Value>Ekipman seri numarası:</Value>
+    </Item>
+    <Item>
+      <Key>曝光时间：</Key>
+      <Value>açıklama zamanı:</Value>
+    </Item>
+    <Item>
+      <Key>增益：</Key>
+      <Value>Gayet:</Value>
+    </Item>
+    <Item>
+      <Key>继续</Key>
+      <Value>Devam et</Value>
+    </Item>
+    <Item>
+      <Key>结束分选</Key>
+      <Value>Düzenlemeyi bitir</Value>
+    </Item>
+    <Item>
+      <Key>开始分选</Key>
+      <Value>Sıramaya başla</Value>
+    </Item>
+    <Item>
+      <Key>模型关联的校准文件不存在，是否使用当前目录下的黑白校准文件？</Key>
+      <Value>Modelle bağlı kalibre dosyası yok. Şimdiki dizinlerde siyah ve beyaz kalibre dosyasını kullanabilir miyiz?</Value>
+    </Item>
+    <Item>
+      <Key>平滑处理</Key>
+      <Value>Tez işleme</Value>
+    </Item>
+    <Item>
+      <Key>尺度缩放</Key>
+      <Value>Ölçüme</Value>
+    </Item>
+    <Item>
+      <Key>SG平滑</Key>
+      <Value>SG Smooth</Value>
+    </Item>
+    <Item>
+      <Key>滑动平滑</Key>
+      <Value>Yüksek sızdırma</Value>
+    </Item>
+    <Item>
+      <Key>最大最小归一化</Key>
+      <Value>Azamik minimal normalizasyon</Value>
+    </Item>
+    <Item>
+      <Key>有效起始波长</Key>
+      <Value>Etkileşimli başlangıç dalga uzunluğu</Value>
+    </Item>
+    <Item>
+      <Key>有效结束波长</Key>
+      <Value>Efektiv son dalga uzunluğu</Value>
+    </Item>
+    <Item>
+      <Key>是否启用扣除背景</Key>
+      <Value>Arkaplan çıkarmasını etkinleştirmek ister misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>背景反射率范围起始值(0~1)</Key>
+      <Value>Arkaplan refleks alanı başlangıç değeri (0~1)</Value>
+    </Item>
+    <Item>
+      <Key>背景反射率范围结束值(0~1)</Key>
+      <Value>Arkaplan refleks menzilinin son değeri (0~1)</Value>
+    </Item>
+    <Item>
+      <Key>未找到相机配置文件，是否导入？（注: 相机配置文件一般在相机配套的U盘中）</Key>
+      <Value>Kamera yapılandırma dosyası bulunmadı. İtal etmek ister misiniz? (Not: Kamera yapılandırma dosyaları genelde kamerayla gelen USB sürücüsünde depolanır.)</Value>
+    </Item>
+    <Item>
+      <Key>气吹设备连接失败</Key>
+      <Value>Hava patlama ekipmanları bağlantısı başarısız oldu</Value>
+    </Item>
+    <Item>
+      <Key>缺少校准文件，需重新校准</Key>
+      <Value>Kalibrasyon dosyalarının eksik, yeniden kalibrasyon gerekli</Value>
+    </Item>
+    <Item>
+      <Key>请选择文件</Key>
+      <Value>Lütfen bir dosya seçin</Value>
+    </Item>
+    <Item>
+      <Key>文件被占用</Key>
+      <Value>Dosya meşgul</Value>
+    </Item>
+    <Item>
+      <Key>找不到文件路径</Key>
+      <Value>Dosya yolu bulamadı</Value>
+    </Item>
+    <Item>
+      <Key>文件已被其他程序打开</Key>
+      <Value>Dosya başka bir program tarafından açıldı.</Value>
+    </Item>
+    <Item>
+      <Key>导出失败</Key>
+      <Value>İhraç başarısız oldu</Value>
+    </Item>
+    <Item>
+      <Key>日期格式不正确，转换日期失败！</Key>
+      <Value>Tarih format ı yanlış, tarih dönüşü başarısız oldu!</Value>
+    </Item>
+    <Item>
+      <Key>数字格式不正确，转换数字失败！</Key>
+      <Value>Sayı format ı yanlış, sayıların dönüşü başarısız oldu!</Value>
+    </Item>
+    <Item>
+      <Key>工作表{0}列数与模版不匹配</Key>
+      <Value>Çalışma yaprağındaki sütun sayısı {0} şablona uymuyor</Value>
+    </Item>
+    <Item>
+      <Key>工作表中的“{0}”列无法识别</Key>
+      <Value>Çalışma yaprağındaki '{0}' sütunu tanınmaz</Value>
+    </Item>
+    <Item>
+      <Key>原始光谱</Key>
+      <Value>Orijinal spektrum</Value>
+    </Item>
+    <Item>
+      <Key>预处理后的光谱</Key>
+      <Value>Önceden işlenmiş spektra</Value>
+    </Item>
+    <Item>
+      <Key>算法名称</Key>
+      <Value>Algoritim adı</Value>
+    </Item>
+    <Item>
+      <Key>参数信息</Key>
+      <Value>Parametre bilgisi</Value>
+    </Item>
+    <Item>
+      <Key>名称</Key>
+      <Value>isim</Value>
+    </Item>
+    <Item>
+      <Key>颜色</Key>
+      <Value>renk</Value>
+    </Item>
+    <Item>
+      <Key>编码</Key>
+      <Value>kodu</Value>
+    </Item>
+    <Item>
+      <Key>阈值</Key>
+      <Value>sınıf</Value>
+    </Item>
+    <Item>
+      <Key>备注</Key>
+      <Value>remarks</Value>
+    </Item>
+    <Item>
+      <Key>X坐标：</Key>
+      <Value>X koordinat:</Value>
+    </Item>
+    <Item>
+      <Key>请选择行</Key>
+      <Value>Lütfen bir satır seçin</Value>
+    </Item>
+    <Item>
+      <Key>请先选择白校准区域</Key>
+      <Value>Lütfen önce beyaz kalibrasyon alanını seçin</Value>
+    </Item>
+    <Item>
+      <Key>连接</Key>
+      <Value>bağlan</Value>
+    </Item>
+    <Item>
+      <Key>应用中</Key>
+      <Value>Uygulama içinde</Value>
+    </Item>
+    <Item>
+      <Key>请先选择COM口</Key>
+      <Value>Lütfen önce COM limanı seçin</Value>
+    </Item>
+    <Item>
+      <Key>吹气</Key>
+      <Value>blow</Value>
+    </Item>
+    <Item>
+      <Key>请先停止正在运行的采集功能</Key>
+      <Value>Lütfen çalıştığım koleksiyonu önce durdurun</Value>
+    </Item>
+    <Item>
+      <Key>采集图像是校准数据，无法保存成原始文件</Key>
+      <Value>Toplanmış resimler kalibre veridir ve orijinal dosyalar olarak kaydedilmez</Value>
+    </Item>
+    <Item>
+      <Key>采集图像是原始数据，无法保存成校准后的文件</Key>
+      <Value>Toplanmış görüntüler çizgi veridir ve kalibreli dosyalar olarak kaydedilebilir</Value>
+    </Item>
+    <Item>
+      <Key>白校准</Key>
+      <Value>Beyaz kalibre</Value>
+    </Item>
+    <Item>
+      <Key>保存并切换至黑校准</Key>
+      <Value>Kara kalibreye kaydet ve değiştir</Value>
+    </Item>
+    <Item>
+      <Key>黑校准</Key>
+      <Value>Siyah kalibre</Value>
+    </Item>
+    <Item>
+      <Key>保存并切换至白校准</Key>
+      <Value>Beyaz kalibreye kaydet ve değiştir</Value>
+    </Item>
+    <Item>
+      <Key>请先选择校准区域</Key>
+      <Value>Lütfen önce kalibrasyon alanını seçin</Value>
+    </Item>
+    <Item>
+      <Key>相机配置已导入</Key>
+      <Value>Kamera yapılandırması içeri alındı</Value>
+    </Item>
+    <Item>
+      <Key>相机配置导入成功</Key>
+      <Value>Kamera yapılandırması başarıyla import edildi</Value>
+    </Item>
+    <Item>
+      <Key>相机配置导入失败</Key>
+      <Value>Kamera yapılandırma içerisi başarısız oldu</Value>
+    </Item>
+    <Item>
+      <Key>相机已断开</Key>
+      <Value>Kamera bağlantısı kesildi</Value>
+    </Item>
+    <Item>
+      <Key>相机已连接</Key>
+      <Value>Kamera bağlanmış</Value>
+    </Item>
+    <Item>
+      <Key>停止调节清晰度和信号量</Key>
+      <Value>Açıklığı ve sinyal miktarını ayarlamayı bırak</Value>
+    </Item>
+    <Item>
+      <Key>开始调节清晰度和信号量</Key>
+      <Value>Açıklığı ve sinyal sesini ayarlamaya başlat</Value>
+    </Item>
+    <Item>
+      <Key>保存数据</Key>
+      <Value>Verileri kaydet</Value>
+    </Item>
+    <Item>
+      <Key>正在保存高光谱数据,请稍等...</Key>
+      <Value>Hiperspektral verileri kaydediyor, lütfen bekleyin</Value>
+    </Item>
+    <Item>
+      <Key>内存使用量过高，采集已暂停</Key>
+      <Value>Hafıza kullanımı çok yüksektir, koleksiyon durandı</Value>
+    </Item>
+    <Item>
+      <Key>帧频或曝光时间已修改，请重新进行校准</Key>
+      <Value>Çerçive hızı ya da açıklama zamanı değiştirildi. Lütfen tekrar kalibre edin.</Value>
+    </Item>
+    <Item>
+      <Key>请先选择训练图片</Key>
+      <Value>Lütfen önce eğitim resmini seçin</Value>
+    </Item>
+    <Item>
+      <Key>模型训练</Key>
+      <Value>model eğitim</Value>
+    </Item>
+    <Item>
+      <Key>正在训练模型,请稍等...</Key>
+      <Value>Eğitim modeli, lütfen bekle.</Value>
+    </Item>
+    <Item>
+      <Key>模型验证</Key>
+      <Value>Model değerlendirmesi</Value>
+    </Item>
+    <Item>
+      <Key>模型验证中...</Key>
+      <Value>Model değerlendirme sırasında</Value>
+    </Item>
+    <Item>
+      <Key>请先进行校准</Key>
+      <Value>Lütfen önce kalibre edin</Value>
+    </Item>
+    <Item>
+      <Key>未找到校准文件，请先进行校准</Key>
+      <Value>Kalibrasyon dosyası bulunamadı, lütfen önce kalibre edin</Value>
+    </Item>
+    <Item>
+      <Key>校准文件已过期，是否重新校准？</Key>
+      <Value>kalibre dosyası geçmişti. Yeniden kalibre etmek ister misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件已过期，是否重新校准？</Key>
+      <Value>Beyaz kalibre dosyası geçti. Yeniden kalibre edilmeli mi?</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件已过期，是否重新校准？</Key>
+      <Value>Siyah kalibre dosyası geçmişti. Yeniden kalibre edilmeli mi?</Value>
+    </Item>
+    <Item>
+      <Key>正在努力加载中，请稍等......</Key>
+      <Value>Yüklemeye çalışıyorum, lütfen bekle.</Value>
+    </Item>
+    <Item>
+      <Key>已运行：{0}s</Key>
+      <Value>Artık çalışıyor: {0}s</Value>
+    </Item>
+    <Item>
+      <Key>取消任务将可能导致数据错误和异常,是否确认取消?</Key>
+      <Value>Görevi iptal etmek veri hataları ve istisnaları olabilir. iptal etmek istediğinize emin misiniz?</Value>
+    </Item>
+    <Item>
+      <Key>取消任务中,请稍等...</Key>
+      <Value>Görevi iptal ediyor, lütfen bekle.</Value>
+    </Item>
+    <Item>
+      <Key>像素显示区间设置异常，请重新设置</Key>
+      <Value>Normal piksel görüntüleme aralığı ayarlaması, lütfen yeniden ayarlayın</Value>
+    </Item>
+    <Item>
+      <Key>请先输入IP和端口</Key>
+      <Value>Lütfen önce IP ve port girin</Value>
+    </Item>
+    <Item>
+      <Key>Csv文件存储</Key>
+      <Value>Csv Dosya Depolama</Value>
+    </Item>
+    <Item>
+      <Key>请选择保存文件</Key>
+      <Value>Lütfen dosyayı kaydetmeyi seçin</Value>
+    </Item>
+    <Item>
+      <Key />
+      <Value />
+    </Item>
+  </Prompts>
+  <Interfaces />
+  <Enumerate>
+    <EnumItem>
+      <Key>EnumGain</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>高</Key>
+          <Value>yüksek</Value>
+        </Item>
+        <Item>
+          <Key>中</Key>
+          <Value>İçeri</Value>
+        </Item>
+        <Item>
+          <Key>低</Key>
+          <Value>düşük</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>PreprocessTypes</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>平滑处理</Key>
+          <Value>Tez işleme</Value>
+        </Item>
+        <Item>
+          <Key>基线校正</Key>
+          <Value>Temel çizgi düzeltme</Value>
+        </Item>
+        <Item>
+          <Key>尺度缩放</Key>
+          <Value>Ölçüme</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumSmoothingAlgorithm</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>SG平滑</Key>
+          <Value>SG Smooth</Value>
+        </Item>
+        <Item>
+          <Key>滑动平滑</Key>
+          <Value>Yüksek sızdırma</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumScaleScalingAlgorithm</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>标准化</Key>
+          <Value>Standardization</Value>
+        </Item>
+        <Item>
+          <Key>最大最小归一化</Key>
+          <Value>Azamik minimal normalizasyon</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumBaselineCorrection</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>一阶导数</Key>
+          <Value>İlk türevi</Value>
+        </Item>
+        <Item>
+          <Key>二阶导数</Key>
+          <Value>İkinci türev</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+  </Enumerate>
+</LanguageLibrary>

@@ -1,0 +1,2826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Forms>
+    <FormItem>
+      <Key>AppsForm</Key>
+      <Value>AppsForm</Value>
+      <Controls>
+        <Item>
+          <Key>lblReportName</Key>
+          <Value>보고</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2Sorting</Key>
+          <Value>실시간 선택 페이지로 보내기</Value>
+        </Item>
+        <Item>
+          <Key>btnApply</Key>
+          <Value>적용</Value>
+        </Item>
+        <Item>
+          <Key>lblRemark</Key>
+          <Value>설명</Value>
+        </Item>
+        <Item>
+          <Key>lblVersion</Key>
+          <Value>버전</Value>
+        </Item>
+        <Item>
+          <Key>lblSensor</Key>
+          <Value>센서</Value>
+        </Item>
+        <Item>
+          <Key>lblModelName</Key>
+          <Value>모델 이름</Value>
+        </Item>
+        <Item>
+          <Key>barBtnDeleteModel</Key>
+          <Value>삭제</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToSorting</Key>
+          <Value>실시간 선택 페이지로 보내기</Value>
+        </Item>
+        <Item>
+          <Key>barBtnPrint</Key>
+          <Value>보고서 인쇄</Value>
+        </Item>
+        <Item>
+          <Key>barBtnFileRename</Key>
+          <Value>모델 파일 이름 바꾸기</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2Train</Key>
+          <Value>모델 트레이닝 페이지로 보내기</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToTrain</Key>
+          <Value>모델 트레이닝 페이지로 보내기</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2OutlineSorting</Key>
+          <Value>프로파일 선택 페이지로 보내기</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToOutlineSorting</Key>
+          <Value>프로파일 선택 페이지로 보내기</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>BrowseForm</Key>
+      <Value>BrowseForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnSent2Trian</Key>
+          <Value>트레이닝 모델로 보내기</Value>
+        </Item>
+        <Item>
+          <Key>lblFileName</Key>
+          <Value>파일 이름</Value>
+        </Item>
+        <Item>
+          <Key>btnFind</Key>
+          <Value>필터링</Value>
+        </Item>
+        <Item>
+          <Key>btnSwitchPath</Key>
+          <Value>디렉토리 전환</Value>
+        </Item>
+        <Item>
+          <Key>btnDeviceModel</Key>
+          <Value>장치 모델</Value>
+        </Item>
+        <Item>
+          <Key>barBtnDelete</Key>
+          <Value>삭제</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2Train</Key>
+          <Value>트레이닝 모델로 보내기</Value>
+        </Item>
+        <Item>
+          <Key>barBtnAppend2Train</Key>
+          <Value>트레이닝 모델에 추가</Value>
+        </Item>
+        <Item>
+          <Key>BtnAppend2Train</Key>
+          <Value>트레이닝 모델에 추가</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>EjectForm</Key>
+      <Value>EjectForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnStartEject</Key>
+          <Value>에어 드라이를 작동시키다</Value>
+        </Item>
+        <Item>
+          <Key>btnEjectSetting</Key>
+          <Value>공기 흡입 설정</Value>
+        </Item>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>프레임 속도: 3000fps</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>MainForm</Key>
+      <Value>SortingExpert</Value>
+      <Controls>
+        <Item>
+          <Key>labBrowse</Key>
+          <Value>이미지 수집</Value>
+        </Item>
+        <Item>
+          <Key>labScan</Key>
+          <Value>이미지 보기</Value>
+        </Item>
+        <Item>
+          <Key>labTran</Key>
+          <Value>훈련 모델</Value>
+        </Item>
+        <Item>
+          <Key>labApps</Key>
+          <Value>모델 보기</Value>
+        </Item>
+        <Item>
+          <Key>labSorting</Key>
+          <Value>실시간 선별</Value>
+        </Item>
+        <Item>
+          <Key>labEject</Key>
+          <Value>실시간 드라이</Value>
+        </Item>
+        <Item>
+          <Key>barItemLanguage</Key>
+          <Value>다국어</Value>
+        </Item>
+        <Item>
+          <Key>barBtnAbout</Key>
+          <Value>정보</Value>
+        </Item>
+        <Item>
+          <Key>barButtonImportCamFig</Key>
+          <Value>카메라 프로파일 가져오기</Value>
+        </Item>
+        <Item>
+          <Key>labOutlineSorting</Key>
+          <Value>프로파일 선택</Value>
+        </Item>
+        <Item>
+          <Key>barButtonItemGuide</Key>
+          <Value>마법사 사용</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>ScanForm</Key>
+      <Value>ViewForm</Value>
+      <Controls>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>현재 프레임 속도: 3000fps</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>카메라 연결</Value>
+        </Item>
+        <Item>
+          <Key>btnStartScan</Key>
+          <Value>시작</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>카메라 설정</Value>
+        </Item>
+        <Item>
+          <Key>btndisplayandcalibsetting</Key>
+          <Value>설정 표시 및 보정</Value>
+        </Item>
+        <Item>
+          <Key>btn_SeleteBlack</Key>
+          <Value>블랙 보정</Value>
+        </Item>
+        <Item>
+          <Key>btn_SelectWhite</Key>
+          <Value>화이트 보정</Value>
+        </Item>
+        <Item>
+          <Key>btnsaveimage</Key>
+          <Value>이미지 저장</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>스펙트럼</Value>
+        </Item>
+        <Item>
+          <Key>colGUANGPUBIANHAO</Key>
+          <Value>스펙트럼 번호</Value>
+        </Item>
+        <Item>
+          <Key>colYANSE</Key>
+          <Value>색상</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteCheck</Key>
+          <Value>선택한 대상 삭제</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteAll</Key>
+          <Value>모든 대상 삭제</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveToFile</Key>
+          <Value>선택한 스펙트럼 저장</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveAllToFile</Key>
+          <Value>모든 스펙트럼 저장</Value>
+        </Item>
+        <Item>
+          <Key>cb_ReflectanceDisplay</Key>
+          <Value>반사율 표시</Value>
+        </Item>
+        <Item>
+          <Key>cb_CurveSmoothing</Key>
+          <Value>커브 부드럽게</Value>
+        </Item>
+        <Item>
+          <Key>btnPause</Key>
+          <Value>일시 중지</Value>
+        </Item>
+        <Item>
+          <Key>lblStartWaveLength</Key>
+          <Value>시작 파장</Value>
+        </Item>
+        <Item>
+          <Key>lblEndWaveLength</Key>
+          <Value>종료 파장</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingForm</Key>
+      <Value>SortingForm</Value>
+      <Controls>
+        <Item>
+          <Key>labModelInfo</Key>
+          <Value>모델 파일의 이름</Value>
+        </Item>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>현재 프레임 속도: 3000fps</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>카메라</Value>
+        </Item>
+        <Item>
+          <Key>btnStartSorting</Key>
+          <Value>선택 시작</Value>
+        </Item>
+        <Item>
+          <Key>btnEjectSetting</Key>
+          <Value>공기 흡입 설정</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>카메라 설정</Value>
+        </Item>
+        <Item>
+          <Key>btnCalibration</Key>
+          <Value>흑백 교정</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>스펙트럼</Value>
+        </Item>
+        <Item>
+          <Key>colGUANGPUBIANHAO</Key>
+          <Value>스펙트럼 번호</Value>
+        </Item>
+        <Item>
+          <Key>colYANSE</Key>
+          <Value>색상</Value>
+        </Item>
+        <Item>
+          <Key>cb_ReflectanceDisplay</Key>
+          <Value>반사율 표시</Value>
+        </Item>
+        <Item>
+          <Key>cb_CurveSmoothing</Key>
+          <Value>커브 부드럽게</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteCheck</Key>
+          <Value>선택한 대상 삭제</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteAll</Key>
+          <Value>모든 대상 삭제</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveToFile</Key>
+          <Value>선택한 스펙트럼 저장</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveAllToFile</Key>
+          <Value>모든 스펙트럼 저장</Value>
+        </Item>
+        <Item>
+          <Key>lblStartWaveLength</Key>
+          <Value>시작 파장</Value>
+        </Item>
+        <Item>
+          <Key>lblEndWaveLength</Key>
+          <Value>종료 파장</Value>
+        </Item>
+        <Item>
+          <Key>btnBlackCalibration</Key>
+          <Value>블랙 보정</Value>
+        </Item>
+        <Item>
+          <Key>btnWhiteCalibration</Key>
+          <Value>화이트 보정</Value>
+        </Item>
+        <Item>
+          <Key>sortingBaseBtbSendToCppProgram</Key>
+          <Value>빠른 분할 프로그램으로 보내기</Value>
+        </Item>
+        <Item>
+          <Key>btnrunfastsorting</Key>
+          <Value>빠른 선별기 시작</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>TrainForm</Key>
+      <Value>TrainForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnFreshDisplay</Key>
+          <Value>디스플레이 새로 고침</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRange</Key>
+          <Value>범위 재설정</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>이미지 범위</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRGB</Key>
+          <Value>RGB 밴드 재설정</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>블루 [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>녹색 [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>빨간색 [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>RGB 디스플레이 밴드</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>디스플레이 모드</Value>
+        </Item>
+        <Item>
+          <Key>btnTrain</Key>
+          <Value>훈련을 시작하다</Value>
+        </Item>
+        <Item>
+          <Key>tabPageAlgorithm</Key>
+          <Value>선별 알고리즘</Value>
+        </Item>
+        <Item>
+          <Key>labelControl8</Key>
+          <Value>테스트</Value>
+        </Item>
+        <Item>
+          <Key>tabPagePreprocessing</Key>
+          <Value>사전 처리</Value>
+        </Item>
+        <Item>
+          <Key>treeListColumn1</Key>
+          <Value>이름</Value>
+        </Item>
+        <Item>
+          <Key>treeListDrawType</Key>
+          <Value>선택 유형</Value>
+        </Item>
+        <Item>
+          <Key>treeListColumn3</Key>
+          <Value>색상</Value>
+        </Item>
+        <Item>
+          <Key>treeListcCLassificationColumn</Key>
+          <Value>분류</Value>
+        </Item>
+        <Item>
+          <Key>btnClass</Key>
+          <Value>분류 편집</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>훈련 정보</Value>
+        </Item>
+        <Item>
+          <Key>btnDeleteLabel</Key>
+          <Value>삭제</Value>
+        </Item>
+        <Item>
+          <Key>btnClearLabel</Key>
+          <Value>탭 비우기</Value>
+        </Item>
+        <Item>
+          <Key>btnClearModel</Key>
+          <Value>모델 비우기</Value>
+        </Item>
+        <Item>
+          <Key>btnDeleteModel</Key>
+          <Value>삭제</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveToModelView</Key>
+          <Value>모델 보기로 저장</Value>
+        </Item>
+        <Item>
+          <Key>barBtnModelRename</Key>
+          <Value>이름 바꾸기</Value>
+        </Item>
+        <Item>
+          <Key>barBtnUseModel</Key>
+          <Value>모델 적용</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2Sorting</Key>
+          <Value>실시간 분할로 보내기</Value>
+        </Item>
+        <Item>
+          <Key>barBtnThresholdEdit</Key>
+          <Value>임계값 수정</Value>
+        </Item>
+        <Item>
+          <Key>btnContourImage</Key>
+          <Value>프로파일 미리보기</Value>
+        </Item>
+        <Item>
+          <Key>lcCtl</Key>
+          <Value>프로파일 수: 0</Value>
+        </Item>
+        <Item>
+          <Key>lblKernelInfo</Key>
+          <Value>커널 이름</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2OutlineSorting</Key>
+          <Value>프로파일 분할로 보내기</Value>
+        </Item>
+        <Item>
+          <Key>chkUpDownLoad</Key>
+          <Value>원본 스펙트럼과 사전 처리 후 스펙트럼을 상하로 구분</Value>
+        </Item>
+        <Item>
+          <Key>rdoBoth</Key>
+          <Value>원본 및 사전 처리 데이터 표시</Value>
+        </Item>
+        <Item>
+          <Key>rdoPanel1</Key>
+          <Value>원본 데이터만 표시</Value>
+        </Item>
+        <Item>
+          <Key>rdoPanel2</Key>
+          <Value>사전 처리된 데이터만 표시</Value>
+        </Item>
+        <Item>
+          <Key>colPreprocessType</Key>
+          <Value>알고리즘 유형</Value>
+        </Item>
+        <Item>
+          <Key>colPreprocessAlgorithm</Key>
+          <Value>알고리즘 이름</Value>
+        </Item>
+        <Item>
+          <Key>colParams</Key>
+          <Value>매개변수</Value>
+        </Item>
+        <Item>
+          <Key>colOperate</Key>
+          <Value>사용 여부</Value>
+        </Item>
+        <Item>
+          <Key>btnAddPreprocess</Key>
+          <Value>사전 처리 알고리즘 추가</Value>
+        </Item>
+        <Item>
+          <Key>btnExportCsv</Key>
+          <Value>태그 정보 내보내기</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>트레이닝 설정</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel2</Key>
+          <Value>스펙트럼 정보</Value>
+        </Item>
+        <Item>
+          <Key>barBtnExportClass</Key>
+          <Value>태그 정보 내보내기</Value>
+        </Item>
+        <Item>
+          <Key>btnPreClearAll</Key>
+          <Value>비우기</Value>
+        </Item>
+        <Item>
+          <Key>btnPreDelete</Key>
+          <Value>삭제</Value>
+        </Item>
+        <Item>
+          <Key>btnPreEdit</Key>
+          <Value>편집</Value>
+        </Item>
+        <Item>
+          <Key>btnPreApply</Key>
+          <Value>적용</Value>
+        </Item>
+        <Item>
+          <Key>btnPreAdd</Key>
+          <Value>신규</Value>
+        </Item>
+        <Item>
+          <Key>barBtnUseModelLabel</Key>
+          <Value>레이블 적용</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>CameraSettingForm</Key>
+      <Value>카메라 설정</Value>
+      <Controls>
+        <Item>
+          <Key>hlLabelResetRange</Key>
+          <Value>범위 재설정</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>이미지 범위</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRGB</Key>
+          <Value>RGB 밴드 재설정</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>블루 [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>녹색 [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>빨간색 [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl8</Key>
+          <Value>RGB 디스플레이 밴드</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>확인</Value>
+        </Item>
+        <Item>
+          <Key>sortingBaseButton1</Key>
+          <Value>최대 프레임 수 가져오기</Value>
+        </Item>
+        <Item>
+          <Key>labelControl9</Key>
+          <Value>프레임 수 실시간 표시</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>이득</Value>
+        </Item>
+        <Item>
+          <Key>btnreadmaxFrameRate</Key>
+          <Value>최대 프레임 속도 가져오기</Value>
+        </Item>
+        <Item>
+          <Key>labUseTime</Key>
+          <Value>교정 유효기간</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>프레임 속도</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>노출 시간</Value>
+        </Item>
+        <Item>
+          <Key>checkFlipX</Key>
+          <Value>이미지 반전 대칭복사 여부</Value>
+        </Item>
+        <Item>
+          <Key>labelControl10</Key>
+          <Value>트리거 모드</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>ClassSettingForm</Key>
+      <Value>분류 관리</Value>
+      <Controls>
+        <Item>
+          <Key>btnColose</Key>
+          <Value>닫기</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveName</Key>
+          <Value>저장</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>설명</Value>
+        </Item>
+        <Item>
+          <Key>chcEditthreshold</Key>
+          <Value>임계값 사용</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>분류 임계값</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>인코딩</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>색상</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>이름</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>클래스 정보</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>이미 분류</Value>
+        </Item>
+        <Item>
+          <Key>columnColor</Key>
+          <Value>색상</Value>
+        </Item>
+        <Item>
+          <Key>gridColumn2</Key>
+          <Value>이름</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>DisplayAndCalibrationSettingForm</Key>
+      <Value>설정 조정 및 표시</Value>
+      <Controls>
+        <Item>
+          <Key>groupControl2</Key>
+          <Value>기타 설정</Value>
+        </Item>
+        <Item>
+          <Key>checkdisplayrefimg</Key>
+          <Value>스펙트럼 그래프 표시</Value>
+        </Item>
+        <Item>
+          <Key>groupControl1</Key>
+          <Value>파일 상태 조정</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>이름</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>이름</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>이름</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>이름</Value>
+        </Item>
+        <Item>
+          <Key>btnimportblackraw</Key>
+          <Value>가져오기</Value>
+        </Item>
+        <Item>
+          <Key>btnimportblackref</Key>
+          <Value>가져오기</Value>
+        </Item>
+        <Item>
+          <Key>btnimportwhiteraw</Key>
+          <Value>가져오기</Value>
+        </Item>
+        <Item>
+          <Key>btnimportwhiteref</Key>
+          <Value>가져오기</Value>
+        </Item>
+        <Item>
+          <Key>btnSave</Key>
+          <Value>저장</Value>
+        </Item>
+        <Item>
+          <Key>checkSavesawimage</Key>
+          <Value>원본 데이터 저장</Value>
+        </Item>
+        <Item>
+          <Key>chkSaveDisplayArea</Key>
+          <Value>현재 표시 영역만 저장 (참고: 수평 방향만 캡처)</Value>
+        </Item>
+        <Item>
+          <Key>chkSplicingWhiteCalibrate</Key>
+          <Value>맞춤법 흰색 보정 선택 영역</Value>
+        </Item>
+        <Item>
+          <Key>chkOnlyCacheDisplayArea</Key>
+          <Value>표시 영역의 데이터만 캐시</Value>
+        </Item>
+        <Item>
+          <Key>lblEffectiveHour</Key>
+          <Value>유효 시간 (h)</Value>
+        </Item>
+        <Item>
+          <Key>lblSampleInterval</Key>
+          <Value>픽셀 구간 표시 (1~640)</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>EjectIpSettingForm</Key>
+      <Value>공기 흡입 설정</Value>
+      <Controls>
+        <Item>
+          <Key>barEditItem12</Key>
+          <Value>이미지 수신자 IP 주소</Value>
+        </Item>
+        <Item>
+          <Key>colTrachea</Key>
+          <Value>기관 번호</Value>
+        </Item>
+        <Item>
+          <Key>colStartPixel</Key>
+          <Value>시작 픽셀</Value>
+        </Item>
+        <Item>
+          <Key>colEndPixel</Key>
+          <Value>끝 픽셀</Value>
+        </Item>
+        <Item>
+          <Key>btnCreateConfig</Key>
+          <Value>새 구성 생성</Value>
+        </Item>
+        <Item>
+          <Key>lblPixelInterval</Key>
+          <Value>인접 기관 시작 픽셀 위치 간격</Value>
+        </Item>
+        <Item>
+          <Key>lblTracheaPixels</Key>
+          <Value>단일 기관 덮어쓰기 픽셀 수</Value>
+        </Item>
+        <Item>
+          <Key>lblPixelNumber</Key>
+          <Value>픽셀 수</Value>
+        </Item>
+        <Item>
+          <Key>lblEndPixel</Key>
+          <Value>끝 픽셀</Value>
+        </Item>
+        <Item>
+          <Key>lblStartPixel</Key>
+          <Value>시작 픽셀</Value>
+        </Item>
+        <Item>
+          <Key>lblTrachea</Key>
+          <Value>기관 수</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>활성화 프레임 수</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>공기 지연 시간 (밀리초)</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>공기 흡입 시간 (밀리초)</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>확인</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>공기 흡입 장치 COM 포트</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>포트 번호</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>IP 주소</Value>
+        </Item>
+        <Item>
+          <Key>btnApply</Key>
+          <Value>적용</Value>
+        </Item>
+        <Item>
+          <Key>chkTracheaDesc</Key>
+          <Value>기관 번호 역순</Value>
+        </Item>
+        <Item>
+          <Key>colOperate</Key>
+          <Value>작업</Value>
+        </Item>
+        <Item>
+          <Key>btnConnect</Key>
+          <Value>연결</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>픽셀 활성화</Value>
+        </Item>
+        <Item>
+          <Key>lblLocalIP</Key>
+          <Value>로컬 IP 주소</Value>
+        </Item>
+        <Item>
+          <Key>lblLocalPort</Key>
+          <Value>로컬 포트 번호</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectPort</Key>
+          <Value>공기 흡입 장치 포트 번호</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectCom</Key>
+          <Value>공기 흡입 장치 COM 포트</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectIp</Key>
+          <Value>공기 흡입 장치 IP 주소</Value>
+        </Item>
+        <Item>
+          <Key>chkTcpConnect</Key>
+          <Value>공기 흐름 장치 연결 방법: TCP/IP</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormThresholdChange</Key>
+      <Value>임계값 수정</Value>
+      <Controls>
+        <Item>
+          <Key>lblThreshold</Key>
+          <Value>임계값</Value>
+        </Item>
+        <Item>
+          <Key>lblErodeLevel</Key>
+          <Value>부식도</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>확인</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormThresholdMatting</Key>
+      <Value>임계값 수정</Value>
+      <Controls>
+        <Item>
+          <Key>lblPaiHeiDiSuanFa</Key>
+          <Value>스파이크 알고리즘</Value>
+        </Item>
+        <Item>
+          <Key>lblThreshold</Key>
+          <Value>검정색 바탕 임계값</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>확인</Value>
+        </Item>
+        <Item>
+          <Key>lblErodeLevel</Key>
+          <Value>부식도</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FromModelFileRename</Key>
+      <Value>이름 바꾸기</Value>
+      <Controls>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>취소</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>확인</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>이름</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FromModelRename</Key>
+      <Value>이름 바꾸기</Value>
+      <Controls>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>취소</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>확인</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>이름</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SaveFileOfName</Key>
+      <Value>파일 이름 입력</Value>
+      <Controls>
+        <Item>
+          <Key>lblName</Key>
+          <Value>이름</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>확인</Value>
+        </Item>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>취소</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SelectTrainBandsForm</Key>
+      <Value>트레이닝 밴드 선택</Value>
+      <Controls>
+        <Item>
+          <Key>chkShowToTrainForm</Key>
+          <Value>마스터 인터페이스 차트에 표시할 파장 선택</Value>
+        </Item>
+        <Item>
+          <Key>btnSetSelection</Key>
+          <Value>선택</Value>
+        </Item>
+        <Item>
+          <Key>btnSelectAll</Key>
+          <Value>모두 선택</Value>
+        </Item>
+        <Item>
+          <Key>btnClearSelection</Key>
+          <Value>비우기</Value>
+        </Item>
+        <Item>
+          <Key>btnReverseSelect</Key>
+          <Value>역선</Value>
+        </Item>
+        <Item>
+          <Key>btnSave</Key>
+          <Value>확인</Value>
+        </Item>
+        <Item>
+          <Key>chkSameSelect</Key>
+          <Value>모든 레이블은 같은 주파수 대역을 사용합니다.</Value>
+        </Item>
+        <Item>
+          <Key>lblClass</Key>
+          <Value>레이블</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingConnectEject</Key>
+      <Value>공기 흡입 프로그램 연결 설정</Value>
+      <Controls>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>확인</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>IP 주소</Value>
+        </Item>
+        <Item>
+          <Key>btnGetIPAddress</Key>
+          <Value>네이티브 IP 가져오기</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>포트 번호</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>통신 방식</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>파일 저장 경로</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>파일 저장 프레임 수</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingSettingForm</Key>
+      <Value>선별 설정</Value>
+      <Controls>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>확인</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>부식력</Value>
+        </Item>
+        <Item>
+          <Key>checkOriImg</Key>
+          <Value>원본 그림 표시</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>AboutForm</Key>
+      <Value>정보</Value>
+      <Controls>
+        <Item>
+          <Key>labVersionTitle</Key>
+          <Value>버전:</Value>
+        </Item>
+        <Item>
+          <Key>btnCheckUpdate</Key>
+          <Value>업데이트 확인</Value>
+        </Item>
+        <Item>
+          <Key>label3</Key>
+          <Value>소개:</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>NewVersionForm</Key>
+      <Value>NewVersionForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnUpdateNow</Key>
+          <Value>지금 업데이트</Value>
+        </Item>
+        <Item>
+          <Key>labTitle</Key>
+          <Value>새 버전</Value>
+        </Item>
+        <Item>
+          <Key>btnUpdateLater</Key>
+          <Value>나중에 알려주세요.</Value>
+        </Item>
+        <Item>
+          <Key>btnIgnore</Key>
+          <Value>현재 버전 무시</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormPreprocessEdit</Key>
+      <Value>사전 처리 알고리즘 추가 / 편집</Value>
+      <Controls>
+        <Item>
+          <Key>lblType</Key>
+          <Value>알고리즘 유형</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>알고리즘</Value>
+        </Item>
+        <Item>
+          <Key>lblParam1</Key>
+          <Value>필터 길이</Value>
+        </Item>
+        <Item>
+          <Key>lblParam2</Key>
+          <Value>필터 횟수</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>확인</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>취소</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>UserGuideForm</Key>
+      <Value>마법사 사용</Value>
+      <Controls>
+        <Item>
+          <Key>lblStep1</Key>
+          <Value>첫 번째 단계:</Value>
+        </Item>
+        <Item>
+          <Key>btnImportFile</Key>
+          <Value>카메라 프로파일 가져오기</Value>
+        </Item>
+        <Item>
+          <Key>lblStep2</Key>
+          <Value>2단계:</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>카메라 연결</Value>
+        </Item>
+        <Item>
+          <Key>lblLinkFile</Key>
+          <Value>접속 실패를 초래하는 일반적인 문제</Value>
+        </Item>
+        <Item>
+          <Key>lblGain</Key>
+          <Value>이득 (고 이득 권장)</Value>
+        </Item>
+        <Item>
+          <Key>lblExposureTime</Key>
+          <Value>노출 시간</Value>
+        </Item>
+        <Item>
+          <Key>btnSet2Device</Key>
+          <Value>계측기로 업데이트</Value>
+        </Item>
+        <Item>
+          <Key>lblMaxFrame</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblArea</Key>
+          <Value>체크</Value>
+        </Item>
+        <Item>
+          <Key>lblSignal</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblClarity</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblStep3</Key>
+          <Value>3단계:</Value>
+        </Item>
+        <Item>
+          <Key>btnAdjust</Key>
+          <Value>선명도 및 신호량 조절 시작</Value>
+        </Item>
+        <Item>
+          <Key>lblStep3Result</Key>
+          <Value>조정 프로세스 시작</Value>
+        </Item>
+        <Item>
+          <Key>groupBox1</Key>
+          <Value>최대 프레임 속도(fps)</Value>
+        </Item>
+        <Item>
+          <Key>groupBox2</Key>
+          <Value>선명도</Value>
+        </Item>
+        <Item>
+          <Key>groupBox3</Key>
+          <Value>신호량</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>신호 조정: 측정 영역에 화이트보드를 놓고 노출 시간을 조정하여 신호가 8000~15000 사이가 되도록 합니다.</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>선명도 조정: 메쉬 용지를 측정 영역에 배치하고 렌즈의 조리개를 최대로 조정하며 렌즈의 초점 거리를 조정하여 선명도를 최대로 조정합니다.</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SplicingWhiteCalibrationForm</Key>
+      <Value>맞춤법 흰색 교정 데이터</Value>
+      <Controls>
+        <Item>
+          <Key>colParams</Key>
+          <Value>좌표</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>저장</Value>
+        </Item>
+        <Item>
+          <Key>btnDelete</Key>
+          <Value>선택 항목 삭제</Value>
+        </Item>
+        <Item>
+          <Key>grpPreArea</Key>
+          <Value>미리보기 영역</Value>
+        </Item>
+        <Item>
+          <Key>btnOkAndClose</Key>
+          <Value>저장 및 닫기</Value>
+        </Item>
+        <Item>
+          <Key>btnStartScan</Key>
+          <Value>채집 시작</Value>
+        </Item>
+        <Item>
+          <Key>btnPause</Key>
+          <Value>일시 중지</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveAndSwitch</Key>
+          <Value>저장 및 흰색 보정으로 전환</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>카메라 설정</Value>
+        </Item>
+        <Item>
+          <Key>groupBox1</Key>
+          <Value>그림을 클릭하여 교정 영역을 선택하세요</Value>
+        </Item>
+        <Item>
+          <Key>lblTitle</Key>
+          <Value>검정색 보정</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>LoadingForm</Key>
+      <Value>ShowDialogForm</Value>
+      <Controls>
+        <Item>
+          <Key>gpcCaption</Key>
+          <Value>제목</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+  </Forms>
+  <Prompts>
+    <Item>
+      <Key>本地模型文件</Key>
+      <Value>로컬 모델 파일</Value>
+    </Item>
+    <Item>
+      <Key>云端模型文件</Key>
+      <Value>클라우드 모델 파일</Value>
+    </Item>
+    <Item>
+      <Key>选择路径</Key>
+      <Value>경로 선택</Value>
+    </Item>
+    <Item>
+      <Key>将删除相关原始文件，确定删除吗？</Key>
+      <Value>관련 원본 파일이 삭제됩니다. 삭제하시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>提示</Key>
+      <Value>힌트</Value>
+    </Item>
+    <Item>
+      <Key>切换语言将重启软件，确定切换吗？</Key>
+      <Value>언어를 바꾸면 소프트웨어가 다시 시작됩니다. 바꾸시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>未找到此模型的黑白校准文件或反射率文件，无法使用</Key>
+      <Value>이 모델의 흑백 교정 파일 또는 반사율 파일을 찾을 수 없습니다. 사용할 수 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>模型信息：</Key>
+      <Value>모델 정보:</Value>
+    </Item>
+    <Item>
+      <Key>电脑未连接相机</Key>
+      <Value>컴퓨터에 카메라가 연결되지 않았습니다.</Value>
+    </Item>
+    <Item>
+      <Key>缺少反射率数据</Key>
+      <Value>반사율 데이터 누락</Value>
+    </Item>
+    <Item>
+      <Key>缺少黑校准数据</Key>
+      <Value>검정색 교정 데이터 누락</Value>
+    </Item>
+    <Item>
+      <Key>缺少白校准数据</Key>
+      <Value>화이트 보정 데이터 누락</Value>
+    </Item>
+    <Item>
+      <Key>模型的光谱通道与相机的不匹配</Key>
+      <Value>모델의 스펙트럼 채널과 카메라의 불일치</Value>
+    </Item>
+    <Item>
+      <Key>点击YES为黑校准，点击NO为白校准,点击Cancel未暗电流校准</Key>
+      <Value>YES를 클릭하면 검정색, NO를 클릭하면 흰색, Cancel을 클릭하면 어두운 전류가 교정되지 않음</Value>
+    </Item>
+    <Item>
+      <Key>链接成功</Key>
+      <Value>링크 성공</Value>
+    </Item>
+    <Item>
+      <Key>标签</Key>
+      <Value>레이블</Value>
+    </Item>
+    <Item>
+      <Key>模型</Key>
+      <Value>모델</Value>
+    </Item>
+    <Item>
+      <Key>选区数量少于两个，数量不够</Key>
+      <Value>두 개 미만의 선택 영역 수</Value>
+    </Item>
+    <Item>
+      <Key>缺少背景选区或未分类选区</Key>
+      <Value>배경 선택 영역 없음 또는 분류되지 않은 선택 영역</Value>
+    </Item>
+    <Item>
+      <Key>缺少目标选区</Key>
+      <Value>대상 선택 영역 없음</Value>
+    </Item>
+    <Item>
+      <Key>存在为标记类型的选区，请核实</Key>
+      <Value>태그 유형의 선택 영역이 있습니다. 확인하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>训练中...</Key>
+      <Value>훈련 중...</Value>
+    </Item>
+    <Item>
+      <Key>算法运行错误，未生成模型</Key>
+      <Value>알고리즘 실행 오류, 모델이 생성되지 않음</Value>
+    </Item>
+    <Item>
+      <Key>请先选择光谱图像</Key>
+      <Value>먼저 스펙트럼 이미지를 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>波长集合</Key>
+      <Value>파장 집합</Value>
+    </Item>
+    <Item>
+      <Key>高光谱图像图片</Key>
+      <Value>하이 스펙트럼 이미지 이미지</Value>
+    </Item>
+    <Item>
+      <Key>数量已经达到最大值</Key>
+      <Value>수량이 이미 최대치에 도달하였습니다.</Value>
+    </Item>
+    <Item>
+      <Key>名称不能为空</Key>
+      <Value>이름은 비워둘 수 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>名称重复</Key>
+      <Value>이름 중복</Value>
+    </Item>
+    <Item>
+      <Key>初始化气吹控制失败</Key>
+      <Value>공기 흐름 제어 초기화 실패</Value>
+    </Item>
+    <Item>
+      <Key>是</Key>
+      <Value>예</Value>
+    </Item>
+    <Item>
+      <Key>否</Key>
+      <Value>아니오</Value>
+    </Item>
+    <Item>
+      <Key>常规</Key>
+      <Value>일반</Value>
+    </Item>
+    <Item>
+      <Key>算法类型</Key>
+      <Value>알고리즘 유형</Value>
+    </Item>
+    <Item>
+      <Key>主成分数量(2-10)</Key>
+      <Value>주성분 수량(2-10)</Value>
+    </Item>
+    <Item>
+      <Key>训练集大小(0.5-1)</Key>
+      <Value>트레이닝 세트 크기 (0.5-1)</Value>
+    </Item>
+    <Item>
+      <Key>训练波长数量</Key>
+      <Value>훈련 파장 수량</Value>
+    </Item>
+    <Item>
+      <Key>训练循环步幅</Key>
+      <Value>훈련 순환 보폭</Value>
+    </Item>
+    <Item>
+      <Key>训练的波长集合</Key>
+      <Value>훈련의 파장 집합</Value>
+    </Item>
+    <Item>
+      <Key>是否开启均值滤波</Key>
+      <Value>균일치 필터 설정 여부</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波力度</Key>
+      <Value>평균값 필터링 강도</Value>
+    </Item>
+    <Item>
+      <Key>是否开启标准化</Key>
+      <Value>표준화 설정 여부</Value>
+    </Item>
+    <Item>
+      <Key>缺少模型文件</Key>
+      <Value>모델 데이터 누락</Value>
+    </Item>
+    <Item>
+      <Key>分选模块正在被使用</Key>
+      <Value>선택 모듈이 사용 중입니다.</Value>
+    </Item>
+    <Item>
+      <Key>当前帧率：</Key>
+      <Value>현재 프레임 속도:</Value>
+    </Item>
+    <Item>
+      <Key>连接相机中...</Key>
+      <Value>카메라 연결 중...</Value>
+    </Item>
+    <Item>
+      <Key>正在停止...</Key>
+      <Value>중지 중...</Value>
+    </Item>
+    <Item>
+      <Key>确定删除该样本吗？</Key>
+      <Value>이 샘플을 삭제하시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>确定清空所有样本吗？</Key>
+      <Value>모든 샘플을 비우시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>确定删除模型吗？</Key>
+      <Value>모델을 삭제하시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>确定清空所有模型吗？</Key>
+      <Value>모든 모델을 비우시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>样本</Key>
+      <Value>견본</Value>
+    </Item>
+    <Item>
+      <Key>预处理</Key>
+      <Value>사전 처리</Value>
+    </Item>
+    <Item>
+      <Key>是否开启均值滤波：</Key>
+      <Value>균일치 필터 설정 여부:</Value>
+    </Item>
+    <Item>
+      <Key>是否开启标准化：</Key>
+      <Value>표준화 설정 여부:</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波力度：</Key>
+      <Value>평균 필터 강도:</Value>
+    </Item>
+    <Item>
+      <Key>波长信息</Key>
+      <Value>파장 정보</Value>
+    </Item>
+    <Item>
+      <Key>类别</Key>
+      <Value>범주</Value>
+    </Item>
+    <Item>
+      <Key>取消</Key>
+      <Value>취소</Value>
+    </Item>
+    <Item>
+      <Key>确定</Key>
+      <Value>확인</Value>
+    </Item>
+    <Item>
+      <Key>忽略</Key>
+      <Value>무시</Value>
+    </Item>
+    <Item>
+      <Key>中止</Key>
+      <Value>중단</Value>
+    </Item>
+    <Item>
+      <Key>重试</Key>
+      <Value>다시 시도</Value>
+    </Item>
+    <Item>
+      <Key>未选中模型!</Key>
+      <Value>모델이 선택되지 않았습니다!</Value>
+    </Item>
+    <Item>
+      <Key>模型未加载!</Key>
+      <Value>모델이 로드되지 않았습니다!</Value>
+    </Item>
+    <Item>
+      <Key>应用失败!</Key>
+      <Value>적용 실패!</Value>
+    </Item>
+    <Item>
+      <Key>应用成功</Key>
+      <Value>적용 성공</Value>
+    </Item>
+    <Item>
+      <Key>发送成功</Key>
+      <Value>발송 성공</Value>
+    </Item>
+    <Item>
+      <Key>请选择相机配置文件</Key>
+      <Value>카메라 구성 파일을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>相机配置文件导入成功!</Key>
+      <Value>카메라 프로파일을 성공적으로 가져왔습니다!</Value>
+    </Item>
+    <Item>
+      <Key>相机连接中...</Key>
+      <Value>카메라 연결 중...</Value>
+    </Item>
+    <Item>
+      <Key>相机连接失败</Key>
+      <Value>카메라 연결 실패</Value>
+    </Item>
+    <Item>
+      <Key>相机连接成功</Key>
+      <Value>카메라 연결 성공</Value>
+    </Item>
+    <Item>
+      <Key>相机断开中...</Key>
+      <Value>카메라 끊기는 중...</Value>
+    </Item>
+    <Item>
+      <Key>相机已经断开</Key>
+      <Value>카메라가 끊겼습니다.</Value>
+    </Item>
+    <Item>
+      <Key>结束采集</Key>
+      <Value>정지</Value>
+    </Item>
+    <Item>
+      <Key>开始采集</Key>
+      <Value>시작</Value>
+    </Item>
+    <Item>
+      <Key>暂停</Key>
+      <Value>일시 중지</Value>
+    </Item>
+    <Item>
+      <Key>连接相机</Key>
+      <Value>카메라 연결</Value>
+    </Item>
+    <Item>
+      <Key>断开连接</Key>
+      <Value>연결 해제</Value>
+    </Item>
+    <Item>
+      <Key>正在将采集到的图像写入磁盘</Key>
+      <Value>수집된 이미지를 디스크에 쓰는 중</Value>
+    </Item>
+    <Item>
+      <Key>相机或GPU正在被使用</Key>
+      <Value>카메라 또는 GPU 사용 중</Value>
+    </Item>
+    <Item>
+      <Key>正在启动...</Key>
+      <Value>시작 중...</Value>
+    </Item>
+    <Item>
+      <Key>校准文件缺失，无法显示校准后图像，自动切换为显示原始图像</Key>
+      <Value>교정 파일이 누락되어 교정된 이미지를 표시할 수 없습니다. 자동으로 원본 이미지로 전환합니다</Value>
+    </Item>
+    <Item>
+      <Key>请先连接相机</Key>
+      <Value>카메라 먼저 연결해주세요.</Value>
+    </Item>
+    <Item>
+      <Key>无图像</Key>
+      <Value>이미지 없음</Value>
+    </Item>
+    <Item>
+      <Key>所选区域需要完全覆盖一个像素点</Key>
+      <Value>선택한 영역은 픽셀 점을 완전히 덮어써야 합니다.</Value>
+    </Item>
+    <Item>
+      <Key>超出当前数据范围</Key>
+      <Value>현재 데이터 범위 초과</Value>
+    </Item>
+    <Item>
+      <Key>当前点的光谱数据已存在</Key>
+      <Value>현재 점의 스펙트럼 데이터가 이미 존재합니다.</Value>
+    </Item>
+    <Item>
+      <Key>超出图像范围</Key>
+      <Value>이미지 범위 초과</Value>
+    </Item>
+    <Item>
+      <Key>校准线超出图像范围</Key>
+      <Value>조정선이 이미지 범위를 벗어남</Value>
+    </Item>
+    <Item>
+      <Key>加载中</Key>
+      <Value>로드 중</Value>
+    </Item>
+    <Item>
+      <Key>请先采集图像</Key>
+      <Value>먼저 그림을 채집하세요</Value>
+    </Item>
+    <Item>
+      <Key>正在更新白板原始数据，如果确定，请点击图像上白板所在的位置</Key>
+      <Value>화이트보드 원본 데이터를 업데이트하는 중입니다. 확인되면 이미지에서 화이트보드가 있는 위치를 클릭하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>正在更新黑板原始数据，如果确定，请点击图像上黑板所在的位置</Key>
+      <Value>칠판 원본 데이터를 업데이트하는 중입니다. 확실하면 이미지에서 칠판이 있는 위치를 클릭하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>出现异常,请稍后重试</Key>
+      <Value>예외가 발생했습니다. 나중에 다시 시도하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>未找黑白校准文件或反射率文件，无法使用</Key>
+      <Value>검정색 또는 반사율 파일을 찾을 수 없습니다. 사용할 수 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>保存中</Key>
+      <Value>저장 중</Value>
+    </Item>
+    <Item>
+      <Key>保存完成</Key>
+      <Value>저장 완료</Value>
+    </Item>
+    <Item>
+      <Key>数据保存失败</Key>
+      <Value>데이터 저장 실패</Value>
+    </Item>
+    <Item>
+      <Key>无数据</Key>
+      <Value>데이터 없음</Value>
+    </Item>
+    <Item>
+      <Key>未选中任何数据</Key>
+      <Value>선택된 데이터가 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>导出</Key>
+      <Value>내보내기</Value>
+    </Item>
+    <Item>
+      <Key>文件</Key>
+      <Value>파일</Value>
+    </Item>
+    <Item>
+      <Key>保存成功</Key>
+      <Value>저장 성공</Value>
+    </Item>
+    <Item>
+      <Key>保存失败</Key>
+      <Value>저장 실패</Value>
+    </Item>
+    <Item>
+      <Key>波长</Key>
+      <Value>파장</Value>
+    </Item>
+    <Item>
+      <Key>保存成功！</Key>
+      <Value>저장 성공!</Value>
+    </Item>
+    <Item>
+      <Key>开始</Key>
+      <Value>시작</Value>
+    </Item>
+    <Item>
+      <Key>正在停止分选...</Key>
+      <Value>선택 해제 중...</Value>
+    </Item>
+    <Item>
+      <Key>吹气设备连接失败</Key>
+      <Value>공기 흡입 장치 연결 실패</Value>
+    </Item>
+    <Item>
+      <Key>正在启动分选...</Key>
+      <Value>분할 선택 시작하는 중...</Value>
+    </Item>
+    <Item>
+      <Key>停止分选</Key>
+      <Value>선택 해제</Value>
+    </Item>
+    <Item>
+      <Key>启动分选</Key>
+      <Value>분류 시작</Value>
+    </Item>
+    <Item>
+      <Key>清空标签</Key>
+      <Value>탭 비우기</Value>
+    </Item>
+    <Item>
+      <Key>删除</Key>
+      <Value>삭제</Value>
+    </Item>
+    <Item>
+      <Key>确定删除样本吗？</Key>
+      <Value>샘플을 삭제하시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>移动</Key>
+      <Value>이동</Value>
+    </Item>
+    <Item>
+      <Key>选点</Key>
+      <Value>선택점</Value>
+    </Item>
+    <Item>
+      <Key>画线</Key>
+      <Value>선을 긋다</Value>
+    </Item>
+    <Item>
+      <Key>画矩形</Key>
+      <Value>직사각형을 그리다</Value>
+    </Item>
+    <Item>
+      <Key>自适应</Key>
+      <Value>적응성</Value>
+    </Item>
+    <Item>
+      <Key>抠图</Key>
+      <Value>인화</Value>
+    </Item>
+    <Item>
+      <Key>处理后的数据已经存在，是否重新生成？</Key>
+      <Value>처리된 데이터가 이미 존재합니다. 재생성하시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>预处理处理中...</Key>
+      <Value>사전 처리 중...</Value>
+    </Item>
+    <Item>
+      <Key>停止训练</Key>
+      <Value>훈련을 중지하다</Value>
+    </Item>
+    <Item>
+      <Key>开始训练</Key>
+      <Value>훈련 시작</Value>
+    </Item>
+    <Item>
+      <Key>白校准板光谱数据</Key>
+      <Value>화이트보딩 보드 스펙트럼 데이터</Value>
+    </Item>
+    <Item>
+      <Key>白校准板原始数据</Key>
+      <Value>화이트보딩 보드 원본 데이터</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板光谱数据</Key>
+      <Value>검정색 교정판 스펙트럼 데이터</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板原始数据</Key>
+      <Value>검정색 정렬판 원본 데이터</Value>
+    </Item>
+    <Item>
+      <Key>请选择白板光谱反射率文件</Key>
+      <Value>화이트보드 스펙트럼 반사율 파일을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>白板光谱反射率文件下找不到对应的文件</Key>
+      <Value>화이트보드 스펙트럼 반사율 파일에서 해당 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>白板光谱反射率文件加载成功</Key>
+      <Value>화이트보드 스펙트럼 반사율 파일 로드 성공</Value>
+    </Item>
+    <Item>
+      <Key>解析白板光谱反射率文件失败，请检查</Key>
+      <Value>화이트보드 스펙트럼 반사율 파일을 처리하지 못했습니다. 확인하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑板光谱反射率文件</Key>
+      <Value>칠판 스펙트럼 반사율 파일을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>黑板光谱反射率文件下找不到对应的文件</Key>
+      <Value>칠판 스펙트럼 반사율 파일에서 해당 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>黑板光谱反射率文件加载成功</Key>
+      <Value>칠판 스펙트럼 반사율 파일 로드 성공</Value>
+    </Item>
+    <Item>
+      <Key>解析黑板光谱反射率文件失败，请检查</Key>
+      <Value>칠판 스펙트럼 반사율 파일을 처리하는 데 실패했습니다. 확인하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>请选择线原始数据文件</Key>
+      <Value>선 원본 데이터 파일을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件下找不到对应的文件</Key>
+      <Value>원본 데이터 파일에서 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件的光谱通道不符合，请重新选择</Key>
+      <Value>원본 데이터 파일의 스펙트럼 채널이 일치하지 않습니다. 다시 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件的空间通道不符合，请重新选择</Key>
+      <Value>원본 데이터 파일의 공간 채널이 일치하지 않습니다. 다시 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件加载成功</Key>
+      <Value>원본 데이터 파일 로드 백색 조정 성공</Value>
+    </Item>
+    <Item>
+      <Key>解析线原始数据文件失败，请检查</Key>
+      <Value>회선 원본 데이터 파일을 처리하지 못했습니다. 확인하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑校准原始数据文件</Key>
+      <Value>검정색 교정 원본 데이터 파일을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件下找不到对应的文件</Key>
+      <Value>검정색 보정 원본 데이터 파일에서 해당 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件的光谱通道不符合，请重新选择</Key>
+      <Value>검정색 보정 원본 데이터 파일의 스펙트럼 채널이 일치하지 않습니다. 다시 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件的空间通道不符合，请重新选择</Key>
+      <Value>검정색 교정 원본 데이터 파일의 공간 채널이 일치하지 않습니다. 다시 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件加载成功</Key>
+      <Value>검정색 보정 원본 데이터 파일 로드 성공</Value>
+    </Item>
+    <Item>
+      <Key>解析黑校准原始数据文件失败，请检查</Key>
+      <Value>검정색 교정 원본 데이터 파일을 처리하는 데 실패했습니다. 확인하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准板反射率数据文件</Key>
+      <Value>화이트보딩 보드 반사율 데이터 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准板原始数据文件</Key>
+      <Value>화이트보딩 원본 데이터 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>白校准板原始数据文件异常</Key>
+      <Value>화이트보딩 보드 원본 데이터 파일 예외</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准板反射率数据文件</Key>
+      <Value>검정색 교정판 반사율 데이터 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准板原始数据文件</Key>
+      <Value>검정색 정렬판 원본 데이터 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板原始数据文件异常</Key>
+      <Value>검정색 교정판 원본 데이터 파일 예외</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度：</Key>
+      <Value>필터 길이:</Value>
+    </Item>
+    <Item>
+      <Key>当前设备可用内存为{0}MB,一次最多可采集{1}帧</Key>
+      <Value>현재 디바이스에 사용 가능한 메모리는 다음과 같습니다.{0}MB, 한 번에 최대 프레임 수집 가능</Value>
+    </Item>
+    <Item>
+      <Key>无法获取设备可用内存，采集过程中会不断增加占用内存，请视情况停止采集</Key>
+      <Value>장치에서 사용 가능한 메모리를 가져올 수 없습니다. 수집 중 메모리 사용량이 계속 증가합니다. 상황에 따라 수집을 중지하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>文件已存在</Key>
+      <Value>파일이 이미 있습니다.</Value>
+    </Item>
+    <Item>
+      <Key>文件不存在</Key>
+      <Value>파일이 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>请选择</Key>
+      <Value>선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>不显示</Key>
+      <Value>표시 안 함</Value>
+    </Item>
+    <Item>
+      <Key>显示</Key>
+      <Value>표시</Value>
+    </Item>
+    <Item>
+      <Key>参数配置必须大于零</Key>
+      <Value>매개변수 구성은 0보다 커야 합니다.</Value>
+    </Item>
+    <Item>
+      <Key>起始像素和终止像素必须在像素个数范围内</Key>
+      <Value>시작 및 끝 픽셀은 픽셀 수 범위 내에 있어야 합니다.</Value>
+    </Item>
+    <Item>
+      <Key>起始像素不能大于终止像素</Key>
+      <Value>시작 픽셀은 끝 픽셀보다 클 수 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>起始像素必须在像素个数[0~{0}]范围内</Key>
+      <Value>시작 픽셀은 픽셀 수 [0 ~ {0}] 범위여야 합니다.</Value>
+    </Item>
+    <Item>
+      <Key>终止像素必须在像素个数[0~{0}]范围内</Key>
+      <Value>종료 픽셀은 픽셀 수 [0 ~ {0}] 범위여야 합니다.</Value>
+    </Item>
+    <Item>
+      <Key>终止像素不能小于起始像素</Key>
+      <Value>끝 픽셀은 시작 픽셀보다 작을 수 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>二值化</Key>
+      <Value>이치화</Value>
+    </Item>
+    <Item>
+      <Key>二值化反转</Key>
+      <Value>이치화 반전</Value>
+    </Item>
+    <Item>
+      <Key>关于</Key>
+      <Value>정보</Value>
+    </Item>
+    <Item>
+      <Key>版本：</Key>
+      <Value>버전:</Value>
+    </Item>
+    <Item>
+      <Key>已是最新版本</Key>
+      <Value>이미 최신 버전</Value>
+    </Item>
+    <Item>
+      <Key>下载并更新</Key>
+      <Value>다운로드 및 업데이트</Value>
+    </Item>
+    <Item>
+      <Key>立即更新</Key>
+      <Value>지금 업데이트</Value>
+    </Item>
+    <Item>
+      <Key>已下载({0})</Key>
+      <Value>다운로드됨 ({0})</Value>
+    </Item>
+    <Item>
+      <Key>请允许来自未知发布者的应用对你的设备进行更改</Key>
+      <Value>알 수 없는 게시자의 애플리케이션이 장치를 변경할 수 있도록 허용해 주십시오</Value>
+    </Item>
+    <Item>
+      <Key>应用成功!</Key>
+      <Value>적용 성공!</Value>
+    </Item>
+    <Item>
+      <Key>标签为空？</Key>
+      <Value>태그가 비어 있습니까?</Value>
+    </Item>
+    <Item>
+      <Key>低</Key>
+      <Value>낮음</Value>
+    </Item>
+    <Item>
+      <Key>中</Key>
+      <Value>가운데</Value>
+    </Item>
+    <Item>
+      <Key>高</Key>
+      <Value>높음</Value>
+    </Item>
+    <Item>
+      <Key>启动中...</Key>
+      <Value>시작 중...</Value>
+    </Item>
+    <Item>
+      <Key>点选区域</Key>
+      <Value>선택 영역</Value>
+    </Item>
+    <Item>
+      <Key>存在未标记类型的选区，请核实</Key>
+      <Value>태그 없는 유형의 선택 영역이 있습니다. 확인하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>轮廓数：</Key>
+      <Value>프로파일 수:</Value>
+    </Item>
+    <Item>
+      <Key>计算中</Key>
+      <Value>계산 중</Value>
+    </Item>
+    <Item>
+      <Key>平滑算法</Key>
+      <Value>매끄러운 알고리즘</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度</Key>
+      <Value>필터 길이</Value>
+    </Item>
+    <Item>
+      <Key>滤波次数</Key>
+      <Value>필터 횟수</Value>
+    </Item>
+    <Item>
+      <Key>尺度缩放算法</Key>
+      <Value>스케일 배율 알고리즘</Value>
+    </Item>
+    <Item>
+      <Key>散射校正</Key>
+      <Value>산란 보정</Value>
+    </Item>
+    <Item>
+      <Key>基线校正</Key>
+      <Value>베이스라인 보정</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波</Key>
+      <Value>평균값 필터</Value>
+    </Item>
+    <Item>
+      <Key>不使用</Key>
+      <Value>사용하지 않음</Value>
+    </Item>
+    <Item>
+      <Key>标准化</Key>
+      <Value>표준화</Value>
+    </Item>
+    <Item>
+      <Key>一阶导数</Key>
+      <Value>1 단계 도수</Value>
+    </Item>
+    <Item>
+      <Key>二阶导数</Key>
+      <Value>2 단계 도수</Value>
+    </Item>
+    <Item>
+      <Key>请先导入相机配置文件（可点击软件左下角导入）</Key>
+      <Value>카메라 프로필을 먼저 가져오십시오 (소프트웨어의 왼쪽 하단 모서리를 클릭하여 가져오십시오.)</Value>
+    </Item>
+    <Item>
+      <Key>导出中</Key>
+      <Value>내보내기 중</Value>
+    </Item>
+    <Item>
+      <Key>导出完成</Key>
+      <Value>내보내기 완료</Value>
+    </Item>
+    <Item>
+      <Key>未分类</Key>
+      <Value>분류되지 않음</Value>
+    </Item>
+    <Item>
+      <Key>背景</Key>
+      <Value>배경</Value>
+    </Item>
+    <Item>
+      <Key>目标</Key>
+      <Value>목표</Value>
+    </Item>
+    <Item>
+      <Key>缺少校准文件，请开灯采集白板数据，然后关灯采集黑板数据，进行校准。</Key>
+      <Value>교정 파일이 없습니다. 다시 교정해야 합니다.</Value>
+    </Item>
+    <Item>
+      <Key>相机与校准文件不匹配，需重新校准</Key>
+      <Value>카메라와 교정 파일이 일치하지 않습니다. 다시 교정해야 합니다.</Value>
+    </Item>
+    <Item>
+      <Key>增益或曝光时间已修改，请确定是否需要重新校准</Key>
+      <Value>교정 파일의 이득 및 노출 시간이 수정됨</Value>
+    </Item>
+    <Item>
+      <Key>矩形</Key>
+      <Value>직사각형</Value>
+    </Item>
+    <Item>
+      <Key>画笔</Key>
+      <Value>화필</Value>
+    </Item>
+    <Item>
+      <Key>点</Key>
+      <Value>점</Value>
+    </Item>
+    <Item>
+      <Key>抠图</Key>
+      <Value>인화</Value>
+    </Item>
+    <Item>
+      <Key>点选区</Key>
+      <Value>점 선택 영역</Value>
+    </Item>
+    <Item>
+      <Key>魔法棒</Key>
+      <Value>마법봉</Value>
+    </Item>
+    <Item>
+      <Key>停止气吹</Key>
+      <Value>공기 흡입 을 멈추다</Value>
+    </Item>
+    <Item>
+      <Key>启动气吹</Key>
+      <Value>에어 드라이를 작동시키다</Value>
+    </Item>
+    <Item>
+      <Key>光谱</Key>
+      <Value>스펙트럼</Value>
+    </Item>
+    <Item>
+      <Key>同一图片文件不可追加，请重新选择图片</Key>
+      <Value>같은 그림 파일을 추가할 수 없습니다. 그림을 다시 선택하십시오</Value>
+    </Item>
+    <Item>
+      <Key>追加的图片格式不匹配，请重新选择图片</Key>
+      <Value>추가 그림 형식이 일치하지 않습니다. 그림을 다시 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>数据复制中，请稍后</Key>
+      <Value>데이터 복제 중, 잠시 후</Value>
+    </Item>
+    <Item>
+      <Key>训练图片必须是反射率图片</Key>
+      <Value>훈련 사진은 반드시 반사율 그림이어야 한다</Value>
+    </Item>
+    <Item>
+      <Key>无法打开训练图片</Key>
+      <Value>훈련 그림을 열 수 없습니다</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准系数文件</Key>
+      <Value>화이트 보정 계수 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>设置ROI失败</Key>
+      <Value>ROI 설정 실패</Value>
+    </Item>
+    <Item>
+      <Key>模型的序列号与相机的不匹配</Key>
+      <Value>모델의 일련 번호가 카메라와 일치하지 않습니다.</Value>
+    </Item>
+    <Item>
+      <Key>相机设置工作模式失败</Key>
+      <Value>카메라 설정 작업 모드 실패</Value>
+    </Item>
+    <Item>
+      <Key>轮廓区域</Key>
+      <Value>프로파일 영역</Value>
+    </Item>
+    <Item>
+      <Key>训练失败</Key>
+      <Value>훈련 실패</Value>
+    </Item>
+    <Item>
+      <Key>该模型的波长通道与训练图片不匹配</Key>
+      <Value>이 모델의 파장 채널은 훈련 그림과 일치하지 않습니다.</Value>
+    </Item>
+    <Item>
+      <Key>已加载图片与该模型的标签不匹配，是否重新加载图片？</Key>
+      <Value>로드된 그림이 모델의 태그와 일치하지 않습니다. 그림을 다시 로드하시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>应用模型中...</Key>
+      <Value>모델에 적용...</Value>
+    </Item>
+    <Item>
+      <Key>计算轮廓中</Key>
+      <Value>아웃라인 계산 중</Value>
+    </Item>
+    <Item>
+      <Key>计算反射率中</Key>
+      <Value>반사율 계산 중</Value>
+    </Item>
+    <Item>
+      <Key>请选择文件夹</Key>
+      <Value>폴더를 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度:</Key>
+      <Value>필터 길이:</Value>
+    </Item>
+    <Item>
+      <Key>,滤波次数:</Key>
+      <Value>, 필터 횟수:</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件</Key>
+      <Value>화이트 보정 계수 파일</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件</Key>
+      <Value>파일 백교정</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件</Key>
+      <Value>검정 교정 파일</Value>
+    </Item>
+    <Item>
+      <Key>请选择白校准系数文件</Key>
+      <Value>백색 조정 계수 파일을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件不存在</Key>
+      <Value>화이트 보정 계수 파일이 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件加载成功</Key>
+      <Value>화이트 보정 계수 파일 로드 성공</Value>
+    </Item>
+    <Item>
+      <Key>解析白校准系数文件失败，请检查</Key>
+      <Value>화이트 보정 계수 파일을 처리하지 못했습니다. 확인하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>请选择白校准文件</Key>
+      <Value>흰색 교정 파일을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件不存在</Key>
+      <Value>화이트 보정 파일이 존재하지 않습니다.</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件类型不是线</Key>
+      <Value>흰색 교정 파일 형식이 선이 아님</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件的光谱通道不符合，请重新选择</Key>
+      <Value>화이트 보정 파일의 스펙트럼 채널이 일치하지 않습니다. 다시 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件的空间通道不符合，请重新选择</Key>
+      <Value>화이트 보정 파일의 공간 채널이 일치하지 않습니다. 다시 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件加载成功</Key>
+      <Value>화이트 보정 파일이 성공적으로 로드되었습니다.</Value>
+    </Item>
+    <Item>
+      <Key>解析白校准文件失败，请检查</Key>
+      <Value>화이트 보정 파일을 처리하지 못했습니다. 확인하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑校准文件</Key>
+      <Value>검정색 교정 파일을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件不存在</Key>
+      <Value>검정색 교정 파일이 존재하지 않습니다.</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件类型不是线</Key>
+      <Value>검정색 교정 파일 유형이 선이 아님</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件的光谱通道不符合，请重新选择</Key>
+      <Value>검정색 교정 파일의 스펙트럼 채널이 일치하지 않습니다. 다시 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件的空间通道不符合，请重新选择</Key>
+      <Value>검정색 교정 파일의 공간 채널이 일치하지 않습니다. 다시 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件加载成功</Key>
+      <Value>검정색 교정 파일이 성공적으로 로드되었습니다.</Value>
+    </Item>
+    <Item>
+      <Key>解析黑校准文件失败，请检查</Key>
+      <Value>검정색 교정 파일을 처리하지 못했습니다. 확인하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准文件</Key>
+      <Value>화이트 보정 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件异常</Key>
+      <Value>화이트 보정 파일 예외</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准文件</Key>
+      <Value>검정색 교정 파일을 찾을 수 없음</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件异常</Key>
+      <Value>검정색 교정 파일 예외</Value>
+    </Item>
+    <Item>
+      <Key>标签信息</Key>
+      <Value>태그 정보</Value>
+    </Item>
+    <Item>
+      <Key>支持的波长范围：</Key>
+      <Value>지원되는 파장 범위:</Value>
+    </Item>
+    <Item>
+      <Key>使用的波长范围：</Key>
+      <Value>사용된 파장 범위:</Value>
+    </Item>
+    <Item>
+      <Key>传感器：</Key>
+      <Value>센서:</Value>
+    </Item>
+    <Item>
+      <Key>备注：</Key>
+      <Value>참고:</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件已存在</Key>
+      <Value>화이트 보정 계수 파일이 이미 있습니다.</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件已存在</Key>
+      <Value>화이트 보정 파일이 이미 존재합니다.</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件已存在</Key>
+      <Value>검정색 교정 파일이 이미 있습니다.</Value>
+    </Item>
+    <Item>
+      <Key>新增预处理算法</Key>
+      <Value>새로운 사전 처리 알고리즘</Value>
+    </Item>
+    <Item>
+      <Key>修改预处理算法</Key>
+      <Value>사전 처리 알고리즘 수정</Value>
+    </Item>
+    <Item>
+      <Key>必须为奇数</Key>
+      <Value>홀수여야 합니다.</Value>
+    </Item>
+    <Item>
+      <Key>修改失败!</Key>
+      <Value>수정 실패!</Value>
+    </Item>
+    <Item>
+      <Key>修改成功</Key>
+      <Value>수정 성공</Value>
+    </Item>
+    <Item>
+      <Key>文件名：</Key>
+      <Value>파일 이름:</Value>
+    </Item>
+    <Item>
+      <Key>设备型号：</Key>
+      <Value>장치 모델:</Value>
+    </Item>
+    <Item>
+      <Key>设备序列号：</Key>
+      <Value>장치 일련 번호:</Value>
+    </Item>
+    <Item>
+      <Key>曝光时间：</Key>
+      <Value>노출 시간:</Value>
+    </Item>
+    <Item>
+      <Key>增益：</Key>
+      <Value>이득:</Value>
+    </Item>
+    <Item>
+      <Key>继续</Key>
+      <Value>계속</Value>
+    </Item>
+    <Item>
+      <Key>结束分选</Key>
+      <Value>선택 종료</Value>
+    </Item>
+    <Item>
+      <Key>开始分选</Key>
+      <Value>선택 시작</Value>
+    </Item>
+    <Item>
+      <Key>模型关联的校准文件不存在，是否使用当前目录下的黑白校准文件？</Key>
+      <Value>모델과 연관된 정렬 파일이 존재하지 않습니다. 현재 디렉토리의 흑백 정렬 파일을 사용합니까?</Value>
+    </Item>
+    <Item>
+      <Key>平滑处理</Key>
+      <Value>부드럽게 처리</Value>
+    </Item>
+    <Item>
+      <Key>尺度缩放</Key>
+      <Value>스케일 조정</Value>
+    </Item>
+    <Item>
+      <Key>SG平滑</Key>
+      <Value>SG 부드럽게</Value>
+    </Item>
+    <Item>
+      <Key>滑动平滑</Key>
+      <Value>슬라이딩 부드럽게</Value>
+    </Item>
+    <Item>
+      <Key>最大最小归一化</Key>
+      <Value>최대 최소 귀일화</Value>
+    </Item>
+    <Item>
+      <Key>有效起始波长</Key>
+      <Value>유효한 시작 파장</Value>
+    </Item>
+    <Item>
+      <Key>有效结束波长</Key>
+      <Value>유효 종료 파장</Value>
+    </Item>
+    <Item>
+      <Key>是否启用扣除背景</Key>
+      <Value>공제 배경 사용 여부</Value>
+    </Item>
+    <Item>
+      <Key>背景反射率范围起始值(0~1)</Key>
+      <Value>배경 반사율 범위 시작값 (0 ~ 1)</Value>
+    </Item>
+    <Item>
+      <Key>背景反射率范围结束值(0~1)</Key>
+      <Value>배경 반사율 범위 끝 값 (0 ~ 1)</Value>
+    </Item>
+    <Item>
+      <Key>未找到相机配置文件，是否导入？（注: 相机配置文件一般在相机配套的U盘中）</Key>
+      <Value>카메라 구성 파일을 찾을 수 없습니다. 가져오시겠습니까?(참고: 카메라 구성 파일은 일반적으로 카메라와 함께 USB에 있습니다.)</Value>
+    </Item>
+    <Item>
+      <Key>气吹设备连接失败</Key>
+      <Value>공기 흡입 장치 연결 실패</Value>
+    </Item>
+    <Item>
+      <Key>缺少校准文件，需重新校准</Key>
+      <Value>교정 파일이 없습니다. 다시 교정해야 합니다.</Value>
+    </Item>
+    <Item>
+      <Key>请选择文件</Key>
+      <Value>파일을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>文件被占用</Key>
+      <Value>파일 사용</Value>
+    </Item>
+    <Item>
+      <Key>找不到文件路径</Key>
+      <Value>파일 경로를 찾을 수 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>文件已被其他程序打开</Key>
+      <Value>다른 프로그램이 파일을 열었습니다.</Value>
+    </Item>
+    <Item>
+      <Key>导出失败</Key>
+      <Value>내보내기 실패</Value>
+    </Item>
+    <Item>
+      <Key>日期格式不正确，转换日期失败！</Key>
+      <Value>날짜 형식이 잘못되었습니다. 날짜 변환에 실패했습니다!</Value>
+    </Item>
+    <Item>
+      <Key>数字格式不正确，转换数字失败！</Key>
+      <Value>숫자 형식이 잘못되었습니다. 숫자 변환에 실패했습니다!</Value>
+    </Item>
+    <Item>
+      <Key>工作表{0}列数与模版不匹配</Key>
+      <Value>워크시트 {0} 열 수가 템플릿과 일치하지 않습니다.</Value>
+    </Item>
+    <Item>
+      <Key>工作表中的“{0}”列无法识别</Key>
+      <Value>워크시트의 "{0}" 열을 인식할 수 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>原始光谱</Key>
+      <Value>원시 스펙트럼</Value>
+    </Item>
+    <Item>
+      <Key>预处理后的光谱</Key>
+      <Value>사전 처리된 스펙트럼</Value>
+    </Item>
+    <Item>
+      <Key>算法名称</Key>
+      <Value>알고리즘 이름</Value>
+    </Item>
+    <Item>
+      <Key>参数信息</Key>
+      <Value>매개변수 정보</Value>
+    </Item>
+    <Item>
+      <Key>名称</Key>
+      <Value>이름</Value>
+    </Item>
+    <Item>
+      <Key>颜色</Key>
+      <Value>색상</Value>
+    </Item>
+    <Item>
+      <Key>编码</Key>
+      <Value>인코딩</Value>
+    </Item>
+    <Item>
+      <Key>阈值</Key>
+      <Value>임계값</Value>
+    </Item>
+    <Item>
+      <Key>备注</Key>
+      <Value>설명</Value>
+    </Item>
+    <Item>
+      <Key>X坐标：</Key>
+      <Value>X 좌표:</Value>
+    </Item>
+    <Item>
+      <Key>请选择行</Key>
+      <Value>행을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>请先选择白校准区域</Key>
+      <Value>먼저 흰색 교정 영역을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>连接</Key>
+      <Value>연결</Value>
+    </Item>
+    <Item>
+      <Key>应用中</Key>
+      <Value>적용 중</Value>
+    </Item>
+    <Item>
+      <Key>请先选择COM口</Key>
+      <Value>COM 포트를 먼저 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>吹气</Key>
+      <Value>불다</Value>
+    </Item>
+    <Item>
+      <Key>请先停止正在运行的采集功能</Key>
+      <Value>실행 중인 채집 기능을 중지하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>采集图像是校准数据，无法保存成原始文件</Key>
+      <Value>이미지 수집은 교정 데이터이며 원본 파일로 저장할 수 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>采集图像是原始数据，无法保存成校准后的文件</Key>
+      <Value>수집된 이미지는 원본 데이터이므로 교정된 파일로 저장할 수 없습니다.</Value>
+    </Item>
+    <Item>
+      <Key>白校准</Key>
+      <Value>화이트 보정</Value>
+    </Item>
+    <Item>
+      <Key>保存并切换至黑校准</Key>
+      <Value>블랙 보정으로 저장 및 전환</Value>
+    </Item>
+    <Item>
+      <Key>黑校准</Key>
+      <Value>블랙 보정</Value>
+    </Item>
+    <Item>
+      <Key>保存并切换至白校准</Key>
+      <Value>저장 및 흰색 보정으로 전환</Value>
+    </Item>
+    <Item>
+      <Key>请先选择校准区域</Key>
+      <Value>먼저 교정 영역을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>相机配置已导入</Key>
+      <Value>카메라 구성 가져오기</Value>
+    </Item>
+    <Item>
+      <Key>相机配置导入成功</Key>
+      <Value>카메라 구성 가져오기 성공</Value>
+    </Item>
+    <Item>
+      <Key>相机配置导入失败</Key>
+      <Value>카메라 구성 가져오기 실패</Value>
+    </Item>
+    <Item>
+      <Key>相机已断开</Key>
+      <Value>카메라가 분리되었습니다.</Value>
+    </Item>
+    <Item>
+      <Key>相机已连接</Key>
+      <Value>카메라가 연결되었습니다.</Value>
+    </Item>
+    <Item>
+      <Key>停止调节清晰度和信号量</Key>
+      <Value>선명도 및 신호량 조절 중지</Value>
+    </Item>
+    <Item>
+      <Key>开始调节清晰度和信号量</Key>
+      <Value>선명도 및 신호량 조절 시작</Value>
+    </Item>
+    <Item>
+      <Key>保存数据</Key>
+      <Value>데이터 저장</Value>
+    </Item>
+    <Item>
+      <Key>正在保存高光谱数据,请稍等...</Key>
+      <Value>하이 스펙트럼 데이터를 저장하는 중입니다. 잠시만...</Value>
+    </Item>
+    <Item>
+      <Key>内存使用量过高，采集已暂停</Key>
+      <Value>메모리 사용량이 너무 많아서 채집이 일시 중지되었습니다.</Value>
+    </Item>
+    <Item>
+      <Key>帧频或曝光时间已修改，请重新进行校准</Key>
+      <Value>프레임 속도 또는 노출 시간이 수정되었습니다. 다시 조정하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>请先选择训练图片</Key>
+      <Value>트레이닝 그림을 먼저 선택하세요</Value>
+    </Item>
+    <Item>
+      <Key>模型训练</Key>
+      <Value>모형 훈련</Value>
+    </Item>
+    <Item>
+      <Key>正在训练模型,请稍等...</Key>
+      <Value>모형 훈련 중입니다. 잠시만...</Value>
+    </Item>
+    <Item>
+      <Key>模型验证</Key>
+      <Value>모델 검증</Value>
+    </Item>
+    <Item>
+      <Key>模型验证中...</Key>
+      <Value>모델 검증 중...</Value>
+    </Item>
+    <Item>
+      <Key>请先进行校准</Key>
+      <Value>먼저 교정 을 해 주십시오</Value>
+    </Item>
+    <Item>
+      <Key>未找到校准文件，请先进行校准</Key>
+      <Value>교정 파일을 찾을 수 없습니다. 먼저 교정하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>校准文件已过期，是否重新校准？</Key>
+      <Value>교정 파일이 만료되었습니다. 다시 교정하시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件已过期，是否重新校准？</Key>
+      <Value>화이트 보정 파일이 만료되었습니다. 다시 보정합니까?</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件已过期，是否重新校准？</Key>
+      <Value>검정색 교정 파일이 만료되었습니다. 다시 교정하시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>正在努力加载中，请稍等......</Key>
+      <Value>로드하려고 노력 중입니다. 잠시만요...</Value>
+    </Item>
+    <Item>
+      <Key>已运行：{0}s</Key>
+      <Value>실행됨:{0}s</Value>
+    </Item>
+    <Item>
+      <Key>取消任务将可能导致数据错误和异常,是否确认取消?</Key>
+      <Value>작업을 취소하면 데이터 오류와 예외가 발생할 수 있습니다. 취소하시겠습니까?</Value>
+    </Item>
+    <Item>
+      <Key>取消任务中,请稍等...</Key>
+      <Value>작업 취소 중, 잠시만...</Value>
+    </Item>
+    <Item>
+      <Key>像素显示区间设置异常，请重新设置</Key>
+      <Value>픽셀 디스플레이 구간 설정 예외, 다시 설정하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>请先输入IP和端口</Key>
+      <Value>먼저 IP 및 포트를 입력하십시오.</Value>
+    </Item>
+    <Item>
+      <Key>Csv文件存储</Key>
+      <Value>Csv 파일 저장소</Value>
+    </Item>
+    <Item>
+      <Key>请选择保存文件</Key>
+      <Value>파일 저장을 선택하십시오.</Value>
+    </Item>
+    <Item>
+      <Key />
+      <Value />
+    </Item>
+  </Prompts>
+  <Interfaces />
+  <Enumerate>
+    <EnumItem>
+      <Key>EnumGain</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>高</Key>
+          <Value>높음</Value>
+        </Item>
+        <Item>
+          <Key>中</Key>
+          <Value>가운데</Value>
+        </Item>
+        <Item>
+          <Key>低</Key>
+          <Value>낮음</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>PreprocessTypes</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>平滑处理</Key>
+          <Value>부드럽게 처리</Value>
+        </Item>
+        <Item>
+          <Key>基线校正</Key>
+          <Value>베이스라인 보정</Value>
+        </Item>
+        <Item>
+          <Key>尺度缩放</Key>
+          <Value>스케일 조정</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumSmoothingAlgorithm</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>SG平滑</Key>
+          <Value>SG 부드럽게</Value>
+        </Item>
+        <Item>
+          <Key>滑动平滑</Key>
+          <Value>슬라이딩 부드럽게</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumScaleScalingAlgorithm</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>标准化</Key>
+          <Value>표준화</Value>
+        </Item>
+        <Item>
+          <Key>最大最小归一化</Key>
+          <Value>최대 최소 귀일화</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumBaselineCorrection</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>一阶导数</Key>
+          <Value>1 단계 도수</Value>
+        </Item>
+        <Item>
+          <Key>二阶导数</Key>
+          <Value>2 단계 도수</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+  </Enumerate>
+</LanguageLibrary>

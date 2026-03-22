@@ -1,0 +1,2826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Forms>
+    <FormItem>
+      <Key>AppsForm</Key>
+      <Value>AppsForm</Value>
+      <Controls>
+        <Item>
+          <Key>lblReportName</Key>
+          <Value>Доклады</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2Sorting</Key>
+          <Value>Отправить на страницу разделения в реальном времени</Value>
+        </Item>
+        <Item>
+          <Key>btnApply</Key>
+          <Value>Применение</Value>
+        </Item>
+        <Item>
+          <Key>lblRemark</Key>
+          <Value>Примечания</Value>
+        </Item>
+        <Item>
+          <Key>lblVersion</Key>
+          <Value>Версия</Value>
+        </Item>
+        <Item>
+          <Key>lblSensor</Key>
+          <Value>Датчик</Value>
+        </Item>
+        <Item>
+          <Key>lblModelName</Key>
+          <Value>Название модели</Value>
+        </Item>
+        <Item>
+          <Key>barBtnDeleteModel</Key>
+          <Value>Удалить</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToSorting</Key>
+          <Value>Отправить на страницу разделения в реальном времени</Value>
+        </Item>
+        <Item>
+          <Key>barBtnPrint</Key>
+          <Value>Печать отчетов</Value>
+        </Item>
+        <Item>
+          <Key>barBtnFileRename</Key>
+          <Value>Переименовать файл модели</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2Train</Key>
+          <Value>Отправить на страницу обучения модели</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToTrain</Key>
+          <Value>Отправить на страницу обучения модели</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2OutlineSorting</Key>
+          <Value>Отправить на страницу выделения профилей</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToOutlineSorting</Key>
+          <Value>Отправить на страницу выделения профилей</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>BrowseForm</Key>
+      <Value>BrowseForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnSent2Trian</Key>
+          <Value>Отправить на обучающую модель</Value>
+        </Item>
+        <Item>
+          <Key>lblFileName</Key>
+          <Value>Имя файла</Value>
+        </Item>
+        <Item>
+          <Key>btnFind</Key>
+          <Value>Отбор</Value>
+        </Item>
+        <Item>
+          <Key>btnSwitchPath</Key>
+          <Value>Переключить каталог</Value>
+        </Item>
+        <Item>
+          <Key>btnDeviceModel</Key>
+          <Value>Тип оборудования</Value>
+        </Item>
+        <Item>
+          <Key>barBtnDelete</Key>
+          <Value>Удалить</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2Train</Key>
+          <Value>Отправить на обучающую модель</Value>
+        </Item>
+        <Item>
+          <Key>barBtnAppend2Train</Key>
+          <Value>Добавить в учебную модель</Value>
+        </Item>
+        <Item>
+          <Key>BtnAppend2Train</Key>
+          <Value>Добавить в учебную модель</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>EjectForm</Key>
+      <Value>EjectForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnStartEject</Key>
+          <Value>Запускаю воздуходув.</Value>
+        </Item>
+        <Item>
+          <Key>btnEjectSetting</Key>
+          <Value>Параметры продувания</Value>
+        </Item>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>Частота кадров: 3000 fps</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>MainForm</Key>
+      <Value>Сортинг - эксперт</Value>
+      <Controls>
+        <Item>
+          <Key>labBrowse</Key>
+          <Value>Образ</Value>
+        </Item>
+        <Item>
+          <Key>labScan</Key>
+          <Value>Сбор</Value>
+        </Item>
+        <Item>
+          <Key>labTran</Key>
+          <Value>Поезд</Value>
+        </Item>
+        <Item>
+          <Key>labApps</Key>
+          <Value>Модель</Value>
+        </Item>
+        <Item>
+          <Key>labSorting</Key>
+          <Value>Сортировка</Value>
+        </Item>
+        <Item>
+          <Key>labEject</Key>
+          <Value>Выйти</Value>
+        </Item>
+        <Item>
+          <Key>barItemLanguage</Key>
+          <Value>Язык</Value>
+        </Item>
+        <Item>
+          <Key>barBtnAbout</Key>
+          <Value>О</Value>
+        </Item>
+        <Item>
+          <Key>barButtonImportCamFig</Key>
+          <Value>Импорт профиля камеры</Value>
+        </Item>
+        <Item>
+          <Key>labOutlineSorting</Key>
+          <Value>Разделение контуров</Value>
+        </Item>
+        <Item>
+          <Key>barButtonItemGuide</Key>
+          <Value>Мастер использования</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>ScanForm</Key>
+      <Value>ViewForm</Value>
+      <Controls>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>Текущая частота кадров: 3000 fps</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>Подключить</Value>
+        </Item>
+        <Item>
+          <Key>btnStartScan</Key>
+          <Value>Запуск</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>Настройка камеры</Value>
+        </Item>
+        <Item>
+          <Key>btndisplayandcalibsetting</Key>
+          <Value>Показать настройки &amp; калибровки</Value>
+        </Item>
+        <Item>
+          <Key>btn_SeleteBlack</Key>
+          <Value>Чёрная калибровка</Value>
+        </Item>
+        <Item>
+          <Key>btn_SelectWhite</Key>
+          <Value>Белая калибровка</Value>
+        </Item>
+        <Item>
+          <Key>btnsaveimage</Key>
+          <Value>Сохранить изображение</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>Спектр</Value>
+        </Item>
+        <Item>
+          <Key>colGUANGPUBIANHAO</Key>
+          <Value>Спектральный номер</Value>
+        </Item>
+        <Item>
+          <Key>colYANSE</Key>
+          <Value>Цвет</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteCheck</Key>
+          <Value>Удалить выбранную цель</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteAll</Key>
+          <Value>Удалить все цели</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveToFile</Key>
+          <Value>Сохранить выделенный спектр</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveAllToFile</Key>
+          <Value>Сохранить все спектры</Value>
+        </Item>
+        <Item>
+          <Key>cb_ReflectanceDisplay</Key>
+          <Value>Отражение</Value>
+        </Item>
+        <Item>
+          <Key>cb_CurveSmoothing</Key>
+          <Value>сглаживание кривой</Value>
+        </Item>
+        <Item>
+          <Key>btnPause</Key>
+          <Value>Приостановление</Value>
+        </Item>
+        <Item>
+          <Key>lblStartWaveLength</Key>
+          <Value>Начальная длина волны</Value>
+        </Item>
+        <Item>
+          <Key>lblEndWaveLength</Key>
+          <Value>Конец длины волны</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingForm</Key>
+      <Value>SortingForm</Value>
+      <Controls>
+        <Item>
+          <Key>labModelInfo</Key>
+          <Value>Имя файла модели</Value>
+        </Item>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>Текущая частота кадров: 3000 fps</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>Подключить</Value>
+        </Item>
+        <Item>
+          <Key>btnStartSorting</Key>
+          <Value>Начать сортировку</Value>
+        </Item>
+        <Item>
+          <Key>btnEjectSetting</Key>
+          <Value>Параметры продувания</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>Настройка камеры</Value>
+        </Item>
+        <Item>
+          <Key>btnCalibration</Key>
+          <Value>Черно - белая калибровка</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>Спектр</Value>
+        </Item>
+        <Item>
+          <Key>colGUANGPUBIANHAO</Key>
+          <Value>Спектральный номер</Value>
+        </Item>
+        <Item>
+          <Key>colYANSE</Key>
+          <Value>Цвет</Value>
+        </Item>
+        <Item>
+          <Key>cb_ReflectanceDisplay</Key>
+          <Value>Отражение</Value>
+        </Item>
+        <Item>
+          <Key>cb_CurveSmoothing</Key>
+          <Value>сглаживание кривой</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteCheck</Key>
+          <Value>Удалить выбранную цель</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteAll</Key>
+          <Value>Удалить все цели</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveToFile</Key>
+          <Value>Сохранить выделенный спектр</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveAllToFile</Key>
+          <Value>Сохранить все спектры</Value>
+        </Item>
+        <Item>
+          <Key>lblStartWaveLength</Key>
+          <Value>Начальная длина волны</Value>
+        </Item>
+        <Item>
+          <Key>lblEndWaveLength</Key>
+          <Value>Конец длины волны</Value>
+        </Item>
+        <Item>
+          <Key>btnBlackCalibration</Key>
+          <Value>Чёрная калибровка</Value>
+        </Item>
+        <Item>
+          <Key>btnWhiteCalibration</Key>
+          <Value>Белая калибровка</Value>
+        </Item>
+        <Item>
+          <Key>sortingBaseBtbSendToCppProgram</Key>
+          <Value>Отправить в программу быстрого разделения</Value>
+        </Item>
+        <Item>
+          <Key>btnrunfastsorting</Key>
+          <Value>Запустить процесс быстрого разделения</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>TrainForm</Key>
+      <Value>TrainForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnFreshDisplay</Key>
+          <Value>Обновить</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRange</Key>
+          <Value>Диапазон сброса</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Диапазон изображений</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRGB</Key>
+          <Value>Сброс RGB - диапазона</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Синий [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Зеленый [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Красный [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>RGB Показать диапазон</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Показать режим</Value>
+        </Item>
+        <Item>
+          <Key>btnTrain</Key>
+          <Value>Начать обучение</Value>
+        </Item>
+        <Item>
+          <Key>tabPageAlgorithm</Key>
+          <Value>Алгоритм разделения</Value>
+        </Item>
+        <Item>
+          <Key>labelControl8</Key>
+          <Value>Испытания</Value>
+        </Item>
+        <Item>
+          <Key>tabPagePreprocessing</Key>
+          <Value>Предварительная обработка</Value>
+        </Item>
+        <Item>
+          <Key>treeListColumn1</Key>
+          <Value>Имя</Value>
+        </Item>
+        <Item>
+          <Key>treeListDrawType</Key>
+          <Value>Тип избирательного округа</Value>
+        </Item>
+        <Item>
+          <Key>treeListColumn3</Key>
+          <Value>Цвет</Value>
+        </Item>
+        <Item>
+          <Key>treeListcCLassificationColumn</Key>
+          <Value>Классификация</Value>
+        </Item>
+        <Item>
+          <Key>btnClass</Key>
+          <Value>Изменить классификацию</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Учебная информация</Value>
+        </Item>
+        <Item>
+          <Key>btnDeleteLabel</Key>
+          <Value>Удалить</Value>
+        </Item>
+        <Item>
+          <Key>btnClearLabel</Key>
+          <Value>Очистить этикетку</Value>
+        </Item>
+        <Item>
+          <Key>btnClearModel</Key>
+          <Value>Очистить модель</Value>
+        </Item>
+        <Item>
+          <Key>btnDeleteModel</Key>
+          <Value>Удалить</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveToModelView</Key>
+          <Value>Сохранить в "Смотреть модель"</Value>
+        </Item>
+        <Item>
+          <Key>barBtnModelRename</Key>
+          <Value>Переименовать</Value>
+        </Item>
+        <Item>
+          <Key>barBtnUseModel</Key>
+          <Value>Прикладная модель</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2Sorting</Key>
+          <Value>Отправить на "Подборка в реальном времени"</Value>
+        </Item>
+        <Item>
+          <Key>barBtnThresholdEdit</Key>
+          <Value>Изменить порог</Value>
+        </Item>
+        <Item>
+          <Key>btnContourImage</Key>
+          <Value>Предварительный просмотр контуров</Value>
+        </Item>
+        <Item>
+          <Key>lcCtl</Key>
+          <Value>Количество контуров: 0</Value>
+        </Item>
+        <Item>
+          <Key>lblKernelInfo</Key>
+          <Value>Имя ядра</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2OutlineSorting</Key>
+          <Value>Отправить в "Контурное выделение"</Value>
+        </Item>
+        <Item>
+          <Key>chkUpDownLoad</Key>
+          <Value>Разделение исходного спектра и спектрограммы после предварительной обработки</Value>
+        </Item>
+        <Item>
+          <Key>rdoBoth</Key>
+          <Value>Показать исходные и предварительно обработанные данные</Value>
+        </Item>
+        <Item>
+          <Key>rdoPanel1</Key>
+          <Value>Показывать только исходные данные</Value>
+        </Item>
+        <Item>
+          <Key>rdoPanel2</Key>
+          <Value>Показывать только предварительно обработанные данные</Value>
+        </Item>
+        <Item>
+          <Key>colPreprocessType</Key>
+          <Value>Тип алгоритма</Value>
+        </Item>
+        <Item>
+          <Key>colPreprocessAlgorithm</Key>
+          <Value>Имя алгоритма</Value>
+        </Item>
+        <Item>
+          <Key>colParams</Key>
+          <Value>Параметры</Value>
+        </Item>
+        <Item>
+          <Key>colOperate</Key>
+          <Value>Включено</Value>
+        </Item>
+        <Item>
+          <Key>btnAddPreprocess</Key>
+          <Value>Добавить алгоритм предварительной обработки</Value>
+        </Item>
+        <Item>
+          <Key>btnExportCsv</Key>
+          <Value>Экспорт информации о вкладке</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>Настройки обучения</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel2</Key>
+          <Value>Спектральная информация</Value>
+        </Item>
+        <Item>
+          <Key>barBtnExportClass</Key>
+          <Value>Экспорт информации о вкладке</Value>
+        </Item>
+        <Item>
+          <Key>btnPreClearAll</Key>
+          <Value>Очистить</Value>
+        </Item>
+        <Item>
+          <Key>btnPreDelete</Key>
+          <Value>Удалить</Value>
+        </Item>
+        <Item>
+          <Key>btnPreEdit</Key>
+          <Value>Редактирование</Value>
+        </Item>
+        <Item>
+          <Key>btnPreApply</Key>
+          <Value>Применение</Value>
+        </Item>
+        <Item>
+          <Key>btnPreAdd</Key>
+          <Value>Дополнительные</Value>
+        </Item>
+        <Item>
+          <Key>barBtnUseModelLabel</Key>
+          <Value>Применить метку</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>CameraSettingForm</Key>
+      <Value>Настройка камеры</Value>
+      <Controls>
+        <Item>
+          <Key>hlLabelResetRange</Key>
+          <Value>Диапазон сброса</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Диапазон изображений</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRGB</Key>
+          <Value>Сброс RGB - диапазона</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Синий [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Зеленый [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Красный [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl8</Key>
+          <Value>RGB Показать диапазон</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>Определение</Value>
+        </Item>
+        <Item>
+          <Key>sortingBaseButton1</Key>
+          <Value>Получение максимального числа кадров</Value>
+        </Item>
+        <Item>
+          <Key>labelControl9</Key>
+          <Value>Количество кадров в реальном времени</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>Усиление</Value>
+        </Item>
+        <Item>
+          <Key>btnreadmaxFrameRate</Key>
+          <Value>Получение максимальной частоты кадров</Value>
+        </Item>
+        <Item>
+          <Key>labUseTime</Key>
+          <Value>Срок действия калибровки</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Частота кадров</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Время экспозиции</Value>
+        </Item>
+        <Item>
+          <Key>checkFlipX</Key>
+          <Value>Отразить ли изображение зеркально</Value>
+        </Item>
+        <Item>
+          <Key>labelControl10</Key>
+          <Value>Режим запуска</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>ClassSettingForm</Key>
+      <Value>Управление классификациями</Value>
+      <Controls>
+        <Item>
+          <Key>btnColose</Key>
+          <Value>Закрыть</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveName</Key>
+          <Value>Сохранить</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Примечания</Value>
+        </Item>
+        <Item>
+          <Key>chcEditthreshold</Key>
+          <Value>Порог включения</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Порог классификации</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Код</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>Цвет</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Имя</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Информация класса</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Существуют классификации</Value>
+        </Item>
+        <Item>
+          <Key>columnColor</Key>
+          <Value>Цвет</Value>
+        </Item>
+        <Item>
+          <Key>gridColumn2</Key>
+          <Value>Имя</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>DisplayAndCalibrationSettingForm</Key>
+      <Value>Настройки калибровки и отображения</Value>
+      <Controls>
+        <Item>
+          <Key>groupControl2</Key>
+          <Value>Другие параметры</Value>
+        </Item>
+        <Item>
+          <Key>checkdisplayrefimg</Key>
+          <Value>Показать спектрограмму</Value>
+        </Item>
+        <Item>
+          <Key>groupControl1</Key>
+          <Value>Проверка состояния файла</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Имя</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>Имя</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Имя</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Имя</Value>
+        </Item>
+        <Item>
+          <Key>btnimportblackraw</Key>
+          <Value>Импорт</Value>
+        </Item>
+        <Item>
+          <Key>btnimportblackref</Key>
+          <Value>Импорт</Value>
+        </Item>
+        <Item>
+          <Key>btnimportwhiteraw</Key>
+          <Value>Импорт</Value>
+        </Item>
+        <Item>
+          <Key>btnimportwhiteref</Key>
+          <Value>Импорт</Value>
+        </Item>
+        <Item>
+          <Key>btnSave</Key>
+          <Value>Сохранить</Value>
+        </Item>
+        <Item>
+          <Key>checkSavesawimage</Key>
+          <Value>Сохранить исходные данные</Value>
+        </Item>
+        <Item>
+          <Key>chkSaveDisplayArea</Key>
+          <Value>Сохранить только текущую область отображения (примечание: перехвачить только горизонтальное направление)</Value>
+        </Item>
+        <Item>
+          <Key>chkSplicingWhiteCalibrate</Key>
+          <Value>Выбор калибровки белого цвета</Value>
+        </Item>
+        <Item>
+          <Key>chkOnlyCacheDisplayArea</Key>
+          <Value>Показывать данные только в кэше</Value>
+        </Item>
+        <Item>
+          <Key>lblEffectiveHour</Key>
+          <Value>Эффективное время (h)</Value>
+        </Item>
+        <Item>
+          <Key>lblSampleInterval</Key>
+          <Value>Показать пиксельный интервал (1 ~ 640)</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>EjectIpSettingForm</Key>
+      <Value>Параметры продувания</Value>
+      <Controls>
+        <Item>
+          <Key>barEditItem12</Key>
+          <Value>IP - адрес получателя изображения</Value>
+        </Item>
+        <Item>
+          <Key>colTrachea</Key>
+          <Value>Номер трахеи</Value>
+        </Item>
+        <Item>
+          <Key>colStartPixel</Key>
+          <Value>Начальный пиксель</Value>
+        </Item>
+        <Item>
+          <Key>colEndPixel</Key>
+          <Value>Конец пикселя</Value>
+        </Item>
+        <Item>
+          <Key>btnCreateConfig</Key>
+          <Value>Создать новую конфигурацию</Value>
+        </Item>
+        <Item>
+          <Key>lblPixelInterval</Key>
+          <Value>Интервал расположения начальных пикселей соседних труб</Value>
+        </Item>
+        <Item>
+          <Key>lblTracheaPixels</Key>
+          <Value>Количество пикселей, покрытых одной трубкой</Value>
+        </Item>
+        <Item>
+          <Key>lblPixelNumber</Key>
+          <Value>Количество пикселей</Value>
+        </Item>
+        <Item>
+          <Key>lblEndPixel</Key>
+          <Value>Конец пикселя</Value>
+        </Item>
+        <Item>
+          <Key>lblStartPixel</Key>
+          <Value>Начальный пиксель</Value>
+        </Item>
+        <Item>
+          <Key>lblTrachea</Key>
+          <Value>Количество трахеи</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Активировать кадр</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Задержка продувания воздуха (миллисекунды)</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Время продувания воздуха (миллисекунды)</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>Определение</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>Устройство для обдува</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Номер порта</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>IP - адрес</Value>
+        </Item>
+        <Item>
+          <Key>btnApply</Key>
+          <Value>Применение</Value>
+        </Item>
+        <Item>
+          <Key>chkTracheaDesc</Key>
+          <Value>Номер трахеи перенумерован.</Value>
+        </Item>
+        <Item>
+          <Key>colOperate</Key>
+          <Value>Операция</Value>
+        </Item>
+        <Item>
+          <Key>btnConnect</Key>
+          <Value>Подключение</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Активировать пиксель</Value>
+        </Item>
+        <Item>
+          <Key>lblLocalIP</Key>
+          <Value>Локальный IP - адрес</Value>
+        </Item>
+        <Item>
+          <Key>lblLocalPort</Key>
+          <Value>Номер локального порта</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectPort</Key>
+          <Value>Номер порта выдувного устройства</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectCom</Key>
+          <Value>Устройство для обдува</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectIp</Key>
+          <Value>IP - адрес устройства вентиляции</Value>
+        </Item>
+        <Item>
+          <Key>chkTcpConnect</Key>
+          <Value>Подключение устройства дутья: TCP / IP</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormThresholdChange</Key>
+      <Value>Пороговые изменения</Value>
+      <Controls>
+        <Item>
+          <Key>lblThreshold</Key>
+          <Value>Порог</Value>
+        </Item>
+        <Item>
+          <Key>lblErodeLevel</Key>
+          <Value>Коррозия</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>Определение</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormThresholdMatting</Key>
+      <Value>Пороговые изменения</Value>
+      <Controls>
+        <Item>
+          <Key>lblPaiHeiDiSuanFa</Key>
+          <Value>Алгоритм чёрного дна</Value>
+        </Item>
+        <Item>
+          <Key>lblThreshold</Key>
+          <Value>Порог черного дна</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>Определение</Value>
+        </Item>
+        <Item>
+          <Key>lblErodeLevel</Key>
+          <Value>Коррозия</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FromModelFileRename</Key>
+      <Value>Переименовать</Value>
+      <Controls>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>Отменить</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>Подтверждение</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>Имя</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FromModelRename</Key>
+      <Value>Переименовать</Value>
+      <Controls>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>Отменить</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>Подтверждение</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>Имя</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SaveFileOfName</Key>
+      <Value>Введите имя файла</Value>
+      <Controls>
+        <Item>
+          <Key>lblName</Key>
+          <Value>Имя</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>Подтверждение</Value>
+        </Item>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>Отменить</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SelectTrainBandsForm</Key>
+      <Value>Выберите учебный диапазон</Value>
+      <Controls>
+        <Item>
+          <Key>chkShowToTrainForm</Key>
+          <Value>Выберите длину волны для отображения диаграммы главного интерфейса</Value>
+        </Item>
+        <Item>
+          <Key>btnSetSelection</Key>
+          <Value>Выбор</Value>
+        </Item>
+        <Item>
+          <Key>btnSelectAll</Key>
+          <Value>Полная выборка</Value>
+        </Item>
+        <Item>
+          <Key>btnClearSelection</Key>
+          <Value>Очистить</Value>
+        </Item>
+        <Item>
+          <Key>btnReverseSelect</Key>
+          <Value>Противоположное избрание</Value>
+        </Item>
+        <Item>
+          <Key>btnSave</Key>
+          <Value>Подтверждение</Value>
+        </Item>
+        <Item>
+          <Key>chkSameSelect</Key>
+          <Value>Все вкладки используют один и тот же диапазон</Value>
+        </Item>
+        <Item>
+          <Key>lblClass</Key>
+          <Value>Метки</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingConnectEject</Key>
+      <Value>Параметры подключения</Value>
+      <Controls>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>Определение</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>IP - адрес</Value>
+        </Item>
+        <Item>
+          <Key>btnGetIPAddress</Key>
+          <Value>Получение собственного IP</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Номер порта</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>Средства связи</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Путь к файлу</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Количество кадров в файловом хранилище</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingSettingForm</Key>
+      <Value>Параметры выделения</Value>
+      <Controls>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>Определение</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Коррозионная сила</Value>
+        </Item>
+        <Item>
+          <Key>checkOriImg</Key>
+          <Value>Показать оригинальное изображение</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>AboutForm</Key>
+      <Value>О</Value>
+      <Controls>
+        <Item>
+          <Key>labVersionTitle</Key>
+          <Value>Версия:</Value>
+        </Item>
+        <Item>
+          <Key>btnCheckUpdate</Key>
+          <Value>Проверить обновление</Value>
+        </Item>
+        <Item>
+          <Key>label3</Key>
+          <Value>Введение:</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>NewVersionForm</Key>
+      <Value>NewVersionForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnUpdateNow</Key>
+          <Value>Обновить немедленно</Value>
+        </Item>
+        <Item>
+          <Key>labTitle</Key>
+          <Value>Новая версия</Value>
+        </Item>
+        <Item>
+          <Key>btnUpdateLater</Key>
+          <Value>Напомни мне позже.</Value>
+        </Item>
+        <Item>
+          <Key>btnIgnore</Key>
+          <Value>Игнорировать текущую версию</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormPreprocessEdit</Key>
+      <Value>Добавление / редактирование алгоритмов предварительной обработки</Value>
+      <Controls>
+        <Item>
+          <Key>lblType</Key>
+          <Value>Тип алгоритма</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>Алгоритм</Value>
+        </Item>
+        <Item>
+          <Key>lblParam1</Key>
+          <Value>Длина фильтра</Value>
+        </Item>
+        <Item>
+          <Key>lblParam2</Key>
+          <Value>Количество фильтров</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>Определение</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>Отменить</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>UserGuideForm</Key>
+      <Value>Мастер использования</Value>
+      <Controls>
+        <Item>
+          <Key>lblStep1</Key>
+          <Value>Первый шаг:</Value>
+        </Item>
+        <Item>
+          <Key>btnImportFile</Key>
+          <Value>Импорт профиля камеры</Value>
+        </Item>
+        <Item>
+          <Key>lblStep2</Key>
+          <Value>Шаг второй:</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>Подключить камеру</Value>
+        </Item>
+        <Item>
+          <Key>lblLinkFile</Key>
+          <Value>Часто возникающие проблемы, приводящие к сбоям соединения</Value>
+        </Item>
+        <Item>
+          <Key>lblGain</Key>
+          <Value>Повышение (рекомендованное повышение)</Value>
+        </Item>
+        <Item>
+          <Key>lblExposureTime</Key>
+          <Value>Время экспозиции</Value>
+        </Item>
+        <Item>
+          <Key>btnSet2Device</Key>
+          <Value>Обновить до прибора</Value>
+        </Item>
+        <Item>
+          <Key>lblMaxFrame</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblArea</Key>
+          <Value>Область</Value>
+        </Item>
+        <Item>
+          <Key>lblSignal</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblClarity</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblStep3</Key>
+          <Value>Шаг третий:</Value>
+        </Item>
+        <Item>
+          <Key>btnAdjust</Key>
+          <Value>Начинаем регулировать чёткость и количество сигнала.</Value>
+        </Item>
+        <Item>
+          <Key>lblStep3Result</Key>
+          <Value>Процесс настройки уже начался.</Value>
+        </Item>
+        <Item>
+          <Key>groupBox1</Key>
+          <Value>Максимальная частота кадров (fps)</Value>
+        </Item>
+        <Item>
+          <Key>groupBox2</Key>
+          <Value>Ясность</Value>
+        </Item>
+        <Item>
+          <Key>groupBox3</Key>
+          <Value>Количество</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Настройка сигнала: поместите доску в область измерения, отрегулируйте время экспозиции, чтобы сигнал составлял от 8000 до 15000</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Коррекция четкости: поместите бумагу сетки в область измерения, отрегулируйте диафрагму объектива до максимума, отрегулируйте фокусное расстояние объектива, чтобы настроить четкость до максимума.</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SplicingWhiteCalibrationForm</Key>
+      <Value>Сшивка данных калибровки белого цвета</Value>
+      <Controls>
+        <Item>
+          <Key>colParams</Key>
+          <Value>координировать</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>сохранять</Value>
+        </Item>
+        <Item>
+          <Key>btnDelete</Key>
+          <Value>Удалить выбранное</Value>
+        </Item>
+        <Item>
+          <Key>grpPreArea</Key>
+          <Value>Показать</Value>
+        </Item>
+        <Item>
+          <Key>btnOkAndClose</Key>
+          <Value>Сохранить и закрыть</Value>
+        </Item>
+        <Item>
+          <Key>btnStartScan</Key>
+          <Value>Начать сбор</Value>
+        </Item>
+        <Item>
+          <Key>btnPause</Key>
+          <Value>Приостановление</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveAndSwitch</Key>
+          <Value>Сохранить и переключиться на калибровку белого</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>Настройка камеры</Value>
+        </Item>
+        <Item>
+          <Key>groupBox1</Key>
+          <Value>Выберите область калибровки</Value>
+        </Item>
+        <Item>
+          <Key>lblTitle</Key>
+          <Value>Чёрная калибровка</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>LoadingForm</Key>
+      <Value>ShowDialogForm</Value>
+      <Controls>
+        <Item>
+          <Key>gpcCaption</Key>
+          <Value>Заголовок</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+  </Forms>
+  <Prompts>
+    <Item>
+      <Key>本地模型文件</Key>
+      <Value>Локальный файл модели</Value>
+    </Item>
+    <Item>
+      <Key>云端模型文件</Key>
+      <Value>Облачный файл модели</Value>
+    </Item>
+    <Item>
+      <Key>选择路径</Key>
+      <Value>Выберите путь</Value>
+    </Item>
+    <Item>
+      <Key>将删除相关原始文件，确定删除吗？</Key>
+      <Value>Удалит соответствующий исходный файл, убедитесь, что он удалён?</Value>
+    </Item>
+    <Item>
+      <Key>提示</Key>
+      <Value>Подсказка</Value>
+    </Item>
+    <Item>
+      <Key>切换语言将重启软件，确定切换吗？</Key>
+      <Value>Переключение языка перезагрузит программное обеспечение, убедитесь, что переключение?</Value>
+    </Item>
+    <Item>
+      <Key>未找到此模型的黑白校准文件或反射率文件，无法使用</Key>
+      <Value>Не найден черно - белый калибровочный файл или рефлекторный файл этой модели</Value>
+    </Item>
+    <Item>
+      <Key>模型信息：</Key>
+      <Value>Информация о модели:</Value>
+    </Item>
+    <Item>
+      <Key>电脑未连接相机</Key>
+      <Value>Компьютер не подключен к камере</Value>
+    </Item>
+    <Item>
+      <Key>缺少反射率数据</Key>
+      <Value>Отсутствие данных об альбедо</Value>
+    </Item>
+    <Item>
+      <Key>缺少黑校准数据</Key>
+      <Value>Отсутствие данных черной калибровки</Value>
+    </Item>
+    <Item>
+      <Key>缺少白校准数据</Key>
+      <Value>Отсутствие белых калибровочных данных</Value>
+    </Item>
+    <Item>
+      <Key>模型的光谱通道与相机的不匹配</Key>
+      <Value>Спектральный канал модели не совпадает с камерой</Value>
+    </Item>
+    <Item>
+      <Key>点击YES为黑校准，点击NO为白校准,点击Cancel未暗电流校准</Key>
+      <Value>Нажмите YES для черной калибровки, NO для белой калибровки, щелкните Cancel для калибровки темного тока</Value>
+    </Item>
+    <Item>
+      <Key>链接成功</Key>
+      <Value>Ссылка удалась</Value>
+    </Item>
+    <Item>
+      <Key>标签</Key>
+      <Value>Метки</Value>
+    </Item>
+    <Item>
+      <Key>模型</Key>
+      <Value>Модель</Value>
+    </Item>
+    <Item>
+      <Key>选区数量少于两个，数量不够</Key>
+      <Value>Количество избирательных округов меньше двух, их недостаточно</Value>
+    </Item>
+    <Item>
+      <Key>缺少背景选区或未分类选区</Key>
+      <Value>Отсутствие фоновых или неклассифицированных избирательных округов</Value>
+    </Item>
+    <Item>
+      <Key>缺少目标选区</Key>
+      <Value>Отсутствие целевых избирательных округов</Value>
+    </Item>
+    <Item>
+      <Key>存在为标记类型的选区，请核实</Key>
+      <Value>Наличие избирательных округов типа разметки, проверьте</Value>
+    </Item>
+    <Item>
+      <Key>训练中...</Key>
+      <Value>На тренировке...</Value>
+    </Item>
+    <Item>
+      <Key>算法运行错误，未生成模型</Key>
+      <Value>Ошибка выполнения алгоритма, не сгенерированная модель</Value>
+    </Item>
+    <Item>
+      <Key>请先选择光谱图像</Key>
+      <Value>Сначала выберите спектральное изображение.</Value>
+    </Item>
+    <Item>
+      <Key>波长集合</Key>
+      <Value>Набор длин волн</Value>
+    </Item>
+    <Item>
+      <Key>高光谱图像图片</Key>
+      <Value>Гиперспектральные изображения</Value>
+    </Item>
+    <Item>
+      <Key>数量已经达到最大值</Key>
+      <Value>Количество достигло максимума.</Value>
+    </Item>
+    <Item>
+      <Key>名称不能为空</Key>
+      <Value>Имя не может быть пустым</Value>
+    </Item>
+    <Item>
+      <Key>名称重复</Key>
+      <Value>Имя повторяется</Value>
+    </Item>
+    <Item>
+      <Key>初始化气吹控制失败</Key>
+      <Value>Ошибка инициализации управления продувкой</Value>
+    </Item>
+    <Item>
+      <Key>是</Key>
+      <Value>Да.</Value>
+    </Item>
+    <Item>
+      <Key>否</Key>
+      <Value>Нет</Value>
+    </Item>
+    <Item>
+      <Key>常规</Key>
+      <Value>Обычный</Value>
+    </Item>
+    <Item>
+      <Key>算法类型</Key>
+      <Value>Тип алгоритма</Value>
+    </Item>
+    <Item>
+      <Key>主成分数量(2-10)</Key>
+      <Value>Основная дробь (2 - 10)</Value>
+    </Item>
+    <Item>
+      <Key>训练集大小(0.5-1)</Key>
+      <Value>Размер тренировочного набора (0,5 - 1)</Value>
+    </Item>
+    <Item>
+      <Key>训练波长数量</Key>
+      <Value>Количество обучающих волн</Value>
+    </Item>
+    <Item>
+      <Key>训练循环步幅</Key>
+      <Value>Шаг цикла обучения</Value>
+    </Item>
+    <Item>
+      <Key>训练的波长集合</Key>
+      <Value>Обучение набору длин волн</Value>
+    </Item>
+    <Item>
+      <Key>是否开启均值滤波</Key>
+      <Value>Включить фильтр среднего значения</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波力度</Key>
+      <Value>Средний уровень фильтрации</Value>
+    </Item>
+    <Item>
+      <Key>是否开启标准化</Key>
+      <Value>Включить стандартизацию</Value>
+    </Item>
+    <Item>
+      <Key>缺少模型文件</Key>
+      <Value>Отсутствие данных модели</Value>
+    </Item>
+    <Item>
+      <Key>分选模块正在被使用</Key>
+      <Value>Используется модуль сортировки.</Value>
+    </Item>
+    <Item>
+      <Key>当前帧率：</Key>
+      <Value>Текущая частота кадров:</Value>
+    </Item>
+    <Item>
+      <Key>连接相机中...</Key>
+      <Value>Подключение к камере...</Value>
+    </Item>
+    <Item>
+      <Key>正在停止...</Key>
+      <Value>Остановить...</Value>
+    </Item>
+    <Item>
+      <Key>确定删除该样本吗？</Key>
+      <Value>Удалить образец?</Value>
+    </Item>
+    <Item>
+      <Key>确定清空所有样本吗？</Key>
+      <Value>Убедитесь, что все образцы очищены?</Value>
+    </Item>
+    <Item>
+      <Key>确定删除模型吗？</Key>
+      <Value>Удалить модель?</Value>
+    </Item>
+    <Item>
+      <Key>确定清空所有模型吗？</Key>
+      <Value>Определить все модели?</Value>
+    </Item>
+    <Item>
+      <Key>样本</Key>
+      <Value>Образец</Value>
+    </Item>
+    <Item>
+      <Key>预处理</Key>
+      <Value>Предварительная обработка</Value>
+    </Item>
+    <Item>
+      <Key>是否开启均值滤波：</Key>
+      <Value>Включить фильтр среднего значения:</Value>
+    </Item>
+    <Item>
+      <Key>是否开启标准化：</Key>
+      <Value>Включить стандартизацию:</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波力度：</Key>
+      <Value>Средний уровень фильтрации:</Value>
+    </Item>
+    <Item>
+      <Key>波长信息</Key>
+      <Value>Информация о длине волны</Value>
+    </Item>
+    <Item>
+      <Key>类别</Key>
+      <Value>Категория</Value>
+    </Item>
+    <Item>
+      <Key>取消</Key>
+      <Value>Отменить</Value>
+    </Item>
+    <Item>
+      <Key>确定</Key>
+      <Value>Определение</Value>
+    </Item>
+    <Item>
+      <Key>忽略</Key>
+      <Value>Игнорировать</Value>
+    </Item>
+    <Item>
+      <Key>中止</Key>
+      <Value>Прекращение</Value>
+    </Item>
+    <Item>
+      <Key>重试</Key>
+      <Value>Повторить попытку</Value>
+    </Item>
+    <Item>
+      <Key>未选中模型!</Key>
+      <Value>Не выбрана модель!</Value>
+    </Item>
+    <Item>
+      <Key>模型未加载!</Key>
+      <Value>Модель не загружена!</Value>
+    </Item>
+    <Item>
+      <Key>应用失败!</Key>
+      <Value>Не удалось применить!</Value>
+    </Item>
+    <Item>
+      <Key>应用成功</Key>
+      <Value>Успешное применение</Value>
+    </Item>
+    <Item>
+      <Key>发送成功</Key>
+      <Value>Отправить успешно</Value>
+    </Item>
+    <Item>
+      <Key>请选择相机配置文件</Key>
+      <Value>Выберите профиль камеры</Value>
+    </Item>
+    <Item>
+      <Key>相机配置文件导入成功!</Key>
+      <Value>Файл конфигурации камеры успешно импортирован!</Value>
+    </Item>
+    <Item>
+      <Key>相机连接中...</Key>
+      <Value>Подключение камеры...</Value>
+    </Item>
+    <Item>
+      <Key>相机连接失败</Key>
+      <Value>Ошибка подключения камеры</Value>
+    </Item>
+    <Item>
+      <Key>相机连接成功</Key>
+      <Value>Камера успешно подключена.</Value>
+    </Item>
+    <Item>
+      <Key>相机断开中...</Key>
+      <Value>Камера отключена...</Value>
+    </Item>
+    <Item>
+      <Key>相机已经断开</Key>
+      <Value>Камера отключена.</Value>
+    </Item>
+    <Item>
+      <Key>结束采集</Key>
+      <Value>Остановить</Value>
+    </Item>
+    <Item>
+      <Key>开始采集</Key>
+      <Value>Запуск</Value>
+    </Item>
+    <Item>
+      <Key>暂停</Key>
+      <Value>Приостановление</Value>
+    </Item>
+    <Item>
+      <Key>连接相机</Key>
+      <Value>Подключить</Value>
+    </Item>
+    <Item>
+      <Key>断开连接</Key>
+      <Value>Отключить соединение</Value>
+    </Item>
+    <Item>
+      <Key>正在将采集到的图像写入磁盘</Key>
+      <Value>Полученные изображения записываются на диск.</Value>
+    </Item>
+    <Item>
+      <Key>相机或GPU正在被使用</Key>
+      <Value>Используется камера или GPU.</Value>
+    </Item>
+    <Item>
+      <Key>正在启动...</Key>
+      <Value>Запускается...</Value>
+    </Item>
+    <Item>
+      <Key>校准文件缺失，无法显示校准后图像，自动切换为显示原始图像</Key>
+      <Value>Отсутствует файл калибровки, не удается отображать изображение после калибровки, автоматически переключается на отображение исходного изображения</Value>
+    </Item>
+    <Item>
+      <Key>请先连接相机</Key>
+      <Value>Сначала подключите камеру.</Value>
+    </Item>
+    <Item>
+      <Key>无图像</Key>
+      <Value>Нет изображений</Value>
+    </Item>
+    <Item>
+      <Key>所选区域需要完全覆盖一个像素点</Key>
+      <Value>Выбранная область должна полностью покрыть точку пикселя</Value>
+    </Item>
+    <Item>
+      <Key>超出当前数据范围</Key>
+      <Value>Выход за рамки текущих данных</Value>
+    </Item>
+    <Item>
+      <Key>当前点的光谱数据已存在</Key>
+      <Value>Спектральные данные уже существуют.</Value>
+    </Item>
+    <Item>
+      <Key>超出图像范围</Key>
+      <Value>Выход за рамки изображения</Value>
+    </Item>
+    <Item>
+      <Key>校准线超出图像范围</Key>
+      <Value>Калибровочная линия выходит за рамки изображения</Value>
+    </Item>
+    <Item>
+      <Key>加载中</Key>
+      <Value>Загрузка</Value>
+    </Item>
+    <Item>
+      <Key>请先采集图像</Key>
+      <Value>Сначала снимите изображение.</Value>
+    </Item>
+    <Item>
+      <Key>正在更新白板原始数据，如果确定，请点击图像上白板所在的位置</Key>
+      <Value>Обновляются исходные данные доски, и если вы уверены, нажмите на изображение, где находится доска</Value>
+    </Item>
+    <Item>
+      <Key>正在更新黑板原始数据，如果确定，请点击图像上黑板所在的位置</Key>
+      <Value>Обновляются исходные данные доски, и если вы уверены, нажмите на изображение, где находится доска</Value>
+    </Item>
+    <Item>
+      <Key>出现异常,请稍后重试</Key>
+      <Value>Появляется аномалия, попробуйте позже.</Value>
+    </Item>
+    <Item>
+      <Key>未找黑白校准文件或反射率文件，无法使用</Key>
+      <Value>Не найден черно - белый калибровочный файл или рефлекторный файл</Value>
+    </Item>
+    <Item>
+      <Key>保存中</Key>
+      <Value>Сохраняется</Value>
+    </Item>
+    <Item>
+      <Key>保存完成</Key>
+      <Value>Сохранение завершено</Value>
+    </Item>
+    <Item>
+      <Key>数据保存失败</Key>
+      <Value>Ошибка сохранения данных</Value>
+    </Item>
+    <Item>
+      <Key>无数据</Key>
+      <Value>Данные отсутствуют</Value>
+    </Item>
+    <Item>
+      <Key>未选中任何数据</Key>
+      <Value>Не выбраны никакие данные</Value>
+    </Item>
+    <Item>
+      <Key>导出</Key>
+      <Value>Экспорт</Value>
+    </Item>
+    <Item>
+      <Key>文件</Key>
+      <Value>Документация</Value>
+    </Item>
+    <Item>
+      <Key>保存成功</Key>
+      <Value>Сохранить успешно</Value>
+    </Item>
+    <Item>
+      <Key>保存失败</Key>
+      <Value>Ошибка сохранения</Value>
+    </Item>
+    <Item>
+      <Key>波长</Key>
+      <Value>Длина волны</Value>
+    </Item>
+    <Item>
+      <Key>保存成功！</Key>
+      <Value>Сохранить успешно!</Value>
+    </Item>
+    <Item>
+      <Key>开始</Key>
+      <Value>Начинаем.</Value>
+    </Item>
+    <Item>
+      <Key>正在停止分选...</Key>
+      <Value>Остановить выделение...</Value>
+    </Item>
+    <Item>
+      <Key>吹气设备连接失败</Key>
+      <Value>Ошибка подключения устройства подачи воздуха</Value>
+    </Item>
+    <Item>
+      <Key>正在启动分选...</Key>
+      <Value>Запускается выделение...</Value>
+    </Item>
+    <Item>
+      <Key>停止分选</Key>
+      <Value>Остановить выделение</Value>
+    </Item>
+    <Item>
+      <Key>启动分选</Key>
+      <Value>Включить выделение</Value>
+    </Item>
+    <Item>
+      <Key>清空标签</Key>
+      <Value>Очистить этикетку</Value>
+    </Item>
+    <Item>
+      <Key>删除</Key>
+      <Value>Удалить</Value>
+    </Item>
+    <Item>
+      <Key>确定删除样本吗？</Key>
+      <Value>Удалить образец?</Value>
+    </Item>
+    <Item>
+      <Key>移动</Key>
+      <Value>Переместить</Value>
+    </Item>
+    <Item>
+      <Key>选点</Key>
+      <Value>Выбор точки</Value>
+    </Item>
+    <Item>
+      <Key>画线</Key>
+      <Value>Линии</Value>
+    </Item>
+    <Item>
+      <Key>画矩形</Key>
+      <Value>Рисовать прямоугольник</Value>
+    </Item>
+    <Item>
+      <Key>自适应</Key>
+      <Value>Самоадаптация</Value>
+    </Item>
+    <Item>
+      <Key>抠图</Key>
+      <Value>Копать карту</Value>
+    </Item>
+    <Item>
+      <Key>处理后的数据已经存在，是否重新生成？</Key>
+      <Value>Обработанные данные уже существуют и генерируются ли заново?</Value>
+    </Item>
+    <Item>
+      <Key>预处理处理中...</Key>
+      <Value>Предварительная обработка...</Value>
+    </Item>
+    <Item>
+      <Key>停止训练</Key>
+      <Value>Прекратить тренировки</Value>
+    </Item>
+    <Item>
+      <Key>开始训练</Key>
+      <Value>Начинаем тренировки.</Value>
+    </Item>
+    <Item>
+      <Key>白校准板光谱数据</Key>
+      <Value>Спектральные данные белой калибровки</Value>
+    </Item>
+    <Item>
+      <Key>白校准板原始数据</Key>
+      <Value>Белая калибровочная панель</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板光谱数据</Key>
+      <Value>Спектральные данные черной калибровки</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板原始数据</Key>
+      <Value>Исходные данные черной калибровки</Value>
+    </Item>
+    <Item>
+      <Key>请选择白板光谱反射率文件</Key>
+      <Value>Выберите файл спектрального отражения</Value>
+    </Item>
+    <Item>
+      <Key>白板光谱反射率文件下找不到对应的文件</Key>
+      <Value>Файл спектрального отражения на доске не найден</Value>
+    </Item>
+    <Item>
+      <Key>白板光谱反射率文件加载成功</Key>
+      <Value>Файл спектрального отражения на доске успешно загружен</Value>
+    </Item>
+    <Item>
+      <Key>解析白板光谱反射率文件失败，请检查</Key>
+      <Value>Ошибка анализа файла спектрального отражения на доске, проверьте</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑板光谱反射率文件</Key>
+      <Value>Выберите файл спектрального отражения</Value>
+    </Item>
+    <Item>
+      <Key>黑板光谱反射率文件下找不到对应的文件</Key>
+      <Value>Файл спектрального отражения на доске не найден</Value>
+    </Item>
+    <Item>
+      <Key>黑板光谱反射率文件加载成功</Key>
+      <Value>Файл спектрального отражения панели успешно загружен</Value>
+    </Item>
+    <Item>
+      <Key>解析黑板光谱反射率文件失败，请检查</Key>
+      <Value>Ошибка анализа файла спектрального отражения на доске, проверьте</Value>
+    </Item>
+    <Item>
+      <Key>请选择线原始数据文件</Key>
+      <Value>Выберите исходный файл данных</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件下找不到对应的文件</Key>
+      <Value>Не удалось найти соответствующий файл в файле исходных данных белой калибровки</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件的光谱通道不符合，请重新选择</Key>
+      <Value>Спектральный канал для белой калибровки исходного файла данных не соответствует, выберите заново</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件的空间通道不符合，请重新选择</Key>
+      <Value>Пространственный канал для белой калибровки исходного файла данных не соответствует, выберите заново</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件加载成功</Key>
+      <Value>Белый калибровочный файл исходных данных успешно загружен</Value>
+    </Item>
+    <Item>
+      <Key>解析线原始数据文件失败，请检查</Key>
+      <Value>Ошибка обработки исходного файла данных линии, проверьте</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑校准原始数据文件</Key>
+      <Value>Выберите файл исходных данных черной калибровки</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件下找不到对应的文件</Key>
+      <Value>Не удалось найти соответствующий файл в файле исходных данных черной калибровки</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件的光谱通道不符合，请重新选择</Key>
+      <Value>Спектральный канал черной калибровки исходного файла данных не совпадает, выберите заново</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件的空间通道不符合，请重新选择</Key>
+      <Value>Чёрная калибровка пространственного канала исходного файла данных не соответствует, выберите заново</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件加载成功</Key>
+      <Value>Файл исходных данных черной калибровки успешно загружен</Value>
+    </Item>
+    <Item>
+      <Key>解析黑校准原始数据文件失败，请检查</Key>
+      <Value>Ошибка анализа исходного файла данных черной калибровки, проверьте</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准板反射率数据文件</Key>
+      <Value>Файл данных альбедо белой калибровки не найден</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准板原始数据文件</Key>
+      <Value>Файл исходных данных белой калибровки не найден</Value>
+    </Item>
+    <Item>
+      <Key>白校准板原始数据文件异常</Key>
+      <Value>Ошибка в файле исходных данных белой калибровки</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准板反射率数据文件</Key>
+      <Value>Файл данных об альбедо черной калибровки не найден</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准板原始数据文件</Key>
+      <Value>Файл исходных данных черной калибровки не найден</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板原始数据文件异常</Key>
+      <Value>Необычность исходного файла данных черной калибровки</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度：</Key>
+      <Value>Длина фильтра:</Value>
+    </Item>
+    <Item>
+      <Key>当前设备可用内存为{0}MB,一次最多可采集{1}帧</Key>
+      <Value>Память, доступная для текущего устройства {0}MB Максимум один раз можно собрать {1} кадр</Value>
+    </Item>
+    <Item>
+      <Key>无法获取设备可用内存，采集过程中会不断增加占用内存，请视情况停止采集</Key>
+      <Value>Невозможно получить доступную память устройства, процесс сбора будет постоянно увеличивать занятую память, прекратите сбор, если это необходимо</Value>
+    </Item>
+    <Item>
+      <Key>文件已存在</Key>
+      <Value>Файл уже существует</Value>
+    </Item>
+    <Item>
+      <Key>文件不存在</Key>
+      <Value>Файл не существует</Value>
+    </Item>
+    <Item>
+      <Key>请选择</Key>
+      <Value>Выберите</Value>
+    </Item>
+    <Item>
+      <Key>不显示</Key>
+      <Value>Не показывать</Value>
+    </Item>
+    <Item>
+      <Key>显示</Key>
+      <Value>Показать</Value>
+    </Item>
+    <Item>
+      <Key>参数配置必须大于零</Key>
+      <Value>Параметры должны быть больше нуля</Value>
+    </Item>
+    <Item>
+      <Key>起始像素和终止像素必须在像素个数范围内</Key>
+      <Value>Начальные и конечные пиксели должны находиться в пределах пикселей.</Value>
+    </Item>
+    <Item>
+      <Key>起始像素不能大于终止像素</Key>
+      <Value>Начальный пиксель не должен превышать конечный.</Value>
+    </Item>
+    <Item>
+      <Key>起始像素必须在像素个数[0~{0}]范围内</Key>
+      <Value>Начальный пиксель должен находиться в пределах [0 ~ {0}] пикселей</Value>
+    </Item>
+    <Item>
+      <Key>终止像素必须在像素个数[0~{0}]范围内</Key>
+      <Value>Конец пикселя должен находиться в пределах [0 ~ {0}] пикселей</Value>
+    </Item>
+    <Item>
+      <Key>终止像素不能小于起始像素</Key>
+      <Value>Конец пикселя не может быть меньше начального пикселя</Value>
+    </Item>
+    <Item>
+      <Key>二值化</Key>
+      <Value>Бинализация</Value>
+    </Item>
+    <Item>
+      <Key>二值化反转</Key>
+      <Value>инверсия двоичного преобразования</Value>
+    </Item>
+    <Item>
+      <Key>关于</Key>
+      <Value>О</Value>
+    </Item>
+    <Item>
+      <Key>版本：</Key>
+      <Value>Версия:</Value>
+    </Item>
+    <Item>
+      <Key>已是最新版本</Key>
+      <Value>Это последняя версия.</Value>
+    </Item>
+    <Item>
+      <Key>下载并更新</Key>
+      <Value>Скачать и обновить</Value>
+    </Item>
+    <Item>
+      <Key>立即更新</Key>
+      <Value>Обновить немедленно</Value>
+    </Item>
+    <Item>
+      <Key>已下载({0})</Key>
+      <Value>Скачать ({0})</Value>
+    </Item>
+    <Item>
+      <Key>请允许来自未知发布者的应用对你的设备进行更改</Key>
+      <Value>Разрешите приложениям от неизвестных издателей изменять ваше устройство</Value>
+    </Item>
+    <Item>
+      <Key>应用成功!</Key>
+      <Value>Успешное применение!</Value>
+    </Item>
+    <Item>
+      <Key>标签为空？</Key>
+      <Value>Метки пустые?</Value>
+    </Item>
+    <Item>
+      <Key>低</Key>
+      <Value>Низкий</Value>
+    </Item>
+    <Item>
+      <Key>中</Key>
+      <Value>Чжун</Value>
+    </Item>
+    <Item>
+      <Key>高</Key>
+      <Value>Высокий</Value>
+    </Item>
+    <Item>
+      <Key>启动中...</Key>
+      <Value>Запуск...</Value>
+    </Item>
+    <Item>
+      <Key>点选区域</Key>
+      <Value>Выбрать область</Value>
+    </Item>
+    <Item>
+      <Key>存在未标记类型的选区，请核实</Key>
+      <Value>Наличие немаркированных типов избирательных округов, пожалуйста, проверьте</Value>
+    </Item>
+    <Item>
+      <Key>轮廓数：</Key>
+      <Value>Количество профилей:</Value>
+    </Item>
+    <Item>
+      <Key>计算中</Key>
+      <Value>В расчёте.</Value>
+    </Item>
+    <Item>
+      <Key>平滑算法</Key>
+      <Value>Алгоритм сглаживания</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度</Key>
+      <Value>Длина фильтра</Value>
+    </Item>
+    <Item>
+      <Key>滤波次数</Key>
+      <Value>Количество фильтров</Value>
+    </Item>
+    <Item>
+      <Key>尺度缩放算法</Key>
+      <Value>Алгоритм масштабирования</Value>
+    </Item>
+    <Item>
+      <Key>散射校正</Key>
+      <Value>коррекция рассеяния</Value>
+    </Item>
+    <Item>
+      <Key>基线校正</Key>
+      <Value>Базовая коррекция</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波</Key>
+      <Value>Средняя фильтрация</Value>
+    </Item>
+    <Item>
+      <Key>不使用</Key>
+      <Value>Не используется</Value>
+    </Item>
+    <Item>
+      <Key>标准化</Key>
+      <Value>Стандартизация</Value>
+    </Item>
+    <Item>
+      <Key>一阶导数</Key>
+      <Value>производная первого порядка</Value>
+    </Item>
+    <Item>
+      <Key>二阶导数</Key>
+      <Value>производная второго порядка</Value>
+    </Item>
+    <Item>
+      <Key>请先导入相机配置文件（可点击软件左下角导入）</Key>
+      <Value>Сначала импортируйте профиль камеры (можно импортировать в левом нижнем углу программы)</Value>
+    </Item>
+    <Item>
+      <Key>导出中</Key>
+      <Value>Экспорт</Value>
+    </Item>
+    <Item>
+      <Key>导出完成</Key>
+      <Value>Экспорт завершен</Value>
+    </Item>
+    <Item>
+      <Key>未分类</Key>
+      <Value>Не классифицировано</Value>
+    </Item>
+    <Item>
+      <Key>背景</Key>
+      <Value>Справочная информация</Value>
+    </Item>
+    <Item>
+      <Key>目标</Key>
+      <Value>Цель</Value>
+    </Item>
+    <Item>
+      <Key>缺少校准文件，请开灯采集白板数据，然后关灯采集黑板数据，进行校准。</Key>
+      <Value>Отсутствует калибровочная документация, требуется повторная калибровка</Value>
+    </Item>
+    <Item>
+      <Key>相机与校准文件不匹配，需重新校准</Key>
+      <Value>Камера не совпадает с калибровочным файлом, необходимо заново откалибровать</Value>
+    </Item>
+    <Item>
+      <Key>增益或曝光时间已修改，请确定是否需要重新校准</Key>
+      <Value>Скорректировано время усиления и экспозиции в файле калибровки</Value>
+    </Item>
+    <Item>
+      <Key>矩形</Key>
+      <Value>Прямоугольник</Value>
+    </Item>
+    <Item>
+      <Key>画笔</Key>
+      <Value>Картина</Value>
+    </Item>
+    <Item>
+      <Key>点</Key>
+      <Value>Точка</Value>
+    </Item>
+    <Item>
+      <Key>抠图</Key>
+      <Value>Копать карту</Value>
+    </Item>
+    <Item>
+      <Key>点选区</Key>
+      <Value>Избирательный округ</Value>
+    </Item>
+    <Item>
+      <Key>魔法棒</Key>
+      <Value>Волшебная палочка.</Value>
+    </Item>
+    <Item>
+      <Key>停止气吹</Key>
+      <Value>Остановите продувку.</Value>
+    </Item>
+    <Item>
+      <Key>启动气吹</Key>
+      <Value>Запускаю воздуходув.</Value>
+    </Item>
+    <Item>
+      <Key>光谱</Key>
+      <Value>Спектр</Value>
+    </Item>
+    <Item>
+      <Key>同一图片文件不可追加，请重新选择图片</Key>
+      <Value>Тот же фотофайл не может быть добавлен, пожалуйста, выберите изображение заново</Value>
+    </Item>
+    <Item>
+      <Key>追加的图片格式不匹配，请重新选择图片</Key>
+      <Value>Дополнительный формат изображения не совпадает, выберите изображение заново</Value>
+    </Item>
+    <Item>
+      <Key>数据复制中，请稍后</Key>
+      <Value>Копирование данных, пожалуйста, позже</Value>
+    </Item>
+    <Item>
+      <Key>训练图片必须是反射率图片</Key>
+      <Value>Учебные фотографии должны быть отражательными.</Value>
+    </Item>
+    <Item>
+      <Key>无法打开训练图片</Key>
+      <Value>Невозможно открыть обучающее изображение</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准系数文件</Key>
+      <Value>Файл коэффициента белой калибровки не найден</Value>
+    </Item>
+    <Item>
+      <Key>设置ROI失败</Key>
+      <Value>Ошибка настройки ROI</Value>
+    </Item>
+    <Item>
+      <Key>模型的序列号与相机的不匹配</Key>
+      <Value>Серийный номер модели не совпадает с номером камеры</Value>
+    </Item>
+    <Item>
+      <Key>相机设置工作模式失败</Key>
+      <Value>Ошибка настройки режима работы камеры</Value>
+    </Item>
+    <Item>
+      <Key>轮廓区域</Key>
+      <Value>Контурная область</Value>
+    </Item>
+    <Item>
+      <Key>训练失败</Key>
+      <Value>Тренировка провалилась</Value>
+    </Item>
+    <Item>
+      <Key>该模型的波长通道与训练图片不匹配</Key>
+      <Value>Канал длины волны модели не совпадает с тренировочным изображением</Value>
+    </Item>
+    <Item>
+      <Key>已加载图片与该模型的标签不匹配，是否重新加载图片？</Key>
+      <Value>Загруженное изображение не совпадает с меткой модели, перезагружается ли изображение?</Value>
+    </Item>
+    <Item>
+      <Key>应用模型中...</Key>
+      <Value>Применение модели...</Value>
+    </Item>
+    <Item>
+      <Key>计算轮廓中</Key>
+      <Value>Вычислить профиль</Value>
+    </Item>
+    <Item>
+      <Key>计算反射率中</Key>
+      <Value>При расчете коэффициента отражения</Value>
+    </Item>
+    <Item>
+      <Key>请选择文件夹</Key>
+      <Value>Выберите папку</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度:</Key>
+      <Value>Длина фильтра:</Value>
+    </Item>
+    <Item>
+      <Key>,滤波次数:</Key>
+      <Value>Количество фильтров:</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件</Key>
+      <Value>Файл белого калибровочного коэффициента</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件</Key>
+      <Value>Белый калибровочный файл</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件</Key>
+      <Value>Файл черной калибровки</Value>
+    </Item>
+    <Item>
+      <Key>请选择白校准系数文件</Key>
+      <Value>Выберите белый калибровочный коэффициент</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件不存在</Key>
+      <Value>Файл коэффициента белой калибровки отсутствует</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件加载成功</Key>
+      <Value>Коэффициент калибровки белого</Value>
+    </Item>
+    <Item>
+      <Key>解析白校准系数文件失败，请检查</Key>
+      <Value>Ошибка анализа файла белого калибровочного коэффициента, проверьте</Value>
+    </Item>
+    <Item>
+      <Key>请选择白校准文件</Key>
+      <Value>Выберите белый калибровочный файл</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件不存在</Key>
+      <Value>Файл белой калибровки не существует</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件类型不是线</Key>
+      <Value>Белый калибровочный файл не является линией</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件的光谱通道不符合，请重新选择</Key>
+      <Value>Спектральный канал белого калиброванного файла не совпадает, выберите заново</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件的空间通道不符合，请重新选择</Key>
+      <Value>Белый калибровочный файл не соответствует пространственному каналу, выберите заново</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件加载成功</Key>
+      <Value>Файл белой калибровки успешно загружен</Value>
+    </Item>
+    <Item>
+      <Key>解析白校准文件失败，请检查</Key>
+      <Value>Ошибка анализа белого калибровочного файла, проверьте</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑校准文件</Key>
+      <Value>Выберите файл черной калибровки</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件不存在</Key>
+      <Value>Файл черной калибровки не существует</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件类型不是线</Key>
+      <Value>Тип черного калиброванного файла не является линией</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件的光谱通道不符合，请重新选择</Key>
+      <Value>Спектральный канал черного калибровочного файла не совпадает, выберите заново</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件的空间通道不符合，请重新选择</Key>
+      <Value>Черный калибровочный файл не соответствует пространственному каналу, выберите заново</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件加载成功</Key>
+      <Value>Файл черной калибровки успешно загружен</Value>
+    </Item>
+    <Item>
+      <Key>解析黑校准文件失败，请检查</Key>
+      <Value>Ошибка анализа черного калибровочного файла, проверьте</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准文件</Key>
+      <Value>Не найден белый калибровочный файл</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件异常</Key>
+      <Value>Ошибка белой калибровки файла</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准文件</Key>
+      <Value>Файл черной калибровки не найден</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件异常</Key>
+      <Value>Ошибка черной калибровки файлов</Value>
+    </Item>
+    <Item>
+      <Key>标签信息</Key>
+      <Value>Информация о вкладке</Value>
+    </Item>
+    <Item>
+      <Key>支持的波长范围：</Key>
+      <Value>Поддерживаемые диапазоны волн:</Value>
+    </Item>
+    <Item>
+      <Key>使用的波长范围：</Key>
+      <Value>Используемый диапазон длин волн:</Value>
+    </Item>
+    <Item>
+      <Key>传感器：</Key>
+      <Value>Датчики:</Value>
+    </Item>
+    <Item>
+      <Key>备注：</Key>
+      <Value>Примечания:</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件已存在</Key>
+      <Value>Коэффициент белой калибровки уже существует</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件已存在</Key>
+      <Value>Белый калибровочный файл уже существует</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件已存在</Key>
+      <Value>Файл черной калибровки уже существует</Value>
+    </Item>
+    <Item>
+      <Key>新增预处理算法</Key>
+      <Value>Новый алгоритм предварительной обработки</Value>
+    </Item>
+    <Item>
+      <Key>修改预处理算法</Key>
+      <Value>Изменить алгоритм предварительной обработки</Value>
+    </Item>
+    <Item>
+      <Key>必须为奇数</Key>
+      <Value>Должно быть нечетным</Value>
+    </Item>
+    <Item>
+      <Key>修改失败!</Key>
+      <Value>Изменить не удалось!</Value>
+    </Item>
+    <Item>
+      <Key>修改成功</Key>
+      <Value>Изменение успешно</Value>
+    </Item>
+    <Item>
+      <Key>文件名：</Key>
+      <Value>Имя файла:</Value>
+    </Item>
+    <Item>
+      <Key>设备型号：</Key>
+      <Value>Тип оборудования:</Value>
+    </Item>
+    <Item>
+      <Key>设备序列号：</Key>
+      <Value>Серийный номер устройства:</Value>
+    </Item>
+    <Item>
+      <Key>曝光时间：</Key>
+      <Value>Время экспозиции:</Value>
+    </Item>
+    <Item>
+      <Key>增益：</Key>
+      <Value>Усиление:</Value>
+    </Item>
+    <Item>
+      <Key>继续</Key>
+      <Value>Продолжай.</Value>
+    </Item>
+    <Item>
+      <Key>结束分选</Key>
+      <Value>Окончание выделения</Value>
+    </Item>
+    <Item>
+      <Key>开始分选</Key>
+      <Value>Начать сортировку</Value>
+    </Item>
+    <Item>
+      <Key>模型关联的校准文件不存在，是否使用当前目录下的黑白校准文件？</Key>
+      <Value>Файл калибровки, связанный с моделью, не существует, используется ли черно - белый калибровочный файл в текущем каталоге?</Value>
+    </Item>
+    <Item>
+      <Key>平滑处理</Key>
+      <Value>Обработка сглаживания</Value>
+    </Item>
+    <Item>
+      <Key>尺度缩放</Key>
+      <Value>Масштабирование</Value>
+    </Item>
+    <Item>
+      <Key>SG平滑</Key>
+      <Value>СГ сглаживание</Value>
+    </Item>
+    <Item>
+      <Key>滑动平滑</Key>
+      <Value>Скользящее сглаживание</Value>
+    </Item>
+    <Item>
+      <Key>最大最小归一化</Key>
+      <Value>Минимальная нормализация</Value>
+    </Item>
+    <Item>
+      <Key>有效起始波长</Key>
+      <Value>Эффективная начальная длина волны</Value>
+    </Item>
+    <Item>
+      <Key>有效结束波长</Key>
+      <Value>Эффективный конец длины волны</Value>
+    </Item>
+    <Item>
+      <Key>是否启用扣除背景</Key>
+      <Value>Включить контекст вычета</Value>
+    </Item>
+    <Item>
+      <Key>背景反射率范围起始值(0~1)</Key>
+      <Value>Начальное значение диапазона фонового отражения (0 ~ 1)</Value>
+    </Item>
+    <Item>
+      <Key>背景反射率范围结束值(0~1)</Key>
+      <Value>Конечное значение диапазона фонового отражения (0 ~ 1)</Value>
+    </Item>
+    <Item>
+      <Key>未找到相机配置文件，是否导入？（注: 相机配置文件一般在相机配套的U盘中）</Key>
+      <Value>Не найден профиль камеры, импортирован? (Примечание: Конфигурационный файл камеры обычно находится на U - диске с камерой.)</Value>
+    </Item>
+    <Item>
+      <Key>气吹设备连接失败</Key>
+      <Value>Ошибка подключения оборудования</Value>
+    </Item>
+    <Item>
+      <Key>缺少校准文件，需重新校准</Key>
+      <Value>Отсутствует калибровочная документация, требуется повторная калибровка</Value>
+    </Item>
+    <Item>
+      <Key>请选择文件</Key>
+      <Value>Выберите файл</Value>
+    </Item>
+    <Item>
+      <Key>文件被占用</Key>
+      <Value>Файл занят</Value>
+    </Item>
+    <Item>
+      <Key>找不到文件路径</Key>
+      <Value>Путь к файлу не найден</Value>
+    </Item>
+    <Item>
+      <Key>文件已被其他程序打开</Key>
+      <Value>Файл был открыт другими программами.</Value>
+    </Item>
+    <Item>
+      <Key>导出失败</Key>
+      <Value>Ошибка экспорта</Value>
+    </Item>
+    <Item>
+      <Key>日期格式不正确，转换日期失败！</Key>
+      <Value>Неверный формат даты, неудачное преобразование даты!</Value>
+    </Item>
+    <Item>
+      <Key>数字格式不正确，转换数字失败！</Key>
+      <Value>Цифровой формат неправильный, преобразование цифры неудачно!</Value>
+    </Item>
+    <Item>
+      <Key>工作表{0}列数与模版不匹配</Key>
+      <Value>Количество столбцов листа {0} не соответствует шаблону</Value>
+    </Item>
+    <Item>
+      <Key>工作表中的“{0}”列无法识别</Key>
+      <Value>Колонка "{0}" в рабочем листе не может быть идентифицирована</Value>
+    </Item>
+    <Item>
+      <Key>原始光谱</Key>
+      <Value>исходный спектр</Value>
+    </Item>
+    <Item>
+      <Key>预处理后的光谱</Key>
+      <Value>Предварительно обработанный спектр</Value>
+    </Item>
+    <Item>
+      <Key>算法名称</Key>
+      <Value>Название алгоритма</Value>
+    </Item>
+    <Item>
+      <Key>参数信息</Key>
+      <Value>Информация о параметрах</Value>
+    </Item>
+    <Item>
+      <Key>名称</Key>
+      <Value>имя</Value>
+    </Item>
+    <Item>
+      <Key>颜色</Key>
+      <Value>цвет</Value>
+    </Item>
+    <Item>
+      <Key>编码</Key>
+      <Value>кодирование</Value>
+    </Item>
+    <Item>
+      <Key>阈值</Key>
+      <Value>порог</Value>
+    </Item>
+    <Item>
+      <Key>备注</Key>
+      <Value>Примечание</Value>
+    </Item>
+    <Item>
+      <Key>X坐标：</Key>
+      <Value>Координата X:</Value>
+    </Item>
+    <Item>
+      <Key>请选择行</Key>
+      <Value>Выберите строку</Value>
+    </Item>
+    <Item>
+      <Key>请先选择白校准区域</Key>
+      <Value>Пожалуйста, выберите белый калибровочный участок.</Value>
+    </Item>
+    <Item>
+      <Key>连接</Key>
+      <Value>Подключение</Value>
+    </Item>
+    <Item>
+      <Key>应用中</Key>
+      <Value>Применение</Value>
+    </Item>
+    <Item>
+      <Key>请先选择COM口</Key>
+      <Value>Сначала выберите COM.</Value>
+    </Item>
+    <Item>
+      <Key>吹气</Key>
+      <Value>Б</Value>
+    </Item>
+    <Item>
+      <Key>请先停止正在运行的采集功能</Key>
+      <Value>Пожалуйста, отключите текущую функцию сбора.</Value>
+    </Item>
+    <Item>
+      <Key>采集图像是校准数据，无法保存成原始文件</Key>
+      <Value>Полученные изображения - это калиброванные данные, которые не могут быть сохранены в исходный файл</Value>
+    </Item>
+    <Item>
+      <Key>采集图像是原始数据，无法保存成校准后的文件</Key>
+      <Value>Полученные изображения являются исходными данными и не могут быть сохранены в калиброванном файле</Value>
+    </Item>
+    <Item>
+      <Key>白校准</Key>
+      <Value>Белая калибровка</Value>
+    </Item>
+    <Item>
+      <Key>保存并切换至黑校准</Key>
+      <Value>Сохранить и переключиться на чёрную калибровку</Value>
+    </Item>
+    <Item>
+      <Key>黑校准</Key>
+      <Value>Чёрная калибровка</Value>
+    </Item>
+    <Item>
+      <Key>保存并切换至白校准</Key>
+      <Value>Сохранить и переключиться на калибровку белого</Value>
+    </Item>
+    <Item>
+      <Key>请先选择校准区域</Key>
+      <Value>Сначала выберите область калибровки.</Value>
+    </Item>
+    <Item>
+      <Key>相机配置已导入</Key>
+      <Value>Настройка камеры импортирована</Value>
+    </Item>
+    <Item>
+      <Key>相机配置导入成功</Key>
+      <Value>Настройка камеры успешно импортирована</Value>
+    </Item>
+    <Item>
+      <Key>相机配置导入失败</Key>
+      <Value>Ошибка импорта конфигурации камеры</Value>
+    </Item>
+    <Item>
+      <Key>相机已断开</Key>
+      <Value>Камера отключена.</Value>
+    </Item>
+    <Item>
+      <Key>相机已连接</Key>
+      <Value>Камера подключена.</Value>
+    </Item>
+    <Item>
+      <Key>停止调节清晰度和信号量</Key>
+      <Value>Остановить регулировку чёткости и сигнала</Value>
+    </Item>
+    <Item>
+      <Key>开始调节清晰度和信号量</Key>
+      <Value>Начинаем регулировать чёткость и количество сигнала.</Value>
+    </Item>
+    <Item>
+      <Key>保存数据</Key>
+      <Value>Сохранить данные</Value>
+    </Item>
+    <Item>
+      <Key>正在保存高光谱数据,请稍等...</Key>
+      <Value>Сохраняются гиперспектральные данные, пожалуйста, подождите...</Value>
+    </Item>
+    <Item>
+      <Key>内存使用量过高，采集已暂停</Key>
+      <Value>Слишком много памяти, сбор приостановлен</Value>
+    </Item>
+    <Item>
+      <Key>帧频或曝光时间已修改，请重新进行校准</Key>
+      <Value>Кадровая частота или время экспозиции изменены, пожалуйста, повторно откалибруйте</Value>
+    </Item>
+    <Item>
+      <Key>请先选择训练图片</Key>
+      <Value>Сначала выберите обучающие фотографии.</Value>
+    </Item>
+    <Item>
+      <Key>模型训练</Key>
+      <Value>Обучение модели</Value>
+    </Item>
+    <Item>
+      <Key>正在训练模型,请稍等...</Key>
+      <Value>Тренирует модель, пожалуйста, подождите...</Value>
+    </Item>
+    <Item>
+      <Key>模型验证</Key>
+      <Value>Проверка модели</Value>
+    </Item>
+    <Item>
+      <Key>模型验证中...</Key>
+      <Value>Проверка модели...</Value>
+    </Item>
+    <Item>
+      <Key>请先进行校准</Key>
+      <Value>Сначала проверьте.</Value>
+    </Item>
+    <Item>
+      <Key>未找到校准文件，请先进行校准</Key>
+      <Value>Не найден калибровочный файл, сначала выполните калибровку</Value>
+    </Item>
+    <Item>
+      <Key>校准文件已过期，是否重新校准？</Key>
+      <Value>Срок действия калибровочного документа истек, будет ли проведена повторная калибровка?</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件已过期，是否重新校准？</Key>
+      <Value>Срок действия белого калибровочного документа истек, будет ли проведена повторная калибровка?</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件已过期，是否重新校准？</Key>
+      <Value>Файл черной калибровки истек, будет ли проведена повторная калибровка?</Value>
+    </Item>
+    <Item>
+      <Key>正在努力加载中，请稍等......</Key>
+      <Value>Работает над загрузкой, пожалуйста, подождите...</Value>
+    </Item>
+    <Item>
+      <Key>已运行：{0}s</Key>
+      <Value>Выполнено: {0}s</Value>
+    </Item>
+    <Item>
+      <Key>取消任务将可能导致数据错误和异常,是否确认取消?</Key>
+      <Value>Отмена задачи может привести к ошибкам и аномалиям в данных, подтверждается ли отмена?</Value>
+    </Item>
+    <Item>
+      <Key>取消任务中,请稍等...</Key>
+      <Value>Отменить задание, пожалуйста, подождите...</Value>
+    </Item>
+    <Item>
+      <Key>像素显示区间设置异常，请重新设置</Key>
+      <Value>Пиксели отображают аномалии в настройках интервала, пожалуйста, переустановите</Value>
+    </Item>
+    <Item>
+      <Key>请先输入IP和端口</Key>
+      <Value>Сначала введите IP и порт.</Value>
+    </Item>
+    <Item>
+      <Key>Csv文件存储</Key>
+      <Value>Хранение файлов CSV</Value>
+    </Item>
+    <Item>
+      <Key>请选择保存文件</Key>
+      <Value>Выберите Сохранить файл</Value>
+    </Item>
+    <Item>
+      <Key />
+      <Value />
+    </Item>
+  </Prompts>
+  <Interfaces />
+  <Enumerate>
+    <EnumItem>
+      <Key>EnumGain</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>高</Key>
+          <Value>Высокий</Value>
+        </Item>
+        <Item>
+          <Key>中</Key>
+          <Value>Чжун</Value>
+        </Item>
+        <Item>
+          <Key>低</Key>
+          <Value>Низкий</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>PreprocessTypes</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>平滑处理</Key>
+          <Value>Обработка сглаживания</Value>
+        </Item>
+        <Item>
+          <Key>基线校正</Key>
+          <Value>Базовая коррекция</Value>
+        </Item>
+        <Item>
+          <Key>尺度缩放</Key>
+          <Value>Масштабирование</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumSmoothingAlgorithm</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>SG平滑</Key>
+          <Value>СГ сглаживание</Value>
+        </Item>
+        <Item>
+          <Key>滑动平滑</Key>
+          <Value>Скользящее сглаживание</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumScaleScalingAlgorithm</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>标准化</Key>
+          <Value>Стандартизация</Value>
+        </Item>
+        <Item>
+          <Key>最大最小归一化</Key>
+          <Value>Минимальная нормализация</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumBaselineCorrection</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>一阶导数</Key>
+          <Value>производная первого порядка</Value>
+        </Item>
+        <Item>
+          <Key>二阶导数</Key>
+          <Value>производная второго порядка</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+  </Enumerate>
+</LanguageLibrary>

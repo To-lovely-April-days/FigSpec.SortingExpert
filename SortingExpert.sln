@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34729.46
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigSpec.SortingExpert", "FigSpec.SortingExpert\FigSpec.SortingExpert.csproj", "{6B05F01C-7EA3-48CE-9FFD-6039C80E5D1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B05F01C-7EA3-48CE-9FFD-6039C80E5D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B05F01C-7EA3-48CE-9FFD-6039C80E5D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B05F01C-7EA3-48CE-9FFD-6039C80E5D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B05F01C-7EA3-48CE-9FFD-6039C80E5D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81F2BA36-DA7F-4F3C-A39B-B744181F42D8}
+	EndGlobalSection
+EndGlobal

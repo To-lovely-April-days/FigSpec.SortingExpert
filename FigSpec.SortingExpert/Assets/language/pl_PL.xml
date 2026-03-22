@@ -1,0 +1,2826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Forms>
+    <FormItem>
+      <Key>AppsForm</Key>
+      <Value>AppsForm</Value>
+      <Controls>
+        <Item>
+          <Key>lblReportName</Key>
+          <Value>sprawozdanie</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2Sorting</Key>
+          <Value>Wyślij do strony sortowania w czasie rzeczywistym</Value>
+        </Item>
+        <Item>
+          <Key>btnApply</Key>
+          <Value>aplikacja</Value>
+        </Item>
+        <Item>
+          <Key>lblRemark</Key>
+          <Value>uwagi</Value>
+        </Item>
+        <Item>
+          <Key>lblVersion</Key>
+          <Value>edycja</Value>
+        </Item>
+        <Item>
+          <Key>lblSensor</Key>
+          <Value>czujnik</Value>
+        </Item>
+        <Item>
+          <Key>lblModelName</Key>
+          <Value>Nazwa modelu</Value>
+        </Item>
+        <Item>
+          <Key>barBtnDeleteModel</Key>
+          <Value>usunąć</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToSorting</Key>
+          <Value>Wyślij do strony sortowania w czasie rzeczywistym</Value>
+        </Item>
+        <Item>
+          <Key>barBtnPrint</Key>
+          <Value>wydrukuj raport</Value>
+        </Item>
+        <Item>
+          <Key>barBtnFileRename</Key>
+          <Value>Zmień nazwę pliku modelu</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2Train</Key>
+          <Value>Wyślij na stronę szkoleniową modelu</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToTrain</Key>
+          <Value>Wyślij na stronę szkoleniową modelu</Value>
+        </Item>
+        <Item>
+          <Key>btnSent2OutlineSorting</Key>
+          <Value>Wyślij na stronę sortowania konturów</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSendToOutlineSorting</Key>
+          <Value>Wyślij na stronę sortowania konturów</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>BrowseForm</Key>
+      <Value>BrowseForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnSent2Trian</Key>
+          <Value>Wyślij do modelu szkoleniowego</Value>
+        </Item>
+        <Item>
+          <Key>lblFileName</Key>
+          <Value>nazwa pliku</Value>
+        </Item>
+        <Item>
+          <Key>btnFind</Key>
+          <Value>ekran</Value>
+        </Item>
+        <Item>
+          <Key>btnSwitchPath</Key>
+          <Value>Przełącz katalog</Value>
+        </Item>
+        <Item>
+          <Key>btnDeviceModel</Key>
+          <Value>Model wyposażenia</Value>
+        </Item>
+        <Item>
+          <Key>barBtnDelete</Key>
+          <Value>usunąć</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2Train</Key>
+          <Value>Wyślij do modelu szkoleniowego</Value>
+        </Item>
+        <Item>
+          <Key>barBtnAppend2Train</Key>
+          <Value>Dodaj do modelu szkolenia</Value>
+        </Item>
+        <Item>
+          <Key>BtnAppend2Train</Key>
+          <Value>Dodaj do modelu szkolenia</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>EjectForm</Key>
+      <Value>EjectForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnStartEject</Key>
+          <Value>Rozpocząć dmuchanie powietrza</Value>
+        </Item>
+        <Item>
+          <Key>btnEjectSetting</Key>
+          <Value>Ustawienie dmuchania powietrza</Value>
+        </Item>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>Szybkość klatek: 3000fps</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>MainForm</Key>
+      <Value>SortingExpert</Value>
+      <Controls>
+        <Item>
+          <Key>labBrowse</Key>
+          <Value>Zbieranie obrazów</Value>
+        </Item>
+        <Item>
+          <Key>labScan</Key>
+          <Value>Wyświetl obrazy</Value>
+        </Item>
+        <Item>
+          <Key>labTran</Key>
+          <Value>Model szkolenia</Value>
+        </Item>
+        <Item>
+          <Key>labApps</Key>
+          <Value>Zobacz model</Value>
+        </Item>
+        <Item>
+          <Key>labSorting</Key>
+          <Value>Sortowanie w czasie rzeczywistym</Value>
+        </Item>
+        <Item>
+          <Key>labEject</Key>
+          <Value>Dmuchy w czasie rzeczywistym</Value>
+        </Item>
+        <Item>
+          <Key>barItemLanguage</Key>
+          <Value>Wielojęzyczny</Value>
+        </Item>
+        <Item>
+          <Key>barBtnAbout</Key>
+          <Value>o</Value>
+        </Item>
+        <Item>
+          <Key>barButtonImportCamFig</Key>
+          <Value>Importuj plik konfiguracyjny kamery</Value>
+        </Item>
+        <Item>
+          <Key>labOutlineSorting</Key>
+          <Value>Sortowanie konturów</Value>
+        </Item>
+        <Item>
+          <Key>barButtonItemGuide</Key>
+          <Value>Kreatory narzędzi</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>ScanForm</Key>
+      <Value>ViewForm</Value>
+      <Controls>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>Aktualna częstotliwość klatek: 3000fps</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>Podłączanie</Value>
+        </Item>
+        <Item>
+          <Key>btnStartScan</Key>
+          <Value>uruchomienie</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>Ustawienia aparatu</Value>
+        </Item>
+        <Item>
+          <Key>btndisplayandcalibsetting</Key>
+          <Value>Ustawienia wyświetlania i kalibracji</Value>
+        </Item>
+        <Item>
+          <Key>btn_SeleteBlack</Key>
+          <Value>Kalibracja czarna</Value>
+        </Item>
+        <Item>
+          <Key>btn_SelectWhite</Key>
+          <Value>Kalibracja biała</Value>
+        </Item>
+        <Item>
+          <Key>btnsaveimage</Key>
+          <Value>Zapisz obrazek</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>widmo</Value>
+        </Item>
+        <Item>
+          <Key>colGUANGPUBIANHAO</Key>
+          <Value>Liczba widmowa</Value>
+        </Item>
+        <Item>
+          <Key>colYANSE</Key>
+          <Value>kolor</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteCheck</Key>
+          <Value>Usuń wybrany cel</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteAll</Key>
+          <Value>Usuń wszystkie cele</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveToFile</Key>
+          <Value>Zapisz wybrane widmo</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveAllToFile</Key>
+          <Value>Zapisz wszystkie widma</Value>
+        </Item>
+        <Item>
+          <Key>cb_ReflectanceDisplay</Key>
+          <Value>Wyświetlacz odbicia</Value>
+        </Item>
+        <Item>
+          <Key>cb_CurveSmoothing</Key>
+          <Value>Gładkie krzywe</Value>
+        </Item>
+        <Item>
+          <Key>btnPause</Key>
+          <Value>zawieszenie</Value>
+        </Item>
+        <Item>
+          <Key>lblStartWaveLength</Key>
+          <Value>Długość fali rozpoczęcia</Value>
+        </Item>
+        <Item>
+          <Key>lblEndWaveLength</Key>
+          <Value>Długość fali końcowej</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingForm</Key>
+      <Value>SortingForm</Value>
+      <Controls>
+        <Item>
+          <Key>labModelInfo</Key>
+          <Value>Nazwa pliku modelu</Value>
+        </Item>
+        <Item>
+          <Key>labFrameRate</Key>
+          <Value>Aktualna częstotliwość klatek: 3000fps</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>Podłączanie kamery</Value>
+        </Item>
+        <Item>
+          <Key>btnStartSorting</Key>
+          <Value>Rozpocznij sortowanie</Value>
+        </Item>
+        <Item>
+          <Key>btnEjectSetting</Key>
+          <Value>Ustawienie dmuchania powietrza</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>Ustawienia aparatu</Value>
+        </Item>
+        <Item>
+          <Key>btnCalibration</Key>
+          <Value>Kalibracja czarno-biała</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>widmo</Value>
+        </Item>
+        <Item>
+          <Key>colGUANGPUBIANHAO</Key>
+          <Value>Liczba widmowa</Value>
+        </Item>
+        <Item>
+          <Key>colYANSE</Key>
+          <Value>kolor</Value>
+        </Item>
+        <Item>
+          <Key>cb_ReflectanceDisplay</Key>
+          <Value>Wyświetlanie odbicia</Value>
+        </Item>
+        <Item>
+          <Key>cb_CurveSmoothing</Key>
+          <Value>Gładka krzywa</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteCheck</Key>
+          <Value>Usuń wybrany cel</Value>
+        </Item>
+        <Item>
+          <Key>btn_DeleteAll</Key>
+          <Value>Usuń wszystkie cele</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveToFile</Key>
+          <Value>Zapisz wybrane widmo</Value>
+        </Item>
+        <Item>
+          <Key>btn_SaveAllToFile</Key>
+          <Value>Zapisz wszystkie widma</Value>
+        </Item>
+        <Item>
+          <Key>lblStartWaveLength</Key>
+          <Value>Długość fali rozpoczęcia</Value>
+        </Item>
+        <Item>
+          <Key>lblEndWaveLength</Key>
+          <Value>Długość fali końcowej</Value>
+        </Item>
+        <Item>
+          <Key>btnBlackCalibration</Key>
+          <Value>Kalibracja czarna</Value>
+        </Item>
+        <Item>
+          <Key>btnWhiteCalibration</Key>
+          <Value>Kalibracja biała</Value>
+        </Item>
+        <Item>
+          <Key>sortingBaseBtbSendToCppProgram</Key>
+          <Value>Wyślij do szybkiego sortera</Value>
+        </Item>
+        <Item>
+          <Key>btnrunfastsorting</Key>
+          <Value>Uruchom program szybkiego sortowania</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>TrainForm</Key>
+      <Value>TrainForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnFreshDisplay</Key>
+          <Value>Odśwież wyświetlacz</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRange</Key>
+          <Value>Resetuj zakres</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Zakres obrazów</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRGB</Key>
+          <Value>Resetuj pasmo RGB</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Niebieski [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Zielony [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Czerwony [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>Pasmo wyświetlacza RGB</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>tryb wyświetlania</Value>
+        </Item>
+        <Item>
+          <Key>btnTrain</Key>
+          <Value>Rozpocząć szkolenie</Value>
+        </Item>
+        <Item>
+          <Key>tabPageAlgorithm</Key>
+          <Value>Algorytm sortowania</Value>
+        </Item>
+        <Item>
+          <Key>labelControl8</Key>
+          <Value>badanie</Value>
+        </Item>
+        <Item>
+          <Key>tabPagePreprocessing</Key>
+          <Value>Przetwarzanie wstępne</Value>
+        </Item>
+        <Item>
+          <Key>treeListColumn1</Key>
+          <Value>nazwa</Value>
+        </Item>
+        <Item>
+          <Key>treeListDrawType</Key>
+          <Value>Typ zaznaczenia</Value>
+        </Item>
+        <Item>
+          <Key>treeListColumn3</Key>
+          <Value>kolor</Value>
+        </Item>
+        <Item>
+          <Key>treeListcCLassificationColumn</Key>
+          <Value>klasyfikacja</Value>
+        </Item>
+        <Item>
+          <Key>btnClass</Key>
+          <Value>Edytuj kategorię</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Informacje o szkoleniu</Value>
+        </Item>
+        <Item>
+          <Key>btnDeleteLabel</Key>
+          <Value>usunąć</Value>
+        </Item>
+        <Item>
+          <Key>btnClearLabel</Key>
+          <Value>Wyczyść znaczniki</Value>
+        </Item>
+        <Item>
+          <Key>btnClearModel</Key>
+          <Value>Wyczyść model</Value>
+        </Item>
+        <Item>
+          <Key>btnDeleteModel</Key>
+          <Value>usunąć</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveToModelView</Key>
+          <Value>Zapisz do "Zobacz model"</Value>
+        </Item>
+        <Item>
+          <Key>barBtnModelRename</Key>
+          <Value>zmień nazwę</Value>
+        </Item>
+        <Item>
+          <Key>barBtnUseModel</Key>
+          <Value>Model zastosowania</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2Sorting</Key>
+          <Value>Wyślij do "Sortowanie w czasie rzeczywistym"</Value>
+        </Item>
+        <Item>
+          <Key>barBtnThresholdEdit</Key>
+          <Value>Zmień prog</Value>
+        </Item>
+        <Item>
+          <Key>btnContourImage</Key>
+          <Value>Podgląd zarysu</Value>
+        </Item>
+        <Item>
+          <Key>lcCtl</Key>
+          <Value>Liczba konturów: 0</Value>
+        </Item>
+        <Item>
+          <Key>lblKernelInfo</Key>
+          <Value>Nazwa jądra</Value>
+        </Item>
+        <Item>
+          <Key>barBtnSend2OutlineSorting</Key>
+          <Value>Wyślij do 'Sortowanie kontur'</Value>
+        </Item>
+        <Item>
+          <Key>chkUpDownLoad</Key>
+          <Value>Oddzielić widmo oryginalne i wstępnie przetworzone przez górę i dolną</Value>
+        </Item>
+        <Item>
+          <Key>rdoBoth</Key>
+          <Value>Wyświetlanie danych surowych i wstępnie przetworzonych</Value>
+        </Item>
+        <Item>
+          <Key>rdoPanel1</Key>
+          <Value>Wyświetla tylko dane surowe</Value>
+        </Item>
+        <Item>
+          <Key>rdoPanel2</Key>
+          <Value>Wyświetla tylko wstępnie przetworzone dane</Value>
+        </Item>
+        <Item>
+          <Key>colPreprocessType</Key>
+          <Value>Typ algorytmu</Value>
+        </Item>
+        <Item>
+          <Key>colPreprocessAlgorithm</Key>
+          <Value>Nazwa algorytmu</Value>
+        </Item>
+        <Item>
+          <Key>colParams</Key>
+          <Value>parametr</Value>
+        </Item>
+        <Item>
+          <Key>colOperate</Key>
+          <Value>włączone</Value>
+        </Item>
+        <Item>
+          <Key>btnAddPreprocess</Key>
+          <Value>Dodaj algorytm przetwarzania wstępnego</Value>
+        </Item>
+        <Item>
+          <Key>btnExportCsv</Key>
+          <Value>Eksportuj informacje o etykiecie</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel1</Key>
+          <Value>Ustawienia szkolenia</Value>
+        </Item>
+        <Item>
+          <Key>dockPanel2</Key>
+          <Value>informacje widmowe</Value>
+        </Item>
+        <Item>
+          <Key>barBtnExportClass</Key>
+          <Value>Eksportuj informacje o etykiecie</Value>
+        </Item>
+        <Item>
+          <Key>btnPreClearAll</Key>
+          <Value>pusty</Value>
+        </Item>
+        <Item>
+          <Key>btnPreDelete</Key>
+          <Value>usunąć</Value>
+        </Item>
+        <Item>
+          <Key>btnPreEdit</Key>
+          <Value>edytuj</Value>
+        </Item>
+        <Item>
+          <Key>btnPreApply</Key>
+          <Value>aplikacja</Value>
+        </Item>
+        <Item>
+          <Key>btnPreAdd</Key>
+          <Value>nowo dodane</Value>
+        </Item>
+        <Item>
+          <Key>barBtnUseModelLabel</Key>
+          <Value>Tagi aplikacji</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>CameraSettingForm</Key>
+      <Value>Ustawienia aparatu</Value>
+      <Controls>
+        <Item>
+          <Key>hlLabelResetRange</Key>
+          <Value>Resetuj zakres</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Zakres obrazów</Value>
+        </Item>
+        <Item>
+          <Key>hlLabelResetRGB</Key>
+          <Value>Resetuj pasmo RGB</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Niebieski [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Zielony [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Czerwony [nm]</Value>
+        </Item>
+        <Item>
+          <Key>labelControl8</Key>
+          <Value>Pasmo wyświetlacza RGB</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>określić</Value>
+        </Item>
+        <Item>
+          <Key>sortingBaseButton1</Key>
+          <Value>Uzyskaj maksymalną częstotliwość klatek</Value>
+        </Item>
+        <Item>
+          <Key>labelControl9</Key>
+          <Value>Częstotliwość klatek wyświetlania w czasie rzeczywistym</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>zysk</Value>
+        </Item>
+        <Item>
+          <Key>btnreadmaxFrameRate</Key>
+          <Value>Uzyskaj maksymalną częstotliwość klatek</Value>
+        </Item>
+        <Item>
+          <Key>labUseTime</Key>
+          <Value>Okres ważności kalibracji</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Szybkość klatek</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>czas narażenia</Value>
+        </Item>
+        <Item>
+          <Key>checkFlipX</Key>
+          <Value>Czy obraz jest lustrzany i odwrócony</Value>
+        </Item>
+        <Item>
+          <Key>labelControl10</Key>
+          <Value>Tryb wyzwalania</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>ClassSettingForm</Key>
+      <Value>Zarządzanie klasyfikacją</Value>
+      <Controls>
+        <Item>
+          <Key>btnColose</Key>
+          <Value>zamknij</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveName</Key>
+          <Value>konserwacja</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>uwagi</Value>
+        </Item>
+        <Item>
+          <Key>chcEditthreshold</Key>
+          <Value>Włącz prog</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Próg klasyfikacji</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>kod</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>kolor</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>nazwa</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Informacje o klasie</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Istniejąca klasyfikacja</Value>
+        </Item>
+        <Item>
+          <Key>columnColor</Key>
+          <Value>kolor</Value>
+        </Item>
+        <Item>
+          <Key>gridColumn2</Key>
+          <Value>nazwa</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>DisplayAndCalibrationSettingForm</Key>
+      <Value>Ustawienia kalibracji i wyświetlania</Value>
+      <Controls>
+        <Item>
+          <Key>groupControl2</Key>
+          <Value>Inne ustawienia</Value>
+        </Item>
+        <Item>
+          <Key>checkdisplayrefimg</Key>
+          <Value>Spektrogram wyświetlania</Value>
+        </Item>
+        <Item>
+          <Key>groupControl1</Key>
+          <Value>Status pliku kalibracji</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>nazwa</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>nazwa</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>nazwa</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>nazwa</Value>
+        </Item>
+        <Item>
+          <Key>btnimportblackraw</Key>
+          <Value>Import</Value>
+        </Item>
+        <Item>
+          <Key>btnimportblackref</Key>
+          <Value>Import</Value>
+        </Item>
+        <Item>
+          <Key>btnimportwhiteraw</Key>
+          <Value>Import</Value>
+        </Item>
+        <Item>
+          <Key>btnimportwhiteref</Key>
+          <Value>Import</Value>
+        </Item>
+        <Item>
+          <Key>btnSave</Key>
+          <Value>Save</Value>
+        </Item>
+        <Item>
+          <Key>checkSavesawimage</Key>
+          <Value>Zapisz oryginalne dane</Value>
+        </Item>
+        <Item>
+          <Key>chkSaveDisplayArea</Key>
+          <Value>Zapisz tylko bieżący obszar wyświetlania (uwaga: przechwytywanie tylko poziomo)</Value>
+        </Item>
+        <Item>
+          <Key>chkSplicingWhiteCalibrate</Key>
+          <Value>Wybór kalibracji białej łączenia</Value>
+        </Item>
+        <Item>
+          <Key>chkOnlyCacheDisplayArea</Key>
+          <Value>Tylko dane pamięci podręcznej w obszarze wyświetlania</Value>
+        </Item>
+        <Item>
+          <Key>lblEffectiveHour</Key>
+          <Value>Czas skuteczny (h)</Value>
+        </Item>
+        <Item>
+          <Key>lblSampleInterval</Key>
+          <Value>Wyświetlanie zakresu pikseli (1~640)</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>EjectIpSettingForm</Key>
+      <Value>Ustawienie dmuchania powietrza</Value>
+      <Controls>
+        <Item>
+          <Key>barEditItem12</Key>
+          <Value>Adres IP odbiornika obrazu</Value>
+        </Item>
+        <Item>
+          <Key>colTrachea</Key>
+          <Value>Liczba śladowca</Value>
+        </Item>
+        <Item>
+          <Key>colStartPixel</Key>
+          <Value>Piksel początkowy</Value>
+        </Item>
+        <Item>
+          <Key>colEndPixel</Key>
+          <Value>Piksel końcowy</Value>
+        </Item>
+        <Item>
+          <Key>btnCreateConfig</Key>
+          <Value>Generuj nową konfigurację</Value>
+        </Item>
+        <Item>
+          <Key>lblPixelInterval</Key>
+          <Value>Odstęp między początkowymi pozycjami pikseli sąsiedniej tchawicy</Value>
+        </Item>
+        <Item>
+          <Key>lblTracheaPixels</Key>
+          <Value>Liczba pikseli pokrytych pojedynczą tchawicą</Value>
+        </Item>
+        <Item>
+          <Key>lblPixelNumber</Key>
+          <Value>Liczba pikseli</Value>
+        </Item>
+        <Item>
+          <Key>lblEndPixel</Key>
+          <Value>Piksel końcowy</Value>
+        </Item>
+        <Item>
+          <Key>lblStartPixel</Key>
+          <Value>Piksel początkowy</Value>
+        </Item>
+        <Item>
+          <Key>lblTrachea</Key>
+          <Value>Liczba tchawicy</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Aktywuj częstotliwość klatek</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Opóźnienie dmuchania powietrza (milisekundy)</Value>
+        </Item>
+        <Item>
+          <Key>labelControl5</Key>
+          <Value>Czas dmuchania (milisekundy)</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>określić</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>Port COM urządzeń do dmuchania</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Numer portu</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Adres IP</Value>
+        </Item>
+        <Item>
+          <Key>btnApply</Key>
+          <Value>aplikacja</Value>
+        </Item>
+        <Item>
+          <Key>chkTracheaDesc</Key>
+          <Value>Numeracja śladowa w odwrotnej kolejności</Value>
+        </Item>
+        <Item>
+          <Key>colOperate</Key>
+          <Value>działanie</Value>
+        </Item>
+        <Item>
+          <Key>btnConnect</Key>
+          <Value>połącz</Value>
+        </Item>
+        <Item>
+          <Key>labelControl7</Key>
+          <Value>Aktywuj piksele</Value>
+        </Item>
+        <Item>
+          <Key>lblLocalIP</Key>
+          <Value>Lokalny adres IP</Value>
+        </Item>
+        <Item>
+          <Key>lblLocalPort</Key>
+          <Value>Numer portu lokalnego</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectPort</Key>
+          <Value>Numer portu urządzenia dmuchawczego</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectCom</Key>
+          <Value>Port COM urządzenia do dmuchania</Value>
+        </Item>
+        <Item>
+          <Key>lblEjectIp</Key>
+          <Value>Adres IP urządzenia dmuchającego</Value>
+        </Item>
+        <Item>
+          <Key>chkTcpConnect</Key>
+          <Value>Metoda połączenia urządzenia do dmuchania powietrza: TCP/IP</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormThresholdChange</Key>
+      <Value>Modyfikacja progu</Value>
+      <Controls>
+        <Item>
+          <Key>lblThreshold</Key>
+          <Value>prog</Value>
+        </Item>
+        <Item>
+          <Key>lblErodeLevel</Key>
+          <Value>Korozyjność</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>określić</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormThresholdMatting</Key>
+      <Value>Modyfikacja progu</Value>
+      <Controls>
+        <Item>
+          <Key>lblPaiHeiDiSuanFa</Key>
+          <Value>Algorytm dedukcji czarnego tła</Value>
+        </Item>
+        <Item>
+          <Key>lblThreshold</Key>
+          <Value>Próg zaciemnienia</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>określić</Value>
+        </Item>
+        <Item>
+          <Key>lblErodeLevel</Key>
+          <Value>Korozyjność</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FromModelFileRename</Key>
+      <Value>zmień nazwę</Value>
+      <Controls>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>anuluj</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>potwierdź</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>nazwa</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FromModelRename</Key>
+      <Value>zmień nazwę</Value>
+      <Controls>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>anuluj</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>potwierdź</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>nazwa</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SaveFileOfName</Key>
+      <Value>Podaj nazwę pliku</Value>
+      <Controls>
+        <Item>
+          <Key>lblName</Key>
+          <Value>nazwa</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>potwierdź</Value>
+        </Item>
+        <Item>
+          <Key>btnCancel</Key>
+          <Value>anuluj</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SelectTrainBandsForm</Key>
+      <Value>Wybierz pasmo treningowe</Value>
+      <Controls>
+        <Item>
+          <Key>chkShowToTrainForm</Key>
+          <Value>Wyświetla wybraną długość fali w wykresie głównego interfejsu</Value>
+        </Item>
+        <Item>
+          <Key>btnSetSelection</Key>
+          <Value>Wybierz Wybierz</Value>
+        </Item>
+        <Item>
+          <Key>btnSelectAll</Key>
+          <Value>Wybierz wszystko</Value>
+        </Item>
+        <Item>
+          <Key>btnClearSelection</Key>
+          <Value>pusty</Value>
+        </Item>
+        <Item>
+          <Key>btnReverseSelect</Key>
+          <Value>Odwróć zaznaczenie</Value>
+        </Item>
+        <Item>
+          <Key>btnSave</Key>
+          <Value>potwierdź</Value>
+        </Item>
+        <Item>
+          <Key>chkSameSelect</Key>
+          <Value>Wszystkie tagi używają tego samego wybranego pasma częstotliwości</Value>
+        </Item>
+        <Item>
+          <Key>lblClass</Key>
+          <Value>etykieta</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingConnectEject</Key>
+      <Value>Ustawienia połączenia programu dmuchania powietrza</Value>
+      <Controls>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>określić</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Adres IP</Value>
+        </Item>
+        <Item>
+          <Key>btnGetIPAddress</Key>
+          <Value>Uzyskaj lokalny adres IP</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Numer portu</Value>
+        </Item>
+        <Item>
+          <Key>labelControl3</Key>
+          <Value>Sposób komunikacji</Value>
+        </Item>
+        <Item>
+          <Key>labelControl4</Key>
+          <Value>Ścieżka do przechowywania plików</Value>
+        </Item>
+        <Item>
+          <Key>labelControl6</Key>
+          <Value>Liczba klatek do przechowywania plików</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SortingSettingForm</Key>
+      <Value>Ustawienia sortowania</Value>
+      <Controls>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>określić</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Intensywność korozji</Value>
+        </Item>
+        <Item>
+          <Key>checkOriImg</Key>
+          <Value>Pokaż oryginalny obraz</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>AboutForm</Key>
+      <Value>o</Value>
+      <Controls>
+        <Item>
+          <Key>labVersionTitle</Key>
+          <Value>edycja:</Value>
+        </Item>
+        <Item>
+          <Key>btnCheckUpdate</Key>
+          <Value>Sprawdź aktualizacje</Value>
+        </Item>
+        <Item>
+          <Key>label3</Key>
+          <Value>Wprowadzenie:</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>NewVersionForm</Key>
+      <Value>NewVersionForm</Value>
+      <Controls>
+        <Item>
+          <Key>btnUpdateNow</Key>
+          <Value>Aktualizuj teraz</Value>
+        </Item>
+        <Item>
+          <Key>labTitle</Key>
+          <Value>Nowa wersja</Value>
+        </Item>
+        <Item>
+          <Key>btnUpdateLater</Key>
+          <Value>Przypomnij mi w przyszłości</Value>
+        </Item>
+        <Item>
+          <Key>btnIgnore</Key>
+          <Value>Ignoruj bieżącą wersję</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>FormPreprocessEdit</Key>
+      <Value>Dodaj/edytuj algorytm przetwarzania wstępnego</Value>
+      <Controls>
+        <Item>
+          <Key>lblType</Key>
+          <Value>Typ algorytmu</Value>
+        </Item>
+        <Item>
+          <Key>lblName</Key>
+          <Value>algorytm</Value>
+        </Item>
+        <Item>
+          <Key>lblParam1</Key>
+          <Value>Długość filtra</Value>
+        </Item>
+        <Item>
+          <Key>lblParam2</Key>
+          <Value>Częstotliwość filtra</Value>
+        </Item>
+        <Item>
+          <Key>btnOK</Key>
+          <Value>określić</Value>
+        </Item>
+        <Item>
+          <Key>btnClose</Key>
+          <Value>anuluj</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>UserGuideForm</Key>
+      <Value>Kreatory narzędzi</Value>
+      <Controls>
+        <Item>
+          <Key>lblStep1</Key>
+          <Value>Krok pierwszy:</Value>
+        </Item>
+        <Item>
+          <Key>btnImportFile</Key>
+          <Value>Importuj plik konfiguracyjny kamery</Value>
+        </Item>
+        <Item>
+          <Key>lblStep2</Key>
+          <Value>Krok 2:</Value>
+        </Item>
+        <Item>
+          <Key>btnConnectCamera</Key>
+          <Value>Podłącz kamerę</Value>
+        </Item>
+        <Item>
+          <Key>lblLinkFile</Key>
+          <Value>Częste problemy powodujące awarię połączenia</Value>
+        </Item>
+        <Item>
+          <Key>lblGain</Key>
+          <Value>Zysk (zalecany wysoki zysk)</Value>
+        </Item>
+        <Item>
+          <Key>lblExposureTime</Key>
+          <Value>czas narażenia</Value>
+        </Item>
+        <Item>
+          <Key>btnSet2Device</Key>
+          <Value>Aktualizacja instrumentu</Value>
+        </Item>
+        <Item>
+          <Key>lblMaxFrame</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblArea</Key>
+          <Value>Obszar</Value>
+        </Item>
+        <Item>
+          <Key>lblSignal</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblClarity</Key>
+          <Value>???</Value>
+        </Item>
+        <Item>
+          <Key>lblStep3</Key>
+          <Value>Krok trzeci:</Value>
+        </Item>
+        <Item>
+          <Key>btnAdjust</Key>
+          <Value>Rozpocząć regulację jasności i głośności sygnału</Value>
+        </Item>
+        <Item>
+          <Key>lblStep3Result</Key>
+          <Value>Rozpoczęła się proces dostosowania</Value>
+        </Item>
+        <Item>
+          <Key>groupBox1</Key>
+          <Value>Maksymalna szybkość klatek (fps)</Value>
+        </Item>
+        <Item>
+          <Key>groupBox2</Key>
+          <Value>definicja</Value>
+        </Item>
+        <Item>
+          <Key>groupBox3</Key>
+          <Value>sygnału</Value>
+        </Item>
+        <Item>
+          <Key>labelControl2</Key>
+          <Value>Regulacja sygnału: Umieść tablicę w obszarze pomiaru, dostosować czas ekspozycji, wykonać sygnał między 8000 a 15000</Value>
+        </Item>
+        <Item>
+          <Key>labelControl1</Key>
+          <Value>Regulacja jasności: Umieść papier siatki w obszarze pomiaru, dostosować przysłonę obiektywu do maksymalnego, dostosować ognisko obiektywu, aby dostosować jasność do maksymalnego.</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>SplicingWhiteCalibrationForm</Key>
+      <Value>Łączenie białych danych kalibracyjnych</Value>
+      <Controls>
+        <Item>
+          <Key>colParams</Key>
+          <Value>współrzędna</Value>
+        </Item>
+        <Item>
+          <Key>btnOk</Key>
+          <Value>konserwacja</Value>
+        </Item>
+        <Item>
+          <Key>btnDelete</Key>
+          <Value>Usuń zaznaczone</Value>
+        </Item>
+        <Item>
+          <Key>grpPreArea</Key>
+          <Value>Obszar podglądu</Value>
+        </Item>
+        <Item>
+          <Key>btnOkAndClose</Key>
+          <Value>Zapisz i zamknij</Value>
+        </Item>
+        <Item>
+          <Key>btnStartScan</Key>
+          <Value>Zacznij zbierać</Value>
+        </Item>
+        <Item>
+          <Key>btnPause</Key>
+          <Value>zawieszenie</Value>
+        </Item>
+        <Item>
+          <Key>btnSaveAndSwitch</Key>
+          <Value>Zapisz i przełącz do kalibracji białej</Value>
+        </Item>
+        <Item>
+          <Key>btnCameraSetting</Key>
+          <Value>Ustawienia aparatu</Value>
+        </Item>
+        <Item>
+          <Key>groupBox1</Key>
+          <Value>Kliknij na obrazek, aby wybrać obszar kalibracji</Value>
+        </Item>
+        <Item>
+          <Key>lblTitle</Key>
+          <Value>Kalibracja czarna</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+    <FormItem>
+      <Key>LoadingForm</Key>
+      <Value>ShowDialogForm</Value>
+      <Controls>
+        <Item>
+          <Key>gpcCaption</Key>
+          <Value>tytuł</Value>
+        </Item>
+      </Controls>
+    </FormItem>
+  </Forms>
+  <Prompts>
+    <Item>
+      <Key>本地模型文件</Key>
+      <Value>Plik modelu lokalnego</Value>
+    </Item>
+    <Item>
+      <Key>云端模型文件</Key>
+      <Value>Pliki modeli oparte na chmurze</Value>
+    </Item>
+    <Item>
+      <Key>选择路径</Key>
+      <Value>Wybierz ścieżkę</Value>
+    </Item>
+    <Item>
+      <Key>将删除相关原始文件，确定删除吗？</Key>
+      <Value>Czy na pewno usuniesz odpowiednie oryginalne pliki?</Value>
+    </Item>
+    <Item>
+      <Key>提示</Key>
+      <Value>Porady</Value>
+    </Item>
+    <Item>
+      <Key>切换语言将重启软件，确定切换吗？</Key>
+      <Value>Przełączanie języków spowoduje ponowne uruchomienie oprogramowania. Czy na pewno chcesz przełączyć?</Value>
+    </Item>
+    <Item>
+      <Key>未找到此模型的黑白校准文件或反射率文件，无法使用</Key>
+      <Value>Nie można znaleźć czarno-białego pliku kalibracji lub pliku odbicia dla tego modelu, nie można użyć</Value>
+    </Item>
+    <Item>
+      <Key>模型信息：</Key>
+      <Value>Informacje o modelu:</Value>
+    </Item>
+    <Item>
+      <Key>电脑未连接相机</Key>
+      <Value>Komputer nie jest podłączony do kamery</Value>
+    </Item>
+    <Item>
+      <Key>缺少反射率数据</Key>
+      <Value>Brak danych dotyczących odbicia</Value>
+    </Item>
+    <Item>
+      <Key>缺少黑校准数据</Key>
+      <Value>Brak czarnych danych kalibracyjnych</Value>
+    </Item>
+    <Item>
+      <Key>缺少白校准数据</Key>
+      <Value>Brak danych kalibracyjnych białych</Value>
+    </Item>
+    <Item>
+      <Key>模型的光谱通道与相机的不匹配</Key>
+      <Value>Niedopasowanie kanału widmowego modelu do kamery</Value>
+    </Item>
+    <Item>
+      <Key>点击YES为黑校准，点击NO为白校准,点击Cancel未暗电流校准</Key>
+      <Value>Kliknij TAK dla kalibracji czarnej, kliknij NIE dla kalibracji białej, kliknij Anuluj dla kalibracji ciemnego prądu</Value>
+    </Item>
+    <Item>
+      <Key>链接成功</Key>
+      <Value>Połączenie pomyślne</Value>
+    </Item>
+    <Item>
+      <Key>标签</Key>
+      <Value>etykieta</Value>
+    </Item>
+    <Item>
+      <Key>模型</Key>
+      <Value>Wzór</Value>
+    </Item>
+    <Item>
+      <Key>选区数量少于两个，数量不够</Key>
+      <Value>Liczba okręgów wyborczych jest mniejsza niż dwa, co nie wystarczy</Value>
+    </Item>
+    <Item>
+      <Key>缺少背景选区或未分类选区</Key>
+      <Value>Brak zaznaczenia tła lub niesklasyfikowanego zaznaczenia</Value>
+    </Item>
+    <Item>
+      <Key>缺少目标选区</Key>
+      <Value>Brakujący obszar wyboru docelowego</Value>
+    </Item>
+    <Item>
+      <Key>存在为标记类型的选区，请核实</Key>
+      <Value>Istnieje wybór typu markera, proszę zweryfikować</Value>
+    </Item>
+    <Item>
+      <Key>训练中...</Key>
+      <Value>Podczas szkolenia</Value>
+    </Item>
+    <Item>
+      <Key>算法运行错误，未生成模型</Key>
+      <Value>Błąd uruchomienia algorytmu, model nie wygenerowany</Value>
+    </Item>
+    <Item>
+      <Key>请先选择光谱图像</Key>
+      <Value>Proszę najpierw wybrać obraz widmowy</Value>
+    </Item>
+    <Item>
+      <Key>波长集合</Key>
+      <Value>Zestaw długości fali</Value>
+    </Item>
+    <Item>
+      <Key>高光谱图像图片</Key>
+      <Value>Obraz hiperspektralny</Value>
+    </Item>
+    <Item>
+      <Key>数量已经达到最大值</Key>
+      <Value>Ilość osiągnęła maksymalną wartość</Value>
+    </Item>
+    <Item>
+      <Key>名称不能为空</Key>
+      <Value>Nazwa nie może być pusta</Value>
+    </Item>
+    <Item>
+      <Key>名称重复</Key>
+      <Value>Podwójna nazwa</Value>
+    </Item>
+    <Item>
+      <Key>初始化气吹控制失败</Key>
+      <Value>Uruchomienie sterowania dmuchaniem powietrza nie powiodło się</Value>
+    </Item>
+    <Item>
+      <Key>是</Key>
+      <Value>tak</Value>
+    </Item>
+    <Item>
+      <Key>否</Key>
+      <Value>nie</Value>
+    </Item>
+    <Item>
+      <Key>常规</Key>
+      <Value>rutyna</Value>
+    </Item>
+    <Item>
+      <Key>算法类型</Key>
+      <Value>Typ algorytmu</Value>
+    </Item>
+    <Item>
+      <Key>主成分数量(2-10)</Key>
+      <Value>Wynik głównego składnika (2-10)</Value>
+    </Item>
+    <Item>
+      <Key>训练集大小(0.5-1)</Key>
+      <Value>Rozmiar zestawu szkoleniowego (0.5-1)</Value>
+    </Item>
+    <Item>
+      <Key>训练波长数量</Key>
+      <Value>Liczba długości fali szkoleniowych</Value>
+    </Item>
+    <Item>
+      <Key>训练循环步幅</Key>
+      <Value>Krok cyklu treningowego</Value>
+    </Item>
+    <Item>
+      <Key>训练的波长集合</Key>
+      <Value>Długość fali ustawiona do treningu</Value>
+    </Item>
+    <Item>
+      <Key>是否开启均值滤波</Key>
+      <Value>Czy chcesz włączyć średnie filtrowanie</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波力度</Key>
+      <Value>Średnia intensywność filtrowania</Value>
+    </Item>
+    <Item>
+      <Key>是否开启标准化</Key>
+      <Value>Czy umożliwić normalizację</Value>
+    </Item>
+    <Item>
+      <Key>缺少模型文件</Key>
+      <Value>Brak danych modelu</Value>
+    </Item>
+    <Item>
+      <Key>分选模块正在被使用</Key>
+      <Value>Używany jest moduł sortowania</Value>
+    </Item>
+    <Item>
+      <Key>当前帧率：</Key>
+      <Value>Aktualna częstotliwość klatek:</Value>
+    </Item>
+    <Item>
+      <Key>连接相机中...</Key>
+      <Value>Podłączanie kamery</Value>
+    </Item>
+    <Item>
+      <Key>正在停止...</Key>
+      <Value>Zatrzymywanie</Value>
+    </Item>
+    <Item>
+      <Key>确定删除该样本吗？</Key>
+      <Value>Na pewno usuniesz tę próbkę?</Value>
+    </Item>
+    <Item>
+      <Key>确定清空所有样本吗？</Key>
+      <Value>Na pewno oczyścisz wszystkie próbki?</Value>
+    </Item>
+    <Item>
+      <Key>确定删除模型吗？</Key>
+      <Value>Na pewno usuniesz model?</Value>
+    </Item>
+    <Item>
+      <Key>确定清空所有模型吗？</Key>
+      <Value>Na pewno wyczyścisz wszystkie modele?</Value>
+    </Item>
+    <Item>
+      <Key>样本</Key>
+      <Value>próbka</Value>
+    </Item>
+    <Item>
+      <Key>预处理</Key>
+      <Value>Przetwarzanie wstępne</Value>
+    </Item>
+    <Item>
+      <Key>是否开启均值滤波：</Key>
+      <Value>Czy chcesz włączyć średnie filtrowanie</Value>
+    </Item>
+    <Item>
+      <Key>是否开启标准化：</Key>
+      <Value>Czy umożliwić normalizację:</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波力度：</Key>
+      <Value>Średnia intensywność filtrowania:</Value>
+    </Item>
+    <Item>
+      <Key>波长信息</Key>
+      <Value>Informacje o długości fali</Value>
+    </Item>
+    <Item>
+      <Key>类别</Key>
+      <Value>kategoria</Value>
+    </Item>
+    <Item>
+      <Key>取消</Key>
+      <Value>anuluj</Value>
+    </Item>
+    <Item>
+      <Key>确定</Key>
+      <Value>określić</Value>
+    </Item>
+    <Item>
+      <Key>忽略</Key>
+      <Value>ignoruj</Value>
+    </Item>
+    <Item>
+      <Key>中止</Key>
+      <Value>zawiesina</Value>
+    </Item>
+    <Item>
+      <Key>重试</Key>
+      <Value>próbuj ponownie</Value>
+    </Item>
+    <Item>
+      <Key>未选中模型!</Key>
+      <Value>Nie wybrano modelu!</Value>
+    </Item>
+    <Item>
+      <Key>模型未加载!</Key>
+      <Value>Model nie naładowany!</Value>
+    </Item>
+    <Item>
+      <Key>应用失败!</Key>
+      <Value>Aplikacja nie powiodła się!</Value>
+    </Item>
+    <Item>
+      <Key>应用成功</Key>
+      <Value>Aplikacja pomyślna</Value>
+    </Item>
+    <Item>
+      <Key>发送成功</Key>
+      <Value>Wysyłanie pomyślne</Value>
+    </Item>
+    <Item>
+      <Key>请选择相机配置文件</Key>
+      <Value>Proszę wybrać plik konfiguracyjny kamery</Value>
+    </Item>
+    <Item>
+      <Key>相机配置文件导入成功!</Key>
+      <Value>Plik konfiguracyjny aparatu zaimportowany pomyślnie!</Value>
+    </Item>
+    <Item>
+      <Key>相机连接中...</Key>
+      <Value>Połączenie z kamerą</Value>
+    </Item>
+    <Item>
+      <Key>相机连接失败</Key>
+      <Value>Połączenie z kamerą nie powiodło się</Value>
+    </Item>
+    <Item>
+      <Key>相机连接成功</Key>
+      <Value>Kamera pomyślnie podłączona</Value>
+    </Item>
+    <Item>
+      <Key>相机断开中...</Key>
+      <Value>Kamera odłączona</Value>
+    </Item>
+    <Item>
+      <Key>相机已经断开</Key>
+      <Value>Kamera została odłączona</Value>
+    </Item>
+    <Item>
+      <Key>结束采集</Key>
+      <Value>Przestań.</Value>
+    </Item>
+    <Item>
+      <Key>开始采集</Key>
+      <Value>uruchomienie</Value>
+    </Item>
+    <Item>
+      <Key>暂停</Key>
+      <Value>zawieszenie</Value>
+    </Item>
+    <Item>
+      <Key>连接相机</Key>
+      <Value>Podłączanie</Value>
+    </Item>
+    <Item>
+      <Key>断开连接</Key>
+      <Value>Odłącz</Value>
+    </Item>
+    <Item>
+      <Key>正在将采集到的图像写入磁盘</Key>
+      <Value>Zapisywanie zebranych obrazów na dysk</Value>
+    </Item>
+    <Item>
+      <Key>相机或GPU正在被使用</Key>
+      <Value>Używana kamera lub GPU</Value>
+    </Item>
+    <Item>
+      <Key>正在启动...</Key>
+      <Value>Rozpoczęcie</Value>
+    </Item>
+    <Item>
+      <Key>校准文件缺失，无法显示校准后图像，自动切换为显示原始图像</Key>
+      <Value>Brakuje pliku kalibracji i nie może wyświetlić skalibrowanego obrazu. Automatyczne przełączenie na wyświetlanie oryginalnego obrazu</Value>
+    </Item>
+    <Item>
+      <Key>请先连接相机</Key>
+      <Value>Proszę najpierw podłączyć kamerę.</Value>
+    </Item>
+    <Item>
+      <Key>无图像</Key>
+      <Value>Brak obrazu</Value>
+    </Item>
+    <Item>
+      <Key>所选区域需要完全覆盖一个像素点</Key>
+      <Value>Wybrany obszar musi w pełni pokryć jeden piksel</Value>
+    </Item>
+    <Item>
+      <Key>超出当前数据范围</Key>
+      <Value>Poza bieżącym zakresem danych</Value>
+    </Item>
+    <Item>
+      <Key>当前点的光谱数据已存在</Key>
+      <Value>Dane widmowe bieżącego punktu już istnieją</Value>
+    </Item>
+    <Item>
+      <Key>超出图像范围</Key>
+      <Value>Poza zakresem obrazu</Value>
+    </Item>
+    <Item>
+      <Key>校准线超出图像范围</Key>
+      <Value>Linia kalibracji przekracza zakres obrazu</Value>
+    </Item>
+    <Item>
+      <Key>加载中</Key>
+      <Value>Ładowanie</Value>
+    </Item>
+    <Item>
+      <Key>请先采集图像</Key>
+      <Value>Proszę najpierw zbierać zdjęcia.</Value>
+    </Item>
+    <Item>
+      <Key>正在更新白板原始数据，如果确定，请点击图像上白板所在的位置</Key>
+      <Value>Aktualizacja oryginalnych danych tablicy. W razie potwierdzenia kliknij na lokalizację tablicy na zdjęciu</Value>
+    </Item>
+    <Item>
+      <Key>正在更新黑板原始数据，如果确定，请点击图像上黑板所在的位置</Key>
+      <Value>Aktualizacja oryginalnych danych tablicy. W razie potwierdzenia kliknij lokalizację tablicy na zdjęciu.</Value>
+    </Item>
+    <Item>
+      <Key>出现异常,请稍后重试</Key>
+      <Value>Wystąpił wyjątek, spróbuj ponownie później</Value>
+    </Item>
+    <Item>
+      <Key>未找黑白校准文件或反射率文件，无法使用</Key>
+      <Value>Nie można znaleźć czarno-białego pliku kalibracji lub pliku odbicia, nie można użyć</Value>
+    </Item>
+    <Item>
+      <Key>保存中</Key>
+      <Value>Oszczędzanie</Value>
+    </Item>
+    <Item>
+      <Key>保存完成</Key>
+      <Value>Zapisz zakończony</Value>
+    </Item>
+    <Item>
+      <Key>数据保存失败</Key>
+      <Value>Zapisywanie danych nie powiodło się</Value>
+    </Item>
+    <Item>
+      <Key>无数据</Key>
+      <Value>Brak danych</Value>
+    </Item>
+    <Item>
+      <Key>未选中任何数据</Key>
+      <Value>Brak wybranych danych</Value>
+    </Item>
+    <Item>
+      <Key>导出</Key>
+      <Value>eksport</Value>
+    </Item>
+    <Item>
+      <Key>文件</Key>
+      <Value>plik</Value>
+    </Item>
+    <Item>
+      <Key>保存成功</Key>
+      <Value>Zapisz pomyślne</Value>
+    </Item>
+    <Item>
+      <Key>保存失败</Key>
+      <Value>Zapisywanie nie powiodło się</Value>
+    </Item>
+    <Item>
+      <Key>波长</Key>
+      <Value>długość fali</Value>
+    </Item>
+    <Item>
+      <Key>保存成功！</Key>
+      <Value>Oszczędzaj sukces!</Value>
+    </Item>
+    <Item>
+      <Key>开始</Key>
+      <Value>uruchomić</Value>
+    </Item>
+    <Item>
+      <Key>正在停止分选...</Key>
+      <Value>Zatrzymanie sortowania</Value>
+    </Item>
+    <Item>
+      <Key>吹气设备连接失败</Key>
+      <Value>awaria połączenia urządzenia dmuchawczego</Value>
+    </Item>
+    <Item>
+      <Key>正在启动分选...</Key>
+      <Value>Rozpoczynanie sortowania</Value>
+    </Item>
+    <Item>
+      <Key>停止分选</Key>
+      <Value>Zatrzymać sortowanie</Value>
+    </Item>
+    <Item>
+      <Key>启动分选</Key>
+      <Value>Rozpocznij sortowanie</Value>
+    </Item>
+    <Item>
+      <Key>清空标签</Key>
+      <Value>Wyczyść znaczniki</Value>
+    </Item>
+    <Item>
+      <Key>删除</Key>
+      <Value>usunąć</Value>
+    </Item>
+    <Item>
+      <Key>确定删除样本吗？</Key>
+      <Value>Na pewno usuniesz próbkę?</Value>
+    </Item>
+    <Item>
+      <Key>移动</Key>
+      <Value>ruchy</Value>
+    </Item>
+    <Item>
+      <Key>选点</Key>
+      <Value>Wybieranie punktów</Value>
+    </Item>
+    <Item>
+      <Key>画线</Key>
+      <Value>Rysuj linie</Value>
+    </Item>
+    <Item>
+      <Key>画矩形</Key>
+      <Value>Narysuj prostokąt</Value>
+    </Item>
+    <Item>
+      <Key>自适应</Key>
+      <Value>samodzielna adaptacja</Value>
+    </Item>
+    <Item>
+      <Key>抠图</Key>
+      <Value>Wycięcie</Value>
+    </Item>
+    <Item>
+      <Key>处理后的数据已经存在，是否重新生成？</Key>
+      <Value>Przetwarzane dane już istnieją. Czy chcesz je zregenerować?</Value>
+    </Item>
+    <Item>
+      <Key>预处理处理中...</Key>
+      <Value>Przetwarzanie wstępne</Value>
+    </Item>
+    <Item>
+      <Key>停止训练</Key>
+      <Value>Przerwać trening</Value>
+    </Item>
+    <Item>
+      <Key>开始训练</Key>
+      <Value>Rozpocząć szkolenie</Value>
+    </Item>
+    <Item>
+      <Key>白校准板光谱数据</Key>
+      <Value>Dane widmowe białej płyty kalibracyjnej</Value>
+    </Item>
+    <Item>
+      <Key>白校准板原始数据</Key>
+      <Value>Dane surowe białej płyty kalibracyjnej</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板光谱数据</Key>
+      <Value>Dane widmowe czarnej płyty kalibracyjnej</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板原始数据</Key>
+      <Value>Surowe dane z czarnej płyty kalibracyjnej</Value>
+    </Item>
+    <Item>
+      <Key>请选择白板光谱反射率文件</Key>
+      <Value>Proszę wybrać plik widmowego odbicia tablicy</Value>
+    </Item>
+    <Item>
+      <Key>白板光谱反射率文件下找不到对应的文件</Key>
+      <Value>Nie można znaleźć odpowiedniego pliku w pliku widmowego odbicia tablicy</Value>
+    </Item>
+    <Item>
+      <Key>白板光谱反射率文件加载成功</Key>
+      <Value>Plik widmowego odbicia tablicy został pomyślnie załadowany</Value>
+    </Item>
+    <Item>
+      <Key>解析白板光谱反射率文件失败，请检查</Key>
+      <Value>Nie udało się analizować pliku odbicia widmowego tablicy, sprawdź</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑板光谱反射率文件</Key>
+      <Value>Proszę wybrać plik spektralnego odbicia tablicy</Value>
+    </Item>
+    <Item>
+      <Key>黑板光谱反射率文件下找不到对应的文件</Key>
+      <Value>Nie można znaleźć odpowiedniego pliku w pliku odbicia widmowego tablicy</Value>
+    </Item>
+    <Item>
+      <Key>黑板光谱反射率文件加载成功</Key>
+      <Value>Plik odbicia widmowego na tablicy pomyślnie załadowany</Value>
+    </Item>
+    <Item>
+      <Key>解析黑板光谱反射率文件失败，请检查</Key>
+      <Value>Nie udało się analizować pliku odbicia widmowego tablicy, sprawdź</Value>
+    </Item>
+    <Item>
+      <Key>请选择线原始数据文件</Key>
+      <Value>Proszę wybrać oryginalny plik danych dla linii</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件下找不到对应的文件</Key>
+      <Value>Odpowiedniego pliku nie można znaleźć w białym pliku danych surowych kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件的光谱通道不符合，请重新选择</Key>
+      <Value>Kanał widmowy oryginalnego pliku danych kalibracji białej nie pasuje, proszę ponownie wybrać</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件的空间通道不符合，请重新选择</Key>
+      <Value>Kanał przestrzenny oryginalnego pliku danych kalibracji białej nie pasuje, proszę ponownie wybrać</Value>
+    </Item>
+    <Item>
+      <Key>白校准原始数据文件加载成功</Key>
+      <Value>Pomyślnie załadowany plik surowych danych kalibracji białej</Value>
+    </Item>
+    <Item>
+      <Key>解析线原始数据文件失败，请检查</Key>
+      <Value>Nie udało się przeanalizować oryginalnego pliku danych linii, sprawdź</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑校准原始数据文件</Key>
+      <Value>Proszę wybrać czarny plik danych kalibracyjnych</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件下找不到对应的文件</Key>
+      <Value>Nie można znaleźć odpowiedniego pliku w czarnym pliku danych surowych kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件的光谱通道不符合，请重新选择</Key>
+      <Value>Kanał widmowy oryginalnego pliku danych kalibracji czarnej nie pasuje, proszę ponownie wybrać</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件的空间通道不符合，请重新选择</Key>
+      <Value>Kanał przestrzenny oryginalnego pliku danych czarnej kalibracji nie pasuje, proszę ponownie wybrać</Value>
+    </Item>
+    <Item>
+      <Key>黑校准原始数据文件加载成功</Key>
+      <Value>Czarny plik danych surowych kalibracji pomyślnie załadowany</Value>
+    </Item>
+    <Item>
+      <Key>解析黑校准原始数据文件失败，请检查</Key>
+      <Value>Nie udało się analizować czarnego pliku danych kalibracyjnych, sprawdź</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准板反射率数据文件</Key>
+      <Value>Nie znaleziono pliku danych dotyczących odbicia białej płytki kalibracyjnej</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准板原始数据文件</Key>
+      <Value>Nie znaleziono oryginalnego pliku danych białej płyty kalibracyjnej</Value>
+    </Item>
+    <Item>
+      <Key>白校准板原始数据文件异常</Key>
+      <Value>Oryginalny plik danych białej płyty kalibracyjnej jest nieprawidłowy</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准板反射率数据文件</Key>
+      <Value>Nie znaleziono pliku danych dotyczących odbicia czarnej płytki kalibracyjnej</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准板原始数据文件</Key>
+      <Value>Nie znaleziono oryginalnego pliku danych czarnej płyty kalibracyjnej</Value>
+    </Item>
+    <Item>
+      <Key>黑校准板原始数据文件异常</Key>
+      <Value>Nieprawidłowość oryginalnego pliku danych na czarnej płytce kalibracyjnej</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度：</Key>
+      <Value>Długość filtra:</Value>
+    </Item>
+    <Item>
+      <Key>当前设备可用内存为{0}MB,一次最多可采集{1}帧</Key>
+      <Value>Dostępna pamięć bieżącego urządzenia to: {0}MB może gromadzić do {1} klatek na raz</Value>
+    </Item>
+    <Item>
+      <Key>无法获取设备可用内存，采集过程中会不断增加占用内存，请视情况停止采集</Key>
+      <Value>Nie można uzyskać dostępnej pamięci urządzenia. Podczas procesu gromadzenia zużycie pamięci będzie nadal rosło. Proszę zatrzymać gromadzenie w zależności od sytuacji</Value>
+    </Item>
+    <Item>
+      <Key>文件已存在</Key>
+      <Value>plik już istnieje</Value>
+    </Item>
+    <Item>
+      <Key>文件不存在</Key>
+      <Value>plik nie istnieje</Value>
+    </Item>
+    <Item>
+      <Key>请选择</Key>
+      <Value>Proszę wybrać</Value>
+    </Item>
+    <Item>
+      <Key>不显示</Key>
+      <Value>Nie wyświetlaj</Value>
+    </Item>
+    <Item>
+      <Key>显示</Key>
+      <Value>wyświetlacz</Value>
+    </Item>
+    <Item>
+      <Key>参数配置必须大于零</Key>
+      <Value>Konfiguracja parametrów musi być większa niż zero</Value>
+    </Item>
+    <Item>
+      <Key>起始像素和终止像素必须在像素个数范围内</Key>
+      <Value>Pixel początkowy i piksel końcowy muszą znajdować się w zakresie liczby pikseli</Value>
+    </Item>
+    <Item>
+      <Key>起始像素不能大于终止像素</Key>
+      <Value>Pixel początkowy nie może być większy niż piksel końcowy</Value>
+    </Item>
+    <Item>
+      <Key>起始像素必须在像素个数[0~{0}]范围内</Key>
+      <Value>Pixel początkowy musi znajdować się w zakresie 0~{0} pikseli</Value>
+    </Item>
+    <Item>
+      <Key>终止像素必须在像素个数[0~{0}]范围内</Key>
+      <Value>Pixel zakończenia musi znajdować się w zakresie 0~{0} pikseli</Value>
+    </Item>
+    <Item>
+      <Key>终止像素不能小于起始像素</Key>
+      <Value>Końcowy piksel nie może być mniejszy niż piksel początkowy</Value>
+    </Item>
+    <Item>
+      <Key>二值化</Key>
+      <Value>Binaryzacja</Value>
+    </Item>
+    <Item>
+      <Key>二值化反转</Key>
+      <Value>Odwrócenie binaryzacji</Value>
+    </Item>
+    <Item>
+      <Key>关于</Key>
+      <Value>o</Value>
+    </Item>
+    <Item>
+      <Key>版本：</Key>
+      <Value>edycja:</Value>
+    </Item>
+    <Item>
+      <Key>已是最新版本</Key>
+      <Value>Jest to już najnowsza wersja</Value>
+    </Item>
+    <Item>
+      <Key>下载并更新</Key>
+      <Value>Pobieranie i aktualizacja</Value>
+    </Item>
+    <Item>
+      <Key>立即更新</Key>
+      <Value>Aktualizuj teraz</Value>
+    </Item>
+    <Item>
+      <Key>已下载({0})</Key>
+      <Value>Pobrano ({0})</Value>
+    </Item>
+    <Item>
+      <Key>请允许来自未知发布者的应用对你的设备进行更改</Key>
+      <Value>Proszę zezwolić aplikacjom nieznanych wydawców na wprowadzanie zmian w urządzeniu</Value>
+    </Item>
+    <Item>
+      <Key>应用成功!</Key>
+      <Value>Aplikacja pomyślna!</Value>
+    </Item>
+    <Item>
+      <Key>标签为空？</Key>
+      <Value>Czy etykieta jest pusta?</Value>
+    </Item>
+    <Item>
+      <Key>低</Key>
+      <Value>niskie</Value>
+    </Item>
+    <Item>
+      <Key>中</Key>
+      <Value>w</Value>
+    </Item>
+    <Item>
+      <Key>高</Key>
+      <Value>wysokie</Value>
+    </Item>
+    <Item>
+      <Key>启动中...</Key>
+      <Value>Rozpoczęcie</Value>
+    </Item>
+    <Item>
+      <Key>点选区域</Key>
+      <Value>Wybierz obszar</Value>
+    </Item>
+    <Item>
+      <Key>存在未标记类型的选区，请核实</Key>
+      <Value>Istnieją nieoznaczone typy wyboru, proszę zweryfikować</Value>
+    </Item>
+    <Item>
+      <Key>轮廓数：</Key>
+      <Value>Liczba konturów:</Value>
+    </Item>
+    <Item>
+      <Key>计算中</Key>
+      <Value>W procesie obliczania</Value>
+    </Item>
+    <Item>
+      <Key>平滑算法</Key>
+      <Value>Algorytm wygładzający</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度</Key>
+      <Value>Długość filtra</Value>
+    </Item>
+    <Item>
+      <Key>滤波次数</Key>
+      <Value>Częstotliwość filtra</Value>
+    </Item>
+    <Item>
+      <Key>尺度缩放算法</Key>
+      <Value>Algorytm skalowania</Value>
+    </Item>
+    <Item>
+      <Key>散射校正</Key>
+      <Value>Korekta rozproszenia</Value>
+    </Item>
+    <Item>
+      <Key>基线校正</Key>
+      <Value>Korekta podstawowa</Value>
+    </Item>
+    <Item>
+      <Key>均值滤波</Key>
+      <Value>Średnie filtrowanie</Value>
+    </Item>
+    <Item>
+      <Key>不使用</Key>
+      <Value>Nie używane</Value>
+    </Item>
+    <Item>
+      <Key>标准化</Key>
+      <Value>Normalizacja</Value>
+    </Item>
+    <Item>
+      <Key>一阶导数</Key>
+      <Value>Pierwsza pochodna</Value>
+    </Item>
+    <Item>
+      <Key>二阶导数</Key>
+      <Value>Druga pochodna</Value>
+    </Item>
+    <Item>
+      <Key>请先导入相机配置文件（可点击软件左下角导入）</Key>
+      <Value>Najpierw zaimportuj plik konfiguracyjny aparatu (kliknij w lewym dolnym rogu oprogramowania, aby zaimportować)</Value>
+    </Item>
+    <Item>
+      <Key>导出中</Key>
+      <Value>Wywóz w toku</Value>
+    </Item>
+    <Item>
+      <Key>导出完成</Key>
+      <Value>Eksport zakończony</Value>
+    </Item>
+    <Item>
+      <Key>未分类</Key>
+      <Value>Niesklasyfikowane</Value>
+    </Item>
+    <Item>
+      <Key>背景</Key>
+      <Value>tło</Value>
+    </Item>
+    <Item>
+      <Key>目标</Key>
+      <Value>cel</Value>
+    </Item>
+    <Item>
+      <Key>缺少校准文件，请开灯采集白板数据，然后关灯采集黑板数据，进行校准。</Key>
+      <Value>Brak plików kalibracyjnych, wymagana rekalibracja</Value>
+    </Item>
+    <Item>
+      <Key>相机与校准文件不匹配，需重新校准</Key>
+      <Value>Kamera nie pasuje do pliku kalibracyjnego i wymaga ponownej kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>增益或曝光时间已修改，请确定是否需要重新校准</Key>
+      <Value>Wzmocnienie i czas ekspozycji w pliku kalibracyjnym zostały zmodyfikowane</Value>
+    </Item>
+    <Item>
+      <Key>矩形</Key>
+      <Value>prostokąt</Value>
+    </Item>
+    <Item>
+      <Key>画笔</Key>
+      <Value>pędzel</Value>
+    </Item>
+    <Item>
+      <Key>点</Key>
+      <Value>miejsce</Value>
+    </Item>
+    <Item>
+      <Key>抠图</Key>
+      <Value>Wyciąć obraz</Value>
+    </Item>
+    <Item>
+      <Key>点选区</Key>
+      <Value>Obszar wyboru punktów</Value>
+    </Item>
+    <Item>
+      <Key>魔法棒</Key>
+      <Value>Magiczna różdżka</Value>
+    </Item>
+    <Item>
+      <Key>停止气吹</Key>
+      <Value>Przestań dmuchać powietrze.</Value>
+    </Item>
+    <Item>
+      <Key>启动气吹</Key>
+      <Value>Rozpocząć dmuchanie powietrza</Value>
+    </Item>
+    <Item>
+      <Key>光谱</Key>
+      <Value>widmo</Value>
+    </Item>
+    <Item>
+      <Key>同一图片文件不可追加，请重新选择图片</Key>
+      <Value>Nie można dołączyć tego samego pliku obrazu. Proszę wybrać nowy obraz</Value>
+    </Item>
+    <Item>
+      <Key>追加的图片格式不匹配，请重新选择图片</Key>
+      <Value>Format dodanego obrazu nie pasuje. Proszę wybrać nowy obraz</Value>
+    </Item>
+    <Item>
+      <Key>数据复制中，请稍后</Key>
+      <Value>Replikacja danych w toku, proszę poczekać</Value>
+    </Item>
+    <Item>
+      <Key>训练图片必须是反射率图片</Key>
+      <Value>Obraz treningu musi być obrazem odbicia</Value>
+    </Item>
+    <Item>
+      <Key>无法打开训练图片</Key>
+      <Value>Nie można otworzyć obrazu szkolenia</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准系数文件</Key>
+      <Value>Nie znaleziono pliku współczynnika kalibracji białej</Value>
+    </Item>
+    <Item>
+      <Key>设置ROI失败</Key>
+      <Value>Nie udało się ustawić ROI</Value>
+    </Item>
+    <Item>
+      <Key>模型的序列号与相机的不匹配</Key>
+      <Value>Numer seryjny modelu nie pasuje do kamery</Value>
+    </Item>
+    <Item>
+      <Key>相机设置工作模式失败</Key>
+      <Value>Ustawienie trybu roboczego aparatu nie powiodło się</Value>
+    </Item>
+    <Item>
+      <Key>轮廓区域</Key>
+      <Value>Obszar zarysowy</Value>
+    </Item>
+    <Item>
+      <Key>训练失败</Key>
+      <Value>Szkolenie nie powiodło się</Value>
+    </Item>
+    <Item>
+      <Key>该模型的波长通道与训练图片不匹配</Key>
+      <Value>Kanał długości fali modelu nie pasuje do obrazu treningowego</Value>
+    </Item>
+    <Item>
+      <Key>已加载图片与该模型的标签不匹配，是否重新加载图片？</Key>
+      <Value>Załadowany obraz nie pasuje do etykiety modelu. Czy chcesz ponownie załadować obraz?</Value>
+    </Item>
+    <Item>
+      <Key>应用模型中...</Key>
+      <Value>W modelu aplikacji</Value>
+    </Item>
+    <Item>
+      <Key>计算轮廓中</Key>
+      <Value>Oblicz kontur</Value>
+    </Item>
+    <Item>
+      <Key>计算反射率中</Key>
+      <Value>Oblicz współczynnik odbicia</Value>
+    </Item>
+    <Item>
+      <Key>请选择文件夹</Key>
+      <Value>Proszę wybrać folder</Value>
+    </Item>
+    <Item>
+      <Key>滤波长度:</Key>
+      <Value>Długość filtra:</Value>
+    </Item>
+    <Item>
+      <Key>,滤波次数:</Key>
+      <Value>Czas filtrowania:</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件</Key>
+      <Value>Plik współczynnika kalibracji białej</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件</Key>
+      <Value>Biały plik kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件</Key>
+      <Value>Czarny plik kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>请选择白校准系数文件</Key>
+      <Value>Proszę wybrać biały plik współczynnika kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件不存在</Key>
+      <Value>Plik współczynnika kalibracji białej nie istnieje</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件加载成功</Key>
+      <Value>Plik białego współczynnika kalibracji został pomyślnie załadowany</Value>
+    </Item>
+    <Item>
+      <Key>解析白校准系数文件失败，请检查</Key>
+      <Value>Nie udało się analizować białego współczynnika kalibracji, proszę sprawdzić</Value>
+    </Item>
+    <Item>
+      <Key>请选择白校准文件</Key>
+      <Value>Proszę wybrać biały plik kalibracyjny</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件不存在</Key>
+      <Value>Biały plik kalibracji nie istnieje</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件类型不是线</Key>
+      <Value>Typ białego pliku kalibracji nie jest linią</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件的光谱通道不符合，请重新选择</Key>
+      <Value>Kanał widmowy w białym pliku kalibracji nie pasuje, proszę wybrać ponownie</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件的空间通道不符合，请重新选择</Key>
+      <Value>Kanał przestrzenny białego pliku kalibracyjnego nie pasuje, proszę wybrać ponownie</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件加载成功</Key>
+      <Value>Biały plik kalibracji załadowany pomyślnie</Value>
+    </Item>
+    <Item>
+      <Key>解析白校准文件失败，请检查</Key>
+      <Value>Nie udało się analizować białego pliku kalibracyjnego, proszę sprawdzić</Value>
+    </Item>
+    <Item>
+      <Key>请选择黑校准文件</Key>
+      <Value>Proszę wybrać czarny plik kalibracyjny</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件不存在</Key>
+      <Value>Czarny plik kalibracji nie istnieje</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件类型不是线</Key>
+      <Value>Typ pliku kalibracji czarnej nie jest linią</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件的光谱通道不符合，请重新选择</Key>
+      <Value>Kanał widmowy w czarnym pliku kalibracyjnym nie pasuje, proszę wybrać ponownie</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件的空间通道不符合，请重新选择</Key>
+      <Value>Kanał spacji czarnego pliku kalibracyjnego nie pasuje, proszę wybrać ponownie</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件加载成功</Key>
+      <Value>Czarny plik kalibracji załadowany pomyślnie</Value>
+    </Item>
+    <Item>
+      <Key>解析黑校准文件失败，请检查</Key>
+      <Value>Nie udało się analizować czarnego pliku kalibracyjnego, sprawdź</Value>
+    </Item>
+    <Item>
+      <Key>未找到白校准文件</Key>
+      <Value>Nie znaleziono białego pliku kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件异常</Key>
+      <Value>Nieprawidłowy biały plik kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>未找到黑校准文件</Key>
+      <Value>Nie znaleziono czarnego pliku kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件异常</Key>
+      <Value>Nieprawidłowość czarnego pliku kalibracyjnego</Value>
+    </Item>
+    <Item>
+      <Key>标签信息</Key>
+      <Value>Informacje o etykiecie</Value>
+    </Item>
+    <Item>
+      <Key>支持的波长范围：</Key>
+      <Value>Obsługiwany zakres długości fali:</Value>
+    </Item>
+    <Item>
+      <Key>使用的波长范围：</Key>
+      <Value>Zakres stosowanych długości fali:</Value>
+    </Item>
+    <Item>
+      <Key>传感器：</Key>
+      <Value>Czujnik:</Value>
+    </Item>
+    <Item>
+      <Key>备注：</Key>
+      <Value>uwagi:</Value>
+    </Item>
+    <Item>
+      <Key>白校准系数文件已存在</Key>
+      <Value>Plik współczynnika kalibracji białej istnieje już</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件已存在</Key>
+      <Value>Biały plik kalibracji już istnieje</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件已存在</Key>
+      <Value>Czarny plik kalibracji już istnieje</Value>
+    </Item>
+    <Item>
+      <Key>新增预处理算法</Key>
+      <Value>Dodaj algorytm przetwarzania wstępnego</Value>
+    </Item>
+    <Item>
+      <Key>修改预处理算法</Key>
+      <Value>Modyfikuj algorytm przetwarzania wstępnego</Value>
+    </Item>
+    <Item>
+      <Key>必须为奇数</Key>
+      <Value>To musi być liczba nieparzysta.</Value>
+    </Item>
+    <Item>
+      <Key>修改失败!</Key>
+      <Value>Modyfikacja nie powiodła się!</Value>
+    </Item>
+    <Item>
+      <Key>修改成功</Key>
+      <Value>Zmodyfikowano pomyślnie</Value>
+    </Item>
+    <Item>
+      <Key>文件名：</Key>
+      <Value>Nazwa pliku:</Value>
+    </Item>
+    <Item>
+      <Key>设备型号：</Key>
+      <Value>Model wyposażenia:</Value>
+    </Item>
+    <Item>
+      <Key>设备序列号：</Key>
+      <Value>Numer seryjny sprzętu:</Value>
+    </Item>
+    <Item>
+      <Key>曝光时间：</Key>
+      <Value>czas narażenia:</Value>
+    </Item>
+    <Item>
+      <Key>增益：</Key>
+      <Value>Zysk:</Value>
+    </Item>
+    <Item>
+      <Key>继续</Key>
+      <Value>kontynuuj</Value>
+    </Item>
+    <Item>
+      <Key>结束分选</Key>
+      <Value>Zakończenie sortowania</Value>
+    </Item>
+    <Item>
+      <Key>开始分选</Key>
+      <Value>Rozpocznij sortowanie</Value>
+    </Item>
+    <Item>
+      <Key>模型关联的校准文件不存在，是否使用当前目录下的黑白校准文件？</Key>
+      <Value>Plik kalibracji skojarzony z modelem nie istnieje. Czy powinniśmy użyć czarno-białego pliku kalibracji w bieżącym katalogu?</Value>
+    </Item>
+    <Item>
+      <Key>平滑处理</Key>
+      <Value>Płynne przetwarzanie</Value>
+    </Item>
+    <Item>
+      <Key>尺度缩放</Key>
+      <Value>Skalowanie</Value>
+    </Item>
+    <Item>
+      <Key>SG平滑</Key>
+      <Value>SG Gładki</Value>
+    </Item>
+    <Item>
+      <Key>滑动平滑</Key>
+      <Value>Gładkie przesuwanie</Value>
+    </Item>
+    <Item>
+      <Key>最大最小归一化</Key>
+      <Value>Maksymalna minimalna normalizacja</Value>
+    </Item>
+    <Item>
+      <Key>有效起始波长</Key>
+      <Value>Skuteczna długość fali startowej</Value>
+    </Item>
+    <Item>
+      <Key>有效结束波长</Key>
+      <Value>Skuteczna długość fali końcowej</Value>
+    </Item>
+    <Item>
+      <Key>是否启用扣除背景</Key>
+      <Value>Czy chcesz włączyć odliczenie w tle</Value>
+    </Item>
+    <Item>
+      <Key>背景反射率范围起始值(0~1)</Key>
+      <Value>Wartość początkowa zakresu odbicia w tle (0~1)</Value>
+    </Item>
+    <Item>
+      <Key>背景反射率范围结束值(0~1)</Key>
+      <Value>Wartość końcowa zakresu odbicia tła (0~1)</Value>
+    </Item>
+    <Item>
+      <Key>未找到相机配置文件，是否导入？（注: 相机配置文件一般在相机配套的U盘中）</Key>
+      <Value>Plik konfiguracyjny aparatu nie znaleziony, chcesz go zaimportować? (Uwaga: Pliki konfiguracyjne aparatu są zwykle przechowywane na dysku USB dołączonym do aparatu.)</Value>
+    </Item>
+    <Item>
+      <Key>气吹设备连接失败</Key>
+      <Value>Nieudane podłączenie urządzeń do dmuchania powietrza</Value>
+    </Item>
+    <Item>
+      <Key>缺少校准文件，需重新校准</Key>
+      <Value>Brak plików kalibracyjnych, wymagana rekalibracja</Value>
+    </Item>
+    <Item>
+      <Key>请选择文件</Key>
+      <Value>Proszę wybrać plik</Value>
+    </Item>
+    <Item>
+      <Key>文件被占用</Key>
+      <Value>Plik jest zajęty</Value>
+    </Item>
+    <Item>
+      <Key>找不到文件路径</Key>
+      <Value>Nie można znaleźć ścieżki pliku</Value>
+    </Item>
+    <Item>
+      <Key>文件已被其他程序打开</Key>
+      <Value>Plik został otwarty przez inny program</Value>
+    </Item>
+    <Item>
+      <Key>导出失败</Key>
+      <Value>Eksport nie powiodł się</Value>
+    </Item>
+    <Item>
+      <Key>日期格式不正确，转换日期失败！</Key>
+      <Value>Format daty niepoprawny, konwersja daty nie powiodła się!</Value>
+    </Item>
+    <Item>
+      <Key>数字格式不正确，转换数字失败！</Key>
+      <Value>Format liczby jest nieprawidłowy, konwersja liczb nie powiodła się!</Value>
+    </Item>
+    <Item>
+      <Key>工作表{0}列数与模版不匹配</Key>
+      <Value>Liczba kolumn na arkuszu {0} nie pasuje do szablonu</Value>
+    </Item>
+    <Item>
+      <Key>工作表中的“{0}”列无法识别</Key>
+      <Value>Kolumna '{0}' w arkuszu nie jest rozpoznawana</Value>
+    </Item>
+    <Item>
+      <Key>原始光谱</Key>
+      <Value>Widmo oryginalne</Value>
+    </Item>
+    <Item>
+      <Key>预处理后的光谱</Key>
+      <Value>Widma wstępnie przetworzone</Value>
+    </Item>
+    <Item>
+      <Key>算法名称</Key>
+      <Value>Nazwa algorytmu</Value>
+    </Item>
+    <Item>
+      <Key>参数信息</Key>
+      <Value>informacje o parametrach</Value>
+    </Item>
+    <Item>
+      <Key>名称</Key>
+      <Value>nazwa</Value>
+    </Item>
+    <Item>
+      <Key>颜色</Key>
+      <Value>kolor</Value>
+    </Item>
+    <Item>
+      <Key>编码</Key>
+      <Value>kod</Value>
+    </Item>
+    <Item>
+      <Key>阈值</Key>
+      <Value>prog</Value>
+    </Item>
+    <Item>
+      <Key>备注</Key>
+      <Value>uwagi</Value>
+    </Item>
+    <Item>
+      <Key>X坐标：</Key>
+      <Value>Współrzędna X:</Value>
+    </Item>
+    <Item>
+      <Key>请选择行</Key>
+      <Value>Proszę wybrać wiersz</Value>
+    </Item>
+    <Item>
+      <Key>请先选择白校准区域</Key>
+      <Value>Najpierw wybierz biały obszar kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>连接</Key>
+      <Value>połącz</Value>
+    </Item>
+    <Item>
+      <Key>应用中</Key>
+      <Value>W stosowaniu</Value>
+    </Item>
+    <Item>
+      <Key>请先选择COM口</Key>
+      <Value>Najpierw wybierz port COM</Value>
+    </Item>
+    <Item>
+      <Key>吹气</Key>
+      <Value>dmuchanie</Value>
+    </Item>
+    <Item>
+      <Key>请先停止正在运行的采集功能</Key>
+      <Value>Najpierw zatrzymaj uruchomioną funkcję kolekcji</Value>
+    </Item>
+    <Item>
+      <Key>采集图像是校准数据，无法保存成原始文件</Key>
+      <Value>Zebrane obrazy są danymi kalibracyjnymi i nie mogą być zapisywane jako oryginalne pliki</Value>
+    </Item>
+    <Item>
+      <Key>采集图像是原始数据，无法保存成校准后的文件</Key>
+      <Value>Zebrane obrazy są danymi surowymi i nie mogą być zapisywane jako skalibrowane pliki</Value>
+    </Item>
+    <Item>
+      <Key>白校准</Key>
+      <Value>Kalibracja biała</Value>
+    </Item>
+    <Item>
+      <Key>保存并切换至黑校准</Key>
+      <Value>Zapisz i przełącz na kalibrację czarną</Value>
+    </Item>
+    <Item>
+      <Key>黑校准</Key>
+      <Value>Kalibracja czarna</Value>
+    </Item>
+    <Item>
+      <Key>保存并切换至白校准</Key>
+      <Value>Zapisz i przełącz do kalibracji białej</Value>
+    </Item>
+    <Item>
+      <Key>请先选择校准区域</Key>
+      <Value>Proszę najpierw wybrać obszar kalibracji</Value>
+    </Item>
+    <Item>
+      <Key>相机配置已导入</Key>
+      <Value>Konfiguracja aparatu została zaimportowana</Value>
+    </Item>
+    <Item>
+      <Key>相机配置导入成功</Key>
+      <Value>Konfiguracja aparatu zaimportowana pomyślnie</Value>
+    </Item>
+    <Item>
+      <Key>相机配置导入失败</Key>
+      <Value>Import konfiguracji aparatu nie powiodł się</Value>
+    </Item>
+    <Item>
+      <Key>相机已断开</Key>
+      <Value>Kamera została odłączona</Value>
+    </Item>
+    <Item>
+      <Key>相机已连接</Key>
+      <Value>Podłączona kamera</Value>
+    </Item>
+    <Item>
+      <Key>停止调节清晰度和信号量</Key>
+      <Value>Przestań dostosowywać jasność i ilość sygnału</Value>
+    </Item>
+    <Item>
+      <Key>开始调节清晰度和信号量</Key>
+      <Value>Rozpocząć regulację jasności i głośności sygnału</Value>
+    </Item>
+    <Item>
+      <Key>保存数据</Key>
+      <Value>Zapisz dane</Value>
+    </Item>
+    <Item>
+      <Key>正在保存高光谱数据,请稍等...</Key>
+      <Value>Zapisuję dane hiperspektralne, proszę poczekać</Value>
+    </Item>
+    <Item>
+      <Key>内存使用量过高，采集已暂停</Key>
+      <Value>Wykorzystanie pamięci jest zbyt wysokie, kolekcja została wstrzymana</Value>
+    </Item>
+    <Item>
+      <Key>帧频或曝光时间已修改，请重新进行校准</Key>
+      <Value>Częstotliwość klatek lub czas ekspozycji zostały zmodyfikowane, proszę ponownie kalibrować</Value>
+    </Item>
+    <Item>
+      <Key>请先选择训练图片</Key>
+      <Value>Proszę najpierw wybrać obraz treningu</Value>
+    </Item>
+    <Item>
+      <Key>模型训练</Key>
+      <Value>modelowe szkolenia</Value>
+    </Item>
+    <Item>
+      <Key>正在训练模型,请稍等...</Key>
+      <Value>Model treningowy, proszę poczekać</Value>
+    </Item>
+    <Item>
+      <Key>模型验证</Key>
+      <Value>Walidacja modelu</Value>
+    </Item>
+    <Item>
+      <Key>模型验证中...</Key>
+      <Value>Podczas walidacji modelu</Value>
+    </Item>
+    <Item>
+      <Key>请先进行校准</Key>
+      <Value>Proszę najpierw kalibrować</Value>
+    </Item>
+    <Item>
+      <Key>未找到校准文件，请先进行校准</Key>
+      <Value>Nie znaleziono pliku kalibracji, proszę najpierw kalibrację</Value>
+    </Item>
+    <Item>
+      <Key>校准文件已过期，是否重新校准？</Key>
+      <Value>Akta kalibracji wygasły, chcesz przekalibrować?</Value>
+    </Item>
+    <Item>
+      <Key>白校准文件已过期，是否重新校准？</Key>
+      <Value>Biały plik kalibracyjny wygasł. Czy powinien zostać przekalibrowany?</Value>
+    </Item>
+    <Item>
+      <Key>黑校准文件已过期，是否重新校准？</Key>
+      <Value>Czarny plik kalibracyjny wygasł.</Value>
+    </Item>
+    <Item>
+      <Key>正在努力加载中，请稍等......</Key>
+      <Value>Próbuję załadować, proszę poczekać</Value>
+    </Item>
+    <Item>
+      <Key>已运行：{0}s</Key>
+      <Value>Już działa: {0}s</Value>
+    </Item>
+    <Item>
+      <Key>取消任务将可能导致数据错误和异常,是否确认取消?</Key>
+      <Value>Anulowanie zadania może spowodować błędy danych i wyjątki. Czy na pewno chcesz anulować?</Value>
+    </Item>
+    <Item>
+      <Key>取消任务中,请稍等...</Key>
+      <Value>Anuluję zadanie, proszę poczekać</Value>
+    </Item>
+    <Item>
+      <Key>像素显示区间设置异常，请重新设置</Key>
+      <Value>Nieprawidłowe ustawienie interwału wyświetlania pikseli, proszę zresetować</Value>
+    </Item>
+    <Item>
+      <Key>请先输入IP和端口</Key>
+      <Value>Najpierw wprowadź adres IP i port</Value>
+    </Item>
+    <Item>
+      <Key>Csv文件存储</Key>
+      <Value>Przechowywanie plików Csv</Value>
+    </Item>
+    <Item>
+      <Key>请选择保存文件</Key>
+      <Value>Proszę wybrać Zapisz plik</Value>
+    </Item>
+    <Item>
+      <Key />
+      <Value />
+    </Item>
+  </Prompts>
+  <Interfaces />
+  <Enumerate>
+    <EnumItem>
+      <Key>EnumGain</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>高</Key>
+          <Value>wysokie</Value>
+        </Item>
+        <Item>
+          <Key>中</Key>
+          <Value>w</Value>
+        </Item>
+        <Item>
+          <Key>低</Key>
+          <Value>niskie</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>PreprocessTypes</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>平滑处理</Key>
+          <Value>Płynne przetwarzanie</Value>
+        </Item>
+        <Item>
+          <Key>基线校正</Key>
+          <Value>Korekta podstawowa</Value>
+        </Item>
+        <Item>
+          <Key>尺度缩放</Key>
+          <Value>Skalowanie</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumSmoothingAlgorithm</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>SG平滑</Key>
+          <Value>SG Gładki</Value>
+        </Item>
+        <Item>
+          <Key>滑动平滑</Key>
+          <Value>Gładkie przesuwanie</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumScaleScalingAlgorithm</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>标准化</Key>
+          <Value>Normalizacja</Value>
+        </Item>
+        <Item>
+          <Key>最大最小归一化</Key>
+          <Value>Maksymalna minimalna normalizacja</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+    <EnumItem>
+      <Key>EnumBaselineCorrection</Key>
+      <Value />
+      <Content>
+        <Item>
+          <Key>一阶导数</Key>
+          <Value>Pierwsza pochodna</Value>
+        </Item>
+        <Item>
+          <Key>二阶导数</Key>
+          <Value>Druga pochodna</Value>
+        </Item>
+      </Content>
+    </EnumItem>
+  </Enumerate>
+</LanguageLibrary>

@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\OpenCvSharp4.runtime.win.4.10.0.20240616\build\net48\OpenCvSharp4.runtime.win.props" Condition="Exists('..\packages\OpenCvSharp4.runtime.win.4.10.0.20240616\build\net48\OpenCvSharp4.runtime.win.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B05F01C-7EA3-48CE-9FFD-6039C80E5D1B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FigSpec.SortingExpert</RootNamespace>
+    <AssemblyName>SortingExpert</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;JIUSHUN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Publish\SortingExpert\Release-1.0\</OutputPath>
+    <DefineConstants>TRACE;GPU</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowedReferenceRelatedFileExtensions>.allowedextension</AllowedReferenceRelatedFileExtensions>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'GPU-Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;GPU</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>无标题 %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.3.8.0\lib\net462\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.MachineLearning.3.8.0\lib\net462\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Statistics.3.8.0\lib\net462\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="Cameras, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllFiles\Cameras.dll</HintPath>
+    </Reference>
+    <Reference Include="CHNSpec.API, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllFiles\CHNSpec.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Cameras.Factory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllFiles\Cameras.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="CHNSpec.Popups, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllFiles\CHNSpec.Popups.dll</HintPath>
+    </Reference>
+    <Reference Include="CHNSpec.Tools">
+      <HintPath>DllFiles\CHNSpec.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.2.UI, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.2.UI, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.2.Wizard, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.2.Extensions, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FigSpec.LightSource, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllFiles\FigSpec.LightSource.dll</HintPath>
+    </Reference>
+    <Reference Include="FigSpec.Spectral, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public-class\FigSpec.Spectral\bin\Debug\FigSpec.Spectral.dll</HintPath>
+    </Reference>
+    <Reference Include="Globalization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllFiles\Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="Hyperspectral, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllFiles\Hyperspectral.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.4.2.13, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.4.2\lib\netstandard2.0\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ILGPU, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ILGPU.1.5.1\lib\net471\ILGPU.dll</HintPath>
+    </Reference>
+    <Reference Include="ILGPU.Algorithms, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ILGPU.Algorithms.1.5.1\lib\net471\ILGPU.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="ImgView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllFiles\ImgView.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.1.0\lib\net46\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.Extensions.Logging.5.2.0\lib\net461\NLog.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>DllFiles\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>DllFiles\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>DllFiles\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>DllFiles\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="NumSharp">
+      <HintPath>..\packages\NumSharp.0.30.0\lib\netstandard2.0\NumSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp4.4.10.0.20240616\lib\net48\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp4.Extensions.4.10.0.20240616\lib\net48\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SerialPortLib, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SerialPortLib.1.1.2\lib\net472\SerialPortLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.7.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Ports, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Ports.6.0.0\lib\net461\System.IO.Ports.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=7.0.0.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.7.0.2\lib\net462\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algorithm\OpenCVSvm.cs" />
+    <Compile Include="Algorithm\ReflectPreprocessing.cs" />
+    <Compile Include="Algorithm\Svm.cs" />
+    <Compile Include="AppCode\Constant.cs" />
+    <Compile Include="DataToCPP\AIModel.cs" />
+    <Compile Include="DataToCPP\PlsAI.cs" />
+    <Compile Include="Entities\ClassIdAndReflectivity.cs" />
+    <Compile Include="Loading\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\SplicingWhiteCalibrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\SplicingWhiteCalibrationForm.Designer.cs">
+      <DependentUpon>SplicingWhiteCalibrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\UserGuideForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\UserGuideForm.designer.cs">
+      <DependentUpon>UserGuideForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\FormPreprocessEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\FormPreprocessEdit.Designer.cs">
+      <DependentUpon>FormPreprocessEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Client\JiuShunEjectDevice.cs" />
+    <Compile Include="Tools\FileStorageHelper.cs" />
+    <Compile Include="Tools\IBaseEjectDevice.cs" />
+    <Compile Include="Tools\Client\ChspecEjectDevice.cs" />
+    <Compile Include="Tools\Client\XiWangEjectDevice.cs" />
+    <Compile Include="Tools\Client\XiWang\PuffData.cs" />
+    <Compile Include="Tools\Common.cs" />
+    <Compile Include="Tools\FileTool.cs" />
+    <Compile Include="AppCode\NotificationAction.cs" />
+    <Compile Include="AppCode\SpeExtend.cs" />
+    <Compile Include="AppCode\TrainFormHelper.cs" />
+    <Compile Include="AppsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppsForm.Designer.cs">
+      <DependentUpon>AppsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl\SortingBaseButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseFormInside.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFormInside.Designer.cs">
+      <DependentUpon>BaseFormInside.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFormSetting.Designer.cs">
+      <DependentUpon>BaseFormSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowseForm.Designer.cs">
+      <DependentUpon>BrowseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuda\CudaAccelerator.cs" />
+    <Compile Include="Cuda\Kernals.cs" />
+    <Compile Include="EjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EjectForm.Designer.cs">
+      <DependentUpon>EjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Algorithm.cs" />
+    <Compile Include="Entities\ApplyInfo.cs" />
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\BaseDictionary.cs" />
+    <Compile Include="Entities\BaseInfo.cs" />
+    <Compile Include="Entities\CalibrationInfo.cs" />
+    <Compile Include="Entities\CameraSetting.cs" />
+    <Compile Include="Entities\GlobalClass.cs" />
+    <Compile Include="Entities\LineClass.cs" />
+    <Compile Include="Entities\PointChart.cs" />
+    <Compile Include="Entities\ScanSet.cs" />
+    <Compile Include="Entities\TracheaSet.cs" />
+    <Compile Include="Enums\BeforeUsedEnum.cs" />
+    <Compile Include="Enums\ColorType.cs" />
+    <Compile Include="Enums\EnumAlgorithm.cs" />
+    <Compile Include="Enums\EnumGain.cs" />
+    <Compile Include="Enums\NoticeForm.cs" />
+    <Compile Include="ModelFiles\NDArrayExtend.cs" />
+    <Compile Include="SettingForms\DisplayAndCalibrationSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\DisplayAndCalibrationSettingForm.Designer.cs">
+      <DependentUpon>DisplayAndCalibrationSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\FormThresholdMatting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\FormThresholdMatting.Designer.cs">
+      <DependentUpon>FormThresholdMatting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\FormThresholdChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\FormThresholdChange.Designer.cs">
+      <DependentUpon>FormThresholdChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\FromModelFileRename.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\FromModelFileRename.Designer.cs">
+      <DependentUpon>FromModelFileRename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\FromModelRename.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\FromModelRename.Designer.cs">
+      <DependentUpon>FromModelRename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\SaveFileOfName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\SaveFileOfName.Designer.cs">
+      <DependentUpon>SaveFileOfName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\SelectTrainBandsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\SelectTrainBandsForm.Designer.cs">
+      <DependentUpon>SelectTrainBandsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\SortingConnectEject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\SortingConnectEject.Designer.cs">
+      <DependentUpon>SortingConnectEject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\SortingSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\SortingSettingForm.Designer.cs">
+      <DependentUpon>SortingSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\CorrectionHelper.cs" />
+    <Compile Include="Tools\ExportHelper.cs" />
+    <Compile Include="Tools\Extend\AttributeExtend.cs" />
+    <Compile Include="Tools\Extend\ColorExtend.cs" />
+    <Compile Include="Tools\Extend\CustomConverter.cs" />
+    <Compile Include="Entities\EjectIP.cs" />
+    <Compile Include="Entities\LabelClass.cs" />
+    <Compile Include="Entities\HypeImg.cs" />
+    <Compile Include="Entities\HypeLabel.cs" />
+    <Compile Include="Entities\ModelsDisplayCell.cs" />
+    <Compile Include="Entities\Preprocessing.cs" />
+    <Compile Include="Entities\ScanParaMeter.cs" />
+    <Compile Include="Entities\Selecting.cs" />
+    <Compile Include="Entities\TraingSet.cs" />
+    <Compile Include="Entities\TrainSetDisplayCell.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFiles\Model.cs" />
+    <Compile Include="ModelFiles\PLS.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingForms\CameraSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\CameraSettingForm.Designer.cs">
+      <DependentUpon>CameraSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\ClassSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\ClassSettingForm.Designer.cs">
+      <DependentUpon>ClassSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\XtraReportDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\XtraReportDetail.Designer.cs">
+      <DependentUpon>XtraReportDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\EjectIpSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\EjectIpSettingForm.Designer.cs">
+      <DependentUpon>EjectIpSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\GlobalSettings.cs" />
+    <Compile Include="SortingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SortingForm.Designer.cs">
+      <DependentUpon>SortingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ClassifierControl.cs" />
+    <Compile Include="Tools\ClassTools.cs" />
+    <Compile Include="Tools\ClientControl.cs" />
+    <Compile Include="Tools\CollectData.cs" />
+    <Compile Include="Tools\Extend\MessageBoxExtend.cs" />
+    <Compile Include="Tools\JsonHelp.cs" />
+    <Compile Include="Tools\Extend\ControlExtend.cs" />
+    <Compile Include="Tools\Extend\EnumExtend.cs" />
+    <Compile Include="Tools\LogHelper.cs" />
+    <Compile Include="Tools\ObjectCopyExtensions.cs" />
+    <Compile Include="Tools\OpenCV.cs" />
+    <Compile Include="Tools\PreprocessingHelper.cs" />
+    <Compile Include="Tools\PythonHelper.cs" />
+    <Compile Include="Tools\ServerControl.cs" />
+    <Compile Include="TrainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainForm.Designer.cs">
+      <DependentUpon>TrainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypeExtensions\Extensions.cs" />
+    <Compile Include="VersionUpdate\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionUpdate\AboutForm.designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VersionUpdate\NewVersionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionUpdate\NewVersionForm.designer.cs">
+      <DependentUpon>NewVersionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VersionUpdate\VersionUpdate.cs" />
+    <Compile Include="ScanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScanForm.Designer.cs">
+      <DependentUpon>ScanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xmls\XApplySetting.cs" />
+    <EmbeddedResource Include="AppsForm.resx">
+      <DependentUpon>AppsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFormInside.resx">
+      <DependentUpon>BaseFormInside.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFormSetting.resx">
+      <DependentUpon>BaseFormSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowseForm.resx">
+      <DependentUpon>BrowseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EjectForm.resx">
+      <DependentUpon>EjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Assets\Files\POCC.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Assets\language\国际化-FigSpec-Sorting-V1.2024-10-15.0.xlsx" />
+    <None Include="DllFiles\CameraLinkInf.ccf" />
+    <Fakes Include="Fakes\DevExpress.XtraVerticalGrid.v18.2.fakes" />
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="SettingForms\SplicingWhiteCalibrationForm.resx">
+      <DependentUpon>SplicingWhiteCalibrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\UserGuideForm.resx">
+      <DependentUpon>UserGuideForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\DisplayAndCalibrationSettingForm.resx">
+      <DependentUpon>DisplayAndCalibrationSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\FormPreprocessEdit.resx">
+      <DependentUpon>FormPreprocessEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\FormThresholdMatting.resx">
+      <DependentUpon>FormThresholdMatting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\FormThresholdChange.resx">
+      <DependentUpon>FormThresholdChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\SaveFileOfName.resx">
+      <DependentUpon>SaveFileOfName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\SortingConnectEject.resx">
+      <DependentUpon>SortingConnectEject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionUpdate\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionUpdate\NewVersionForm.resx">
+      <DependentUpon>NewVersionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SettingForms\CameraSettingForm.resx">
+      <DependentUpon>CameraSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\ClassSettingForm.resx">
+      <DependentUpon>ClassSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\XtraReportDetail.resx">
+      <DependentUpon>XtraReportDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\EjectIpSettingForm.resx">
+      <DependentUpon>EjectIpSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\FromModelFileRename.resx">
+      <DependentUpon>FromModelFileRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\FromModelRename.resx">
+      <DependentUpon>FromModelRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\SelectTrainBandsForm.resx">
+      <DependentUpon>SelectTrainBandsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\SortingSettingForm.resx">
+      <DependentUpon>SortingSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SortingForm.resx">
+      <DependentUpon>SortingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainForm.resx">
+      <DependentUpon>TrainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScanForm.resx">
+      <DependentUpon>ScanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Assets\language\en_US.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\language\es.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\language\ja.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\language\ko.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\language\pl_PL.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\language\pt_BR.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\language\ru.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\language\tr.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\language\zh_CN.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DllFiles\CameraLinkCmd.dll" />
+    <Content Include="DllFiles\Cameras.B.dll" />
+    <Content Include="DllFiles\Cameras.dll" />
+    <Content Include="DllFiles\Cameras.Factory.dll" />
+    <Content Include="DllFiles\Cameras.H.dll" />
+    <Content Include="DllFiles\Cameras.T.dll" />
+    <Content Include="DllFiles\Cameras.TCL.dll" />
+    <Content Include="DllFiles\CamT.dll" />
+    <Content Include="DllFiles\CHNSpec.API.dll" />
+    <Content Include="DllFiles\CHNSpec.Popups.dll" />
+    <Content Include="DllFiles\DALSA.SaperaLT.SapClassBasic.dll" />
+    <Content Include="DllFiles\FigSpec.LightSource.dll" />
+    <Content Include="DllFiles\FigSpec.Spectral.dll" />
+    <Content Include="DllFiles\Globalization.dll" />
+    <Content Include="DllFiles\Hyperspectral.dll" />
+    <Content Include="DllFiles\ImgView.dll" />
+    <Content Include="Icon\apps-click.png" />
+    <Content Include="Icon\apps-normal.png" />
+    <Content Include="Icon\browse-click.png" />
+    <Content Include="Icon\browse-normal.png" />
+    <Content Include="Icon\eject-click.png" />
+    <Content Include="Icon\eject-normal.png" />
+    <Content Include="Icon\sorting-click.png" />
+    <Content Include="Icon\sorting-normal.png" />
+    <Content Include="Icon\train-click.png" />
+    <Content Include="Icon\train-normal.png" />
+    <Content Include="Icon\view-click.png" />
+    <Content Include="Icon\view-normal.png" />
+    <Content Include="image\example.png" />
+    <None Include="Resources\neural.png" />
+    <Content Include="无标题 %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenCvSharp4.runtime.win.4.10.0.20240616\build\net48\OpenCvSharp4.runtime.win.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCvSharp4.runtime.win.4.10.0.20240616\build\net48\OpenCvSharp4.runtime.win.props'))" />
+    <Error Condition="!Exists('..\packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Accord.3.8.0\build\Accord.targets'))" />
+  </Target>
+  <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />
+</Project>
