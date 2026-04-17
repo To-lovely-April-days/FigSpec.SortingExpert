@@ -156,7 +156,25 @@ namespace FigSpec.SortingExpert.ModelFiles
         public float StartBackgroundThreshold { get; set; }
 
         public float EndBackgroundThreshold { get; set; }
+        /// <summary>
+        /// "统一颜色"功能:是否勾选
+        /// </summary>
+        public bool UnifyColorEnabled { get; set; } = false;
 
+        /// <summary>
+        /// "统一颜色"功能:目标类别(-1=自动多数投票,>=0=强制指定的 classid)
+        /// </summary>
+        public int UnifyTargetClassId { get; set; } = -1;
+
+        /// <summary>
+        /// "统一颜色"功能:置信度阈值(0~100)
+        /// </summary>
+        public int UnifyConfidenceThreshold { get; set; } = 60;
+
+        /// <summary>
+        /// "统一颜色"功能:是否填充矿石背景
+        /// </summary>
+        public bool UnifyFillBackground { get; set; } = false;
 
         /// <summary>
         /// 预处理算法，模型中的都应是已经启用的算法

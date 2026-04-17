@@ -37,7 +37,15 @@ using DevExpress.XtraTreeList.Nodes;
 namespace FigSpec.SortingExpert
 {
     public partial class TrainForm : BaseFormInside
-    {
+    {/// <summary>
+     /// 下拉框数据源项
+     /// </summary>
+        private class UnifyTargetItem
+        {
+            public int ClassId { get; set; }  // -1 = 自动多数投票
+            public string Display { get; set; }
+            public override string ToString() => Display;
+        }
         protected override CreateParams CreateParams
         {
             get
@@ -73,6 +81,18 @@ namespace FigSpec.SortingExpert
         /// 验证的预览图片数据
         /// </summary>
         private byte[][] pridictionImage;
+        /// <summary>
+        /// pridictionImage 的原始备份(统一颜色功能用,每次聚合都从这个备份开始)
+        /// </summary>
+        private byte[][] pridictionImageOriginal;
+        /// <summary>
+        /// 标记"统一颜色"控件是否已被激活(每次训练/应用模型重置)
+        /// </summary>
+        private bool unifyControlsActivated = false;
+        /// <summary>
+        /// 标记:当前正在从模型读取设置到控件(此时不要触发写回和刷新)
+        /// </summary>
+        private bool isLoadingUnifySettings = false;
         /// <summary>
         /// 验证显示预览图片定时器
         /// </summary>
@@ -170,6 +190,9 @@ namespace FigSpec.SortingExpert
                 btnExportCsv.Visible = false;
                 barBtnSend2OutlineSorting.Visibility = BarItemVisibility.Never;
             }
+
+            // ===== 新增:默认禁用"统一颜色"相关控件 =====
+            SetUnifyControlsEnabled(false);
         }
 
         private void TrainForm_Load(object sender, EventArgs e)
@@ -524,6 +547,8 @@ namespace FigSpec.SortingExpert
                 //刷新模型
                 UpdateTrainSet();
                 GlobalSettings.ApplySetting.Save();
+                // 刷新"统一颜色"下拉框的类别选项
+                RefreshUnifyTargetCombo();
             }
 
         }
@@ -1106,6 +1131,8 @@ namespace FigSpec.SortingExpert
         /// <param name="e"></param>
         private async void barBtnUseModelLabel_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetUnifyControlsEnabled(false);
+            unifyControlsActivated = false;
             if (!string.IsNullOrEmpty(GlobalSettings.ApplySetting.runingApp))
             {
                 FormShowHelper.ShowMessage("分选模块正在被使用".ToMultiLanguage(), "提示".ToMultiLanguage());
@@ -1281,7 +1308,594 @@ namespace FigSpec.SortingExpert
                 Console.WriteLine("高光谱图像刷新异常");
             }
         }
+        /// <summary>
+        /// 从 model 读取"统一颜色"设置,应用到界面控件
+        /// </summary>
+        private void LoadUnifySettingsFromModel()
+        {
+            if (model == null) return;
 
+            try
+            {
+                // 暂时屏蔽事件,避免读取时触发写回/刷新
+                isLoadingUnifySettings = true;
+
+                // 阈值滑块
+                if (trackUnifyThreshold != null)
+                {
+                    int threshold = model.UnifyConfidenceThreshold;
+                    if (threshold < 0) threshold = 60;
+                    if (threshold > 100) threshold = 100;
+                    trackUnifyThreshold.Value = threshold;
+                    if (lblUnifyThreshold != null)
+                    {
+                        lblUnifyThreshold.Text = $"置信度阈值: {threshold}%";
+                    }
+                }
+
+                // 下拉框先填充类别选项,再设置选中项
+                RefreshUnifyTargetCombo();
+                if (cboUnifyTargetClass != null)
+                {
+                    int targetIdx = 0; // 默认选"自动"
+                    for (int i = 0; i < cboUnifyTargetClass.Properties.Items.Count; i++)
+                    {
+                        var item = cboUnifyTargetClass.Properties.Items[i] as UnifyTargetItem;
+                        if (item != null && item.ClassId == model.UnifyTargetClassId)
+                        {
+                            targetIdx = i;
+                            break;
+                        }
+                    }
+                    cboUnifyTargetClass.SelectedIndex = targetIdx;
+                }
+
+                // "填充背景"
+                if (chkFillBackground != null)
+                {
+                    chkFillBackground.Checked = model.UnifyFillBackground;
+                }
+
+                // 最后才设置"统一颜色"复选框,触发一次刷新
+                if (chkUnifyColor != null)
+                {
+                    chkUnifyColor.Checked = model.UnifyColorEnabled;
+                }
+
+                Console.WriteLine($"[统一颜色] 已从模型读取设置: 勾选={model.UnifyColorEnabled}, 目标={model.UnifyTargetClassId}, 阈值={model.UnifyConfidenceThreshold}%, 填充={model.UnifyFillBackground}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("[统一颜色] LoadUnifySettingsFromModel 异常: " + ex.Message);
+            }
+            finally
+            {
+                isLoadingUnifySettings = false;
+            }
+        }
+
+        /// <summary>
+        /// 把当前界面的"统一颜色"设置写回 model,并保存
+        /// </summary>
+        private void SaveUnifySettingsToModel()
+        {
+            if (model == null) return;
+            if (isLoadingUnifySettings) return; // 正在读取中,不要写回
+
+            try
+            {
+                model.UnifyColorEnabled = chkUnifyColor != null && chkUnifyColor.Checked;
+
+                int classId = -1;
+                var selected = cboUnifyTargetClass?.SelectedItem as UnifyTargetItem;
+                if (selected != null) classId = selected.ClassId;
+                model.UnifyTargetClassId = classId;
+
+                model.UnifyConfidenceThreshold = trackUnifyThreshold != null ? trackUnifyThreshold.Value : 60;
+                model.UnifyFillBackground = chkFillBackground != null && chkFillBackground.Checked;
+
+                // 触发全局保存,让设置持久化到 .fsmodel 文件
+                GlobalSettings.ApplySetting.Save();
+
+                Console.WriteLine($"[统一颜色] 设置已保存到模型");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("[统一颜色] SaveUnifySettingsToModel 异常: " + ex.Message);
+            }
+        }
+        /// <summary>
+        /// 统一管理"统一颜色"相关控件的启用/禁用状态
+        /// </summary>
+        /// <param name="enabled">true=启用(预测图已渲染),false=禁用</param>
+        private void SetUnifyControlsEnabled(bool enabled)
+        {
+            try
+            {
+                if (chkUnifyColor != null) chkUnifyColor.Enabled = enabled;
+
+                // 下拉框、阈值、填充背景这些,只有"统一颜色"被勾选了才启用
+                // 所以这里要么统一禁用,要么根据 chkUnifyColor.Checked 状态联动
+                bool subEnabled = enabled && chkUnifyColor != null && chkUnifyColor.Checked;
+                if (cboUnifyTargetClass != null) cboUnifyTargetClass.Enabled = subEnabled;
+                if (trackUnifyThreshold != null) trackUnifyThreshold.Enabled = subEnabled;
+                if (lblUnifyThreshold != null) lblUnifyThreshold.Enabled = subEnabled;
+                if (chkFillBackground != null) chkFillBackground.Enabled = subEnabled;
+
+                // 禁用时,强制取消所有勾选状态并清理备份,避免下次训练时残留状态
+                if (!enabled)
+                {
+                    if (chkUnifyColor != null) chkUnifyColor.Checked = false;
+                    if (chkFillBackground != null) chkFillBackground.Checked = false;
+                    pridictionImageOriginal = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("[统一颜色] SetUnifyControlsEnabled 异常: " + ex.Message);
+            }
+        }
+        /// <summary>
+        /// "统一颜色"复选框状态变化时触发,立即重新刷新显示
+        /// </summary>
+        private void chkUnifyColor_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine($"===== chkUnifyColor_CheckedChanged 触发,Checked={chkUnifyColor.Checked} =====");
+            // 加这一行
+            if (!isLoadingUnifySettings) SaveUnifySettingsToModel();
+            // 让子控件跟着"统一颜色"勾选状态联动
+            bool subEnabled = chkUnifyColor.Checked && unifyControlsActivated;
+            if (cboUnifyTargetClass != null) cboUnifyTargetClass.Enabled = subEnabled;
+            if (trackUnifyThreshold != null) trackUnifyThreshold.Enabled = subEnabled;
+            if (lblUnifyThreshold != null) lblUnifyThreshold.Enabled = subEnabled;
+            if (chkFillBackground != null)
+            {
+                chkFillBackground.Enabled = subEnabled;
+                if (!chkUnifyColor.Checked)
+                {
+                    chkFillBackground.Checked = false;
+                }
+            }
+
+            if (model == null || pridictionImage == null || img == null || spe == null)
+            {
+                Console.WriteLine("[统一颜色] 条件不满足,跳过。");
+                return;
+            }
+
+            if (chkUnifyColor.Checked)
+            {
+                if (pridictionImageOriginal == null)
+                {
+                    BackupPridictionImage();
+                }
+                RefreshUnifyTargetCombo();
+            }
+
+            RefreshPredictionImage();
+        }
+
+        /// <summary>
+        /// "填充背景"复选框变化:重新渲染
+        /// </summary>
+        private void chkFillBackground_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine($"[填充背景] CheckedChanged: Checked={chkFillBackground.Checked}");
+            // 加这一行
+            if (!isLoadingUnifySettings) SaveUnifySettingsToModel();
+            if (chkUnifyColor == null || !chkUnifyColor.Checked) return;
+            if (model == null || pridictionImage == null || img == null || spe == null) return;
+
+            RefreshPredictionImage();
+        }
+        /// <summary>
+        /// 根据当前 model 填充"统一目标类别"下拉框
+        /// </summary>
+        private void RefreshUnifyTargetCombo()
+        {
+            try
+            {
+                cboUnifyTargetClass.Properties.Items.Clear();
+
+                // 第一项:自动(多数投票)
+                cboUnifyTargetClass.Properties.Items.Add(new UnifyTargetItem
+                {
+                    ClassId = -1,
+                    Display = "自动(多数投票)"
+                });
+
+                // 把 model.plss 里的每个类别加进来
+                if (model != null && model.plss != null)
+                {
+                    var classes = GlobalSettings.ApplySetting.traingSet.label.classes;
+                    foreach (var pls in model.plss)
+                    {
+                        // 找这个 classid 对应的类别名称
+                        var cls = classes.Find(c => c.id == pls.classid);
+                        string name = cls != null ? cls.name : ("类别 " + pls.classid);
+
+                        cboUnifyTargetClass.Properties.Items.Add(new UnifyTargetItem
+                        {
+                            ClassId = pls.classid,
+                            Display = name
+                        });
+                    }
+                }
+
+                // 默认选第一个(自动)
+                if (cboUnifyTargetClass.Properties.Items.Count > 0 &&
+                    cboUnifyTargetClass.SelectedIndex < 0)
+                {
+                    cboUnifyTargetClass.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("[统一颜色] RefreshUnifyTargetCombo 异常: " + ex.Message);
+            }
+        }
+        /// <summary>
+        /// 兜底阈值滑块变化
+        /// </summary>
+        private void trackUnifyThreshold_EditValueChanged(object sender, EventArgs e)
+        {
+            // 实时更新标签显示
+            if (lblUnifyThreshold != null)
+            {
+                lblUnifyThreshold.Text = $"置信度阈值: {trackUnifyThreshold.Value}%";
+            }
+            // 加这一行
+            if (!isLoadingUnifySettings) SaveUnifySettingsToModel();
+            // 只有勾选了统一颜色、且选了具体类别时才重新刷新
+            if (chkUnifyColor == null || !chkUnifyColor.Checked) return;
+            if (model == null || pridictionImage == null || img == null || spe == null) return;
+
+            // 如果下拉框是"自动",阈值不起作用,不用刷新
+            var selected = cboUnifyTargetClass.SelectedItem as UnifyTargetItem;
+            if (selected == null || selected.ClassId < 0) return;
+
+            RefreshPredictionImage();
+        }
+        /// <summary>
+        /// 下拉框切换:重新刷新一下画面
+        /// </summary>
+        private void cboUnifyTargetClass_SelectedIndexChanged(object sender, EventArgs e)
+        {  // 加这一行
+            if (!isLoadingUnifySettings) SaveUnifySettingsToModel();
+            // 只有勾选了"统一颜色"且有预测结果,切换才刷新
+            if (chkUnifyColor == null || !chkUnifyColor.Checked) return;
+            if (model == null || pridictionImage == null || img == null || spe == null) return;
+
+            RefreshPredictionImage();
+        }
+        /// <summary>
+        /// 手动刷新预测图(不依赖定时器和焦点判断)
+        /// </summary>
+        private unsafe void RefreshPredictionImage()
+        {
+            try
+            {// 无论是否勾选,都先从备份还原
+                RestorePridictionImage();
+
+                // 勾选了才做聚合
+                if (chkUnifyColor != null && chkUnifyColor.Checked)
+                {
+                    byte? forceClassId = null;
+                    var selected = cboUnifyTargetClass.SelectedItem as UnifyTargetItem;
+                    if (selected != null && selected.ClassId >= 0)
+                    {
+                        forceClassId = (byte)selected.ClassId;
+                    }
+
+                    // 读取兜底阈值(0~100 → 0.0~1.0)
+                    float fallbackThreshold = (trackUnifyThreshold != null)
+                        ? trackUnifyThreshold.Value / 100f
+                        : 0.2f;
+
+                    bool fillBg = chkFillBackground != null && chkFillBackground.Checked;
+                    UnifyClassIdByContour(forceClassId, fallbackThreshold, fillBg);
+                }
+                Bitmap bitmap = img.ToBitmap(spe.Lines, spe.Samples);
+                var bData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
+                var ptr = (byte*)bData.Scan0;
+
+                Parallel.For(0, spe.Samples, (int y) =>
+                {
+                    for (int x = 0; x < pridictionImage.Length; x++)
+                    {
+                        if (pridictionImage[x] is null) continue;
+                        if (pridictionImage[x][y] == 0) continue;
+                        if (model.plss == null || model.plss.Count == 0) continue;
+
+                        foreach (var item in model.plss)
+                        {
+                            if (pridictionImage[x][y] == item.classid)
+                            {
+                                *(ptr + y * bData.Stride + x * 3) = Color.FromArgb(item.color).B;
+                                *(ptr + y * bData.Stride + x * 3 + 1) = Color.FromArgb(item.color).G;
+                                *(ptr + y * bData.Stride + x * 3 + 2) = Color.FromArgb(item.color).R;
+                            }
+                        }
+                    }
+                });
+                bitmap.UnlockBits(bData);
+                imageViewWithTools1.SetImage(bitmap, GlobalSettings.ApplySetting.StartSample, GlobalSettings.ApplySetting.EndSample);
+                Console.WriteLine("[统一颜色] 图片已刷新到界面");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("[统一颜色] RefreshPredictionImage 异常: " + ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
+        }
+        /// <summary>
+        /// 备份当前的 pridictionImage 到 pridictionImageOriginal
+        /// </summary>
+        private void BackupPridictionImage()
+        {
+            if (pridictionImage == null)
+            {
+                pridictionImageOriginal = null;
+                return;
+            }
+
+            pridictionImageOriginal = new byte[pridictionImage.Length][];
+            for (int i = 0; i < pridictionImage.Length; i++)
+            {
+                if (pridictionImage[i] == null)
+                {
+                    pridictionImageOriginal[i] = null;
+                }
+                else
+                {
+                    pridictionImageOriginal[i] = new byte[pridictionImage[i].Length];
+                    Buffer.BlockCopy(pridictionImage[i], 0, pridictionImageOriginal[i], 0, pridictionImage[i].Length);
+                }
+            }
+            Console.WriteLine("[统一颜色] 已备份原始预测结果");
+        }
+
+        /// <summary>
+        /// 从备份还原 pridictionImage
+        /// </summary>
+        private void RestorePridictionImage()
+        {
+            if (pridictionImageOriginal == null || pridictionImage == null) return;
+            if (pridictionImageOriginal.Length != pridictionImage.Length) return;
+
+            for (int i = 0; i < pridictionImage.Length; i++)
+            {
+                if (pridictionImageOriginal[i] == null)
+                {
+                    pridictionImage[i] = null;
+                }
+                else
+                {
+                    if (pridictionImage[i] == null || pridictionImage[i].Length != pridictionImageOriginal[i].Length)
+                    {
+                        pridictionImage[i] = new byte[pridictionImageOriginal[i].Length];
+                    }
+                    Buffer.BlockCopy(pridictionImageOriginal[i], 0, pridictionImage[i], 0, pridictionImageOriginal[i].Length);
+                }
+            }
+        }
+        /// <summary>
+        /// 按连通域统一 classid
+        /// </summary>
+        /// <param name="forceClassId">
+        /// 用户指定的目标 classid。传 null 走多数投票(仅处理花色矿石)。
+        /// </param>
+        /// <param name="confidenceThreshold">
+        /// 置信度阈值(0.0~1.0)。仅在 forceClassId 有值时生效。
+        /// 置信度 = 最多类别像素数 / 矩形总面积。
+        /// 低于阈值 = 模型不确信 → 染成 forceClassId
+        /// 高于阈值 = 模型确信 → 保留原判
+        /// </param>
+        private void UnifyClassIdByContour(byte? forceClassId = null, float confidenceThreshold = 0.6f, bool fillBackground = false)
+        {
+            try
+            {
+                if (pridictionImage == null || pridictionImage.Length == 0 || model == null)
+                    return;
+
+                var set = GlobalSettings.ApplySetting.traingSet;
+                var algorithm = set.algorithm;
+                var channel = (set.ImgR, set.ImgG, set.ImgB);
+
+                float tr, tg, tb;
+                if (spe.Hdr.DataType == 4)
+                {
+                    tr = set.ImgThresholdR / 100f;
+                    tg = set.ImgThresholdG / 100f;
+                    tb = set.ImgThresholdB / 100f;
+                }
+                else
+                {
+                    tr = set.ImgThresholdR;
+                    tg = set.ImgThresholdG;
+                    tb = set.ImgThresholdB;
+                }
+
+                Bitmap rgbBitmap = SpeExtend.BackgroundCorrectionToBitmap(
+                    spe, channel, (tr, tg, tb),
+                    algorithm.StartBandIndex, algorithm.EndBandIndex,
+                    algorithm.BackgroundCorrection,
+                    algorithm.StartBackgroundThreshold, algorithm.EndBackgroundThreshold);
+
+                var contourInfo = OpenCV.FindContourInfo(
+                    rgbBitmap, 30f, 0,
+                    needPreview: false, needRect: true, needAllPoints: true);
+                rgbBitmap.Dispose();
+
+                Console.WriteLine($"[统一颜色] 矿石数={contourInfo?.Count ?? 0}, " +
+                                  $"模式={(forceClassId.HasValue ? "强制=" + forceClassId.Value : "自动")}, " +
+                                  $"置信度阈值={confidenceThreshold:F2}");
+
+                if (contourInfo == null || contourInfo.Count == 0) return;
+
+                int changedCount = 0;
+                int confidentStones = 0;  // 被判定为"模型确信",保留原判的数量
+                int uncertainStones = 0;  // 被判定为"模型不确信",按用户指定覆盖的数量
+                const int EXPAND = 2;
+
+                Parallel.For(0, contourInfo.Count, (int i) =>
+                {
+                    var rect = contourInfo.ContourRects[i];
+
+                    int x0 = Math.Max(0, rect.X - EXPAND);
+                    int y0 = Math.Max(0, rect.Y - EXPAND);
+                    int x1 = Math.Min(pridictionImage.Length - 1, rect.X + rect.Width + EXPAND);
+                    int y1 = Math.Min(spe.Samples - 1, rect.Y + rect.Height + EXPAND);
+
+                    // 统计票数和总像素
+                    Dictionary<byte, int> voteCount = new Dictionary<byte, int>();
+                    int totalPixelCount = 0;
+
+                    for (int x = x0; x <= x1; x++)
+                    {
+                        if (pridictionImage[x] == null) continue;
+                        for (int y = y0; y <= y1; y++)
+                        {
+                            totalPixelCount++;
+                            byte cid = pridictionImage[x][y];
+                            if (cid == 0) continue;
+                            if (voteCount.ContainsKey(cid)) voteCount[cid]++;
+                            else voteCount[cid] = 1;
+                        }
+                    }
+
+                    if (totalPixelCount == 0) return;
+
+                    // 找最多票数的类别
+                    byte topClassId = 0;
+                    int topVotes = 0;
+                    foreach (var kv in voteCount)
+                    {
+                        if (kv.Value > topVotes)
+                        {
+                            topVotes = kv.Value;
+                            topClassId = kv.Key;
+                        }
+                    }
+
+                    // 置信度 = 最多类别像素数 / 矩形总面积
+                    float confidence = (float)topVotes / totalPixelCount;
+
+                    // ===== 决策分支 =====
+                    byte winnerClassId;
+                    bool shouldOverride;  // 是否要强制覆盖(覆盖时整颗矿石都染色,含原本是背景的像素)
+
+                    if (forceClassId.HasValue)
+                    {
+                        // 用户指定了类别
+                        if (confidence >= confidenceThreshold)
+                        {
+                            // 模型确信 → 保留原判,但用矿石自己的主要类别
+                            System.Threading.Interlocked.Increment(ref confidentStones);
+
+                            if (voteCount.Count >= 2)
+                            {
+                                winnerClassId = topClassId;
+                                shouldOverride = false;
+                            }
+                            else if (voteCount.Count == 1 && fillBackground)
+                            {
+                                // 单一类别,但要填充背景
+                                winnerClassId = topClassId;
+                                shouldOverride = false;
+                            }
+                            else
+                            {
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            // 模型不确信 → 按用户指定的染
+                            winnerClassId = forceClassId.Value;
+                            shouldOverride = true;
+                            System.Threading.Interlocked.Increment(ref uncertainStones);
+                        }
+                    }
+                    else
+                    {
+                        // 自动模式
+                        if (voteCount.Count >= 2)
+                        {
+                            // 花色矿石:多数投票
+                            winnerClassId = topClassId;
+                            shouldOverride = false;
+                        }
+                        else if (voteCount.Count == 1 && fillBackground)
+                        {
+                            // 单一类别,但勾了"填充背景",也要处理
+                            winnerClassId = topClassId;
+                            shouldOverride = false;
+                        }
+                        else
+                        {
+                            // 单一类别且未勾"填充背景",不处理
+                            return;
+                        }
+                    }
+
+                    // ===== 改写 =====
+                    // ===== 改写 =====
+                    int localChanged = 0;
+
+                    // fillBackground=true 或 shouldOverride=true 都需要走"整颗矿石填充"路径
+                    bool needFullFill = shouldOverride || fillBackground;
+
+                    if (needFullFill)
+                    {
+                        // 整颗矿石(轮廓内所有点)都染成 winnerClassId
+                        var points = contourInfo.AllPoints[i];
+                        if (points == null) return;
+                        foreach (var pt in points)
+                        {
+                            if (pt.X < 0 || pt.X >= pridictionImage.Length) continue;
+                            if (pridictionImage[pt.X] == null) continue;
+                            if (pt.Y < 0 || pt.Y >= pridictionImage[pt.X].Length) continue;
+
+                            if (pridictionImage[pt.X][pt.Y] != winnerClassId)
+                            {
+                                pridictionImage[pt.X][pt.Y] = winnerClassId;
+                                localChanged++;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // 普通统一:只改已有非 0 像素,保留背景
+                        for (int x = x0; x <= x1; x++)
+                        {
+                            if (pridictionImage[x] == null) continue;
+                            for (int y = y0; y <= y1; y++)
+                            {
+                                if (pridictionImage[x][y] != 0 &&
+                                    pridictionImage[x][y] != winnerClassId)
+                                {
+                                    pridictionImage[x][y] = winnerClassId;
+                                    localChanged++;
+                                }
+                            }
+                        }
+                    }
+
+                    if (localChanged > 0)
+                    {
+                        System.Threading.Interlocked.Add(ref changedCount, localChanged);
+                    }
+                });
+
+                Console.WriteLine($"[统一颜色] 确信保留={confidentStones}, 不确信覆盖={uncertainStones}, 改写像素={changedCount}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("[统一颜色] UnifyClassIdByContour 异常: " + ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
+        }
         private unsafe void PridictionImageViewTimer_Tick(object sender, EventArgs e)
         {
             try
@@ -1295,7 +1909,14 @@ namespace FigSpec.SortingExpert
                     isSaveImage = true;
                 }
 
-                //var set = GlobalSettings.ApplySetting.traingSet;
+                ////var set = GlobalSettings.ApplySetting.traingSet;
+                //// ========== 统一颜色: 如果复选框勾选,先按矿石聚合 classid ==========
+                //if (chkUnifyColor != null && chkUnifyColor.Checked)
+                //{
+                //    UnifyClassIdByContour();
+                //}
+                //// ===============================================================
+
                 Bitmap bitmap = img.ToBitmap(spe.Lines, spe.Samples);
                 var bData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
                 var ptr = (byte*)bData.Scan0;
@@ -1337,7 +1958,28 @@ namespace FigSpec.SortingExpert
                 });
                 bitmap.UnlockBits(bData);
                 imageViewWithTools1.SetImage(bitmap, GlobalSettings.ApplySetting.StartSample, GlobalSettings.ApplySetting.EndSample);
+                // ===== 首次渲染完成后启用"统一颜色"控件 =====
+                if (!unifyControlsActivated && pridictionImage != null && pridictionImage.Length > 0)
+                {
+                    bool hasData = false;
+                    for (int x = 0; x < pridictionImage.Length; x++)
+                    {
+                        if (pridictionImage[x] != null)
+                        {
+                            hasData = true;
+                            break;
+                        }
+                    }
+                    if (hasData)
+                    {
+                        unifyControlsActivated = true;
+                        SetUnifyControlsEnabled(true);
+                        Console.WriteLine("[统一颜色] 预测图已渲染,启用相关控件");
 
+                        // ===== 新增:从 model 读取之前保存的设置 =====
+                        LoadUnifySettingsFromModel();
+                    }
+                }
                 if (isSaveImage)
                 {
                     string dir = GlobalSettings.ApplyInfo.PreviewImgPath;
@@ -2023,7 +2665,9 @@ namespace FigSpec.SortingExpert
             GlobalSettings.ApplySetting.stopAppFlag = false;
             GlobalSettings.ApplySetting.runingApp = "train";
             pridictionImage = new byte[spe.Lines][];
-
+            pridictionImageOriginal = null; // 清空备份,下次勾选时会重新备份
+            unifyControlsActivated = false;  // 重置激活标记
+            this.Invoke(new Action(() => SetUnifyControlsEnabled(false)));
             if (model.ContourEnabled)
             {
                 ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessQueueOutline));

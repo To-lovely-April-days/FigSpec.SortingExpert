@@ -77,6 +77,11 @@ namespace FigSpec.SortingExpert
             this.btnContourImage = new FigSpec.SortingExpert.BaseControl.SortingBaseButton();
             this.lcCtl = new DevExpress.XtraEditors.LabelControl();
             this.btnTrain = new FigSpec.SortingExpert.BaseControl.SortingBaseButton();
+            this.chkUnifyColor = new DevExpress.XtraEditors.CheckEdit();
+            this.cboUnifyTargetClass = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.trackUnifyThreshold = new DevExpress.XtraEditors.TrackBarControl();
+            this.chkFillBackground = new DevExpress.XtraEditors.CheckEdit();
+            this.lblUnifyThreshold = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabPagePreprocessing = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
@@ -203,6 +208,11 @@ namespace FigSpec.SortingExpert
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuModelRoot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuModel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupPreprocess)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUnifyColor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboUnifyTargetClass.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkFillBackground.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackUnifyThreshold)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackUnifyThreshold.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // navigationFrame1
@@ -674,9 +684,15 @@ namespace FigSpec.SortingExpert
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(373, 729);
             this.panelControl2.TabIndex = 0;
+
             // 
             // panelControl5
             // 
+            this.panelControl5.Controls.Add(this.chkUnifyColor);
+            this.panelControl5.Controls.Add(this.cboUnifyTargetClass);
+            this.panelControl5.Controls.Add(this.chkFillBackground);
+            this.panelControl5.Controls.Add(this.lblUnifyThreshold);
+            this.panelControl5.Controls.Add(this.trackUnifyThreshold);
             this.panelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl5.Controls.Add(this.btnContourImage);
@@ -710,6 +726,64 @@ namespace FigSpec.SortingExpert
             this.lcCtl.Size = new System.Drawing.Size(105, 23);
             this.lcCtl.TabIndex = 20;
             this.lcCtl.Text = "轮廓数：0";
+            // 
+            // chkUnifyColor
+            // 
+            this.chkUnifyColor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkUnifyColor.Location = new System.Drawing.Point(11, 290);
+            this.chkUnifyColor.Name = "chkUnifyColor";
+            this.chkUnifyColor.Properties.Caption = "统一颜色";
+            this.chkUnifyColor.Size = new System.Drawing.Size(120, 22);
+            this.chkUnifyColor.TabIndex = 22;
+            this.chkUnifyColor.CheckedChanged += new System.EventHandler(this.chkUnifyColor_CheckedChanged);
+            // 
+            // cboUnifyTargetClass
+            // 
+            this.cboUnifyTargetClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cboUnifyTargetClass.Location = new System.Drawing.Point(140, 290);
+            this.cboUnifyTargetClass.Name = "cboUnifyTargetClass";
+            this.cboUnifyTargetClass.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboUnifyTargetClass.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cboUnifyTargetClass.Size = new System.Drawing.Size(100, 22);
+            this.cboUnifyTargetClass.TabIndex = 23;
+            this.cboUnifyTargetClass.SelectedIndexChanged += new System.EventHandler(this.cboUnifyTargetClass_SelectedIndexChanged);
+            // 
+            // chkFillBackground
+            // 
+            this.chkFillBackground.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkFillBackground.Enabled = false;  // 默认禁用,勾选"统一颜色"后才启用
+            this.chkFillBackground.Location = new System.Drawing.Point(246, 290);
+            this.chkFillBackground.Name = "chkFillBackground";
+            this.chkFillBackground.Properties.Caption = "填充背景";
+            this.chkFillBackground.Size = new System.Drawing.Size(100, 22);
+            this.chkFillBackground.TabIndex = 26;
+            this.chkFillBackground.CheckedChanged += new System.EventHandler(this.chkFillBackground_CheckedChanged);
+            // 
+            // lblUnifyThreshold
+            // 
+            this.lblUnifyThreshold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblUnifyThreshold.Location = new System.Drawing.Point(11, 262);
+            this.lblUnifyThreshold.Name = "lblUnifyThreshold";
+            this.lblUnifyThreshold.Size = new System.Drawing.Size(120, 14);
+            this.lblUnifyThreshold.TabIndex = 24;
+            this.lblUnifyThreshold.Text = "置信度阈值: 60%";
+            // 
+            // trackUnifyThreshold
+            // 
+            this.trackUnifyThreshold.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackUnifyThreshold.EditValue = 60;
+            this.trackUnifyThreshold.Location = new System.Drawing.Point(135, 260);
+            this.trackUnifyThreshold.Name = "trackUnifyThreshold";
+            this.trackUnifyThreshold.Properties.Maximum = 100;
+            this.trackUnifyThreshold.Properties.Minimum = 0;
+            this.trackUnifyThreshold.Properties.SmallChange = 5;
+            this.trackUnifyThreshold.Properties.LargeChange = 10;
+            this.trackUnifyThreshold.Properties.TickFrequency = 10;
+            this.trackUnifyThreshold.Size = new System.Drawing.Size(210, 25);
+            this.trackUnifyThreshold.TabIndex = 25;
+            this.trackUnifyThreshold.EditValueChanged += new System.EventHandler(this.trackUnifyThreshold_EditValueChanged);
             // 
             // btnTrain
             // 
@@ -1452,6 +1526,13 @@ namespace FigSpec.SortingExpert
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuModelRoot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuModel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupPreprocess)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUnifyColor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboUnifyTargetClass.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkFillBackground.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackUnifyThreshold.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackUnifyThreshold)).EndInit();
+
+            this.panelControl5.SuspendLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1478,6 +1559,11 @@ namespace FigSpec.SortingExpert
         private DevExpress.XtraEditors.PanelControl panelControl9;
         private SortingBaseButton btnTrain;
         private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
+        private DevExpress.XtraEditors.CheckEdit chkUnifyColor;
+        private DevExpress.XtraEditors.ComboBoxEdit cboUnifyTargetClass;
+        private DevExpress.XtraEditors.TrackBarControl trackUnifyThreshold;
+        private DevExpress.XtraEditors.CheckEdit chkFillBackground;
+        private DevExpress.XtraEditors.LabelControl lblUnifyThreshold;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage3;
@@ -1561,5 +1647,6 @@ namespace FigSpec.SortingExpert
         private DevExpress.XtraBars.BarButtonItem btnPreAdd;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraBars.BarButtonItem barBtnUseModelLabel;
+
     }
 }
