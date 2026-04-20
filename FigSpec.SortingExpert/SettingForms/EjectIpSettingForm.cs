@@ -241,10 +241,36 @@ namespace FigSpec.SortingExpert.SettingForms
         private void repositoryItemButtonEdit1_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             var rowData = gvConfig.GetFocusedRow() as TracheaSetItem;
-            if (rowData == null || !ClassifierControl.Shared.IsConnected)
-                return;
+            bool isConnected = ClassifierControl.Shared.IsConnected;
 
-            ClassifierControl.Shared.Eject(new int[] { rowData.TracheaNumber - 1 }, (ushort)spinBlowTime.Value);
+            LogHelper.WriteLog($"[EJECT-BTN] 点击吹气按钮, rowData={(rowData == null ? "NULL" : "气管号=" + rowData.TracheaNumber)}, IsConnected={isConnected}, 吹气时长={spinBlowTime.Value}ms");
+
+            if (rowData == null)
+            {
+                LogHelper.WriteLog("[EJECT-BTN] 已退出: rowData 为 NULL (没选中任何一行)");
+                FormShowHelper.ShowMessage("请先选中一行气管配置".ToMultiLanguage(), "提示".ToMultiLanguage());
+                return;
+            }
+            if (!isConnected)
+            {
+                LogHelper.WriteLog("[EJECT-BTN] 已退出: 气吹设备未连接,请先点顶部'连接'按钮");
+                FormShowHelper.ShowMessage("气吹设备未连接,请先点顶部'连接'按钮".ToMultiLanguage(), "提示".ToMultiLanguage());
+                return;
+            }
+
+            int portIndex = rowData.TracheaNumber - 1;
+            ushort duration = (ushort)spinBlowTime.Value;
+            LogHelper.WriteLog($"[EJECT-BTN] 调用 Shared.Eject, ports=[{portIndex}], duration={duration}ms");
+
+            try
+            {
+                ClassifierControl.Shared.Eject(new int[] { portIndex }, duration);
+                LogHelper.WriteLog("[EJECT-BTN] Shared.Eject 调用完成");
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog($"[EJECT-BTN] Shared.Eject 抛异常: {ex.Message}");
+            }
         }
 
         private void btnConnect_Click(object sender, EventArgs e)

@@ -143,6 +143,15 @@ namespace FigSpec.SortingExpert.Tools
             long timestamp = 0;
             byte[] frame = null;
             bool usefullFlag = false;//数据是否还有用
+                                     // === 诊断: AirProcessWork 启动 ===
+            LogHelper.WriteLog($"[AIR-PROC] AirProcessWork 线程已启动, " +
+                               $"AirDelay={AirDelay}ms, AirDuration={AirDuration}ms, " +
+                               $"activatePixelsX={activatePixelsX}, activatePixelsY={activatePixelsY}, " +
+                               $"AirCount={AirCount}, FrameRate={ass.SortCameraSetting.FrameRate}");
+            long _airProcLoopCounter = 0;  // 循环计数器
+            long _airProcDequeueCounter = 0;  // 出队计数器
+            long _airProcEjectCounter = 0;  // 触发吹气计数器
+            long _airProcExceptionCount = 0;                                 // ==================================
             while (!AirStopToken)
             {
                 while (pauseFlag)
@@ -169,6 +178,13 @@ namespace FigSpec.SortingExpert.Tools
                             AirQueue.TryDequeue(out var removeData);
                             frame = removeData.data;
                             timestamp = removeData.timestamp;
+                            _airProcDequeueCounter++;
+                            // === 诊断: 每 100 次出队打印一次 ===
+                            if ((_airProcDequeueCounter % 100) == 0)
+                            {
+                                LogHelper.WriteLog($"[AIR-PROC] 已出队 {_airProcDequeueCounter} 帧, AirQueue 当前剩余={AirQueue.Count}");
+                            }
+                            // ==================================
 #if DEBUG
                             LogHelper.WriteLine($"TOTAL-TIME-一帧数据从采样到吹气的总时间：" + (currentTimeLong - timestamp) / 10);
 #endif
@@ -186,6 +202,14 @@ namespace FigSpec.SortingExpert.Tools
                         }
                         else if (currentTimeLong > timestamp + delay + overtime)//超时，直接丢弃
                         {
+                            // === 诊断: 偶尔打印超时丢弃 ===
+                            if ((_airProcDequeueCounter % 50) == 0)
+                            {
+                                long overdueMs = (currentTimeLong - timestamp - delay - overtime) / 10000;
+                                LogHelper.WriteLog($"[AIR-PROC] 帧超时丢弃 #{_airProcDequeueCounter}, " +
+                                                   $"超时 {overdueMs}ms (delay={AirDelay}ms, overtime={overtime / 10000}ms)");
+                            }
+                            // ============================
                             usefullFlag = false;
                             continue;
                         }
@@ -211,15 +235,34 @@ namespace FigSpec.SortingExpert.Tools
                             int sIndex = pixelAirMap[i][0] - activatePixelsY + 1;
                             int eIndex = pixelAirMap[i][pixelAirMap[i].Count - 1] + activatePixelsY - 1;
                             sIndex = sIndex < 0 ? 0 : sIndex;
-                            eIndex = eIndex < preSampleState.Length ? eIndex : preSampleState.Length - 1;
+
+                            int maxIdx = Math.Min(frame.Length, preSampleState.Length) - 1;
+                            eIndex = eIndex < maxIdx ? eIndex : maxIdx;
+                            if (sIndex > eIndex) continue;
+
                             int count = 0;
                             for (int y = sIndex; y <= eIndex; y++)
                             {
-                                count = frame[y] > 0 ? (count + 1) : 0;
+                                if (y >= frame.Length) break;
+
+                                // === 修复: 只把 真实业务类 (1~253) 当前景, 排除 0 和保留值 254/255 ===
+                                bool isTarget = frame[y] > 0 && frame[y] < 254;
+                                count = isTarget ? (count + 1) : 0;
+                                // ============================================================
+
                                 if (count >= activatePixelsY)
                                 {
                                     airsState[i] = (byte)activatePixelsX;
-                                    Array.Clear(temp, pixelAirMap[i][0], pixelAirMap[i].Count);
+
+                                    // Array.Clear 越界保护 (之前已加)
+                                    int clearStart = pixelAirMap[i][0];
+                                    int clearLen = pixelAirMap[i].Count;
+                                    if (clearStart < 0) clearStart = 0;
+                                    if (clearStart + clearLen > temp.Length)
+                                        clearLen = temp.Length - clearStart;
+                                    if (clearLen > 0)
+                                        Array.Clear(temp, clearStart, clearLen);
+
                                     break;
                                 }
                             }
@@ -233,18 +276,37 @@ namespace FigSpec.SortingExpert.Tools
                             for (int j = 0; j < pixelAirMap[i].Count; j++)
                             {
                                 var index = pixelAirMap[i][j];
-                                if (frame[index] == 0)
+
+                                if (index < 0 || index >= frame.Length || index >= preSampleState.Length)
                                     continue;
-                                var maxValue = Math.Max(TryGetValue(preSampleState, index - 1), Math.Max(preSampleState[index], TryGetValue(preSampleState, index + 1)));
+
+                                // === 修复: 只把 真实业务类 (1~253) 当前景, 排除 0 和保留值 254/255 ===
+                                if (frame[index] == 0 || frame[index] >= 254)
+                                    continue;
+                                // ============================================================
+
+                                var maxValue = Math.Max(TryGetValue(preSampleState, index - 1),
+                                                         Math.Max(preSampleState[index],
+                                                                  TryGetValue(preSampleState, index + 1)));
                                 if (maxValue == activatePixelsX - 1)
                                 {
                                     airsState[i] = (byte)activatePixelsX;
-                                    Array.Clear(temp, pixelAirMap[i][0], pixelAirMap[i].Count);
+
+                                    // Array.Clear 越界保护 (之前已加)
+                                    int clearStart = pixelAirMap[i][0];
+                                    int clearLen = pixelAirMap[i].Count;
+                                    if (clearStart < 0) clearStart = 0;
+                                    if (clearStart + clearLen > temp.Length)
+                                        clearLen = temp.Length - clearStart;
+                                    if (clearLen > 0)
+                                        Array.Clear(temp, clearStart, clearLen);
+
                                     break;
                                 }
                                 else
                                 {
-                                    temp[index] = (byte)(maxValue + 1);
+                                    if (index < temp.Length)
+                                        temp[index] = (byte)(maxValue + 1);
                                 }
                             }
                         }
@@ -264,6 +326,12 @@ namespace FigSpec.SortingExpert.Tools
                     }
                     if (arrejt.Count > 0)
                     {
+                        _airProcEjectCounter++;
+                        // === 诊断: 触发吹气! 这是核心日志 ===
+                        LogHelper.WriteLog($"[AIR-EJECT] 触发吹气 #{_airProcEjectCounter}, " +
+                                           $"气管={string.Join(",", arrejt)}, " +
+                                           $"duration={AirDuration}ms");
+                        // ====================================
                         Eject(arrejt.ToArray(), (ushort)AirDuration);
                     }
 #if DEBUG
@@ -271,9 +339,25 @@ namespace FigSpec.SortingExpert.Tools
                     Console.Write($"chui-一帧的吹气时间： {(DateTime.Now.Ticks - start_time)}" + "\r\n");
 #endif
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                    Trace.WriteLine($"air err "+ e.Message.ToString());
+                    _airProcExceptionCount++;
+                    if (_airProcExceptionCount <= 5)
+                    {
+                        // 头 5 次详细打印, 包含上下文
+                        LogHelper.WriteLog($"[AIR-PROC] !!! 异常 #{_airProcExceptionCount} !!! {e.Message}\n" +
+                                           $"  上下文: AirCount={AirCount}, " +
+                                           $"frame.Length={frame?.Length}, " +
+                                           $"preSampleState.Length={preSampleState?.Length}, " +
+                                           $"airsState.Length={airsState?.Length}\n" +
+                                           $"  StackTrace:\n{e.StackTrace}");
+                    }
+                    else if ((_airProcExceptionCount % 1000) == 0)
+                    {
+                        // 之后每 1000 次打一次, 避免日志爆炸
+                        LogHelper.WriteLog($"[AIR-PROC] 累计异常 {_airProcExceptionCount} 次, 最新: {e.Message}");
+                    }
+                    Trace.WriteLine($"air err " + e.Message.ToString());
                 }
             }
         }

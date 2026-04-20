@@ -367,7 +367,7 @@ namespace FigSpec.SortingExpert.SettingForms
             this.btnCreateConfig.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCreateConfig.MinimumSize = new System.Drawing.Size(144, 35);
             this.btnCreateConfig.Name = "btnCreateConfig";
-            this.btnCreateConfig.Size = new System.Drawing.Size(173, 50);
+            this.btnCreateConfig.Size = new System.Drawing.Size(144, 35);
             this.btnCreateConfig.TabIndex = 22;
             this.btnCreateConfig.Text = "生成新的配置";
             this.btnCreateConfig.Click += new System.EventHandler(this.btnCreateConfig_Click);
@@ -550,7 +550,7 @@ namespace FigSpec.SortingExpert.SettingForms
             this.sortingBaseButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sortingBaseButton1.MinimumSize = new System.Drawing.Size(157, 36);
             this.sortingBaseButton1.Name = "sortingBaseButton1";
-            this.sortingBaseButton1.Size = new System.Drawing.Size(157, 50);
+            this.sortingBaseButton1.Size = new System.Drawing.Size(157, 36);
             this.sortingBaseButton1.TabIndex = 15;
             this.sortingBaseButton1.Text = "设置到气阀";
             this.sortingBaseButton1.Visible = false;

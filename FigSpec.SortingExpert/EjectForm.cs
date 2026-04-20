@@ -136,7 +136,25 @@ namespace FigSpec.SortingExpert
                     saveQueue.Enqueue(frameData);
                 }
 
-                if (frameData.ToList().Sum(x => x) > 0)
+                // 修改后的判断
+                bool hasTarget = false;
+                int targetCount = 0;
+                for (int i = 0; i < frameData.Length; i++)
+                {
+                    if (frameData[i] > 0 && frameData[i] < 254)
+                    {
+                        hasTarget = true;
+                        targetCount++;
+                    }
+                }
+
+                // === 新增: 偶尔打印 hasTarget 状态 ===
+                if (targetCount > 0)  // 只在真的有目标时打印,避免日志爆炸
+                {
+                    LogHelper.WriteLog($"[EJECT-FRAME] hasTarget=true, targetCount={targetCount}, 入队 AirQueue");
+                }
+                // =====================================
+                if (hasTarget)
                 {
                     ClassifierControl.Shared.AirQueue.Enqueue((isContinue, frameData, time1));
                     isContinue = true;
@@ -215,13 +233,18 @@ namespace FigSpec.SortingExpert
 
         private void btnStartEject_Click(object sender, EventArgs e)
         {
+            LogHelper.WriteLog($"[EJECT-BTN] 点击 启动气吹 按钮, 当前状态 startFlag={startFlag}");
+
             if (!startFlag)
             {
                 var setting = GlobalSettings.ApplySetting;
+                LogHelper.WriteLog($"[EJECT-BTN] 准备连接气吹设备: TCP={setting.EjectDeviceConnectTcp}, IP={setting.EjectDeviceIp}, Port={setting.EjectDevicePort}, COM={setting.EjectDeviceCom}");
+
                 if (setting.EjectDeviceConnectTcp)
                 {
                     if (!ClassifierControl.Shared.ConnectEjectDevice(setting.EjectDeviceIp, setting.EjectDevicePort))
                     {
+                        LogHelper.WriteLog($"[EJECT-BTN] 气吹设备连接失败! TCP={setting.EjectDeviceIp}:{setting.EjectDevicePort}");
                         FormShowHelper.ShowMessage("气吹设备连接失败".ToMultiLanguage(), "提示".ToMultiLanguage());
                         return;
                     }
@@ -231,12 +254,15 @@ namespace FigSpec.SortingExpert
                     //初始化气吹
                     if (!ClassifierControl.Shared.ConnectEjectDevice(setting.EjectDeviceCom))
                     {
+                        LogHelper.WriteLog($"[EJECT-BTN] 气吹设备连接失败! COM={setting.EjectDeviceCom}");
                         FormShowHelper.ShowMessage("气吹设备连接失败".ToMultiLanguage(), "提示".ToMultiLanguage());
                         return;
                     }
                 }
 
+                LogHelper.WriteLog($"[EJECT-BTN] 气吹设备连接成功, 准备 StartAirProcess");
                 ClassifierControl.Shared.StartAirProcess();
+                LogHelper.WriteLog($"[EJECT-BTN] StartAirProcess 已调用");
 
                 imageViewTimer.Start();
 
@@ -246,14 +272,17 @@ namespace FigSpec.SortingExpert
                 needLine = realSample * controlWidth / controlHeight;
                 saveQueue = new ConcurrentQueue<byte[]>();
                 startFlag = true;
+                LogHelper.WriteLog($"[EJECT-BTN] startFlag 设为 true, 启动完成");
             }
             else
             {
+                LogHelper.WriteLog($"[EJECT-BTN] 准备 StopAirProcess");
                 ClassifierControl.Shared.StopAirProcess();
                 imageViewTimer.Stop();
                 saveQueue = null;
                 startFlag = false;
                 ClassifierControl.Shared.DisConnectEjectDevice();
+                LogHelper.WriteLog($"[EJECT-BTN] 已停止气吹");
             }
             UpdateStatus();
         }

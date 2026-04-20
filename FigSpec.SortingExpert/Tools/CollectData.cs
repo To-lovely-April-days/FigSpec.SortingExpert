@@ -108,7 +108,18 @@ namespace FigSpec.SortingExpert.Tools
         /// 发送吹气的服务端
         /// </summary>
         private ClientControl client;
-
+        /// <summary>
+        /// 实时"统一颜色"处理器（方案A 延迟缓冲，跨批矿石也能完整投票）
+        /// </summary>
+        private RealtimeUnifyProcessor _unifyProcessor = new RealtimeUnifyProcessor(
+            carryLines: 25);
+        // ========== 新增: 实时分选显示用染色器 ==========
+        private SortingDisplayHelper _displayHelper = new SortingDisplayHelper(25);
+        /// <summary>
+        /// 统一颜色日志控制：每 N 批打印一次详细日志,避免日志爆炸
+        /// </summary>
+        private long _unifyLogCounter = 0;
+        private const int UNIFY_LOG_EVERY_N_BATCHES = 20;  // 每 20 批打印一次详细日志
         private FileStorageHelper _fileStorageHelper;
 
         /// <summary>
@@ -199,6 +210,9 @@ namespace FigSpec.SortingExpert.Tools
                     ScanParaMeter.camera.StopGrab();
                 ScanParaMeter.ImgTimer.Stop();
             });
+            _unifyProcessor?.Reset();
+            _displayHelper?.Reset();         // ← 新增这一行
+            LogHelper.WriteLog("[UNIFY] StopGrab: 处理器缓冲已清空");
         }
 
         private void InitQueue()
@@ -212,6 +226,11 @@ namespace FigSpec.SortingExpert.Tools
             displayRgbQueue = new ConcurrentQueue<byte[]>();
             saveToSpeFileQueue = new ConcurrentQueue<byte[]>();
             reflectDataQueue = new ConcurrentQueue<float[,]>();
+            // 清空统一颜色处理器的缓冲，避免上一次分选的残留
+            _unifyProcessor?.Reset();
+            _displayHelper?.Reset();         // ← 新增这一行
+            _unifyLogCounter = 0;
+            LogHelper.WriteLog("[UNIFY] InitQueue: 处理器缓冲已清空");
         }
 
 
@@ -694,6 +713,16 @@ namespace FigSpec.SortingExpert.Tools
         /// <param name="port"></param>
         public void StartGrab(Model model, bool isOutlineSorting)
         {
+            LogHelper.WriteLog($"[UNIFY] ===== 实时分选启动 · 方案A 已集成 =====");
+            if (model != null)
+            {
+                LogHelper.WriteLog(
+                    $"[UNIFY] 模型配置: " +
+                    $"UnifyColorEnabled={model.UnifyColorEnabled}, " +
+                    $"UnifyTargetClassId={model.UnifyTargetClassId}, " +
+                    $"UnifyConfidenceThreshold={model.UnifyConfidenceThreshold}, " +
+                    $"UnifyFillBackground={model.UnifyFillBackground}");
+            }
 #if DEBUG
             ScanParaMeter.ReceivedLines = 0;
             ScanParaMeter.StartReceivedTime = 0;
@@ -701,6 +730,7 @@ namespace FigSpec.SortingExpert.Tools
 #endif
 
             InitQueue();
+            _displayHelper?.Reset();         // ← 新增这一行
             _fileStorageHelper.ClearData();
             SaveFlag = true;
             StartFlag = true;//开始采集标志
@@ -1015,10 +1045,31 @@ namespace FigSpec.SortingExpert.Tools
 #if DEBUG
                         LogHelper.WriteLine($"ProcessPointSortingV1_2--执行GPU相关操作的时间：" + (DateTime.Now.Ticks - start_time));
 #endif
+
+                        // 吹气和显示链路用独立的 tags 副本,避免互相污染
+                        // (SendEjectData 会调用 UnifyProcessor.Process 修改 tags)
+                        byte[,] tagsForDisplay = (byte[,])tags.Clone();
+
+                        // 1) 吹气队列: 原始 tags 直接进
                         ejectDataQueue.Enqueue(tags);
-                        displayDataQueue.Enqueue(im);
+
+                        // 2) 显示: 按 classid 染色 + 统一颜色
+                        byte[,] classColorIm;
+                        try
+                        {
+                            classColorIm = _displayHelper.Render(tagsForDisplay, model);
+                            if (classColorIm == null) classColorIm = im;  // 渲染失败兜底用原始RGB
+                        }
+                        catch (Exception ex)
+                        {
+                            LogHelper.WriteLog("[UNIFY-DISP] 渲染异常,降级为原始RGB: " + ex.Message);
+                            classColorIm = im;
+                        }
+                        displayDataQueue.Enqueue(classColorIm);
+
                         SortingResultEvent.Set();
                         SortingResultDisplayEvent.Set();
+
 #if DEBUG
                         LogHelper.WriteLine($"ProcessPointSortingV1_2--保存图像的时间：" + (DateTime.Now.Ticks - start_time));
 #endif
@@ -1072,6 +1123,98 @@ namespace FigSpec.SortingExpert.Tools
 #if DEBUG
                         LogHelper.WriteLine($"SendEjectData-取数据时间：" + (DateTime.Now.Ticks - start_time));
 #endif
+                        // ========== 新增：统一颜色处理 ==========
+                        if (model.UnifyColorEnabled && model.UnifyTargetClassId >= 1)
+                        {
+                            try
+                            {
+                                float threshold = model.UnifyConfidenceThreshold / 100f;
+                                if (threshold < 0f) threshold = 0f;
+                                if (threshold > 1f) threshold = 1f;
+
+                                // 是否本批打印详细日志
+                                bool shouldLog = (_unifyLogCounter % UNIFY_LOG_EVERY_N_BATCHES) == 0;
+                                int[] beforeHist = null;
+                                if (shouldLog)
+                                {
+                                    beforeHist = CountClassHist(tags, 256);
+                                }
+
+                                long unifyStart = DateTime.Now.Ticks;
+                                tags = _unifyProcessor.Process(
+                                    tags,
+                                    model.UnifyTargetClassId,
+                                    threshold,
+                                    model.UnifyFillBackground);
+                                long unifyCost = (DateTime.Now.Ticks - unifyStart) / 10000;
+
+                                if (shouldLog)
+                                {
+                                    int[] afterHist = CountClassHist(tags, 256);
+                                    LogHelper.WriteLog(
+                                        $"[UNIFY] 批#{_unifyLogCounter} " +
+                                        $"目标={model.UnifyTargetClassId} " +
+                                        $"阈值={model.UnifyConfidenceThreshold}% " +
+                                        $"填充={model.UnifyFillBackground} " +
+                                        $"耗时={unifyCost}ms");
+                                    LogHelper.WriteLog($"[UNIFY] 前: {HistToString(beforeHist)}");
+                                    LogHelper.WriteLog($"[UNIFY] 后: {HistToString(afterHist)}");
+                                }
+                                _unifyLogCounter++;
+                            }
+                            catch (Exception exUnify)
+                            {
+                                LogHelper.WriteLog(
+                                    $"[UNIFY] 处理异常 batch#{_unifyLogCounter}: {exUnify.Message}",
+                                    exUnify);
+                                // 异常时 tags 保持原值,吹气不中断
+                            }
+                        }
+                        else
+                        {
+                            // 未启用时重置缓冲
+                            if (_unifyProcessor != null)
+                            {
+                                _unifyProcessor.Reset();
+                            }
+                        }
+                        // =====================================
+                        // === 诊断: 每 100 批打印一次 CommunicationType (避免日志爆炸) ===
+                        if ((_unifyLogCounter % 100) == 0)
+                        {
+                            LogHelper.WriteLog($"[COMM-TYPE] 当前 CommunicationType={GlobalSettings.ApplySetting.CommunicationType} " +
+                                               $"(0=TCP, 1=COM, 2=Csv), startIndex={startIndex}, " +
+                                               $"CustomSamples={GlobalSettings.ApplySetting.CustomSamples}");
+                        }
+                        // =================================================================
+
+                        if (GlobalSettings.ApplySetting.CommunicationType == 0)
+                        {
+                            SendClient(tags, startIndex, GlobalSettings.ApplySetting.CustomSamples);
+                        }
+                        else if (GlobalSettings.ApplySetting.CommunicationType == 1)
+                        {
+                            SendToEject(tags, startIndex, GlobalSettings.ApplySetting.CustomSamples);
+                        }
+                        else if (GlobalSettings.ApplySetting.CommunicationType == 2)
+                        {
+                            try
+                            {
+                                SendCsvFile(tags, startIndex, GlobalSettings.ApplySetting.CustomSamples);
+                            }
+                            catch (Exception ex)
+                            {
+                                LogHelper.WriteLog("保存显示图像" + ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            // === 诊断: 异常情况 (CommunicationType 是其他值) ===
+                            if ((_unifyLogCounter % 100) == 0)
+                            {
+                                LogHelper.WriteLog($"[COMM-TYPE] !!! 异常: CommunicationType={GlobalSettings.ApplySetting.CommunicationType} 不是 0/1/2, 数据被丢弃 !!!");
+                            }
+                        }
                         #region 加入腐蚀功能
                         if (model.BackgroundCorrection)
                         {
@@ -1140,6 +1283,38 @@ namespace FigSpec.SortingExpert.Tools
                 GlobalSettings.ApplySetting.runingApp = string.Empty;
                 GC.Collect();
             }
+        }
+        private static int[] CountClassHist(byte[,] tags, int numClasses)
+        {
+            int[] hist = new int[numClasses];
+            int lines = tags.GetLength(0);
+            int samples = tags.GetLength(1);
+            for (int i = 0; i < lines; i++)
+            {
+                for (int j = 0; j < samples; j++)
+                {
+                    byte c = tags[i, j];
+                    if (c < numClasses) hist[c]++;
+                }
+            }
+            return hist;
+        }
+
+        /// <summary>
+        /// 直方图 → 可读字符串 (只列出非 0 类别, 便于排查 tags 里实际有什么值)
+        /// </summary>
+        private static string HistToString(int[] hist)
+        {
+            var sb = new System.Text.StringBuilder();
+            for (int i = 0; i < hist.Length; i++)
+            {
+                if (hist[i] > 0)
+                {
+                    if (sb.Length > 0) sb.Append(", ");
+                    sb.Append($"类{i}={hist[i]}");
+                }
+            }
+            return sb.Length > 0 ? sb.ToString() : "全背景";
         }
         /// <summary>
         /// 保存显示图像

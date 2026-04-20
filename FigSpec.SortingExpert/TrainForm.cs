@@ -1314,7 +1314,10 @@ namespace FigSpec.SortingExpert
         private void LoadUnifySettingsFromModel()
         {
             if (model == null) return;
-
+            // === 新增诊断日志 ===
+            LogHelper.WriteLog($"[UNIFY-LOAD] 从 model 加载, uid={model.uid}, name={model.name}");
+            LogHelper.WriteLog($"[UNIFY-LOAD] model 中的值: enabled={model.UnifyColorEnabled}, target={model.UnifyTargetClassId}, threshold={model.UnifyConfidenceThreshold}, fill={model.UnifyFillBackground}");
+            // === 原代码继续 ===
             try
             {
                 // 暂时屏蔽事件,避免读取时触发写回/刷新
@@ -1379,29 +1382,68 @@ namespace FigSpec.SortingExpert
         /// </summary>
         private void SaveUnifySettingsToModel()
         {
-            if (model == null) return;
-            if (isLoadingUnifySettings) return; // 正在读取中,不要写回
+            if (model == null) { LogHelper.WriteLog("[UNIFY-SAVE] 跳过: model 为 null"); return; }
+            if (isLoadingUnifySettings) { LogHelper.WriteLog("[UNIFY-SAVE] 跳过: 正在加载中"); return; }
 
             try
             {
-                model.UnifyColorEnabled = chkUnifyColor != null && chkUnifyColor.Checked;
-
+                bool enabled = chkUnifyColor != null && chkUnifyColor.Checked;
                 int classId = -1;
                 var selected = cboUnifyTargetClass?.SelectedItem as UnifyTargetItem;
                 if (selected != null) classId = selected.ClassId;
+                int thr = trackUnifyThreshold != null ? trackUnifyThreshold.Value : 60;
+                bool fill = chkFillBackground != null && chkFillBackground.Checked;
+
+                // === 关键日志: 写入 model 之前 ===
+                LogHelper.WriteLog($"[UNIFY-SAVE] 即将写入 model, uid={model.uid}, name={model.name}");
+                LogHelper.WriteLog($"[UNIFY-SAVE] 值: enabled={enabled}, target={classId}, threshold={thr}, fill={fill}");
+
+                model.UnifyColorEnabled = enabled;
                 model.UnifyTargetClassId = classId;
+                model.UnifyConfidenceThreshold = thr;
+                model.UnifyFillBackground = fill;
 
-                model.UnifyConfidenceThreshold = trackUnifyThreshold != null ? trackUnifyThreshold.Value : 60;
-                model.UnifyFillBackground = chkFillBackground != null && chkFillBackground.Checked;
+                // 验证: 写入后从 model 读回
+                LogHelper.WriteLog($"[UNIFY-SAVE] 写入后 model 中实际值: enabled={model.UnifyColorEnabled}, target={model.UnifyTargetClassId}");
 
-                // 触发全局保存,让设置持久化到 .fsmodel 文件
+                // 验证: 检查 traingSet.models 列表里的对应 model 是否也更新了(应该引用同一对象)
+                var listedModel = GlobalSettings.ApplySetting.traingSet.models.Find(m => m.uid == model.uid);
+                if (listedModel == null)
+                {
+                    LogHelper.WriteLog($"[UNIFY-SAVE] ⚠️ 警告: 列表里找不到 uid={model.uid} 的模型!");
+                }
+                else if (!ReferenceEquals(listedModel, model))
+                {
+                    LogHelper.WriteLog($"[UNIFY-SAVE] ⚠️ 警告: 列表里的模型和当前 model 不是同一个实例!");
+                    LogHelper.WriteLog($"[UNIFY-SAVE]    列表里的 enabled={listedModel.UnifyColorEnabled}");
+                }
+                else
+                {
+                    LogHelper.WriteLog($"[UNIFY-SAVE] ✓ 列表里的 model 是同一个实例, enabled={listedModel.UnifyColorEnabled}");
+                }
+
+                // 保存到全局配置
                 GlobalSettings.ApplySetting.Save();
 
-                Console.WriteLine($"[统一颜色] 设置已保存到模型");
+                // 验证磁盘文件是否真的包含新值
+                string xmlPath = GlobalSettings.ApplyInfo.ApplySettingPath + "ApplySetting.xml";
+                if (System.IO.File.Exists(xmlPath))
+                {
+                    string content = System.IO.File.ReadAllText(xmlPath);
+                    bool hasField = content.Contains("UnifyColorEnabled");
+                    bool hasTrue = content.Contains("<UnifyColorEnabled>true</UnifyColorEnabled>");
+                    LogHelper.WriteLog($"[UNIFY-SAVE] 磁盘文件: 路径={xmlPath}, 含字段={hasField}, 含true={hasTrue}");
+                    LogHelper.WriteLog($"[UNIFY-SAVE] 磁盘文件大小={new System.IO.FileInfo(xmlPath).Length} 字节");
+                }
+                else
+                {
+                    LogHelper.WriteLog($"[UNIFY-SAVE] ⚠️ 警告: 磁盘文件不存在! {xmlPath}");
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("[统一颜色] SaveUnifySettingsToModel 异常: " + ex.Message);
+                LogHelper.WriteLog($"[UNIFY-SAVE] 异常: {ex.Message}");
+                LogHelper.WriteLog($"[UNIFY-SAVE] 异常堆栈: {ex.StackTrace}");
             }
         }
         /// <summary>
@@ -1621,11 +1663,54 @@ namespace FigSpec.SortingExpert
                 bitmap.UnlockBits(bData);
                 imageViewWithTools1.SetImage(bitmap, GlobalSettings.ApplySetting.StartSample, GlobalSettings.ApplySetting.EndSample);
                 Console.WriteLine("[统一颜色] 图片已刷新到界面");
+
+                // ===== 方案B: 把当前效果图覆盖保存到 spe_image_path =====
+                // 这样切换到其他模型再切回来时,SetTrainResultImage 读取的就是带统一颜色效果的图
+                SaveCurrentBitmapToModelPath(bitmap);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("[统一颜色] RefreshPredictionImage 异常: " + ex.Message);
                 Console.WriteLine(ex.StackTrace);
+            }
+     
+        }
+        /// <summary>
+        /// 把当前渲染的 bitmap 保存到 model.spe_image_path,覆盖训练时的原始预测图
+        /// 这样切换模型后再切回来,能直接从磁盘读到带"统一颜色"效果的图
+        /// </summary>
+        private void SaveCurrentBitmapToModelPath(Bitmap bitmap)
+        {
+            try
+            {
+                if (bitmap == null || model == null) return;
+                if (string.IsNullOrEmpty(model.spe_image_path)) return;
+
+                string dir = Path.GetDirectoryName(model.spe_image_path);
+                if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+                {
+                    Directory.CreateDirectory(dir);
+                }
+
+                // 克隆一份再保存,避免 bitmap 被界面占用时写文件冲突
+                using (var clone = (Bitmap)bitmap.Clone())
+                {
+                    // 若文件被占用,用临时文件再替换的方式保证不抛异常
+                    string tempFile = model.spe_image_path + ".tmp";
+                    clone.Save(tempFile, ImageFormat.Bmp);
+
+                    if (File.Exists(model.spe_image_path))
+                    {
+                        File.Delete(model.spe_image_path);
+                    }
+                    File.Move(tempFile, model.spe_image_path);
+                }
+
+                Console.WriteLine($"[统一颜色] 已保存效果图到: {model.spe_image_path}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("[统一颜色] SaveCurrentBitmapToModelPath 异常: " + ex.Message);
             }
         }
         /// <summary>

@@ -38,7 +38,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;JIUSHUN</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -501,7 +501,9 @@
     <Compile Include="Tools\OpenCV.cs" />
     <Compile Include="Tools\PreprocessingHelper.cs" />
     <Compile Include="Tools\PythonHelper.cs" />
+    <Compile Include="Tools\RealtimeUnifyProcessor.cs" />
     <Compile Include="Tools\ServerControl.cs" />
+    <Compile Include="Tools\SortingDisplayHelper.cs" />
     <Compile Include="TrainForm.cs">
       <SubType>Form</SubType>
     </Compile>

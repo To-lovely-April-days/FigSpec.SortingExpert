@@ -79,8 +79,10 @@ namespace FigSpec.SortingExpert.Tools.Client
         {
             try
             {
+                LogHelper.WriteLog($"[CHSPEC-EJECT] Eject 入口: ports=[{string.Join(",", ports)}], time={time}ms, IsConnected={SPICOM.IsConnected}");
                 if (ports.Length == 0)
                 {
+                    LogHelper.WriteLog("[CHSPEC-EJECT] ports 空,直接返回");
                     return true;
                 }
                 int count = ports.Length;
@@ -133,7 +135,27 @@ namespace FigSpec.SortingExpert.Tools.Client
             var delay_b1 = (byte)(delay >> 8);
             var delay_b2 = (byte)(delay & 0xff);
             byte[] message = new byte[] { 0xff, index_b1, index_b2, delay_b1, delay_b2, duration_b1, duration_b2 };
+
+            // === 诊断: 准备发送串口指令 ===
+            string hex = BitConverter.ToString(message);
+            LogHelper.WriteLog($"[CHSPEC-EJECT] 准备发送: {hex} " +
+                               $"(气管 {startindex}~{endindex}, duration={duration}ms, delay={delay}ms), " +
+                               $"SPICOM.IsConnected={SPICOM.IsConnected}");
+            // ================================
+
             bool isSuccess = SPICOM.SendMessage(message);
+
+            // === 诊断: 发送结果 ===
+            if (isSuccess)
+            {
+                LogHelper.WriteLog($"[CHSPEC-EJECT] 发送成功, 耗时 {(DateTime.Now.Ticks - start_time) / 10000}ms");
+            }
+            else
+            {
+                LogHelper.WriteLog($"[CHSPEC-EJECT] !!! 发送失败 !!! SPICOM.IsConnected={SPICOM.IsConnected}");
+            }
+            // ======================
+
             if (!isSuccess)
             {
                 LogHelper.WriteLog("初始化气吹控制失败");
