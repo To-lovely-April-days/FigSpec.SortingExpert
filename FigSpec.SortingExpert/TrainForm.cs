@@ -856,6 +856,15 @@ namespace FigSpec.SortingExpert
                 case EnumTrainSetCellType.Model:
                     //模型
                     ShowLabel(false);
+                    // 切换当前 model 引用
+                    var switchedModel = GlobalSettings.ApplySetting.traingSet.models.Find(
+                        o => o.uid == trainSetDisplayCell.uid);
+                    if (switchedModel != null)
+                    {
+                        model = switchedModel;
+                        // 从新模型加载统一颜色设置到界面
+                        LoadUnifySettingsFromModel();
+                    }
                     if (!SetTrainResultImage(trainSetDisplayCell))
                     {
                         PreviewWithRGB();
@@ -1539,12 +1548,12 @@ namespace FigSpec.SortingExpert
             {
                 cboUnifyTargetClass.Properties.Items.Clear();
 
-                // 第一项:自动(多数投票)
-                cboUnifyTargetClass.Properties.Items.Add(new UnifyTargetItem
-                {
-                    ClassId = -1,
-                    Display = "自动(多数投票)"
-                });
+                //// 第一项:自动(多数投票)
+                //cboUnifyTargetClass.Properties.Items.Add(new UnifyTargetItem
+                //{
+                //    ClassId = -1,
+                //    Display = "自动(多数投票)"
+                //});
 
                 // 把 model.plss 里的每个类别加进来
                 if (model != null && model.plss != null)

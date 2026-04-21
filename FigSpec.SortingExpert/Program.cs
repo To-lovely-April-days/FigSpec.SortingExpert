@@ -71,24 +71,24 @@ namespace FigSpec.SortingExpert
 
             #endregion 加载多语言
 
-            try
-            {
-                //检查更新
-                int maxBuild = Math.Max(GlobalSettings.ApplyInfo.BuildVersion, Properties.Settings.Default.IgnoreBuild);
-                SystemApi systemApi = new SystemApi();
+            //try
+            //{
+            //    //检查更新
+            //    int maxBuild = Math.Max(GlobalSettings.ApplyInfo.BuildVersion, Properties.Settings.Default.IgnoreBuild);
+            //    SystemApi systemApi = new SystemApi();
 
-                string result = systemApi.GetCheckUpdate(GlobalSettings.ApplyInfo.PlatformCode, maxBuild, out Versions version);
-                if (string.IsNullOrEmpty(result) && version != null)
-                {
-                    VersionUpdate.VersionUpdate versionUpdate = new VersionUpdate.VersionUpdate();
-                    versionUpdate.ShowUpgradeProgramForm(version);
-                }
-            }
-            catch (Exception ex)
-            {
-                LogHelper.WriteLog("检查新版本失败", ex);
-                return;
-            }
+            //    string result = systemApi.GetCheckUpdate(GlobalSettings.ApplyInfo.PlatformCode, maxBuild, out Versions version);
+            //    if (string.IsNullOrEmpty(result) && version != null)
+            //    {
+            //        VersionUpdate.VersionUpdate versionUpdate = new VersionUpdate.VersionUpdate();
+            //        versionUpdate.ShowUpgradeProgramForm(version);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    LogHelper.WriteLog("检查新版本失败", ex);
+            //    return;
+            //}
             Application.Run(new MainForm());
         }
 

@@ -47,6 +47,12 @@ namespace FigSpec.SortingExpert.Tools
         /// </summary>
         public int AirCount { get; set; }
         /// <summary>
+        /// 吹气目标类别集合。
+        /// null 或空集 = 吹所有前景类别（默认行为）
+        /// 非空 = 只吹集合内的类别
+        /// </summary>
+        public HashSet<byte> EjectTargetClassIds { get; set; } = null;
+        /// <summary>
         /// 气吹控制串口
         /// </summary>
 
@@ -138,7 +144,7 @@ namespace FigSpec.SortingExpert.Tools
         public void AirProcessWork(object obj)
         {
             var ass = GlobalSettings.ApplySetting;
-            long overtime = 10000000 / ass.SortCameraSetting.FrameRate * 100;// 600000;//最长超时时间
+            long overtime = 10000000 / ass.SortCameraSetting.FrameRate * 300;// 600000;//最长超时时间
             long start_time = 0;
             long timestamp = 0;
             byte[] frame = null;
@@ -245,16 +251,18 @@ namespace FigSpec.SortingExpert.Tools
                             {
                                 if (y >= frame.Length) break;
 
-                                // === 修复: 只把 真实业务类 (1~253) 当前景, 排除 0 和保留值 254/255 ===
-                                bool isTarget = frame[y] > 0 && frame[y] < 254;
-                                count = isTarget ? (count + 1) : 0;
-                                // ============================================================
+                                bool isTarget;
+                                if (EjectTargetClassIds != null && EjectTargetClassIds.Count > 0)
+                                    isTarget = EjectTargetClassIds.Contains(frame[y]);
+                                else
+                                    isTarget = frame[y] > 0 && frame[y] < 254;
+
+                                count = isTarget ? (count + 1) : 0;  // 这行不能少！
 
                                 if (count >= activatePixelsY)
                                 {
                                     airsState[i] = (byte)activatePixelsX;
 
-                                    // Array.Clear 越界保护 (之前已加)
                                     int clearStart = pixelAirMap[i][0];
                                     int clearLen = pixelAirMap[i].Count;
                                     if (clearStart < 0) clearStart = 0;
@@ -281,8 +289,18 @@ namespace FigSpec.SortingExpert.Tools
                                     continue;
 
                                 // === 修复: 只把 真实业务类 (1~253) 当前景, 排除 0 和保留值 254/255 ===
-                                if (frame[index] == 0 || frame[index] >= 254)
-                                    continue;
+                                // 改成：
+                                // 改成：
+                                if (EjectTargetClassIds != null && EjectTargetClassIds.Count > 0)
+                                {
+                                    if (!EjectTargetClassIds.Contains(frame[index]))
+                                        continue;
+                                }
+                                else
+                                {
+                                    if (frame[index] == 0 || frame[index] >= 254)
+                                        continue;
+                                }
                                 // ============================================================
 
                                 var maxValue = Math.Max(TryGetValue(preSampleState, index - 1),

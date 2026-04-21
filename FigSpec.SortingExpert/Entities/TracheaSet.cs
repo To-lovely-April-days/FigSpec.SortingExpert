@@ -16,8 +16,9 @@ namespace FigSpec.SortingExpert.Entities
         public int EndPixel { get; set; } = 640;
         public int Trachea { get; set; } = 40;
         public Single TracheaPixels { get; set; } = 16;
-        public Single PixelInterval { get; set; } = 16;//偏移量
-
+        public Single PixelInterval { get; set; } = 16;//偏移量（保留兼容）
+        public Single PixelOffsetFront { get; set; } = 0; //前偏移量
+        public Single PixelOffsetBack { get; set; } = 0;  //后偏移量
         public bool TracheaDesc { get; set; }
 
         public List<TracheaSetItem> Items { get; set; }

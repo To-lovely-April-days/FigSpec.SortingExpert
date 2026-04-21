@@ -185,7 +185,7 @@ namespace FigSpec.SortingExpert.Tools
 #endif
                 //接收数据队列，添加数据
                 byteQueue.Enqueue(grabData);
-                timeDataQueue.Enqueue(DateTime.Now.Ticks);
+                //timeDataQueue.Enqueue(DateTime.Now.Ticks);
                 GrabedDataEvent.Set();
 
             }
@@ -1026,6 +1026,7 @@ namespace FigSpec.SortingExpert.Tools
                             if (byteQueue.TryDequeue(out var data))
                             {
                                 Buffer.BlockCopy(data.Values, 0, grabDatas, destinationLength * copyLoc, destinationLength);
+               
                                 copyLoc++;
                             }
                             else
@@ -1048,10 +1049,15 @@ namespace FigSpec.SortingExpert.Tools
 
                         // 吹气和显示链路用独立的 tags 副本,避免互相污染
                         // (SendEjectData 会调用 UnifyProcessor.Process 修改 tags)
+                        byte[,] tagsForEject = (byte[,])tags.Clone();
                         byte[,] tagsForDisplay = (byte[,])tags.Clone();
-
+                        // GPU处理完之后再记录时间，这样时间戳代表"数据准备好可以吹气"的时刻
+                        for (int t = 0; t < dealCount; t++)
+                        {
+                            timeDataQueue.Enqueue(DateTime.Now.Ticks);
+                        }
                         // 1) 吹气队列: 原始 tags 直接进
-                        ejectDataQueue.Enqueue(tags);
+                        ejectDataQueue.Enqueue(tagsForEject);
 
                         // 2) 显示: 按 classid 染色 + 统一颜色
                         byte[,] classColorIm;
@@ -1116,6 +1122,7 @@ namespace FigSpec.SortingExpert.Tools
                         LogHelper.WriteLine($"SendEjectData--###### 有数据需要发送到吹气：{ejectDataQueue.Count},时间：{(DateTime.Now.Ticks - start_time)}");
 #endif
                         start_time = DateTime.Now.Ticks;
+                       
                         if (!ejectDataQueue.TryDequeue(out byte[,] tags))
                         {
                             continue;
@@ -1128,7 +1135,7 @@ namespace FigSpec.SortingExpert.Tools
                         {
                             try
                             {
-                                float threshold = model.UnifyConfidenceThreshold / 100f;
+                                float threshold = Math.Max(model.UnifyConfidenceThreshold / 100f, 0.5f);
                                 if (threshold < 0f) threshold = 0f;
                                 if (threshold > 1f) threshold = 1f;
 
@@ -1242,26 +1249,7 @@ namespace FigSpec.SortingExpert.Tools
                             }
                         }
                         #endregion
-                        if (GlobalSettings.ApplySetting.CommunicationType == 0)
-                        {
-                            SendClient(tags, startIndex, GlobalSettings.ApplySetting.CustomSamples);
-                        }
-                        else if (GlobalSettings.ApplySetting.CommunicationType == 1)
-                        {
-                            SendToEject(tags, startIndex, GlobalSettings.ApplySetting.CustomSamples);
-                        }
-                        else if (GlobalSettings.ApplySetting.CommunicationType == 2)
-                        {
-                            try
-                            {
-                                SendCsvFile(tags, startIndex, GlobalSettings.ApplySetting.CustomSamples);
-
-                            }
-                            catch (Exception ex)
-                            {
-                                LogHelper.WriteLog("保存显示图像" + ex.Message);
-                            }
-                        }
+                       
 #if DEBUG
                         LogHelper.WriteLine($"SendEjectData-发送时间：" + (DateTime.Now.Ticks - start_time));
 #endif

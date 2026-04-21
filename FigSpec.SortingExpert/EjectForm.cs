@@ -1,4 +1,6 @@
-﻿using FigSpec.SortingExpert.AppCode;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using FigSpec.SortingExpert.AppCode;
 using FigSpec.SortingExpert.SettingForms;
 using FigSpec.SortingExpert.Tools;
 using FigSpec.Spectral.Extensions;
@@ -46,6 +48,11 @@ namespace FigSpec.SortingExpert
         private bool startFlag = false;
 
         #endregion
+        /// <summary>
+        /// 吹气目标类别多选下拉框
+        /// </summary>
+        private CheckedComboBoxEdit cmbEjectClasses;
+        private LabelControl lblEjectClasses;
         public EjectForm()
         {
             InitializeComponent();
@@ -53,6 +60,100 @@ namespace FigSpec.SortingExpert
             NotificationAction.SendEjectSetting = SendEjectSetting;
             NotificationAction.SendEjectData = SendEjectData;
             updateFrameRate(false);
+            InitEjectClassCombo();
+        }
+        /// <summary>
+        /// 初始化吹气类别多选下拉框
+        /// </summary>
+        private void InitEjectClassCombo()
+        {
+            // 标签
+            lblEjectClasses = new DevExpress.XtraEditors.LabelControl();
+            lblEjectClasses.Text = "吹气类别:";
+            lblEjectClasses.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
+            lblEjectClasses.Margin = new System.Windows.Forms.Padding(10, 6, 3, 3); // 左边留点间距，垂直居中
+
+            // 多选下拉框
+            cmbEjectClasses = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            cmbEjectClasses.Size = new System.Drawing.Size(200, 23);
+            cmbEjectClasses.Properties.SelectAllItemCaption = "全部类别";
+            cmbEjectClasses.Properties.SeparatorChar = ',';
+
+            RefreshEjectClassItems();
+
+            cmbEjectClasses.EditValueChanged += (s, args) =>
+            {
+                SyncEjectTargetClassIds();
+            };
+
+            // 加到 flowLayoutPanel1，排在 btnStartEject 和 btnEjectSetting 后面
+            flowLayoutPanel1.Controls.Add(lblEjectClasses);
+            flowLayoutPanel1.Controls.Add(cmbEjectClasses);
+        }
+
+        /// <summary>
+        /// 从当前模型加载所有类别到多选框，默认勾选训练界面的目标类别
+        /// </summary>
+        private void RefreshEjectClassItems()
+        {
+            if (cmbEjectClasses == null) return;
+            cmbEjectClasses.Properties.Items.Clear();
+
+            var set = GlobalSettings.ApplySetting.traingSet;
+            var classes = set?.label?.classes;
+            if (classes == null) return;
+
+            // 获取训练界面当前模型的目标类别
+            int targetClassId = -1;
+            var model = set.models?.FindLast(m => m.UnifyColorEnabled);
+            if (model != null)
+            {
+                targetClassId = model.UnifyTargetClassId;
+            }
+
+            foreach (var cls in classes)
+            {
+                if (cls.id <= 0 || cls.id >= 254) continue;
+
+                // 如果是训练界面选的目标类别，默认勾选
+                CheckState state = (cls.id == targetClassId)
+                    ? CheckState.Checked
+                    : CheckState.Unchecked;
+
+                cmbEjectClasses.Properties.Items.Add(cls.id, cls.name, state, true);
+            }
+
+            // 同步一次到 ClassifierControl
+            SyncEjectTargetClassIds();
+        }
+
+        /// <summary>
+        /// 把界面选中的类别同步到 ClassifierControl
+        /// </summary>
+        private void SyncEjectTargetClassIds()
+        {
+            var checkedItems = cmbEjectClasses.Properties.Items;
+            var selectedIds = new HashSet<byte>();
+
+            foreach (CheckedListBoxItem item in checkedItems)
+            {
+                if (item.CheckState == CheckState.Checked)
+                {
+                    selectedIds.Add((byte)(int)item.Value);
+                }
+            }
+
+            if (selectedIds.Count == 0)
+            {
+                // 没有选任何类别，吹所有前景
+                ClassifierControl.Shared.EjectTargetClassIds = null;
+            }
+            else
+            {
+                ClassifierControl.Shared.EjectTargetClassIds = selectedIds;
+            }
+
+            LogHelper.WriteLog($"[EJECT-CLASS] 吹气目标类别更新: {(selectedIds.Count == 0 ? "全部" : string.Join(",", selectedIds))}");
         }
         /// <summary>
         /// 初始化

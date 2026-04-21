@@ -7,7 +7,8 @@ namespace FigSpec.SortingExpert.SettingForms
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        private DevExpress.XtraEditors.LabelControl lblOffsetBack;
+        private DevExpress.XtraEditors.SpinEdit spOffsetBack;
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -65,6 +66,8 @@ namespace FigSpec.SortingExpert.SettingForms
             this.lblStartPixel = new DevExpress.XtraEditors.LabelControl();
             this.spTrachea = new DevExpress.XtraEditors.SpinEdit();
             this.lblTrachea = new DevExpress.XtraEditors.LabelControl();
+            this.spOffsetBack = new DevExpress.XtraEditors.SpinEdit();
+            this.lblOffsetBack = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.sortingBaseButton1 = new FigSpec.SortingExpert.BaseControl.SortingBaseButton();
             this.spActivatePixelsY = new DevExpress.XtraEditors.SpinEdit();
@@ -106,6 +109,7 @@ namespace FigSpec.SortingExpert.SettingForms
             ((System.ComponentModel.ISupportInitialize)(this.spEndPixel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spStartPixel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTrachea.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spOffsetBack.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spActivatePixelsY.Properties)).BeginInit();
@@ -140,9 +144,9 @@ namespace FigSpec.SortingExpert.SettingForms
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1097, 724);
+            this.panelControl1.Size = new System.Drawing.Size(987, 724);
             this.panelControl1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -152,20 +156,20 @@ namespace FigSpec.SortingExpert.SettingForms
             this.flowLayoutPanel1.Controls.Add(this.btnClose);
             this.flowLayoutPanel1.Controls.Add(this.btnApply);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 665);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 665);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1063, 47);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(956, 47);
             this.flowLayoutPanel1.TabIndex = 15;
             // 
             // btnClose
             // 
             this.btnClose.AutoSize = true;
-            this.btnClose.Location = new System.Drawing.Point(902, 5);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnClose.MinimumSize = new System.Drawing.Size(157, 36);
+            this.btnClose.Location = new System.Drawing.Point(812, 5);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnClose.MinimumSize = new System.Drawing.Size(141, 36);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(157, 36);
+            this.btnClose.Size = new System.Drawing.Size(141, 36);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "确定";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -173,11 +177,11 @@ namespace FigSpec.SortingExpert.SettingForms
             // btnApply
             // 
             this.btnApply.AutoSize = true;
-            this.btnApply.Location = new System.Drawing.Point(737, 5);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnApply.MinimumSize = new System.Drawing.Size(157, 36);
+            this.btnApply.Location = new System.Drawing.Point(665, 5);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnApply.MinimumSize = new System.Drawing.Size(141, 36);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(157, 36);
+            this.btnApply.Size = new System.Drawing.Size(141, 36);
             this.btnApply.TabIndex = 14;
             this.btnApply.Text = "应用";
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
@@ -203,10 +207,12 @@ namespace FigSpec.SortingExpert.SettingForms
             this.panelControl4.Controls.Add(this.lblStartPixel);
             this.panelControl4.Controls.Add(this.spTrachea);
             this.panelControl4.Controls.Add(this.lblTrachea);
-            this.panelControl4.Location = new System.Drawing.Point(421, 19);
-            this.panelControl4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControl4.Controls.Add(this.spOffsetBack);
+            this.panelControl4.Controls.Add(this.lblOffsetBack);
+            this.panelControl4.Location = new System.Drawing.Point(378, 19);
+            this.panelControl4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(659, 641);
+            this.panelControl4.Size = new System.Drawing.Size(593, 641);
             this.panelControl4.TabIndex = 13;
             // 
             // spTracheaEnd
@@ -216,21 +222,21 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spTracheaEnd.Location = new System.Drawing.Point(427, 127);
-            this.spTracheaEnd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spTracheaEnd.Location = new System.Drawing.Point(384, 127);
+            this.spTracheaEnd.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spTracheaEnd.Name = "spTracheaEnd";
             this.spTracheaEnd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spTracheaEnd.Properties.IsFloatValue = false;
             this.spTracheaEnd.Properties.Mask.EditMask = "N00";
-            this.spTracheaEnd.Size = new System.Drawing.Size(144, 30);
+            this.spTracheaEnd.Size = new System.Drawing.Size(129, 30);
             this.spTracheaEnd.TabIndex = 28;
             this.spTracheaEnd.Visible = false;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(427, 96);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl1.Location = new System.Drawing.Point(384, 96);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(72, 22);
             this.labelControl1.TabIndex = 27;
@@ -244,21 +250,21 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spTracheaStart.Location = new System.Drawing.Point(214, 127);
-            this.spTracheaStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spTracheaStart.Location = new System.Drawing.Point(192, 127);
+            this.spTracheaStart.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spTracheaStart.Name = "spTracheaStart";
             this.spTracheaStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spTracheaStart.Properties.IsFloatValue = false;
             this.spTracheaStart.Properties.Mask.EditMask = "N00";
-            this.spTracheaStart.Size = new System.Drawing.Size(144, 30);
+            this.spTracheaStart.Size = new System.Drawing.Size(129, 30);
             this.spTracheaStart.TabIndex = 26;
             this.spTracheaStart.Visible = false;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(214, 96);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl2.Location = new System.Drawing.Point(192, 96);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(72, 22);
             this.labelControl2.TabIndex = 25;
@@ -267,8 +273,8 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             // chkTracheaDesc
             // 
-            this.chkTracheaDesc.Location = new System.Drawing.Point(27, 251);
-            this.chkTracheaDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkTracheaDesc.Location = new System.Drawing.Point(24, 251);
+            this.chkTracheaDesc.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.chkTracheaDesc.Name = "chkTracheaDesc";
             this.chkTracheaDesc.Properties.AutoWidth = true;
             this.chkTracheaDesc.Properties.Caption = "气管编号倒序";
@@ -277,14 +283,14 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             // gcConfig
             // 
-            this.gcConfig.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gcConfig.Location = new System.Drawing.Point(17, 291);
+            this.gcConfig.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.gcConfig.Location = new System.Drawing.Point(15, 291);
             this.gcConfig.MainView = this.gvConfig;
-            this.gcConfig.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gcConfig.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.gcConfig.Name = "gcConfig";
             this.gcConfig.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gcConfig.Size = new System.Drawing.Size(634, 343);
+            this.gcConfig.Size = new System.Drawing.Size(570, 343);
             this.gcConfig.TabIndex = 23;
             this.gcConfig.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvConfig});
@@ -311,44 +317,44 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             this.colTrachea.Caption = "气管编号";
             this.colTrachea.FieldName = "TracheaNumber";
-            this.colTrachea.MinWidth = 29;
+            this.colTrachea.MinWidth = 26;
             this.colTrachea.Name = "colTrachea";
             this.colTrachea.OptionsColumn.AllowEdit = false;
             this.colTrachea.Visible = true;
             this.colTrachea.VisibleIndex = 0;
-            this.colTrachea.Width = 143;
+            this.colTrachea.Width = 129;
             // 
             // colStartPixel
             // 
             this.colStartPixel.Caption = "起始像素";
             this.colStartPixel.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colStartPixel.FieldName = "StartPixel";
-            this.colStartPixel.MinWidth = 29;
+            this.colStartPixel.MinWidth = 26;
             this.colStartPixel.Name = "colStartPixel";
             this.colStartPixel.Visible = true;
             this.colStartPixel.VisibleIndex = 1;
-            this.colStartPixel.Width = 243;
+            this.colStartPixel.Width = 219;
             // 
             // colEndPixel
             // 
             this.colEndPixel.Caption = "结束像素";
             this.colEndPixel.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colEndPixel.FieldName = "EndPixel";
-            this.colEndPixel.MinWidth = 29;
+            this.colEndPixel.MinWidth = 26;
             this.colEndPixel.Name = "colEndPixel";
             this.colEndPixel.Visible = true;
             this.colEndPixel.VisibleIndex = 2;
-            this.colEndPixel.Width = 246;
+            this.colEndPixel.Width = 221;
             // 
             // colOperate
             // 
             this.colOperate.Caption = "操作";
             this.colOperate.ColumnEdit = this.repositoryItemButtonEdit1;
-            this.colOperate.MinWidth = 29;
+            this.colOperate.MinWidth = 26;
             this.colOperate.Name = "colOperate";
             this.colOperate.Visible = true;
             this.colOperate.VisibleIndex = 3;
-            this.colOperate.Width = 107;
+            this.colOperate.Width = 96;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -363,11 +369,11 @@ namespace FigSpec.SortingExpert.SettingForms
             // btnCreateConfig
             // 
             this.btnCreateConfig.AutoSize = true;
-            this.btnCreateConfig.Location = new System.Drawing.Point(427, 247);
-            this.btnCreateConfig.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCreateConfig.MinimumSize = new System.Drawing.Size(144, 35);
+            this.btnCreateConfig.Location = new System.Drawing.Point(384, 247);
+            this.btnCreateConfig.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnCreateConfig.MinimumSize = new System.Drawing.Size(129, 35);
             this.btnCreateConfig.Name = "btnCreateConfig";
-            this.btnCreateConfig.Size = new System.Drawing.Size(144, 35);
+            this.btnCreateConfig.Size = new System.Drawing.Size(129, 35);
             this.btnCreateConfig.TabIndex = 22;
             this.btnCreateConfig.Text = "生成新的配置";
             this.btnCreateConfig.Click += new System.EventHandler(this.btnCreateConfig_Click);
@@ -379,22 +385,22 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spPixelInterval.Location = new System.Drawing.Point(27, 204);
-            this.spPixelInterval.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spPixelInterval.Location = new System.Drawing.Point(24, 204);
+            this.spPixelInterval.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spPixelInterval.Name = "spPixelInterval";
             this.spPixelInterval.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spPixelInterval.Size = new System.Drawing.Size(144, 30);
+            this.spPixelInterval.Size = new System.Drawing.Size(129, 30);
             this.spPixelInterval.TabIndex = 21;
             // 
             // lblPixelInterval
             // 
-            this.lblPixelInterval.Location = new System.Drawing.Point(27, 173);
-            this.lblPixelInterval.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblPixelInterval.Location = new System.Drawing.Point(24, 173);
+            this.lblPixelInterval.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblPixelInterval.Name = "lblPixelInterval";
-            this.lblPixelInterval.Size = new System.Drawing.Size(90, 22);
+            this.lblPixelInterval.Size = new System.Drawing.Size(72, 22);
             this.lblPixelInterval.TabIndex = 20;
-            this.lblPixelInterval.Text = "吹气偏移量";
+            this.lblPixelInterval.Text = "前偏移量";
             // 
             // spTracheaPixels
             // 
@@ -403,19 +409,19 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             65536});
-            this.spTracheaPixels.Location = new System.Drawing.Point(214, 204);
-            this.spTracheaPixels.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spTracheaPixels.Location = new System.Drawing.Point(192, 204);
+            this.spTracheaPixels.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spTracheaPixels.Name = "spTracheaPixels";
             this.spTracheaPixels.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spTracheaPixels.Size = new System.Drawing.Size(144, 30);
+            this.spTracheaPixels.Size = new System.Drawing.Size(129, 30);
             this.spTracheaPixels.TabIndex = 19;
             this.spTracheaPixels.Visible = false;
             // 
             // lblTracheaPixels
             // 
-            this.lblTracheaPixels.Location = new System.Drawing.Point(214, 173);
-            this.lblTracheaPixels.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblTracheaPixels.Location = new System.Drawing.Point(192, 173);
+            this.lblTracheaPixels.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblTracheaPixels.Name = "lblTracheaPixels";
             this.lblTracheaPixels.Size = new System.Drawing.Size(72, 22);
             this.lblTracheaPixels.TabIndex = 18;
@@ -429,20 +435,20 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spPixelNumber.Location = new System.Drawing.Point(26, 55);
-            this.spPixelNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spPixelNumber.Location = new System.Drawing.Point(23, 55);
+            this.spPixelNumber.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spPixelNumber.Name = "spPixelNumber";
             this.spPixelNumber.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spPixelNumber.Properties.IsFloatValue = false;
             this.spPixelNumber.Properties.Mask.EditMask = "N00";
-            this.spPixelNumber.Size = new System.Drawing.Size(144, 30);
+            this.spPixelNumber.Size = new System.Drawing.Size(129, 30);
             this.spPixelNumber.TabIndex = 17;
             // 
             // lblPixelNumber
             // 
-            this.lblPixelNumber.Location = new System.Drawing.Point(27, 24);
-            this.lblPixelNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblPixelNumber.Location = new System.Drawing.Point(24, 24);
+            this.lblPixelNumber.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblPixelNumber.Name = "lblPixelNumber";
             this.lblPixelNumber.Size = new System.Drawing.Size(72, 22);
             this.lblPixelNumber.TabIndex = 16;
@@ -455,20 +461,20 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spEndPixel.Location = new System.Drawing.Point(427, 55);
-            this.spEndPixel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spEndPixel.Location = new System.Drawing.Point(384, 55);
+            this.spEndPixel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spEndPixel.Name = "spEndPixel";
             this.spEndPixel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spEndPixel.Properties.IsFloatValue = false;
             this.spEndPixel.Properties.Mask.EditMask = "N00";
-            this.spEndPixel.Size = new System.Drawing.Size(144, 30);
+            this.spEndPixel.Size = new System.Drawing.Size(129, 30);
             this.spEndPixel.TabIndex = 15;
             // 
             // lblEndPixel
             // 
-            this.lblEndPixel.Location = new System.Drawing.Point(427, 24);
-            this.lblEndPixel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblEndPixel.Location = new System.Drawing.Point(384, 24);
+            this.lblEndPixel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblEndPixel.Name = "lblEndPixel";
             this.lblEndPixel.Size = new System.Drawing.Size(72, 22);
             this.lblEndPixel.TabIndex = 14;
@@ -481,20 +487,20 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spStartPixel.Location = new System.Drawing.Point(214, 55);
-            this.spStartPixel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spStartPixel.Location = new System.Drawing.Point(192, 55);
+            this.spStartPixel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spStartPixel.Name = "spStartPixel";
             this.spStartPixel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spStartPixel.Properties.IsFloatValue = false;
             this.spStartPixel.Properties.Mask.EditMask = "N00";
-            this.spStartPixel.Size = new System.Drawing.Size(144, 30);
+            this.spStartPixel.Size = new System.Drawing.Size(129, 30);
             this.spStartPixel.TabIndex = 13;
             // 
             // lblStartPixel
             // 
-            this.lblStartPixel.Location = new System.Drawing.Point(214, 24);
-            this.lblStartPixel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblStartPixel.Location = new System.Drawing.Point(192, 24);
+            this.lblStartPixel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblStartPixel.Name = "lblStartPixel";
             this.lblStartPixel.Size = new System.Drawing.Size(72, 22);
             this.lblStartPixel.TabIndex = 12;
@@ -507,24 +513,46 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spTrachea.Location = new System.Drawing.Point(27, 127);
-            this.spTrachea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spTrachea.Location = new System.Drawing.Point(24, 127);
+            this.spTrachea.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spTrachea.Name = "spTrachea";
             this.spTrachea.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spTrachea.Properties.IsFloatValue = false;
             this.spTrachea.Properties.Mask.EditMask = "N00";
-            this.spTrachea.Size = new System.Drawing.Size(144, 30);
+            this.spTrachea.Size = new System.Drawing.Size(129, 30);
             this.spTrachea.TabIndex = 11;
             // 
             // lblTrachea
             // 
-            this.lblTrachea.Location = new System.Drawing.Point(27, 96);
-            this.lblTrachea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblTrachea.Location = new System.Drawing.Point(24, 96);
+            this.lblTrachea.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblTrachea.Name = "lblTrachea";
             this.lblTrachea.Size = new System.Drawing.Size(72, 22);
             this.lblTrachea.TabIndex = 10;
             this.lblTrachea.Text = "气管数量";
+            // 
+            // spOffsetBack
+            // 
+            this.spOffsetBack.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spOffsetBack.Location = new System.Drawing.Point(214, 204);
+            this.spOffsetBack.Name = "spOffsetBack";
+            this.spOffsetBack.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spOffsetBack.Size = new System.Drawing.Size(144, 30);
+            this.spOffsetBack.TabIndex = 30;
+            // 
+            // lblOffsetBack
+            // 
+            this.lblOffsetBack.Location = new System.Drawing.Point(214, 173);
+            this.lblOffsetBack.Name = "lblOffsetBack";
+            this.lblOffsetBack.Size = new System.Drawing.Size(72, 22);
+            this.lblOffsetBack.TabIndex = 29;
+            this.lblOffsetBack.Text = "后偏移量";
             // 
             // panelControl3
             // 
@@ -537,20 +565,20 @@ namespace FigSpec.SortingExpert.SettingForms
             this.panelControl3.Controls.Add(this.labelControl6);
             this.panelControl3.Controls.Add(this.labelControl4);
             this.panelControl3.Controls.Add(this.labelControl5);
-            this.panelControl3.Location = new System.Drawing.Point(17, 366);
-            this.panelControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControl3.Location = new System.Drawing.Point(15, 366);
+            this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(396, 294);
+            this.panelControl3.Size = new System.Drawing.Size(356, 294);
             this.panelControl3.TabIndex = 12;
             // 
             // sortingBaseButton1
             // 
             this.sortingBaseButton1.AutoSize = true;
-            this.sortingBaseButton1.Location = new System.Drawing.Point(213, 215);
-            this.sortingBaseButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.sortingBaseButton1.MinimumSize = new System.Drawing.Size(157, 36);
+            this.sortingBaseButton1.Location = new System.Drawing.Point(191, 215);
+            this.sortingBaseButton1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.sortingBaseButton1.MinimumSize = new System.Drawing.Size(141, 36);
             this.sortingBaseButton1.Name = "sortingBaseButton1";
-            this.sortingBaseButton1.Size = new System.Drawing.Size(157, 36);
+            this.sortingBaseButton1.Size = new System.Drawing.Size(141, 36);
             this.sortingBaseButton1.TabIndex = 15;
             this.sortingBaseButton1.Text = "设置到气阀";
             this.sortingBaseButton1.Visible = false;
@@ -563,8 +591,8 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spActivatePixelsY.Location = new System.Drawing.Point(213, 174);
-            this.spActivatePixelsY.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spActivatePixelsY.Location = new System.Drawing.Point(191, 174);
+            this.spActivatePixelsY.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spActivatePixelsY.Name = "spActivatePixelsY";
             this.spActivatePixelsY.Properties.Appearance.Options.UseTextOptions = true;
             this.spActivatePixelsY.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -582,7 +610,7 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spActivatePixelsY.Size = new System.Drawing.Size(176, 30);
+            this.spActivatePixelsY.Size = new System.Drawing.Size(158, 30);
             this.spActivatePixelsY.TabIndex = 11;
             // 
             // spActivatePixelsX
@@ -592,8 +620,8 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spActivatePixelsX.Location = new System.Drawing.Point(213, 124);
-            this.spActivatePixelsX.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spActivatePixelsX.Location = new System.Drawing.Point(191, 124);
+            this.spActivatePixelsX.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spActivatePixelsX.Name = "spActivatePixelsX";
             this.spActivatePixelsX.Properties.Appearance.Options.UseTextOptions = true;
             this.spActivatePixelsX.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -611,13 +639,13 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spActivatePixelsX.Size = new System.Drawing.Size(176, 30);
+            this.spActivatePixelsX.Size = new System.Drawing.Size(158, 30);
             this.spActivatePixelsX.TabIndex = 9;
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(26, 179);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl7.Location = new System.Drawing.Point(23, 179);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(72, 22);
             this.labelControl7.TabIndex = 10;
@@ -630,8 +658,8 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spinDelayTime.Location = new System.Drawing.Point(213, 24);
-            this.spinDelayTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spinDelayTime.Location = new System.Drawing.Point(191, 24);
+            this.spinDelayTime.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spinDelayTime.Name = "spinDelayTime";
             this.spinDelayTime.Properties.Appearance.Options.UseTextOptions = true;
             this.spinDelayTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -639,7 +667,7 @@ namespace FigSpec.SortingExpert.SettingForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spinDelayTime.Properties.IsFloatValue = false;
             this.spinDelayTime.Properties.Mask.EditMask = "N00";
-            this.spinDelayTime.Size = new System.Drawing.Size(176, 30);
+            this.spinDelayTime.Size = new System.Drawing.Size(158, 30);
             this.spinDelayTime.TabIndex = 9;
             // 
             // spinBlowTime
@@ -649,8 +677,8 @@ namespace FigSpec.SortingExpert.SettingForms
             0,
             0,
             0});
-            this.spinBlowTime.Location = new System.Drawing.Point(213, 74);
-            this.spinBlowTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.spinBlowTime.Location = new System.Drawing.Point(191, 74);
+            this.spinBlowTime.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.spinBlowTime.Name = "spinBlowTime";
             this.spinBlowTime.Properties.Appearance.Options.UseTextOptions = true;
             this.spinBlowTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -658,13 +686,13 @@ namespace FigSpec.SortingExpert.SettingForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spinBlowTime.Properties.IsFloatValue = false;
             this.spinBlowTime.Properties.Mask.EditMask = "N00";
-            this.spinBlowTime.Size = new System.Drawing.Size(176, 30);
+            this.spinBlowTime.Size = new System.Drawing.Size(158, 30);
             this.spinBlowTime.TabIndex = 11;
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(26, 129);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl6.Location = new System.Drawing.Point(23, 129);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(72, 22);
             this.labelControl6.TabIndex = 7;
@@ -672,8 +700,8 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(26, 28);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl4.Location = new System.Drawing.Point(23, 28);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(122, 22);
             this.labelControl4.TabIndex = 7;
@@ -681,8 +709,8 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(26, 79);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl5.Location = new System.Drawing.Point(23, 79);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(122, 22);
             this.labelControl5.TabIndex = 10;
@@ -691,10 +719,10 @@ namespace FigSpec.SortingExpert.SettingForms
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.tableLayoutPanel1);
-            this.panelControl2.Location = new System.Drawing.Point(17, 19);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControl2.Location = new System.Drawing.Point(15, 19);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(396, 338);
+            this.panelControl2.Size = new System.Drawing.Size(356, 338);
             this.panelControl2.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -716,7 +744,7 @@ namespace FigSpec.SortingExpert.SettingForms
             this.tableLayoutPanel1.Controls.Add(this.chkTcpConnect, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
@@ -726,13 +754,13 @@ namespace FigSpec.SortingExpert.SettingForms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(392, 334);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(352, 334);
             this.tableLayoutPanel1.TabIndex = 26;
             // 
             // lblLocalIP
             // 
-            this.lblLocalIP.Location = new System.Drawing.Point(4, 5);
-            this.lblLocalIP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblLocalIP.Location = new System.Drawing.Point(3, 5);
+            this.lblLocalIP.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblLocalIP.Name = "lblLocalIP";
             this.lblLocalIP.Size = new System.Drawing.Size(89, 22);
             this.lblLocalIP.TabIndex = 0;
@@ -740,43 +768,43 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             // textIP
             // 
-            this.textIP.Location = new System.Drawing.Point(200, 5);
-            this.textIP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textIP.Location = new System.Drawing.Point(179, 5);
+            this.textIP.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.textIP.Name = "textIP";
             this.textIP.Properties.ReadOnly = true;
-            this.textIP.Size = new System.Drawing.Size(176, 30);
+            this.textIP.Size = new System.Drawing.Size(158, 30);
             this.textIP.TabIndex = 3;
             // 
             // txtServerPort
             // 
-            this.txtServerPort.Location = new System.Drawing.Point(200, 52);
-            this.txtServerPort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtServerPort.Location = new System.Drawing.Point(179, 52);
+            this.txtServerPort.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtServerPort.Name = "txtServerPort";
-            this.txtServerPort.Size = new System.Drawing.Size(176, 30);
+            this.txtServerPort.Size = new System.Drawing.Size(158, 30);
             this.txtServerPort.TabIndex = 4;
             this.txtServerPort.Validating += new System.ComponentModel.CancelEventHandler(this.txtEjectPort_Validating);
             // 
             // txtEjectIp
             // 
-            this.txtEjectIp.Location = new System.Drawing.Point(200, 146);
-            this.txtEjectIp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEjectIp.Location = new System.Drawing.Point(179, 146);
+            this.txtEjectIp.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEjectIp.Name = "txtEjectIp";
-            this.txtEjectIp.Size = new System.Drawing.Size(176, 30);
+            this.txtEjectIp.Size = new System.Drawing.Size(158, 30);
             this.txtEjectIp.TabIndex = 18;
             // 
             // txtEjectPort
             // 
-            this.txtEjectPort.Location = new System.Drawing.Point(200, 193);
-            this.txtEjectPort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEjectPort.Location = new System.Drawing.Point(179, 193);
+            this.txtEjectPort.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEjectPort.Name = "txtEjectPort";
-            this.txtEjectPort.Size = new System.Drawing.Size(176, 30);
+            this.txtEjectPort.Size = new System.Drawing.Size(158, 30);
             this.txtEjectPort.TabIndex = 19;
             this.txtEjectPort.Validating += new System.ComponentModel.CancelEventHandler(this.txtEjectPort_Validating);
             // 
             // lblLocalPort
             // 
-            this.lblLocalPort.Location = new System.Drawing.Point(4, 52);
-            this.lblLocalPort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblLocalPort.Location = new System.Drawing.Point(3, 52);
+            this.lblLocalPort.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblLocalPort.Name = "lblLocalPort";
             this.lblLocalPort.Size = new System.Drawing.Size(90, 22);
             this.lblLocalPort.TabIndex = 1;
@@ -784,31 +812,31 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             // cmbCOM
             // 
-            this.cmbCOM.Location = new System.Drawing.Point(200, 240);
-            this.cmbCOM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbCOM.Location = new System.Drawing.Point(179, 240);
+            this.cmbCOM.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbCOM.Name = "cmbCOM";
             this.cmbCOM.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbCOM.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbCOM.Size = new System.Drawing.Size(176, 30);
+            this.cmbCOM.Size = new System.Drawing.Size(158, 30);
             this.cmbCOM.TabIndex = 14;
             // 
             // btnConnect
             // 
             this.btnConnect.AutoSize = true;
-            this.btnConnect.Location = new System.Drawing.Point(200, 287);
-            this.btnConnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnConnect.MinimumSize = new System.Drawing.Size(176, 36);
+            this.btnConnect.Location = new System.Drawing.Point(179, 287);
+            this.btnConnect.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnConnect.MinimumSize = new System.Drawing.Size(158, 36);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(176, 36);
+            this.btnConnect.Size = new System.Drawing.Size(158, 36);
             this.btnConnect.TabIndex = 15;
             this.btnConnect.Text = "连接";
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // lblEjectPort
             // 
-            this.lblEjectPort.Location = new System.Drawing.Point(4, 193);
-            this.lblEjectPort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblEjectPort.Location = new System.Drawing.Point(3, 193);
+            this.lblEjectPort.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblEjectPort.Name = "lblEjectPort";
             this.lblEjectPort.Size = new System.Drawing.Size(126, 22);
             this.lblEjectPort.TabIndex = 17;
@@ -816,8 +844,8 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             // lblEjectCom
             // 
-            this.lblEjectCom.Location = new System.Drawing.Point(4, 240);
-            this.lblEjectCom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblEjectCom.Location = new System.Drawing.Point(3, 240);
+            this.lblEjectCom.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblEjectCom.Name = "lblEjectCom";
             this.lblEjectCom.Size = new System.Drawing.Size(128, 22);
             this.lblEjectCom.TabIndex = 5;
@@ -825,8 +853,8 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             // lblEjectIp
             // 
-            this.lblEjectIp.Location = new System.Drawing.Point(4, 146);
-            this.lblEjectIp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblEjectIp.Location = new System.Drawing.Point(3, 146);
+            this.lblEjectIp.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.lblEjectIp.Name = "lblEjectIp";
             this.lblEjectIp.Size = new System.Drawing.Size(125, 22);
             this.lblEjectIp.TabIndex = 16;
@@ -834,8 +862,8 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             // chkTcpConnect
             // 
-            this.chkTcpConnect.Location = new System.Drawing.Point(4, 99);
-            this.chkTcpConnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkTcpConnect.Location = new System.Drawing.Point(3, 99);
+            this.chkTcpConnect.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.chkTcpConnect.Name = "chkTcpConnect";
             this.chkTcpConnect.Properties.AutoWidth = true;
             this.chkTcpConnect.Properties.Caption = "吹气设备连接方式：TCP/IP";
@@ -845,13 +873,13 @@ namespace FigSpec.SortingExpert.SettingForms
             // 
             // EjectIpSettingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 724);
+            this.ClientSize = new System.Drawing.Size(987, 724);
             this.Controls.Add(this.panelControl1);
             this.LookAndFeel.SkinName = "Office 2010 Black";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Margin = new System.Windows.Forms.Padding(9, 13, 9, 13);
+            this.Margin = new System.Windows.Forms.Padding(8, 13, 8, 13);
             this.Name = "EjectIpSettingForm";
             this.Text = "气吹设置";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EjectIpSettingForm_FormClosed);
@@ -875,6 +903,7 @@ namespace FigSpec.SortingExpert.SettingForms
             ((System.ComponentModel.ISupportInitialize)(this.spEndPixel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spStartPixel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTrachea.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spOffsetBack.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();

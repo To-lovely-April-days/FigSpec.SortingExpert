@@ -123,13 +123,12 @@ namespace FigSpec.SortingExpert.SettingForms
                 var pixelNumber = Convert.ToInt32(spPixelNumber.Value);
                 var startPixel = Convert.ToInt32(spStartPixel.Value);
                 var endPixel = Convert.ToInt32(spEndPixel.Value);
-
                 var trachea = Convert.ToInt32(spTrachea.Value);
-       
-                var pixelInterval = Convert.ToSingle(spPixelInterval.Value);//偏移量
 
+                var offsetFront = Convert.ToSingle(spPixelInterval.Value);  // 前偏移量（复用原控件）
+                var offsetBack = Convert.ToSingle(spOffsetBack.Value);      // 后偏移量（新控件）
 
-                if (pixelNumber < 1 || startPixel < 1 || endPixel < 1 || trachea < 1  )
+                if (pixelNumber < 1 || startPixel < 1 || endPixel < 1 || trachea < 1)
                 {
                     FormShowHelper.ShowMessage("参数配置必须大于零".ToMultiLanguage(), "提示".ToMultiLanguage());
                     return;
@@ -145,18 +144,29 @@ namespace FigSpec.SortingExpert.SettingForms
                     return;
                 }
 
-                List<TracheaSetItem> configs = new List<TracheaSetItem>();
-                float lInterval = (float)(endPixel - startPixel+1) / (trachea);
-                float extra = 3;//
-                for (int i = 0; i <= trachea; i++)
+                // 有效像素范围 = 去掉前后偏移
+                float effectiveStart = startPixel + offsetFront;
+                float effectiveEnd = endPixel - offsetBack;
+
+                if (effectiveStart >= effectiveEnd)
                 {
-                    float loc = startPixel + pixelInterval + lInterval * (i ) ;
+                    FormShowHelper.ShowMessage("前后偏移量之和不能大于像素范围".ToMultiLanguage(), "提示".ToMultiLanguage());
+                    return;
+                }
+
+                float lInterval = (effectiveEnd - effectiveStart) / trachea;
+
+                List<TracheaSetItem> configs = new List<TracheaSetItem>();
+                for (int i = 0; i < trachea; i++)
+                {
+                    float start = effectiveStart + lInterval * i;
+                    float end = effectiveStart + lInterval * (i + 1);
 
                     configs.Add(new TracheaSetItem()
                     {
-                        TracheaNumber = chkTracheaDesc.Checked ? (trachea - i) : i+1,
-                        StartPixel = loc - lInterval / 2- extra,
-                        EndPixel = loc + lInterval / 2+ extra
+                        TracheaNumber = chkTracheaDesc.Checked ? (trachea - i) : i + 1,
+                        StartPixel = start,
+                        EndPixel = end
                     });
                 }
 
@@ -168,8 +178,9 @@ namespace FigSpec.SortingExpert.SettingForms
                 set.StartPixel = startPixel;
                 set.EndPixel = endPixel;
                 set.Trachea = trachea;
-
-                set.PixelInterval = pixelInterval;
+                set.PixelOffsetFront = offsetFront;
+                set.PixelOffsetBack = offsetBack;
+                set.PixelInterval = offsetFront; // 兼容
                 set.TracheaDesc = chkTracheaDesc.Checked;
                 set.Items = configs;
 

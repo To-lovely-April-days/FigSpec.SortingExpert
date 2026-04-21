@@ -79,7 +79,8 @@ namespace FigSpec.SortingExpert.Tools
                 model.UnifyTargetClassId >= 1 &&
                 model.UnifyTargetClassId < 254)
             {
-                float threshold = model.UnifyConfidenceThreshold / 100f;
+                // 显示链路使用较高阈值，补偿分批处理连通域小的影响
+                float threshold = Math.Max(model.UnifyConfidenceThreshold / 100f, 0.5f);
                 if (threshold < 0f) threshold = 0f;
                 if (threshold > 1f) threshold = 1f;
 
