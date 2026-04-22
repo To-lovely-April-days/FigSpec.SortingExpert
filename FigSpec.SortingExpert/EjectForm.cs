@@ -53,6 +53,15 @@ namespace FigSpec.SortingExpert
         /// </summary>
         private CheckedComboBoxEdit cmbEjectClasses;
         private LabelControl lblEjectClasses;
+        /// <summary>
+        /// [EJECT-FRAME] 日志计数器,每 500 次打 1 次
+        /// </summary>
+        private long _ejectFrameLogCounter = 0;
+        // ===== 诊断探针 A 的统计字段 =====
+        private long _enqueueSample = 0;
+        private long _enqueueSum = 0;
+        private long _enqueueMax = 0;
+        // =================================
         public EjectForm()
         {
             InitializeComponent();
@@ -249,15 +258,42 @@ namespace FigSpec.SortingExpert
                     }
                 }
 
-                // === 新增: 偶尔打印 hasTarget 状态 ===
-                if (targetCount > 0)  // 只在真的有目标时打印,避免日志爆炸
+                // === 诊断日志已减频 (高频路径,每帧打日志会拖慢处理线程) ===
+                // 每 500 帧打 1 次即可,主要用于确认数据流还在走。
+                _ejectFrameLogCounter++;
+                if (targetCount > 0 && (_ejectFrameLogCounter % 500) == 0)
                 {
-                    LogHelper.WriteLog($"[EJECT-FRAME] hasTarget=true, targetCount={targetCount}, 入队 AirQueue");
+                    LogHelper.WriteLog($"[EJECT-FRAME] #{_ejectFrameLogCounter} targetCount={targetCount}");
                 }
-                // =====================================
+                // ================================================================
                 if (hasTarget)
                 {
+                    // === 诊断探针 A: 从"相机扫到(time1)" 到 "即将 AirQueue.Enqueue" 的耗时 ===
+                    // 这段时间覆盖: SendEjectData(CollectData) → TCP回环 → EjectForm 回调 处理
+                    // 如果这段慢,说明瓶颈在 Unify / TCP 回环 / SendEjectData 主链路
+                    long enqueueDelayMs = (DateTime.Now.Ticks - time1) / 10000;
+                    _enqueueSample++;
+                    _enqueueMax = Math.Max(_enqueueMax, enqueueDelayMs);
+                    _enqueueSum += enqueueDelayMs;
+                    // 每 500 次打一次聚合统计(不要每次都打,会拖慢)
+                    if (_enqueueSample >= 500)
+                    {
+                        double avg = (double)_enqueueSum / _enqueueSample;
+                        LogHelper.WriteLog($"[PROBE-A-ENQUEUE] 最近500帧: 平均={avg:F1}ms, 最大={_enqueueMax}ms, " +
+                                           $"targetCount={targetCount}");
+                        _enqueueSample = 0;
+                        _enqueueSum = 0;
+                        _enqueueMax = 0;
+                    }
+                    // 同时:单次异常尖峰立刻打印
+                    if (enqueueDelayMs > 30)
+                    {
+                        LogHelper.WriteLog($"[PROBE-A-ENQUEUE] !!! 尖峰 {enqueueDelayMs}ms !!! targetCount={targetCount}");
+                    }
+                    // ==========================================================================
+
                     ClassifierControl.Shared.AirQueue.Enqueue((isContinue, frameData, time1));
+                    ClassifierControl.Shared.AirQueueEvent.Set();
                     isContinue = true;
                 }
                 else

@@ -35,6 +35,13 @@ namespace FigSpec.SortingExpert.Tools
         /// 接收数据（帧数据）的队列
         /// </summary>
         private ConcurrentQueue<GrabData> byteQueue;
+        /// <summary>
+        /// 采集时间戳队列，和 byteQueue 一一对应。
+        /// 在相机回调 ConnCameraInfo_GrabedData 里与 byteQueue 同步入队，
+        /// 在所有 byteQueue 的消费者处同步出队，保证顺序不错位。
+        /// 这个时间戳代表"物料经过相机的真实时刻"，是吹气延时计算的唯一基准。
+        /// </summary>
+        private ConcurrentQueue<long> byteTimeQueue;
 
         /// <summary>
         /// 清晰度, 用户向导使用
@@ -112,9 +119,9 @@ namespace FigSpec.SortingExpert.Tools
         /// 实时"统一颜色"处理器（方案A 延迟缓冲，跨批矿石也能完整投票）
         /// </summary>
         private RealtimeUnifyProcessor _unifyProcessor = new RealtimeUnifyProcessor(
-            carryLines: 25);
+            carryLines: 10);
         // ========== 新增: 实时分选显示用染色器 ==========
-        private SortingDisplayHelper _displayHelper = new SortingDisplayHelper(25);
+        private SortingDisplayHelper _displayHelper = new SortingDisplayHelper(10);
         /// <summary>
         /// 统一颜色日志控制：每 N 批打印一次详细日志,避免日志爆炸
         /// </summary>
@@ -173,19 +180,22 @@ namespace FigSpec.SortingExpert.Tools
         {
             if (grabData.Values?.Length > 0)
             {
-#if DEBUG
-                ScanParaMeter.ReceivedLines++;
-                if (DateTime.Now.Ticks >= ScanParaMeter.StartReceivedTime + 10000000)
-                {
-                    ScanParaMeter.SpendTime = DateTime.Now.Ticks - ScanParaMeter.StartReceivedTime;
-                    ScanParaMeter.FrameFrequency = ScanParaMeter.ReceivedLines - ScanParaMeter.StartReceivedLines;
-                    ScanParaMeter.StartReceivedTime = DateTime.Now.Ticks;
-                    ScanParaMeter.StartReceivedLines = ScanParaMeter.ReceivedLines;
-                }
-#endif
-                //接收数据队列，添加数据
+                //#if DEBUG
+                //                ScanParaMeter.ReceivedLines++;
+                //                if (DateTime.Now.Ticks >= ScanParaMeter.StartReceivedTime + 10000000)
+                //                {
+                //                    ScanParaMeter.SpendTime = DateTime.Now.Ticks - ScanParaMeter.StartReceivedTime;
+                //                    ScanParaMeter.FrameFrequency = ScanParaMeter.ReceivedLines - ScanParaMeter.StartReceivedLines;
+                //                    ScanParaMeter.StartReceivedTime = DateTime.Now.Ticks;
+                //                    ScanParaMeter.StartReceivedLines = ScanParaMeter.ReceivedLines;
+                //                }
+                //#endif
+                // 接收数据队列,添加数据
+                // 【关键】时间戳必须在相机回调这里打,代表物料真实的采集时刻。
+                // 下游 GPU 攒批/Unify 处理耗时不影响这个戳。
+                long acquireTicks = DateTime.Now.Ticks;
                 byteQueue.Enqueue(grabData);
-                //timeDataQueue.Enqueue(DateTime.Now.Ticks);
+                byteTimeQueue.Enqueue(acquireTicks);
                 GrabedDataEvent.Set();
 
             }
@@ -218,6 +228,7 @@ namespace FigSpec.SortingExpert.Tools
         private void InitQueue()
         {
             byteQueue = new ConcurrentQueue<GrabData>();
+            byteTimeQueue = new ConcurrentQueue<long>();
             clarityQueue = new ConcurrentQueue<float[]>();
             //prepareDataQueue = new ConcurrentQueue<byte[,]>();
             timeDataQueue = new ConcurrentQueue<long>();
@@ -466,6 +477,7 @@ namespace FigSpec.SortingExpert.Tools
                             if (byteQueue.TryDequeue(out var d))
                             {
                                 data.Add(d);
+                                byteTimeQueue.TryDequeue(out _);   // ← 新增:保持与 byteQueue 同步出队
                                 i++;
                             }
                         }
@@ -965,6 +977,7 @@ namespace FigSpec.SortingExpert.Tools
                             if (byteQueue.TryDequeue(out var data))
                             {
                                 Buffer.BlockCopy(data.Values, 0, grabDatas, destinationLength * i, destinationLength);
+                                byteTimeQueue.TryDequeue(out _);   // ← 新增:保持与 byteQueue 同步出队
                                 i++;
                             }
                             else
@@ -1003,19 +1016,48 @@ namespace FigSpec.SortingExpert.Tools
                 var model = obj as Model;
                 long start_time = 0;
 
-                int destinationLength = Samples * bands * 2;// 
+                int destinationLength = Samples * bands * 2;
                 byte[,] grabDatas = new byte[dealCount, Samples * bands * 2];
-                int copyLoc = 0;//记录拷贝到了第一个帧数据
+                int copyLoc = 0;
+                long[] _batchFrameTicks = new long[dealCount];
+
+                // ========== 【PROBE-L】诊断探针字段 - 每秒聚合一次 ==========
+                long _probeLLastLogTicks = DateTime.Now.Ticks;
+                long _probeLGpuSum = 0;
+                long _probeLGpuMax = 0;
+                long _probeLCloneSum = 0;
+                long _probeLCloneMax = 0;
+                long _probeLUnifyDispSum = 0;  // 显示渲染耗时
+                long _probeLBatchSum = 0;      // 整批处理总耗时
+                int _probeLBatchCount = 0;
+                int _probeLByteQueueMax = 0;
+                int _probeLEjectQueueMax = 0;
+                int _probeLWaitTriggerCount = 0;  // 攒不满时 continue 的次数
+                int _probeLGen0Start = GC.CollectionCount(0);
+                int _probeLGen1Start = GC.CollectionCount(1);
+                int _probeLGen2Start = GC.CollectionCount(2);
+                // 启动标记日志,确认 dealCount 是多少
+                LogHelper.WriteLog($"[PROBE-L] ProcessPointSortingV1_2 启动, dealCount={dealCount}, " +
+                                   $"Samples={Samples}, bands={bands}, " +
+                                   $"grabDatas.Length={grabDatas.Length} bytes, " +
+                                   $"ServerGC={System.Runtime.GCSettings.IsServerGC}");
+                // ================================================================
+
                 while (StartFlag && !GlobalSettings.ApplySetting.stopAppFlag)
                 {
                     GrabedDataEvent.WaitOne();
                     int currentCount = byteQueue.Count;
+
+                    // ========== 【PROBE-L】byteQueue 深度监控 ==========
+                    if (currentCount > _probeLByteQueueMax) _probeLByteQueueMax = currentCount;
+                    // ===================================================
+
                     if (currentCount > 0)
                     {
-#if DEBUG
-                        LogHelper.WriteLine($"ProcessPointSortingV1_2--###### 开始,累积的待分选的数量：{currentCount},时间：{(DateTime.Now.Ticks - start_time)}");
-                        LogHelper.WriteLine($"ProcessPointSortingV1_2--使用时间：{ScanParaMeter.SpendTime}，采集帧数：{ScanParaMeter.FrameFrequency} ，时间：{(DateTime.Now.Ticks - start_time)}");
-#endif
+                        // ========== 【PROBE-L】批处理总耗时起点 ==========
+                        long _probeLBatchStart = DateTime.Now.Ticks;
+                        // =================================================
+
                         start_time = DateTime.Now.Ticks;
                         for (int pp = 0; pp < currentCount; pp++)
                         {
@@ -1026,7 +1068,14 @@ namespace FigSpec.SortingExpert.Tools
                             if (byteQueue.TryDequeue(out var data))
                             {
                                 Buffer.BlockCopy(data.Values, 0, grabDatas, destinationLength * copyLoc, destinationLength);
-               
+
+                                if (!byteTimeQueue.TryDequeue(out long frameTicks))
+                                {
+                                    frameTicks = DateTime.Now.Ticks;
+                                    LogHelper.WriteLog("[TIME-SYNC] !!! byteTimeQueue 与 byteQueue 失步, 用当前时间兜底 !!!");
+                                }
+                                _batchFrameTicks[copyLoc] = frameTicks;
+
                                 copyLoc++;
                             }
                             else
@@ -1036,61 +1085,110 @@ namespace FigSpec.SortingExpert.Tools
                         }
                         if (copyLoc < dealCount)
                         {
+                            _probeLWaitTriggerCount++;   // 【PROBE-L】攒不满的次数
                             continue;
                         }
                         copyLoc = 0;
-#if DEBUG
-                        LogHelper.WriteLine($"ProcessPointSortingV1_2--从队列中取{dealCount}条数据的时间：" + (DateTime.Now.Ticks - start_time));
-#endif
-                        var (tags, im) = CudaAccelerator.Shared.PLSSClassifyByCorrection(model, dealCount, Samples, grabDatas);
-#if DEBUG
-                        LogHelper.WriteLine($"ProcessPointSortingV1_2--执行GPU相关操作的时间：" + (DateTime.Now.Ticks - start_time));
-#endif
 
-                        // 吹气和显示链路用独立的 tags 副本,避免互相污染
-                        // (SendEjectData 会调用 UnifyProcessor.Process 修改 tags)
+                        // ========== 【PROBE-L】测 GPU 耗时 ==========
+                        long _probeLGpuStart = DateTime.Now.Ticks;
+                        var (tags, im) = CudaAccelerator.Shared.PLSSClassifyByCorrection(model, dealCount, Samples, grabDatas);
+                        long _probeLGpuMs = (DateTime.Now.Ticks - _probeLGpuStart) / 10000;
+                        _probeLGpuSum += _probeLGpuMs;
+                        if (_probeLGpuMs > _probeLGpuMax) _probeLGpuMax = _probeLGpuMs;
+                        // =============================================
+
+                        // ========== 【PROBE-L】测 Clone 耗时 ==========
+                        long _probeLCloneStart = DateTime.Now.Ticks;
                         byte[,] tagsForEject = (byte[,])tags.Clone();
                         byte[,] tagsForDisplay = (byte[,])tags.Clone();
-                        // GPU处理完之后再记录时间，这样时间戳代表"数据准备好可以吹气"的时刻
+                        long _probeLCloneMs = (DateTime.Now.Ticks - _probeLCloneStart) / 10000;
+                        _probeLCloneSum += _probeLCloneMs;
+                        if (_probeLCloneMs > _probeLCloneMax) _probeLCloneMax = _probeLCloneMs;
+                        // ================================================
+
                         for (int t = 0; t < dealCount; t++)
                         {
-                            timeDataQueue.Enqueue(DateTime.Now.Ticks);
+                            timeDataQueue.Enqueue(_batchFrameTicks[t]);
                         }
-                        // 1) 吹气队列: 原始 tags 直接进
                         ejectDataQueue.Enqueue(tagsForEject);
 
-                        // 2) 显示: 按 classid 染色 + 统一颜色
+                        // ========== 【PROBE-L】监控 ejectDataQueue 深度 ==========
+                        int _probeLEjQ = ejectDataQueue.Count;
+                        if (_probeLEjQ > _probeLEjectQueueMax) _probeLEjectQueueMax = _probeLEjQ;
+                        // =========================================================
+
+                        // ========== 【PROBE-L】测显示渲染耗时 ==========
+                        long _probeLDispStart = DateTime.Now.Ticks;
                         byte[,] classColorIm;
                         try
                         {
                             classColorIm = _displayHelper.Render(tagsForDisplay, model);
-                            if (classColorIm == null) classColorIm = im;  // 渲染失败兜底用原始RGB
+                            if (classColorIm == null) classColorIm = im;
                         }
                         catch (Exception ex)
                         {
                             LogHelper.WriteLog("[UNIFY-DISP] 渲染异常,降级为原始RGB: " + ex.Message);
                             classColorIm = im;
                         }
+                        long _probeLDispMs = (DateTime.Now.Ticks - _probeLDispStart) / 10000;
+                        _probeLUnifyDispSum += _probeLDispMs;
+                        // =================================================
+
                         displayDataQueue.Enqueue(classColorIm);
 
                         SortingResultEvent.Set();
                         SortingResultDisplayEvent.Set();
 
-#if DEBUG
-                        LogHelper.WriteLine($"ProcessPointSortingV1_2--保存图像的时间：" + (DateTime.Now.Ticks - start_time));
-#endif
-#if DEBUG
-                        LogHelper.WriteLine($"ProcessPointSortingV1_2--###### 总时间：" + (DateTime.Now.Ticks - start_time));
-                        //LogHelper.WriteLine((DateTime.Now.Ticks - start_time));
-                        //LogHelper.WriteLine($"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-#endif
+                        // ========== 【PROBE-L】批处理总耗时 ==========
+                        long _probeLBatchMs = (DateTime.Now.Ticks - _probeLBatchStart) / 10000;
+                        _probeLBatchSum += _probeLBatchMs;
+                        _probeLBatchCount++;
+                        // ================================================
+
+                        // ========== 【PROBE-L】每秒聚合输出一次 ==========
+                        long _probeLNowTicks = DateTime.Now.Ticks;
+                        if (_probeLNowTicks - _probeLLastLogTicks >= 10000000 && _probeLBatchCount > 0)
+                        {
+                            int gen0Cur = GC.CollectionCount(0);
+                            int gen1Cur = GC.CollectionCount(1);
+                            int gen2Cur = GC.CollectionCount(2);
+                            int airQCur = ClassifierControl.Shared.AirQueue.Count;
+
+                            LogHelper.WriteLog(
+                                $"[PROBE-L] 批次/秒={_probeLBatchCount}, " +
+                                $"GPU(ms): 平均={(double)_probeLGpuSum / _probeLBatchCount:F1} 最大={_probeLGpuMax}, " +
+                                $"Clone(ms): 平均={(double)_probeLCloneSum / _probeLBatchCount:F1} 最大={_probeLCloneMax}, " +
+                                $"Disp(ms): 平均={(double)_probeLUnifyDispSum / _probeLBatchCount:F1}, " +
+                                $"批总(ms): 平均={(double)_probeLBatchSum / _probeLBatchCount:F1}, " +
+                                $"byteQ最大={_probeLByteQueueMax}, ejectQ最大={_probeLEjectQueueMax}, AirQ当前={airQCur}, " +
+                                $"攒不满次数={_probeLWaitTriggerCount}, " +
+                                $"GC: Gen0={gen0Cur - _probeLGen0Start} Gen1={gen1Cur - _probeLGen1Start} Gen2={gen2Cur - _probeLGen2Start}");
+
+                            // 重置
+                            _probeLLastLogTicks = _probeLNowTicks;
+                            _probeLGpuSum = 0;
+                            _probeLGpuMax = 0;
+                            _probeLCloneSum = 0;
+                            _probeLCloneMax = 0;
+                            _probeLUnifyDispSum = 0;
+                            _probeLBatchSum = 0;
+                            _probeLBatchCount = 0;
+                            _probeLByteQueueMax = 0;
+                            _probeLEjectQueueMax = 0;
+                            _probeLWaitTriggerCount = 0;
+                            _probeLGen0Start = gen0Cur;
+                            _probeLGen1Start = gen1Cur;
+                            _probeLGen2Start = gen2Cur;
+                        }
+                        // =====================================================
                     }
                 }
             }
             catch (Exception ex)
             {
 #if DEBUG
-                LogHelper.WriteLine("实时分选每帧数据异常：" + ex.Message);
+                LogHelper.WriteLine("实时分选每帧数据异常:" + ex.Message);
 #endif
             }
             finally
@@ -1139,14 +1237,9 @@ namespace FigSpec.SortingExpert.Tools
                                 if (threshold < 0f) threshold = 0f;
                                 if (threshold > 1f) threshold = 1f;
 
-                                // 是否本批打印详细日志
-                                bool shouldLog = (_unifyLogCounter % UNIFY_LOG_EVERY_N_BATCHES) == 0;
-                                int[] beforeHist = null;
-                                if (shouldLog)
-                                {
-                                    beforeHist = CountClassHist(tags, 256);
-                                }
-
+                               
+                                // [UNIFY] 诊断日志已关闭 (高频路径日志拖慢处理线程导致延迟漂移)。
+                                // 如需排查,改回: bool shouldLog = (_unifyLogCounter % 500) == 0;
                                 long unifyStart = DateTime.Now.Ticks;
                                 tags = _unifyProcessor.Process(
                                     tags,
@@ -1155,17 +1248,11 @@ namespace FigSpec.SortingExpert.Tools
                                     model.UnifyFillBackground);
                                 long unifyCost = (DateTime.Now.Ticks - unifyStart) / 10000;
 
-                                if (shouldLog)
+                                // 只在 Unify 耗时异常时才打日志(比如 >10ms 说明图像太复杂,是有用的信息)
+                                if (unifyCost > 10)
                                 {
-                                    int[] afterHist = CountClassHist(tags, 256);
-                                    LogHelper.WriteLog(
-                                        $"[UNIFY] 批#{_unifyLogCounter} " +
-                                        $"目标={model.UnifyTargetClassId} " +
-                                        $"阈值={model.UnifyConfidenceThreshold}% " +
-                                        $"填充={model.UnifyFillBackground} " +
-                                        $"耗时={unifyCost}ms");
-                                    LogHelper.WriteLog($"[UNIFY] 前: {HistToString(beforeHist)}");
-                                    LogHelper.WriteLog($"[UNIFY] 后: {HistToString(afterHist)}");
+                                    LogHelper.WriteLog($"[UNIFY] !!! 批#{_unifyLogCounter} 耗时异常={unifyCost}ms " +
+                                                       $"目标={model.UnifyTargetClassId} 阈值={model.UnifyConfidenceThreshold}% 填充={model.UnifyFillBackground}");
                                 }
                                 _unifyLogCounter++;
                             }
@@ -1185,15 +1272,7 @@ namespace FigSpec.SortingExpert.Tools
                                 _unifyProcessor.Reset();
                             }
                         }
-                        // =====================================
-                        // === 诊断: 每 100 批打印一次 CommunicationType (避免日志爆炸) ===
-                        if ((_unifyLogCounter % 100) == 0)
-                        {
-                            LogHelper.WriteLog($"[COMM-TYPE] 当前 CommunicationType={GlobalSettings.ApplySetting.CommunicationType} " +
-                                               $"(0=TCP, 1=COM, 2=Csv), startIndex={startIndex}, " +
-                                               $"CustomSamples={GlobalSettings.ApplySetting.CustomSamples}");
-                        }
-                        // =================================================================
+                     
 
                         if (GlobalSettings.ApplySetting.CommunicationType == 0)
                         {

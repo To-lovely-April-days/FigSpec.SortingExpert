@@ -309,6 +309,7 @@
     <Compile Include="SettingForms\FormPreprocessEdit.Designer.cs">
       <DependentUpon>FormPreprocessEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\CameraSimulator.cs" />
     <Compile Include="Tools\Client\JiuShunEjectDevice.cs" />
     <Compile Include="Tools\FileStorageHelper.cs" />
     <Compile Include="Tools\IBaseEjectDevice.cs" />

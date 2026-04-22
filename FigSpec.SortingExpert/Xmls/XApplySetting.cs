@@ -164,7 +164,7 @@ namespace FigSpec.SortingExpert
         /// <summary>
         /// 分选时计算的帧数
         /// </summary>
-        private int _CalculatedFrameCount = 25;
+        private int _CalculatedFrameCount = 10;
         public int CalculatedFrameCount 
         {
             get => _CalculatedFrameCount;

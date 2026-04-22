@@ -60,7 +60,7 @@ namespace FigSpec.SortingExpert.Tools
         /// </summary>
         private long _processCallCounter = 0;
 
-        public RealtimeUnifyProcessor(int carryLines = 25)
+        public RealtimeUnifyProcessor(int carryLines = 10)
         {
             K = carryLines;
             _tail = null;
@@ -103,7 +103,7 @@ namespace FigSpec.SortingExpert.Tools
 
             // === v3 诊断: 每 50 次 Process 打印输入直方图 ===
             _processCallCounter++;
-            bool debug = (_processCallCounter % 50) == 1;
+            bool debug = false;
             if (debug)
             {
                 int[] inHist = new int[256];

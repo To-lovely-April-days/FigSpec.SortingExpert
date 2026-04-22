@@ -79,10 +79,10 @@ namespace FigSpec.SortingExpert.Tools.Client
         {
             try
             {
-                LogHelper.WriteLog($"[CHSPEC-EJECT] Eject 入口: ports=[{string.Join(",", ports)}], time={time}ms, IsConnected={SPICOM.IsConnected}");
+               
                 if (ports.Length == 0)
                 {
-                    LogHelper.WriteLog("[CHSPEC-EJECT] ports 空,直接返回");
+                   
                     return true;
                 }
                 int count = ports.Length;
@@ -127,7 +127,6 @@ namespace FigSpec.SortingExpert.Tools.Client
         /// <param name="delay">延时(ms)</param>
         private void OpenAir(int startindex, int endindex, ushort duration, ushort delay = 1)
         {
-            long start_time = DateTime.Now.Ticks;
             var duration_b1 = (byte)(duration >> 8);
             var duration_b2 = (byte)(duration & 0xff);
             var index_b1 = (byte)startindex;
@@ -136,29 +135,22 @@ namespace FigSpec.SortingExpert.Tools.Client
             var delay_b2 = (byte)(delay & 0xff);
             byte[] message = new byte[] { 0xff, index_b1, index_b2, delay_b1, delay_b2, duration_b1, duration_b2 };
 
-            // === 诊断: 准备发送串口指令 ===
-            string hex = BitConverter.ToString(message);
-            LogHelper.WriteLog($"[CHSPEC-EJECT] 准备发送: {hex} " +
-                               $"(气管 {startindex}~{endindex}, duration={duration}ms, delay={delay}ms), " +
-                               $"SPICOM.IsConnected={SPICOM.IsConnected}");
-            // ================================
-
+            // 【新增探针 H】精确测量每次 SendMessage 耗时
+            long sendStart = DateTime.Now.Ticks;
             bool isSuccess = SPICOM.SendMessage(message);
+            long sendMs = (DateTime.Now.Ticks - sendStart) / 10000;
 
-            // === 诊断: 发送结果 ===
-            if (isSuccess)
+            // 只在超过 2ms 时打印(正常应该 <1ms)
+            if (sendMs > 2)
             {
-                LogHelper.WriteLog($"[CHSPEC-EJECT] 发送成功, 耗时 {(DateTime.Now.Ticks - start_time) / 10000}ms");
+                LogHelper.WriteLog($"[PROBE-H-SERIAL] !!! SendMessage 耗时 {sendMs}ms " +
+                                   $"气管 {startindex}~{endindex}, 连接状态={SPICOM.IsConnected}");
             }
-            else
-            {
-                LogHelper.WriteLog($"[CHSPEC-EJECT] !!! 发送失败 !!! SPICOM.IsConnected={SPICOM.IsConnected}");
-            }
-            // ======================
 
             if (!isSuccess)
             {
-                LogHelper.WriteLog("初始化气吹控制失败");
+                LogHelper.WriteLog($"[CHSPEC-EJECT] !!! 发送失败 !!! 气管 {startindex}~{endindex}, " +
+                                   $"duration={duration}ms, SPICOM.IsConnected={SPICOM.IsConnected}");
             }
         }
         public bool Set(int[] devices,int[] data)

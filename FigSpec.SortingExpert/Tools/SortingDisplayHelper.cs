@@ -33,7 +33,7 @@ namespace FigSpec.SortingExpert.Tools
         private bool _colorTableBuilt = false;
         private Model _lastModel = null;
 
-        public SortingDisplayHelper(int carryLines = 25)
+        public SortingDisplayHelper(int carryLines = 10)
         {
             _unifyProcessor = new RealtimeUnifyProcessor(carryLines);
         }
@@ -73,7 +73,7 @@ namespace FigSpec.SortingExpert.Tools
 
             // 第 1 步: 统一颜色(若启用)
             byte[,] processedTags;
-            bool shouldLog = (_logCounter % LOG_EVERY_N_BATCHES) == 0;
+            bool shouldLog = false;
 
             if (model.UnifyColorEnabled &&
                 model.UnifyTargetClassId >= 1 &&

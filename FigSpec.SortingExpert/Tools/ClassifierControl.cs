@@ -62,6 +62,12 @@ namespace FigSpec.SortingExpert.Tools
         private IBaseEjectDevice AirCtrl;
 
         public ConcurrentQueue<(bool isContinue, byte[] data, long timestamp)> AirQueue = new ConcurrentQueue<(bool isContinue, byte[] data, long timestamp)>();
+        /// <summary>
+        /// AirQueue 入队唤醒事件。
+        /// EjectForm.SendEjectData 里 Enqueue 之后 Set,AirProcessWork 里 WaitOne。
+        /// 取代原来的 Thread.Sleep(1) 轮询,降低抖动。
+        /// </summary>
+        public AutoResetEvent AirQueueEvent = new AutoResetEvent(false);
 
         /// <summary>
         /// 气吹状态
@@ -157,7 +163,18 @@ namespace FigSpec.SortingExpert.Tools
             long _airProcLoopCounter = 0;  // 循环计数器
             long _airProcDequeueCounter = 0;  // 出队计数器
             long _airProcEjectCounter = 0;  // 触发吹气计数器
-            long _airProcExceptionCount = 0;                                 // ==================================
+            long _airProcExceptionCount = 0;
+            // ==================================
+            // ===== 诊断探针 B 的统计字段 =====
+            long _probeBSample = 0;
+            long _probeBSum = 0;
+            long _probeBMax = 0;
+            // =================================
+            // ===== 诊断探针 C 的统计字段 =====
+            long _probeCSample = 0;
+            long _probeCSum = 0;
+            long _probeCMax = 0;
+            long _probeCEjectLagSum = 0;
             while (!AirStopToken)
             {
                 while (pauseFlag)
@@ -177,23 +194,48 @@ namespace FigSpec.SortingExpert.Tools
                         {
                             if (AirQueue.Count == 0)
                             {
-                                Thread.Sleep(1);
+                                // 事件驱动,由 EjectForm.SendEjectData 入队时 Set 唤醒。
+                                // WaitOne(2) 给 2ms 兜底,防止 Set 信号丢失时死等。
+                                AirQueueEvent.WaitOne(2);
                                 continue;
                             }
-                            //(frame, timestamp) = AirQueue.First();
                             AirQueue.TryDequeue(out var removeData);
                             frame = removeData.data;
                             timestamp = removeData.timestamp;
                             _airProcDequeueCounter++;
-                            // === 诊断: 每 100 次出队打印一次 ===
+
+                            // === 诊断探针 B: 从"相机扫到(timestamp)" 到 "被 AirProcessWork 取出" 的耗时 ===
+                            // 这段包含: 入 AirQueue 之前的所有处理 + AirQueue 排队等待
+                            // 如果这段的值 稳定偏大 → 前面链路本身慢
+                            // 如果这段的值 偶尔尖峰 → AirQueue 堆积了
+                            long dequeueDelayMs = (DateTime.Now.Ticks - timestamp) / 10000;
+                            _probeBSample++;
+                            _probeBSum += dequeueDelayMs;
+                            _probeBMax = Math.Max(_probeBMax, dequeueDelayMs);
+                            if (_probeBSample >= 500)
+                            {
+                                double avg = (double)_probeBSum / _probeBSample;
+                                LogHelper.WriteLog($"[PROBE-B-DEQUEUE] 最近500帧: 平均={avg:F1}ms, 最大={_probeBMax}ms, " +
+                                                   $"AirQueue剩余={AirQueue.Count}");
+                                _probeBSample = 0;
+                                _probeBSum = 0;
+                                _probeBMax = 0;
+                            }
+                            if (dequeueDelayMs > 30)
+                            {
+                                LogHelper.WriteLog($"[PROBE-B-DEQUEUE] !!! 尖峰 {dequeueDelayMs}ms !!! AirQueue剩余={AirQueue.Count}");
+                            }
+                            // ==========================================================================
+
+                            // === 诊断: 每 100 次出队打印一次(保留原日志) ===
                             if ((_airProcDequeueCounter % 100) == 0)
                             {
                                 LogHelper.WriteLog($"[AIR-PROC] 已出队 {_airProcDequeueCounter} 帧, AirQueue 当前剩余={AirQueue.Count}");
                             }
                             // ==================================
-#if DEBUG
-                            LogHelper.WriteLine($"TOTAL-TIME-一帧数据从采样到吹气的总时间：" + (currentTimeLong - timestamp) / 10);
-#endif
+
+                            //LogHelper.WriteLine($"TOTAL-TIME-一帧数据从采样到吹气的总时间：" + (currentTimeLong - timestamp) / 10);
+
 
                             if (!removeData.isContinue)
                             {
@@ -221,9 +263,9 @@ namespace FigSpec.SortingExpert.Tools
                         }
                         usefullFlag = false;
                     }
-#if DEBUG
-                    LogHelper.WriteLine($"chui-取数据时间：" + (DateTime.Now.Ticks - start_time));
-#endif
+
+                    //LogHelper.WriteLine($"chui-取数据时间：" + (DateTime.Now.Ticks - start_time));
+
 
                     byte[] temp = new byte[preSampleState.Length];
                     for (int i = 0; i < AirCount; i++)
@@ -331,9 +373,9 @@ namespace FigSpec.SortingExpert.Tools
                     }
                     Array.Copy(temp, preSampleState, temp.Length);
 
-#if DEBUG
-                    LogHelper.WriteLine($"chui-判断吹气孔的时间：" + (DateTime.Now.Ticks - start_time));
-#endif
+
+                    //LogHelper.WriteLine($"chui-判断吹气孔的时间：" + (DateTime.Now.Ticks - start_time));
+
                     List<int> arrejt = new List<int>();
                     for (int p = 0; p < AirCount; p++)
                     {
@@ -345,17 +387,58 @@ namespace FigSpec.SortingExpert.Tools
                     if (arrejt.Count > 0)
                     {
                         _airProcEjectCounter++;
-                        // === 诊断: 触发吹气! 这是核心日志 ===
-                        LogHelper.WriteLog($"[AIR-EJECT] 触发吹气 #{_airProcEjectCounter}, " +
-                                           $"气管={string.Join(",", arrejt)}, " +
-                                           $"duration={AirDuration}ms");
-                        // ====================================
+                        long triggerTicks = DateTime.Now.Ticks;
+                        long realDelayMs = (triggerTicks - timestamp) / 10000;
+
+                        // === 诊断探针 C: 完整端到端延迟 + 吹气函数耗时 ===
+                        // realDelayMs = 相机扫到 → 即将调用 Eject() 的总延时
+                        // AirDelay 大于 0 时,这个值应该 ≈ max(链路总耗时, AirDelay)
+                        _probeCSample++;
+                        _probeCSum += realDelayMs;
+                        _probeCMax = Math.Max(_probeCMax, realDelayMs);
+                        if (_probeCSample >= 50)
+                        {
+                            double avg = (double)_probeCSum / _probeCSample;
+                            LogHelper.WriteLog($"[PROBE-C-END2END] 最近50次触发: 平均={avg:F1}ms, 最大={_probeCMax}ms, " +
+                                               $"AirDelay设置={AirDelay}ms, AirQueue剩余={AirQueue.Count}");
+                            _probeCSample = 0;
+                            _probeCSum = 0;
+                            _probeCMax = 0;
+                        }
+                        // 单次异常尖峰立即打
+                        if (realDelayMs > AirDelay + 20)   // 超过期望值 20ms 算尖峰
+                        {
+                            LogHelper.WriteLog($"[PROBE-C-END2END] !!! 尖峰 realDelay={realDelayMs}ms " +
+                                               $"(期望≈{AirDelay}ms) AirQueue剩余={AirQueue.Count}");
+                        }
+                        // ====================================================
+
+                        // 保留原 AIR-EJECT 日志(每 50 次)
+                        if ((_airProcEjectCounter % 50) == 1)
+                        {
+                            LogHelper.WriteLog($"[AIR-EJECT] 触发吹气 #{_airProcEjectCounter}, " +
+                                               $"实际端到端延迟={realDelayMs}ms, " +
+                                               $"AirQueue剩余={AirQueue.Count}, " +
+                                               $"气管={string.Join(",", arrejt)}, " +
+                                               $"duration={AirDuration}ms");
+                        }
+
+                        // 调用 Eject, 同时测量 Eject 本身耗时
+                        long ejectCallStart = DateTime.Now.Ticks;
                         Eject(arrejt.ToArray(), (ushort)AirDuration);
+                        long ejectCallMs = (DateTime.Now.Ticks - ejectCallStart) / 10000;
+
+                        // === 诊断探针 D: Eject 函数本身的耗时(从调用到返回) ===
+                        // 这是"代码内 Eject 调用"的时间,不包含硬件响应时间
+                        // 通常应该 <=3ms,如果经常 >10ms 说明串口发送变慢
+                        if (ejectCallMs > 5)
+                        {
+                            LogHelper.WriteLog($"[PROBE-D-EJECT-CALL] !!! Eject() 调用耗时 {ejectCallMs}ms " +
+                                               $"(期望<=3ms), 气管数={arrejt.Count}");
+                        }
+                        // ====================================================
                     }
-#if DEBUG
-                    Console.Write($"chui-一帧的吹气状态：" + string.Join(",", airsState) + "\r\n");
-                    Console.Write($"chui-一帧的吹气时间： {(DateTime.Now.Ticks - start_time)}" + "\r\n");
-#endif
+
                 }
                 catch (Exception e)
                 {
