@@ -505,6 +505,7 @@
     <Compile Include="Tools\RealtimeUnifyProcessor.cs" />
     <Compile Include="Tools\ServerControl.cs" />
     <Compile Include="Tools\SortingDisplayHelper.cs" />
+    <Compile Include="Tools\UdpParamSender.cs" />
     <Compile Include="TrainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -3,6 +3,7 @@ using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using FigSpec.SortingExpert.AppCode;
 using FigSpec.SortingExpert.Entities;
+using FigSpec.SortingExpert.Tools;
 using FigSpec.SortingExpert.VersionUpdate;
 using Globalization;
 using Hyperspectral.SpectralFile;
@@ -134,6 +135,7 @@ namespace FigSpec.SortingExpert
             }
             this.TopMost = true;
             this.TopMost = false;
+            UdpParamSender.Shared.Start();   // ← 新增
         }
 
         private void InitMenuLanguage()
@@ -289,6 +291,7 @@ namespace FigSpec.SortingExpert
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            UdpParamSender.Shared.Stop();    // ← 新增
             GlobalSettings.ApplySetting.Save();
             if (ScanParaMeter.camera != null)
             {
